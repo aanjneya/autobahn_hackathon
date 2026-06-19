@@ -82,3 +82,5 @@ if __name__ == "__main__":
     print(f"Feiertage Österreich:  {len(feiertage_at):>5} Tage")
     print(f"Schulferien Bayern:    {len(ferien_by):>5} Tage")
     print(f"Schulferien AT (S+T):  {len(ferien_at):>5} Tage")
+
+    # test
