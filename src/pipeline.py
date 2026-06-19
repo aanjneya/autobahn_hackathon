@@ -103,11 +103,15 @@ def process_directory(input_dir, output_dir, dataset_type="1min_traffic"):
             print(f"Error processing {input_path}: {e}")
 
 if __name__ == "__main__":
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    default_input_dir = os.path.join(BASE_DIR, "data", "rawdata", "2023-2025_1min_2+0_v")
+    default_output_dir = os.path.join(BASE_DIR, "data", "clean", "2023-2025_1min_2+0_v")
+
     parser = argparse.ArgumentParser(description="Process minute-by-minute highway sensor data into 4-hour aggregated blocks.")
     parser.add_argument("--input", type=str, help="Path to a single input raw CSV file")
     parser.add_argument("--output", type=str, help="Path to save the processed ML-ready CSV file")
-    parser.add_argument("--input_dir", type=str, default="data/rawdata/2023-2025_1min_2+0_v", help="Path to a directory of raw CSV files")
-    parser.add_argument("--output_dir", type=str, default="data/clean/2023-2025_1min_2+0_v", help="Path to a directory to save processed CSV files")
+    parser.add_argument("--input_dir", type=str, default=default_input_dir, help="Path to a directory of raw CSV files")
+    parser.add_argument("--output_dir", type=str, default=default_output_dir, help="Path to a directory to save processed CSV files")
     parser.add_argument("--dataset_type", type=str, default="1min_traffic", choices=["1min_traffic", "dauz_1h", "lt_fbt"], help="Type of dataset to process")
     
     args = parser.parse_args()
