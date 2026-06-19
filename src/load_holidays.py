@@ -45,7 +45,7 @@ def _load_ics_by_keyword(keywords: list[str]) -> set[date]:
     days: set[date] = set()
     for f in files:
         days.update(_parse_ics(f))
-    return days
+    return {d for d in days if d.year in YEARS}
 
 
 def _parse_ics(path: Path) -> set[date]:
