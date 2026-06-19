@@ -1,0 +1,2685 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//https://www.feiertage-oesterreich.at/kalender-download/
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:d9f83c3c872bde1662231677918b2413@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2000
+DTSTART;VALUE=DATE:20000214
+DTEND;VALUE=DATE:20000220
+END:VEVENT
+BEGIN:VEVENT
+UID:5aebd80ee5f1a06c9e7565d9a18f3003@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2000
+DTSTART;VALUE=DATE:20000415
+DTEND;VALUE=DATE:20000426
+END:VEVENT
+BEGIN:VEVENT
+UID:9afef0e8b3d294a685ceb14e1ebe18c2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2000
+DTSTART;VALUE=DATE:20000610
+DTEND;VALUE=DATE:20000614
+END:VEVENT
+BEGIN:VEVENT
+UID:98cf5d49670c39c7782cc311ea29a3ea@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2000
+DTSTART;VALUE=DATE:20000708
+DTEND;VALUE=DATE:20000911
+END:VEVENT
+BEGIN:VEVENT
+UID:9550438bb5ebd561eccefeecb48a7f5a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2000
+DTSTART;VALUE=DATE:20001224
+DTEND;VALUE=DATE:20010107
+END:VEVENT
+BEGIN:VEVENT
+UID:8a2e9bee7fca0d67be228f321294b35b@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2000
+DTSTART;VALUE=DATE:20001102
+DTEND;VALUE=DATE:20001103
+END:VEVENT
+BEGIN:VEVENT
+UID:2e0bd634efd8b7adde7aa6f98614ca51@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2000
+DTSTART;VALUE=DATE:20000924
+DTEND;VALUE=DATE:20000925
+END:VEVENT
+BEGIN:VEVENT
+UID:2388e5b4fcae9ac9d0018a90823b2c2b@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2001
+DTSTART;VALUE=DATE:20010212
+DTEND;VALUE=DATE:20010218
+END:VEVENT
+BEGIN:VEVENT
+UID:f2b01e91d7d1fbbeeb2f09ae3679c34a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2001
+DTSTART;VALUE=DATE:20010407
+DTEND;VALUE=DATE:20010418
+END:VEVENT
+BEGIN:VEVENT
+UID:ee72f2b2229bd8dcdac6d3b8a8dcf353@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2001
+DTSTART;VALUE=DATE:20010602
+DTEND;VALUE=DATE:20010606
+END:VEVENT
+BEGIN:VEVENT
+UID:4b35c799455118c67a4ce349fca07a0c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2001
+DTSTART;VALUE=DATE:20010707
+DTEND;VALUE=DATE:20010910
+END:VEVENT
+BEGIN:VEVENT
+UID:e664bd11381367deb42f0f90b9260102@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2001
+DTSTART;VALUE=DATE:20011224
+DTEND;VALUE=DATE:20020107
+END:VEVENT
+BEGIN:VEVENT
+UID:ed4db1b4d5d3bd35db3e742048ae8268@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2001
+DTSTART;VALUE=DATE:20011102
+DTEND;VALUE=DATE:20011103
+END:VEVENT
+BEGIN:VEVENT
+UID:34f7c4ec6a39fadc350246f01690dae2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2001
+DTSTART;VALUE=DATE:20010924
+DTEND;VALUE=DATE:20010925
+END:VEVENT
+BEGIN:VEVENT
+UID:a9299354e654fad2282796a1e6101cc0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2002
+DTSTART;VALUE=DATE:20020211
+DTEND;VALUE=DATE:20020217
+END:VEVENT
+BEGIN:VEVENT
+UID:68df0d62d765b0cde6a81ad826eb262c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2002
+DTSTART;VALUE=DATE:20020323
+DTEND;VALUE=DATE:20020403
+END:VEVENT
+BEGIN:VEVENT
+UID:da61bb77dcab066596d7a407962f8870@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2002
+DTSTART;VALUE=DATE:20020518
+DTEND;VALUE=DATE:20020522
+END:VEVENT
+BEGIN:VEVENT
+UID:2080ce77d9dd1d618a1c1f51e3417b32@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2002
+DTSTART;VALUE=DATE:20020706
+DTEND;VALUE=DATE:20020909
+END:VEVENT
+BEGIN:VEVENT
+UID:8d7ed1d50f4c869441684756858bbf37@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2002
+DTSTART;VALUE=DATE:20021223
+DTEND;VALUE=DATE:20030107
+END:VEVENT
+BEGIN:VEVENT
+UID:ad29acd96012d0fa4d68442040573030@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2002
+DTSTART;VALUE=DATE:20021102
+DTEND;VALUE=DATE:20021103
+END:VEVENT
+BEGIN:VEVENT
+UID:f7e861ffef33d08835cbd20c8c889735@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2002
+DTSTART;VALUE=DATE:20020924
+DTEND;VALUE=DATE:20020925
+END:VEVENT
+BEGIN:VEVENT
+UID:bb8816622d5241d33bd9392a3a73eeac@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2003
+DTSTART;VALUE=DATE:20030210
+DTEND;VALUE=DATE:20030216
+END:VEVENT
+BEGIN:VEVENT
+UID:92f023f6e234a04e9fc582101e2a1911@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2003
+DTSTART;VALUE=DATE:20030412
+DTEND;VALUE=DATE:20030423
+END:VEVENT
+BEGIN:VEVENT
+UID:53feac2d8bb7a2510bb85b899dfa7aa0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2003
+DTSTART;VALUE=DATE:20030607
+DTEND;VALUE=DATE:20030611
+END:VEVENT
+BEGIN:VEVENT
+UID:f5ecb815176e86d14ed7608c28515e15@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2003
+DTSTART;VALUE=DATE:20030705
+DTEND;VALUE=DATE:20030908
+END:VEVENT
+BEGIN:VEVENT
+UID:4dba1816cf174b93a72fedf43732e1d2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2003
+DTSTART;VALUE=DATE:20031224
+DTEND;VALUE=DATE:20040107
+END:VEVENT
+BEGIN:VEVENT
+UID:a4fdab36d1a0d3050600ff239fd7b55f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2003
+DTSTART;VALUE=DATE:20031102
+DTEND;VALUE=DATE:20031103
+END:VEVENT
+BEGIN:VEVENT
+UID:661906cbd85cc20e67bb60756db32267@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2003
+DTSTART;VALUE=DATE:20030924
+DTEND;VALUE=DATE:20030925
+END:VEVENT
+BEGIN:VEVENT
+UID:300ec9e177e2ce1bb555d3dbbec1ee03@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2004
+DTSTART;VALUE=DATE:20040209
+DTEND;VALUE=DATE:20040215
+END:VEVENT
+BEGIN:VEVENT
+UID:5d707c532ad32b808945f4e3d4a544fb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2004
+DTSTART;VALUE=DATE:20040403
+DTEND;VALUE=DATE:20040414
+END:VEVENT
+BEGIN:VEVENT
+UID:b0b86a0d2f981194625215964dfc9b20@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2004
+DTSTART;VALUE=DATE:20040529
+DTEND;VALUE=DATE:20040602
+END:VEVENT
+BEGIN:VEVENT
+UID:83c70bf2ddc766bd043dc59bc0c5fca5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2004
+DTSTART;VALUE=DATE:20040710
+DTEND;VALUE=DATE:20040913
+END:VEVENT
+BEGIN:VEVENT
+UID:3fb9a4adf8d3a81a71826c7e2b44e367@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2004
+DTSTART;VALUE=DATE:20041224
+DTEND;VALUE=DATE:20050107
+END:VEVENT
+BEGIN:VEVENT
+UID:1ee5e96f33f752fa7cdcdf215f3e208a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2004
+DTSTART;VALUE=DATE:20041102
+DTEND;VALUE=DATE:20041103
+END:VEVENT
+BEGIN:VEVENT
+UID:6ec1f4bace3a9ebb655f8773acf64402@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2004
+DTSTART;VALUE=DATE:20040924
+DTEND;VALUE=DATE:20040925
+END:VEVENT
+BEGIN:VEVENT
+UID:4a32f7c976a453dfd983cbac578fd9a1@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2005
+DTSTART;VALUE=DATE:20050214
+DTEND;VALUE=DATE:20050220
+END:VEVENT
+BEGIN:VEVENT
+UID:53a12cf96efd5581561063ae0bfe17a8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2005
+DTSTART;VALUE=DATE:20050319
+DTEND;VALUE=DATE:20050330
+END:VEVENT
+BEGIN:VEVENT
+UID:5203b137cf5bee7671062296022a0e95@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2005
+DTSTART;VALUE=DATE:20050514
+DTEND;VALUE=DATE:20050518
+END:VEVENT
+BEGIN:VEVENT
+UID:8cc500a3d2dd2b419a7ea43734a15501@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2005
+DTSTART;VALUE=DATE:20050709
+DTEND;VALUE=DATE:20050912
+END:VEVENT
+BEGIN:VEVENT
+UID:61c7f6a20dfe53f4e3b6d8bd43a7a082@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2005
+DTSTART;VALUE=DATE:20051224
+DTEND;VALUE=DATE:20060108
+END:VEVENT
+BEGIN:VEVENT
+UID:fc9a73ba6d5b2f762022ce4ada9b5f28@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2005
+DTSTART;VALUE=DATE:20051102
+DTEND;VALUE=DATE:20051103
+END:VEVENT
+BEGIN:VEVENT
+UID:8d96e4dd804f2e400e6a7da80eefec9c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2005
+DTSTART;VALUE=DATE:20050924
+DTEND;VALUE=DATE:20050925
+END:VEVENT
+BEGIN:VEVENT
+UID:df67dc2de52ca6e8947bc2a29bd1f7a8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2006
+DTSTART;VALUE=DATE:20060213
+DTEND;VALUE=DATE:20060219
+END:VEVENT
+BEGIN:VEVENT
+UID:550a12d67b902d41cbe8b49528c0395a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2006
+DTSTART;VALUE=DATE:20060408
+DTEND;VALUE=DATE:20060419
+END:VEVENT
+BEGIN:VEVENT
+UID:8906f3c336990382535f123c9561d193@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2006
+DTSTART;VALUE=DATE:20060603
+DTEND;VALUE=DATE:20060607
+END:VEVENT
+BEGIN:VEVENT
+UID:372ecec0980bfebdfe7c8c15356e139f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2006
+DTSTART;VALUE=DATE:20060708
+DTEND;VALUE=DATE:20060911
+END:VEVENT
+BEGIN:VEVENT
+UID:08deee5fb154cf727df2b8a0117077ab@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2006
+DTSTART;VALUE=DATE:20061224
+DTEND;VALUE=DATE:20070107
+END:VEVENT
+BEGIN:VEVENT
+UID:fd21c511628908e231ed1e0f1e8b6668@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2006
+DTSTART;VALUE=DATE:20061102
+DTEND;VALUE=DATE:20061103
+END:VEVENT
+BEGIN:VEVENT
+UID:fd8f724b503eb1bac64ae1545c4ce5d7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2006
+DTSTART;VALUE=DATE:20060924
+DTEND;VALUE=DATE:20060925
+END:VEVENT
+BEGIN:VEVENT
+UID:0fd05eaa0ad4b623b8bdd773111566ae@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2007
+DTSTART;VALUE=DATE:20070212
+DTEND;VALUE=DATE:20070218
+END:VEVENT
+BEGIN:VEVENT
+UID:28e3ed5379b00d955d557f6f1d2d898d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2007
+DTSTART;VALUE=DATE:20070331
+DTEND;VALUE=DATE:20070411
+END:VEVENT
+BEGIN:VEVENT
+UID:615426c19bc69127368b026e3640b6bb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2007
+DTSTART;VALUE=DATE:20070526
+DTEND;VALUE=DATE:20070530
+END:VEVENT
+BEGIN:VEVENT
+UID:7b6f1880a509fdacf33bf80f90659f1a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2007
+DTSTART;VALUE=DATE:20070707
+DTEND;VALUE=DATE:20070910
+END:VEVENT
+BEGIN:VEVENT
+UID:3c7087dc3df9b3d13dcca06e65c0448c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2007
+DTSTART;VALUE=DATE:20071224
+DTEND;VALUE=DATE:20080107
+END:VEVENT
+BEGIN:VEVENT
+UID:0694b5bf0c7a5cb56640de3d7089c498@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2007
+DTSTART;VALUE=DATE:20071102
+DTEND;VALUE=DATE:20071103
+END:VEVENT
+BEGIN:VEVENT
+UID:2fc76ba629128b8d975fb44b6707704f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2007
+DTSTART;VALUE=DATE:20070924
+DTEND;VALUE=DATE:20070925
+END:VEVENT
+BEGIN:VEVENT
+UID:acc5a7c3e18f1cf7f99818501aa3e9a8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2008
+DTSTART;VALUE=DATE:20080211
+DTEND;VALUE=DATE:20080217
+END:VEVENT
+BEGIN:VEVENT
+UID:0181ab88c219f59f8908f9a9c4a0de3c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2008
+DTSTART;VALUE=DATE:20080315
+DTEND;VALUE=DATE:20080326
+END:VEVENT
+BEGIN:VEVENT
+UID:6e2fc28d2a4c00a96f2790ee7794bb45@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2008
+DTSTART;VALUE=DATE:20080510
+DTEND;VALUE=DATE:20080514
+END:VEVENT
+BEGIN:VEVENT
+UID:dbf01790e2758890fb869246ee860517@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2008
+DTSTART;VALUE=DATE:20080705
+DTEND;VALUE=DATE:20080908
+END:VEVENT
+BEGIN:VEVENT
+UID:938a6fc949ff62ddadd66d0c65ab6ea0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2008
+DTSTART;VALUE=DATE:20081224
+DTEND;VALUE=DATE:20090107
+END:VEVENT
+BEGIN:VEVENT
+UID:25dab7c6b834241bbc8f778ebabb48c5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2008
+DTSTART;VALUE=DATE:20081102
+DTEND;VALUE=DATE:20081103
+END:VEVENT
+BEGIN:VEVENT
+UID:6bfe590b9031805dcd4b17e5d445c0e3@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2008
+DTSTART;VALUE=DATE:20080924
+DTEND;VALUE=DATE:20080925
+END:VEVENT
+BEGIN:VEVENT
+UID:7d703b71fe179ce2e0ff0d6c8dedb647@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2009
+DTSTART;VALUE=DATE:20090209
+DTEND;VALUE=DATE:20090215
+END:VEVENT
+BEGIN:VEVENT
+UID:fdb194afc753094e7e5b8328b0d62766@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2009
+DTSTART;VALUE=DATE:20090404
+DTEND;VALUE=DATE:20090415
+END:VEVENT
+BEGIN:VEVENT
+UID:b52536074fdc945e7e8ebb325b710872@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2009
+DTSTART;VALUE=DATE:20090530
+DTEND;VALUE=DATE:20090603
+END:VEVENT
+BEGIN:VEVENT
+UID:41092e7bfee4655fee78ab3d5e685a89@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2009
+DTSTART;VALUE=DATE:20090711
+DTEND;VALUE=DATE:20090914
+END:VEVENT
+BEGIN:VEVENT
+UID:2035670271a1579a08d96de718cdce76@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2009
+DTSTART;VALUE=DATE:20091224
+DTEND;VALUE=DATE:20100107
+END:VEVENT
+BEGIN:VEVENT
+UID:65e0b82e450847280e617f3e847b85c0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2009
+DTSTART;VALUE=DATE:20091102
+DTEND;VALUE=DATE:20091103
+END:VEVENT
+BEGIN:VEVENT
+UID:c4ef7215a57ed4bf8edd25040ef3d8ea@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2009
+DTSTART;VALUE=DATE:20090924
+DTEND;VALUE=DATE:20090925
+END:VEVENT
+BEGIN:VEVENT
+UID:e01091406480fde8b78436ffce4be787@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2010
+DTSTART;VALUE=DATE:20100208
+DTEND;VALUE=DATE:20100214
+END:VEVENT
+BEGIN:VEVENT
+UID:df857f0287a97933473cbbcb1f1cf0ba@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2010
+DTSTART;VALUE=DATE:20100327
+DTEND;VALUE=DATE:20100407
+END:VEVENT
+BEGIN:VEVENT
+UID:6125c6c8edaadda6e5776f36429d89de@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2010
+DTSTART;VALUE=DATE:20100522
+DTEND;VALUE=DATE:20100526
+END:VEVENT
+BEGIN:VEVENT
+UID:bcd573e01ea06ac761e9638fad89b2a5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2010
+DTSTART;VALUE=DATE:20100710
+DTEND;VALUE=DATE:20100913
+END:VEVENT
+BEGIN:VEVENT
+UID:daa5814a3e036f67a41327edbcf8c972@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2010
+DTSTART;VALUE=DATE:20101224
+DTEND;VALUE=DATE:20110107
+END:VEVENT
+BEGIN:VEVENT
+UID:14da448c74d6b72f02541a508cdb3c6a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2010
+DTSTART;VALUE=DATE:20101102
+DTEND;VALUE=DATE:20101103
+END:VEVENT
+BEGIN:VEVENT
+UID:c36c118bed636533521d1b9f76604cf1@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2010
+DTSTART;VALUE=DATE:20100924
+DTEND;VALUE=DATE:20100925
+END:VEVENT
+BEGIN:VEVENT
+UID:a7cb19a6470e1c613037c95bc54bd698@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2011
+DTSTART;VALUE=DATE:20110214
+DTEND;VALUE=DATE:20110220
+END:VEVENT
+BEGIN:VEVENT
+UID:75fa9f924fbd866c3755682529dc9a62@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2011
+DTSTART;VALUE=DATE:20110416
+DTEND;VALUE=DATE:20110427
+END:VEVENT
+BEGIN:VEVENT
+UID:fc4df53b63bfd85723ad116b63de9b2a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2011
+DTSTART;VALUE=DATE:20110611
+DTEND;VALUE=DATE:20110615
+END:VEVENT
+BEGIN:VEVENT
+UID:7df5c77659abefc421aeae594d1b9359@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2011
+DTSTART;VALUE=DATE:20110709
+DTEND;VALUE=DATE:20110912
+END:VEVENT
+BEGIN:VEVENT
+UID:b3d271591f7bea2c6bbe43cd3bd128ae@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2011
+DTSTART;VALUE=DATE:20111224
+DTEND;VALUE=DATE:20120108
+END:VEVENT
+BEGIN:VEVENT
+UID:256cfa677d02044e921e001e60c5482c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2011
+DTSTART;VALUE=DATE:20111102
+DTEND;VALUE=DATE:20111103
+END:VEVENT
+BEGIN:VEVENT
+UID:3396717f587b9634258389b1aba9dd1b@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2011
+DTSTART;VALUE=DATE:20110924
+DTEND;VALUE=DATE:20110925
+END:VEVENT
+BEGIN:VEVENT
+UID:2db7c1d81f9ee300f08a52883a867e4a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2012
+DTSTART;VALUE=DATE:20120213
+DTEND;VALUE=DATE:20120219
+END:VEVENT
+BEGIN:VEVENT
+UID:0de4fcb75b98b96b7ad74af358f493b5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2012
+DTSTART;VALUE=DATE:20120331
+DTEND;VALUE=DATE:20120411
+END:VEVENT
+BEGIN:VEVENT
+UID:b6861f57651ad26edc88b15a50bf386a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2012
+DTSTART;VALUE=DATE:20120526
+DTEND;VALUE=DATE:20120530
+END:VEVENT
+BEGIN:VEVENT
+UID:95da648801007f06c0da6aa284f8d4b3@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2012
+DTSTART;VALUE=DATE:20120707
+DTEND;VALUE=DATE:20120910
+END:VEVENT
+BEGIN:VEVENT
+UID:0389349fced0307818e8465f3bfb5ae2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2012
+DTSTART;VALUE=DATE:20121224
+DTEND;VALUE=DATE:20130107
+END:VEVENT
+BEGIN:VEVENT
+UID:99b5682e7987722ea6cd3448e785ce6a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2012
+DTSTART;VALUE=DATE:20121102
+DTEND;VALUE=DATE:20121103
+END:VEVENT
+BEGIN:VEVENT
+UID:b04ea93d1f143d121496446b321e50ea@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2012
+DTSTART;VALUE=DATE:20120924
+DTEND;VALUE=DATE:20120925
+END:VEVENT
+BEGIN:VEVENT
+UID:5b4197e56e7ec839f165cc50ac3491c0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2013
+DTSTART;VALUE=DATE:20130211
+DTEND;VALUE=DATE:20130217
+END:VEVENT
+BEGIN:VEVENT
+UID:fe56bb1f8c9426b5dd27bdd6aaf13098@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2013
+DTSTART;VALUE=DATE:20130323
+DTEND;VALUE=DATE:20130403
+END:VEVENT
+BEGIN:VEVENT
+UID:3aa4f9fa7225731d201f6e939d759ff9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2013
+DTSTART;VALUE=DATE:20130518
+DTEND;VALUE=DATE:20130522
+END:VEVENT
+BEGIN:VEVENT
+UID:173e52142ebd632b0683e790e0178da3@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2013
+DTSTART;VALUE=DATE:20130706
+DTEND;VALUE=DATE:20130909
+END:VEVENT
+BEGIN:VEVENT
+UID:2d2c807bcbbdec47595038cb48c038d7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2013
+DTSTART;VALUE=DATE:20131223
+DTEND;VALUE=DATE:20140107
+END:VEVENT
+BEGIN:VEVENT
+UID:2603c6e6c25384ebf00923f887b782a7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2013
+DTSTART;VALUE=DATE:20131102
+DTEND;VALUE=DATE:20131103
+END:VEVENT
+BEGIN:VEVENT
+UID:a14466e38e0aa7329fb19245a8a3e948@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2013
+DTSTART;VALUE=DATE:20130924
+DTEND;VALUE=DATE:20130925
+END:VEVENT
+BEGIN:VEVENT
+UID:acb90e9fe5afb24abf0cc467466abd93@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2014
+DTSTART;VALUE=DATE:20140210
+DTEND;VALUE=DATE:20140216
+END:VEVENT
+BEGIN:VEVENT
+UID:61e605d975600c2a745ce64d9c7cefa7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2014
+DTSTART;VALUE=DATE:20140412
+DTEND;VALUE=DATE:20140423
+END:VEVENT
+BEGIN:VEVENT
+UID:855fc5a8ce1bceced63ae66ad136d4d5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2014
+DTSTART;VALUE=DATE:20140607
+DTEND;VALUE=DATE:20140611
+END:VEVENT
+BEGIN:VEVENT
+UID:690bf4abcf4af5b7b274ebc612d51b4f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2014
+DTSTART;VALUE=DATE:20140705
+DTEND;VALUE=DATE:20140908
+END:VEVENT
+BEGIN:VEVENT
+UID:2e4d6eb0615183c692d5eb7039cf4a00@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2014
+DTSTART;VALUE=DATE:20141224
+DTEND;VALUE=DATE:20150107
+END:VEVENT
+BEGIN:VEVENT
+UID:62dbfe259bb8e960af3db87be8094ade@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2014
+DTSTART;VALUE=DATE:20141102
+DTEND;VALUE=DATE:20141103
+END:VEVENT
+BEGIN:VEVENT
+UID:fac6d03c36ccf5360a1402d47e0aefac@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2014
+DTSTART;VALUE=DATE:20140924
+DTEND;VALUE=DATE:20140925
+END:VEVENT
+BEGIN:VEVENT
+UID:65dc32315b1f6622788d8398a204681d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2015
+DTSTART;VALUE=DATE:20150209
+DTEND;VALUE=DATE:20150215
+END:VEVENT
+BEGIN:VEVENT
+UID:e29e212c76fcd8dea15c84f7a9d9f6d8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2015
+DTSTART;VALUE=DATE:20150328
+DTEND;VALUE=DATE:20150408
+END:VEVENT
+BEGIN:VEVENT
+UID:053a6804e5199978d2d4ffb7274b30bb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2015
+DTSTART;VALUE=DATE:20150523
+DTEND;VALUE=DATE:20150527
+END:VEVENT
+BEGIN:VEVENT
+UID:8187858281ce0e7debcb659250b854e5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2015
+DTSTART;VALUE=DATE:20150711
+DTEND;VALUE=DATE:20150914
+END:VEVENT
+BEGIN:VEVENT
+UID:5cf76f2bf50bcc605383d10581ef5260@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2015
+DTSTART;VALUE=DATE:20151224
+DTEND;VALUE=DATE:20160107
+END:VEVENT
+BEGIN:VEVENT
+UID:848f536e8224b66df40c1c7e83a2dad9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2015
+DTSTART;VALUE=DATE:20151102
+DTEND;VALUE=DATE:20151103
+END:VEVENT
+BEGIN:VEVENT
+UID:4b6d61a8832fe0ffa5d3f4e401a5abab@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2015
+DTSTART;VALUE=DATE:20150924
+DTEND;VALUE=DATE:20150925
+END:VEVENT
+BEGIN:VEVENT
+UID:85b9906df2a99447431aaf01c1a584f2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2016
+DTSTART;VALUE=DATE:20160208
+DTEND;VALUE=DATE:20160214
+END:VEVENT
+BEGIN:VEVENT
+UID:0bfe91b7501c3e8c5978764f72a5530c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2016
+DTSTART;VALUE=DATE:20160319
+DTEND;VALUE=DATE:20160330
+END:VEVENT
+BEGIN:VEVENT
+UID:54c7c3c4384e8046244170abf874e820@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2016
+DTSTART;VALUE=DATE:20160514
+DTEND;VALUE=DATE:20160518
+END:VEVENT
+BEGIN:VEVENT
+UID:2e79d7fad223989003a365fbd19b2001@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2016
+DTSTART;VALUE=DATE:20160709
+DTEND;VALUE=DATE:20160912
+END:VEVENT
+BEGIN:VEVENT
+UID:e5280b68c6dfaa6a0eaf5917e55f9797@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2016
+DTSTART;VALUE=DATE:20161224
+DTEND;VALUE=DATE:20170108
+END:VEVENT
+BEGIN:VEVENT
+UID:7a100ead3434387b01be25c162326706@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2016
+DTSTART;VALUE=DATE:20161102
+DTEND;VALUE=DATE:20161103
+END:VEVENT
+BEGIN:VEVENT
+UID:2f4de1e0dafdd8123a83d0f9828ede36@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2016
+DTSTART;VALUE=DATE:20160924
+DTEND;VALUE=DATE:20160925
+END:VEVENT
+BEGIN:VEVENT
+UID:f69b9aeb45d1021bd3b2e40744e36d68@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2017
+DTSTART;VALUE=DATE:20170213
+DTEND;VALUE=DATE:20170219
+END:VEVENT
+BEGIN:VEVENT
+UID:22b027f0728ddc21219eb16139827e11@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2017
+DTSTART;VALUE=DATE:20170408
+DTEND;VALUE=DATE:20170419
+END:VEVENT
+BEGIN:VEVENT
+UID:cde51c8162b76070830f046a607cf6df@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2017
+DTSTART;VALUE=DATE:20170603
+DTEND;VALUE=DATE:20170607
+END:VEVENT
+BEGIN:VEVENT
+UID:59dfc26c2b139d82fb7fb5b4cd776769@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2017
+DTSTART;VALUE=DATE:20170708
+DTEND;VALUE=DATE:20170911
+END:VEVENT
+BEGIN:VEVENT
+UID:aedc86c9b3fef8ad408108d85a2b39c9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2017
+DTSTART;VALUE=DATE:20171224
+DTEND;VALUE=DATE:20180107
+END:VEVENT
+BEGIN:VEVENT
+UID:83c399c8ef82ea23ac52a0cb6fa1fd25@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2017
+DTSTART;VALUE=DATE:20171102
+DTEND;VALUE=DATE:20171103
+END:VEVENT
+BEGIN:VEVENT
+UID:ec54c9a0857329f708b78dc4d9e97288@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2017
+DTSTART;VALUE=DATE:20170924
+DTEND;VALUE=DATE:20170925
+END:VEVENT
+BEGIN:VEVENT
+UID:7bbeeb3f337e1b69aa92838b0ef3857e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2018
+DTSTART;VALUE=DATE:20180212
+DTEND;VALUE=DATE:20180218
+END:VEVENT
+BEGIN:VEVENT
+UID:132ed77aeaaed8379e4c944d3573714d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2018
+DTSTART;VALUE=DATE:20180324
+DTEND;VALUE=DATE:20180404
+END:VEVENT
+BEGIN:VEVENT
+UID:8c0477f585d4226798a91f5143d571c2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2018
+DTSTART;VALUE=DATE:20180519
+DTEND;VALUE=DATE:20180523
+END:VEVENT
+BEGIN:VEVENT
+UID:ebe5e6a59a07354f5a612d4c43239729@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2018
+DTSTART;VALUE=DATE:20180707
+DTEND;VALUE=DATE:20180910
+END:VEVENT
+BEGIN:VEVENT
+UID:4e621ccf2cb1d7d1eed627e85fa3caaa@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2018
+DTSTART;VALUE=DATE:20181224
+DTEND;VALUE=DATE:20190107
+END:VEVENT
+BEGIN:VEVENT
+UID:94a301f89769270d4c20d5b4b65d111b@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2018
+DTSTART;VALUE=DATE:20181102
+DTEND;VALUE=DATE:20181103
+END:VEVENT
+BEGIN:VEVENT
+UID:e460520868aa7114afb2e07c7332caa9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2018
+DTSTART;VALUE=DATE:20180924
+DTEND;VALUE=DATE:20180925
+END:VEVENT
+BEGIN:VEVENT
+UID:ffe142e9129141915bcdec1066729690@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2019
+DTSTART;VALUE=DATE:20190211
+DTEND;VALUE=DATE:20190217
+END:VEVENT
+BEGIN:VEVENT
+UID:4098eb449fb5631cba16311d9b60a75d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2019
+DTSTART;VALUE=DATE:20190413
+DTEND;VALUE=DATE:20190424
+END:VEVENT
+BEGIN:VEVENT
+UID:b132d5dcbf0ab4f16739f77bae2422ea@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2019
+DTSTART;VALUE=DATE:20190608
+DTEND;VALUE=DATE:20190612
+END:VEVENT
+BEGIN:VEVENT
+UID:54f1dde26b33691da2664876d29aa4c8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2019
+DTSTART;VALUE=DATE:20190706
+DTEND;VALUE=DATE:20190909
+END:VEVENT
+BEGIN:VEVENT
+UID:7d00b558eeecfc929542495fc960eb63@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2019
+DTSTART;VALUE=DATE:20191223
+DTEND;VALUE=DATE:20200107
+END:VEVENT
+BEGIN:VEVENT
+UID:d500e2d3ef6fc04468a463e7c5cbfec5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2019
+DTSTART;VALUE=DATE:20191102
+DTEND;VALUE=DATE:20191103
+END:VEVENT
+BEGIN:VEVENT
+UID:95637fab70f427cce66736b6375517c4@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2019
+DTSTART;VALUE=DATE:20190924
+DTEND;VALUE=DATE:20190925
+END:VEVENT
+BEGIN:VEVENT
+UID:6d57d85f1174fc772d33278a9c88953e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2020
+DTSTART;VALUE=DATE:20200210
+DTEND;VALUE=DATE:20200216
+END:VEVENT
+BEGIN:VEVENT
+UID:797ceb8d08964e4ab5e4e0a0b85fea25@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2020
+DTSTART;VALUE=DATE:20200404
+DTEND;VALUE=DATE:20200415
+END:VEVENT
+BEGIN:VEVENT
+UID:07128c61398bb179dbe395c11a6adf70@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2020
+DTSTART;VALUE=DATE:20200530
+DTEND;VALUE=DATE:20200603
+END:VEVENT
+BEGIN:VEVENT
+UID:d268fbe802182d53d2d5969e8614acf7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2020
+DTSTART;VALUE=DATE:20200711
+DTEND;VALUE=DATE:20200914
+END:VEVENT
+BEGIN:VEVENT
+UID:7f21448e14610e562147fb7c081ca66c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2020
+DTSTART;VALUE=DATE:20201027
+DTEND;VALUE=DATE:20201101
+END:VEVENT
+BEGIN:VEVENT
+UID:66e4d41165dab5e43998e6025f94f443@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2020
+DTSTART;VALUE=DATE:20201224
+DTEND;VALUE=DATE:20210107
+END:VEVENT
+BEGIN:VEVENT
+UID:f4a3f04e72ad40c8c8b295054d6acdcd@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2020
+DTSTART;VALUE=DATE:20201102
+DTEND;VALUE=DATE:20201103
+END:VEVENT
+BEGIN:VEVENT
+UID:8a2fdf47232325644ba7447e772c533e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2020
+DTSTART;VALUE=DATE:20200924
+DTEND;VALUE=DATE:20200925
+END:VEVENT
+BEGIN:VEVENT
+UID:f987d7ed55881dd60c2f128bf5c40384@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2021
+DTSTART;VALUE=DATE:20210208
+DTEND;VALUE=DATE:20210214
+END:VEVENT
+BEGIN:VEVENT
+UID:a345c493ad80ed96a4875358fe8412c1@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2021
+DTSTART;VALUE=DATE:20210327
+DTEND;VALUE=DATE:20210406
+END:VEVENT
+BEGIN:VEVENT
+UID:a00fc30b421215aa1118315864123ce8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2021
+DTSTART;VALUE=DATE:20210522
+DTEND;VALUE=DATE:20210525
+END:VEVENT
+BEGIN:VEVENT
+UID:b391fb8e0b9932bc91fc0bc708f11d8e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2021
+DTSTART;VALUE=DATE:20210710
+DTEND;VALUE=DATE:20210913
+END:VEVENT
+BEGIN:VEVENT
+UID:baf38a345367cfa117f55361f5e5ed90@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2021
+DTSTART;VALUE=DATE:20211027
+DTEND;VALUE=DATE:20211101
+END:VEVENT
+BEGIN:VEVENT
+UID:0d28681d9f46aaed5889a141cf3458ab@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2021
+DTSTART;VALUE=DATE:20211224
+DTEND;VALUE=DATE:20220107
+END:VEVENT
+BEGIN:VEVENT
+UID:e13f608e786c100a0a8029bb5968cac7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2021
+DTSTART;VALUE=DATE:20211102
+DTEND;VALUE=DATE:20211103
+END:VEVENT
+BEGIN:VEVENT
+UID:b3db4ed9a1269e0a496304ef5fb34948@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2021
+DTSTART;VALUE=DATE:20210924
+DTEND;VALUE=DATE:20210925
+END:VEVENT
+BEGIN:VEVENT
+UID:5993e21ff4b2e0b53b7cb8e0444ea3e7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2022
+DTSTART;VALUE=DATE:20220214
+DTEND;VALUE=DATE:20220220
+END:VEVENT
+BEGIN:VEVENT
+UID:e576a9c7d1a9a097de2a8354c19e11b7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2022
+DTSTART;VALUE=DATE:20220409
+DTEND;VALUE=DATE:20220419
+END:VEVENT
+BEGIN:VEVENT
+UID:64257383f4f3b7c2415c3b76c313f2c8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2022
+DTSTART;VALUE=DATE:20220604
+DTEND;VALUE=DATE:20220607
+END:VEVENT
+BEGIN:VEVENT
+UID:229e7b40a15f5be1b50b00113f23bdac@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2022
+DTSTART;VALUE=DATE:20220709
+DTEND;VALUE=DATE:20220912
+END:VEVENT
+BEGIN:VEVENT
+UID:52de85d933c6f3c1ac71d884ca0e419f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2022
+DTSTART;VALUE=DATE:20221027
+DTEND;VALUE=DATE:20221101
+END:VEVENT
+BEGIN:VEVENT
+UID:9bedc0f05bc1d7fcfeec079d8784f012@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2022
+DTSTART;VALUE=DATE:20221224
+DTEND;VALUE=DATE:20230108
+END:VEVENT
+BEGIN:VEVENT
+UID:10e57b50e14bc0c1cce58513d98435ad@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2022
+DTSTART;VALUE=DATE:20221102
+DTEND;VALUE=DATE:20221103
+END:VEVENT
+BEGIN:VEVENT
+UID:6767360c055fe0134d79673c44b83441@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2022
+DTSTART;VALUE=DATE:20220924
+DTEND;VALUE=DATE:20220925
+END:VEVENT
+BEGIN:VEVENT
+UID:a910c327b78939a90ba4f84cb3e83b5a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2023
+DTSTART;VALUE=DATE:20230213
+DTEND;VALUE=DATE:20230219
+END:VEVENT
+BEGIN:VEVENT
+UID:84321d9bef5c6f2dcc6bca144491ea88@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2023
+DTSTART;VALUE=DATE:20230401
+DTEND;VALUE=DATE:20230411
+END:VEVENT
+BEGIN:VEVENT
+UID:b225ae4b11deef62a28214e0374ffb56@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2023
+DTSTART;VALUE=DATE:20230527
+DTEND;VALUE=DATE:20230530
+END:VEVENT
+BEGIN:VEVENT
+UID:cea612fc7c3ba0df187f45aef56be01f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2023
+DTSTART;VALUE=DATE:20230708
+DTEND;VALUE=DATE:20230911
+END:VEVENT
+BEGIN:VEVENT
+UID:02023ed6d382694786117d43c7e6e637@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2023
+DTSTART;VALUE=DATE:20231027
+DTEND;VALUE=DATE:20231101
+END:VEVENT
+BEGIN:VEVENT
+UID:70515217ecda6e83e5c10bc0c0f6b538@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2023
+DTSTART;VALUE=DATE:20231224
+DTEND;VALUE=DATE:20240107
+END:VEVENT
+BEGIN:VEVENT
+UID:7d28a3c2b1ecf923345dd2fafcbb1985@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2023
+DTSTART;VALUE=DATE:20231102
+DTEND;VALUE=DATE:20231103
+END:VEVENT
+BEGIN:VEVENT
+UID:b6b4a4707aaffc3b3884aa365e728139@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2023
+DTSTART;VALUE=DATE:20230924
+DTEND;VALUE=DATE:20230925
+END:VEVENT
+BEGIN:VEVENT
+UID:5406522a53b44da59f3a2815db5b39c9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2024
+DTSTART;VALUE=DATE:20240212
+DTEND;VALUE=DATE:20240218
+END:VEVENT
+BEGIN:VEVENT
+UID:ee67447805e504f91cb989fbe321247c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2024
+DTSTART;VALUE=DATE:20240323
+DTEND;VALUE=DATE:20240402
+END:VEVENT
+BEGIN:VEVENT
+UID:3c371d345512b53c89eece909ef2c76f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2024
+DTSTART;VALUE=DATE:20240518
+DTEND;VALUE=DATE:20240521
+END:VEVENT
+BEGIN:VEVENT
+UID:486160ce2d349fb95ae1b4ea1bb4f9bb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2024
+DTSTART;VALUE=DATE:20240706
+DTEND;VALUE=DATE:20240909
+END:VEVENT
+BEGIN:VEVENT
+UID:93f132ce258123a41661590d713d4ce2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2024
+DTSTART;VALUE=DATE:20241027
+DTEND;VALUE=DATE:20241101
+END:VEVENT
+BEGIN:VEVENT
+UID:1d2a6bc459517fe3554727e9521cad78@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2024
+DTSTART;VALUE=DATE:20241223
+DTEND;VALUE=DATE:20250107
+END:VEVENT
+BEGIN:VEVENT
+UID:7f02c06c1ff5ec37e86a7a2b7a63d5a4@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2024
+DTSTART;VALUE=DATE:20241102
+DTEND;VALUE=DATE:20241103
+END:VEVENT
+BEGIN:VEVENT
+UID:f48ec712a3a2443be00b00c8b212c677@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2024
+DTSTART;VALUE=DATE:20240924
+DTEND;VALUE=DATE:20240925
+END:VEVENT
+BEGIN:VEVENT
+UID:dbd10c66c4462f63a7a7c6a03733250c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2025
+DTSTART;VALUE=DATE:20250210
+DTEND;VALUE=DATE:20250216
+END:VEVENT
+BEGIN:VEVENT
+UID:a084c9782134e72dc05335a0912247ee@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2025
+DTSTART;VALUE=DATE:20250412
+DTEND;VALUE=DATE:20250422
+END:VEVENT
+BEGIN:VEVENT
+UID:990673c75cf08627bb2884f455ff20d9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2025
+DTSTART;VALUE=DATE:20250607
+DTEND;VALUE=DATE:20250610
+END:VEVENT
+BEGIN:VEVENT
+UID:7b92a643ea67b2f182a6fa35d690069a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2025
+DTSTART;VALUE=DATE:20250705
+DTEND;VALUE=DATE:20250908
+END:VEVENT
+BEGIN:VEVENT
+UID:681c0b56c19f1fe9576640f971a76c11@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2025
+DTSTART;VALUE=DATE:20251027
+DTEND;VALUE=DATE:20251101
+END:VEVENT
+BEGIN:VEVENT
+UID:7e17896b1adc99b06132136ff0cbbdb6@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2025
+DTSTART;VALUE=DATE:20251224
+DTEND;VALUE=DATE:20260107
+END:VEVENT
+BEGIN:VEVENT
+UID:3ab7bf58b8f384e8ebffe85c007822c8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2025
+DTSTART;VALUE=DATE:20251102
+DTEND;VALUE=DATE:20251103
+END:VEVENT
+BEGIN:VEVENT
+UID:217f19f40d7f9f9d16756f13062a0fb9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2025
+DTSTART;VALUE=DATE:20250924
+DTEND;VALUE=DATE:20250925
+END:VEVENT
+BEGIN:VEVENT
+UID:767e551a20b4442b1ade8847d51cf236@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2026
+DTSTART;VALUE=DATE:20260209
+DTEND;VALUE=DATE:20260215
+END:VEVENT
+BEGIN:VEVENT
+UID:1434adfee6ef9e7905f3ce2eb4c01d89@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2026
+DTSTART;VALUE=DATE:20260328
+DTEND;VALUE=DATE:20260407
+END:VEVENT
+BEGIN:VEVENT
+UID:4b3bdb95142789071d11a2326e3ae1e5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2026
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260526
+END:VEVENT
+BEGIN:VEVENT
+UID:d4fe9ef2d2c1804daa58ad0289d12409@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2026
+DTSTART;VALUE=DATE:20260711
+DTEND;VALUE=DATE:20260914
+END:VEVENT
+BEGIN:VEVENT
+UID:4931fa9aa7ed0a337f48dd83e182e6fa@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2026
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261101
+END:VEVENT
+BEGIN:VEVENT
+UID:c3af765ecfd01a304e1c942f421edbaa@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2026
+DTSTART;VALUE=DATE:20261224
+DTEND;VALUE=DATE:20270107
+END:VEVENT
+BEGIN:VEVENT
+UID:563be4cc575ed03089f10979384f8f27@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2026
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+END:VEVENT
+BEGIN:VEVENT
+UID:aa13657f9806191a95d55cccf24227c0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2026
+DTSTART;VALUE=DATE:20260924
+DTEND;VALUE=DATE:20260925
+END:VEVENT
+BEGIN:VEVENT
+UID:6eb1aa0ee723fba0347611ab635c2f19@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:OÖ\,St\,S\,T\,V
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2027
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270221
+END:VEVENT
+BEGIN:VEVENT
+UID:7a7444d076fb13d513f40e6dc09ecce8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2027
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270330
+END:VEVENT
+BEGIN:VEVENT
+UID:1f3ea647404aa1c701c3d21bbff96bdd@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2027
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270518
+END:VEVENT
+BEGIN:VEVENT
+UID:b78b709eff55851220f7e61912018d42@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2027
+DTSTART;VALUE=DATE:20270710
+DTEND;VALUE=DATE:20270913
+END:VEVENT
+BEGIN:VEVENT
+UID:2445438bcadafec0d22952a373661a6e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2027
+DTSTART;VALUE=DATE:20271027
+DTEND;VALUE=DATE:20271101
+END:VEVENT
+BEGIN:VEVENT
+UID:d9544b5178e1c36f5f6caa344e12f2f2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2027
+DTSTART;VALUE=DATE:20271224
+DTEND;VALUE=DATE:20280107
+END:VEVENT
+BEGIN:VEVENT
+UID:9c737afd458c5039f81dcc5afe67458d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2027
+DTSTART;VALUE=DATE:20271102
+DTEND;VALUE=DATE:20271103
+END:VEVENT
+BEGIN:VEVENT
+UID:b656a9ace296dab640719b49d18a2917@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2027
+DTSTART;VALUE=DATE:20270924
+DTEND;VALUE=DATE:20270925
+END:VEVENT
+BEGIN:VEVENT
+UID:b5c0433587d9063926b14e002e1ff395@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2028
+DTSTART;VALUE=DATE:20280214
+DTEND;VALUE=DATE:20280220
+END:VEVENT
+BEGIN:VEVENT
+UID:2c1a8e6a41e60b393017c457dcbd0cfa@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2028
+DTSTART;VALUE=DATE:20280408
+DTEND;VALUE=DATE:20280418
+END:VEVENT
+BEGIN:VEVENT
+UID:5b16fdbcfa1b8cda03943dba0f9b9be0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2028
+DTSTART;VALUE=DATE:20280603
+DTEND;VALUE=DATE:20280606
+END:VEVENT
+BEGIN:VEVENT
+UID:0df2ad2058951d3e23bed08ea1e1d2d2@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2028
+DTSTART;VALUE=DATE:20280708
+DTEND;VALUE=DATE:20280911
+END:VEVENT
+BEGIN:VEVENT
+UID:4fd34b90c3a9a0e1c4ae930669b8b7d4@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2028
+DTSTART;VALUE=DATE:20281027
+DTEND;VALUE=DATE:20281101
+END:VEVENT
+BEGIN:VEVENT
+UID:2ccd81217bd9dc9e6327cddc06d10657@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2028
+DTSTART;VALUE=DATE:20281224
+DTEND;VALUE=DATE:20290107
+END:VEVENT
+BEGIN:VEVENT
+UID:737b552dd16c4138f71cb44159f2cc97@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2028
+DTSTART;VALUE=DATE:20281102
+DTEND;VALUE=DATE:20281103
+END:VEVENT
+BEGIN:VEVENT
+UID:8d1f1157c8bbf515ddca4d613ef83bd0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2028
+DTSTART;VALUE=DATE:20280924
+DTEND;VALUE=DATE:20280925
+END:VEVENT
+BEGIN:VEVENT
+UID:94135c59dabde2ae3cd1cf61c7535b8b@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2029
+DTSTART;VALUE=DATE:20290212
+DTEND;VALUE=DATE:20290218
+END:VEVENT
+BEGIN:VEVENT
+UID:423d79f8c521ddde946aa8894b561a50@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2029
+DTSTART;VALUE=DATE:20290324
+DTEND;VALUE=DATE:20290403
+END:VEVENT
+BEGIN:VEVENT
+UID:853018843ccfbd5a293c4229fe3be9c0@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2029
+DTSTART;VALUE=DATE:20290519
+DTEND;VALUE=DATE:20290522
+END:VEVENT
+BEGIN:VEVENT
+UID:b00d27781466c55e5d7e68d2f5cd2c9a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2029
+DTSTART;VALUE=DATE:20290707
+DTEND;VALUE=DATE:20290910
+END:VEVENT
+BEGIN:VEVENT
+UID:7a29ab7dfac84dcac065b88d8cdbb234@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2029
+DTSTART;VALUE=DATE:20291027
+DTEND;VALUE=DATE:20291101
+END:VEVENT
+BEGIN:VEVENT
+UID:ec202d0c7ec4dc6725f3cbe483abf0a4@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2029
+DTSTART;VALUE=DATE:20291224
+DTEND;VALUE=DATE:20300107
+END:VEVENT
+BEGIN:VEVENT
+UID:4307e6584955a0d70a0222607f3c9665@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2029
+DTSTART;VALUE=DATE:20291102
+DTEND;VALUE=DATE:20291103
+END:VEVENT
+BEGIN:VEVENT
+UID:4b610b9d82b5139c4da4c9a39da5317c@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2029
+DTSTART;VALUE=DATE:20290924
+DTEND;VALUE=DATE:20290925
+END:VEVENT
+BEGIN:VEVENT
+UID:5616ddf079aa41902c536d954d0b5633@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2030
+DTSTART;VALUE=DATE:20300211
+DTEND;VALUE=DATE:20300217
+END:VEVENT
+BEGIN:VEVENT
+UID:47f3c4b4dd13f65731b54dbe49a23a51@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2030
+DTSTART;VALUE=DATE:20300413
+DTEND;VALUE=DATE:20300423
+END:VEVENT
+BEGIN:VEVENT
+UID:a523c41ff938bfd2d5fce395c93f3e91@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2030
+DTSTART;VALUE=DATE:20300608
+DTEND;VALUE=DATE:20300611
+END:VEVENT
+BEGIN:VEVENT
+UID:921ffdd351fdda4eb58510dca2534657@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2030
+DTSTART;VALUE=DATE:20300706
+DTEND;VALUE=DATE:20300909
+END:VEVENT
+BEGIN:VEVENT
+UID:2d2905d622efa27a6cb4a04a6b8b61cb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2030
+DTSTART;VALUE=DATE:20301027
+DTEND;VALUE=DATE:20301101
+END:VEVENT
+BEGIN:VEVENT
+UID:917021ed4fb6babeedde653394321b14@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2030
+DTSTART;VALUE=DATE:20301223
+DTEND;VALUE=DATE:20310107
+END:VEVENT
+BEGIN:VEVENT
+UID:4b349a37b379cac52d2e3fcedf1bf386@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2030
+DTSTART;VALUE=DATE:20301102
+DTEND;VALUE=DATE:20301103
+END:VEVENT
+BEGIN:VEVENT
+UID:26bb87df9bc294beddfc0923ee2ba3a9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2030
+DTSTART;VALUE=DATE:20300924
+DTEND;VALUE=DATE:20300925
+END:VEVENT
+BEGIN:VEVENT
+UID:321c2890496cc901c0465f7ec91a05df@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2031
+DTSTART;VALUE=DATE:20310210
+DTEND;VALUE=DATE:20310216
+END:VEVENT
+BEGIN:VEVENT
+UID:feb4e9aa05c11f05d15ca8f7ee0dd34f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2031
+DTSTART;VALUE=DATE:20310405
+DTEND;VALUE=DATE:20310415
+END:VEVENT
+BEGIN:VEVENT
+UID:0e20aa2bbf874e7ba289add6a4fbfbbf@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2031
+DTSTART;VALUE=DATE:20310531
+DTEND;VALUE=DATE:20310603
+END:VEVENT
+BEGIN:VEVENT
+UID:7d94bd37405ebd49a642c7ab4f889d0d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2031
+DTSTART;VALUE=DATE:20310705
+DTEND;VALUE=DATE:20310908
+END:VEVENT
+BEGIN:VEVENT
+UID:58c24e14058040d4c42d61bb61877282@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2031
+DTSTART;VALUE=DATE:20311027
+DTEND;VALUE=DATE:20311101
+END:VEVENT
+BEGIN:VEVENT
+UID:4ea6a3e3334b9002773ae7c9c4ea8257@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2031
+DTSTART;VALUE=DATE:20311224
+DTEND;VALUE=DATE:20320107
+END:VEVENT
+BEGIN:VEVENT
+UID:70a44486e8bbff4279fd61c6bc397f38@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2031
+DTSTART;VALUE=DATE:20311102
+DTEND;VALUE=DATE:20311103
+END:VEVENT
+BEGIN:VEVENT
+UID:dd0764016d3547052cf97afef7c45804@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2031
+DTSTART;VALUE=DATE:20310924
+DTEND;VALUE=DATE:20310925
+END:VEVENT
+BEGIN:VEVENT
+UID:8854f3194d65a4d7dad85c92d4712d0d@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2032
+DTSTART;VALUE=DATE:20320209
+DTEND;VALUE=DATE:20320215
+END:VEVENT
+BEGIN:VEVENT
+UID:a17f127712f6f9d83dc1bd0d05dc97da@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2032
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320330
+END:VEVENT
+BEGIN:VEVENT
+UID:31f0a4ba0600dd50ac92ae719e9a514e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2032
+DTSTART;VALUE=DATE:20320515
+DTEND;VALUE=DATE:20320518
+END:VEVENT
+BEGIN:VEVENT
+UID:4d73e7dd3feedf08af3c5a99a28a4ee4@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2032
+DTSTART;VALUE=DATE:20320710
+DTEND;VALUE=DATE:20320913
+END:VEVENT
+BEGIN:VEVENT
+UID:30c8aee6110c12ea6852f73e43113a76@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2032
+DTSTART;VALUE=DATE:20321027
+DTEND;VALUE=DATE:20321101
+END:VEVENT
+BEGIN:VEVENT
+UID:3bc71fe4a6966c80bc485c9a3f0ae152@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2032
+DTSTART;VALUE=DATE:20321224
+DTEND;VALUE=DATE:20330107
+END:VEVENT
+BEGIN:VEVENT
+UID:8f765556b46062938d627a0f61d33f8a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2032
+DTSTART;VALUE=DATE:20321102
+DTEND;VALUE=DATE:20321103
+END:VEVENT
+BEGIN:VEVENT
+UID:aa6ac0e9479c8fb84e4ba4d5cd3d370f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2032
+DTSTART;VALUE=DATE:20320924
+DTEND;VALUE=DATE:20320925
+END:VEVENT
+BEGIN:VEVENT
+UID:8817d0d7a4556a2c1e5d1ed04c82b3e8@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2033
+DTSTART;VALUE=DATE:20330214
+DTEND;VALUE=DATE:20330220
+END:VEVENT
+BEGIN:VEVENT
+UID:da8bd68789b40d9f3edf6ba1df583456@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2033
+DTSTART;VALUE=DATE:20330409
+DTEND;VALUE=DATE:20330419
+END:VEVENT
+BEGIN:VEVENT
+UID:dc0399d76f70277834bd7166742079bb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2033
+DTSTART;VALUE=DATE:20330604
+DTEND;VALUE=DATE:20330607
+END:VEVENT
+BEGIN:VEVENT
+UID:74109b78e76e0d90c251ec0ddc940ae9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2033
+DTSTART;VALUE=DATE:20330709
+DTEND;VALUE=DATE:20330912
+END:VEVENT
+BEGIN:VEVENT
+UID:227876a87af61a617b447933e9f908e7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2033
+DTSTART;VALUE=DATE:20331027
+DTEND;VALUE=DATE:20331101
+END:VEVENT
+BEGIN:VEVENT
+UID:baa61ba2a06de8ef7c483d3be7bf6e3f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2033
+DTSTART;VALUE=DATE:20331224
+DTEND;VALUE=DATE:20340108
+END:VEVENT
+BEGIN:VEVENT
+UID:6058b466775346cd5556c436d4a0123e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2033
+DTSTART;VALUE=DATE:20331102
+DTEND;VALUE=DATE:20331103
+END:VEVENT
+BEGIN:VEVENT
+UID:5e55cf6cfea9a4489076c3a1797603e3@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2033
+DTSTART;VALUE=DATE:20330924
+DTEND;VALUE=DATE:20330925
+END:VEVENT
+BEGIN:VEVENT
+UID:16e6d33ad80740e536772f0ceef084bb@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2034
+DTSTART;VALUE=DATE:20340213
+DTEND;VALUE=DATE:20340219
+END:VEVENT
+BEGIN:VEVENT
+UID:3642da647b3e55bca235806aa466a55a@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2034
+DTSTART;VALUE=DATE:20340401
+DTEND;VALUE=DATE:20340411
+END:VEVENT
+BEGIN:VEVENT
+UID:f2562a50a87cade1dd1125f55184bd74@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2034
+DTSTART;VALUE=DATE:20340527
+DTEND;VALUE=DATE:20340530
+END:VEVENT
+BEGIN:VEVENT
+UID:2e8934b8059a34d6b05c091bda0fd2ef@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2034
+DTSTART;VALUE=DATE:20340708
+DTEND;VALUE=DATE:20340911
+END:VEVENT
+BEGIN:VEVENT
+UID:76450c461181c52260a2683ebd07edf4@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2034
+DTSTART;VALUE=DATE:20341027
+DTEND;VALUE=DATE:20341101
+END:VEVENT
+BEGIN:VEVENT
+UID:b47bf89eabda56b1cc36bd09b982b71f@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2034
+DTSTART;VALUE=DATE:20341224
+DTEND;VALUE=DATE:20350107
+END:VEVENT
+BEGIN:VEVENT
+UID:5779671d39c9b433974f3631c0fdb7d9@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2034
+DTSTART;VALUE=DATE:20341102
+DTEND;VALUE=DATE:20341103
+END:VEVENT
+BEGIN:VEVENT
+UID:713faea9501c0f6e45a18590fac9b5e7@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2034
+DTSTART;VALUE=DATE:20340924
+DTEND;VALUE=DATE:20340925
+END:VEVENT
+BEGIN:VEVENT
+UID:ba8997ef948c26a66b7217ad63a58630@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Salzburg 2035
+DTSTART;VALUE=DATE:20350212
+DTEND;VALUE=DATE:20350218
+END:VEVENT
+BEGIN:VEVENT
+UID:86941029d6c9fdf2d2f52051b333b551@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Salzburg 2035
+DTSTART;VALUE=DATE:20350317
+DTEND;VALUE=DATE:20350327
+END:VEVENT
+BEGIN:VEVENT
+UID:5279434e15f68d671fdc1e858432569e@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Salzburg 2035
+DTSTART;VALUE=DATE:20350512
+DTEND;VALUE=DATE:20350515
+END:VEVENT
+BEGIN:VEVENT
+UID:ae6b0078b8e5a05451ed04feb7213f0b@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Salzburg 2035
+DTSTART;VALUE=DATE:20350707
+DTEND;VALUE=DATE:20350910
+END:VEVENT
+BEGIN:VEVENT
+UID:92f8f619ca25f2c2f14e38a70de11526@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Salzburg 2035
+DTSTART;VALUE=DATE:20351027
+DTEND;VALUE=DATE:20351101
+END:VEVENT
+BEGIN:VEVENT
+UID:cffed33728d9e408bd78fcd1e3b08fa5@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Salzburg 2035
+DTSTART;VALUE=DATE:20351224
+DTEND;VALUE=DATE:20360107
+END:VEVENT
+BEGIN:VEVENT
+UID:2822084f9a5c04456a276b266d33b592@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Salzburg 2035
+DTSTART;VALUE=DATE:20351102
+DTEND;VALUE=DATE:20351103
+END:VEVENT
+BEGIN:VEVENT
+UID:5d5ec336a8308dbae74d803c2c648352@feiertage-oesterreich.at
+DTSTAMP:20260619T215553Z
+LOCATION:S
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/st-rupert-24-september/
+SUMMARY:St. Rupert Salzburg 2035
+DTSTART;VALUE=DATE:20350924
+DTEND;VALUE=DATE:20350925
+END:VEVENT
+END:VCALENDAR

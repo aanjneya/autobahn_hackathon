@@ -1,0 +1,2685 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//https://www.feiertage-oesterreich.at/kalender-download/
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:91abaf1461359b6a0fee5a7de05624c2@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2000
+DTSTART;VALUE=DATE:20000214
+DTEND;VALUE=DATE:20000220
+END:VEVENT
+BEGIN:VEVENT
+UID:5c9cb14fffaa350a4dee8075cdcece07@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2000
+DTSTART;VALUE=DATE:20000415
+DTEND;VALUE=DATE:20000426
+END:VEVENT
+BEGIN:VEVENT
+UID:6c658f736270f0a2b66969c8e4d61ade@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2000
+DTSTART;VALUE=DATE:20000610
+DTEND;VALUE=DATE:20000614
+END:VEVENT
+BEGIN:VEVENT
+UID:7cc2601f106b823328aea35851c8938b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2000
+DTSTART;VALUE=DATE:20000708
+DTEND;VALUE=DATE:20000911
+END:VEVENT
+BEGIN:VEVENT
+UID:13b65dee73270127397d84bdb0995282@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2000
+DTSTART;VALUE=DATE:20001224
+DTEND;VALUE=DATE:20010107
+END:VEVENT
+BEGIN:VEVENT
+UID:1c45170a102fa67a904e2eaabb67b8e9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2000
+DTSTART;VALUE=DATE:20001102
+DTEND;VALUE=DATE:20001103
+END:VEVENT
+BEGIN:VEVENT
+UID:63e7f24456fa5523c9cf46125355c56b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2000: https://www.feiertage-oesterreich.at/schulferien/2000/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2000
+DTSTART;VALUE=DATE:20000319
+DTEND;VALUE=DATE:20000320
+END:VEVENT
+BEGIN:VEVENT
+UID:f5c3f12745af7c2792746db7c4d03746@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2001
+DTSTART;VALUE=DATE:20010212
+DTEND;VALUE=DATE:20010218
+END:VEVENT
+BEGIN:VEVENT
+UID:953aeae490a63a40db3e58e1371ab078@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2001
+DTSTART;VALUE=DATE:20010407
+DTEND;VALUE=DATE:20010418
+END:VEVENT
+BEGIN:VEVENT
+UID:d9e0c56ece8f17f77438d08129bc893c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2001
+DTSTART;VALUE=DATE:20010602
+DTEND;VALUE=DATE:20010606
+END:VEVENT
+BEGIN:VEVENT
+UID:00bc5a8516a959719d28397cdbbd39a9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2001
+DTSTART;VALUE=DATE:20010707
+DTEND;VALUE=DATE:20010910
+END:VEVENT
+BEGIN:VEVENT
+UID:6abcff777b91b0758a49e8545200b9aa@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2001
+DTSTART;VALUE=DATE:20011224
+DTEND;VALUE=DATE:20020107
+END:VEVENT
+BEGIN:VEVENT
+UID:dadb7e4e4961df5a4272de841c8e228a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2001
+DTSTART;VALUE=DATE:20011102
+DTEND;VALUE=DATE:20011103
+END:VEVENT
+BEGIN:VEVENT
+UID:36bd8ad4afa1f93c0f9e1dd9a1d4cbf9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2001: https://www.feiertage-oesterreich.at/schulferien/2001/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2001
+DTSTART;VALUE=DATE:20010319
+DTEND;VALUE=DATE:20010320
+END:VEVENT
+BEGIN:VEVENT
+UID:3eb44c5714b516d8d76bc549a67dd12e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2002
+DTSTART;VALUE=DATE:20020211
+DTEND;VALUE=DATE:20020217
+END:VEVENT
+BEGIN:VEVENT
+UID:6c84cbf593faa668f881c046460f763e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2002
+DTSTART;VALUE=DATE:20020323
+DTEND;VALUE=DATE:20020403
+END:VEVENT
+BEGIN:VEVENT
+UID:bc35aad3ef562e3548f1f376ad2b5655@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2002
+DTSTART;VALUE=DATE:20020518
+DTEND;VALUE=DATE:20020522
+END:VEVENT
+BEGIN:VEVENT
+UID:6ba1b85f2bc94185733e8519e7e67be7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2002
+DTSTART;VALUE=DATE:20020706
+DTEND;VALUE=DATE:20020909
+END:VEVENT
+BEGIN:VEVENT
+UID:ca0a8c35583b06b795b89059c366a7c4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2002
+DTSTART;VALUE=DATE:20021223
+DTEND;VALUE=DATE:20030107
+END:VEVENT
+BEGIN:VEVENT
+UID:39576da1643509a7aea0c4387a60d1f1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2002
+DTSTART;VALUE=DATE:20021102
+DTEND;VALUE=DATE:20021103
+END:VEVENT
+BEGIN:VEVENT
+UID:f49d37bcf2476edc02ad754ca30a5713@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2002: https://www.feiertage-oesterreich.at/schulferien/2002/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2002
+DTSTART;VALUE=DATE:20020319
+DTEND;VALUE=DATE:20020320
+END:VEVENT
+BEGIN:VEVENT
+UID:49f3f68db4d927249f92840705659132@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2003
+DTSTART;VALUE=DATE:20030210
+DTEND;VALUE=DATE:20030216
+END:VEVENT
+BEGIN:VEVENT
+UID:4b3a31c824f67fdd30bd0999d9e3ec2d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2003
+DTSTART;VALUE=DATE:20030412
+DTEND;VALUE=DATE:20030423
+END:VEVENT
+BEGIN:VEVENT
+UID:b59fcdace303b0b37642a8a8c1c7741b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2003
+DTSTART;VALUE=DATE:20030607
+DTEND;VALUE=DATE:20030611
+END:VEVENT
+BEGIN:VEVENT
+UID:879e49c7522121122fb7d97e09f7895e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2003
+DTSTART;VALUE=DATE:20030705
+DTEND;VALUE=DATE:20030908
+END:VEVENT
+BEGIN:VEVENT
+UID:d425a0ab1e200bfe5a99c93ff87d6ae9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2003
+DTSTART;VALUE=DATE:20031224
+DTEND;VALUE=DATE:20040107
+END:VEVENT
+BEGIN:VEVENT
+UID:128e8471fa06145a2006656e048bf85b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2003
+DTSTART;VALUE=DATE:20031102
+DTEND;VALUE=DATE:20031103
+END:VEVENT
+BEGIN:VEVENT
+UID:071b55b7cfa96e2e883ce42b64999956@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2003: https://www.feiertage-oesterreich.at/schulferien/2003/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2003
+DTSTART;VALUE=DATE:20030319
+DTEND;VALUE=DATE:20030320
+END:VEVENT
+BEGIN:VEVENT
+UID:abf69c64b838deb057cec8a366cb8401@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2004
+DTSTART;VALUE=DATE:20040209
+DTEND;VALUE=DATE:20040215
+END:VEVENT
+BEGIN:VEVENT
+UID:e3824f4c54fed29000c3e41a33823965@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2004
+DTSTART;VALUE=DATE:20040403
+DTEND;VALUE=DATE:20040414
+END:VEVENT
+BEGIN:VEVENT
+UID:2ca673450856630103e1abc34e8b683d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2004
+DTSTART;VALUE=DATE:20040529
+DTEND;VALUE=DATE:20040602
+END:VEVENT
+BEGIN:VEVENT
+UID:3e7aa76f20b16c7ce1f33ddf1af66b8e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2004
+DTSTART;VALUE=DATE:20040710
+DTEND;VALUE=DATE:20040913
+END:VEVENT
+BEGIN:VEVENT
+UID:c5524c891cc8ac03f128fd755e93c0b7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2004
+DTSTART;VALUE=DATE:20041224
+DTEND;VALUE=DATE:20050107
+END:VEVENT
+BEGIN:VEVENT
+UID:bc98a4a0000427a8e1728cbc5ddd2093@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2004
+DTSTART;VALUE=DATE:20041102
+DTEND;VALUE=DATE:20041103
+END:VEVENT
+BEGIN:VEVENT
+UID:d3a0ad978e38fccb7fd74410958dbed7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2004: https://www.feiertage-oesterreich.at/schulferien/2004/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2004
+DTSTART;VALUE=DATE:20040319
+DTEND;VALUE=DATE:20040320
+END:VEVENT
+BEGIN:VEVENT
+UID:a5d28081107fe89b153be58115329ba8@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2005
+DTSTART;VALUE=DATE:20050214
+DTEND;VALUE=DATE:20050220
+END:VEVENT
+BEGIN:VEVENT
+UID:b45a18a72ef12ff3718a8eeaee7dbd0b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2005
+DTSTART;VALUE=DATE:20050319
+DTEND;VALUE=DATE:20050330
+END:VEVENT
+BEGIN:VEVENT
+UID:335ee5df40e1c68d961f7f591b8403e1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2005
+DTSTART;VALUE=DATE:20050514
+DTEND;VALUE=DATE:20050518
+END:VEVENT
+BEGIN:VEVENT
+UID:916677380e25a5a566e7bfed4be2448e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2005
+DTSTART;VALUE=DATE:20050709
+DTEND;VALUE=DATE:20050912
+END:VEVENT
+BEGIN:VEVENT
+UID:498b8569377beb4644e8272c98265150@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2005
+DTSTART;VALUE=DATE:20051224
+DTEND;VALUE=DATE:20060108
+END:VEVENT
+BEGIN:VEVENT
+UID:3553203ed6fb1443eccfa51e0f981f2b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2005
+DTSTART;VALUE=DATE:20051102
+DTEND;VALUE=DATE:20051103
+END:VEVENT
+BEGIN:VEVENT
+UID:1966fae6799bad4724fb48537b65fbff@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2005: https://www.feiertage-oesterreich.at/schulferien/2005/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2005
+DTSTART;VALUE=DATE:20050319
+DTEND;VALUE=DATE:20050320
+END:VEVENT
+BEGIN:VEVENT
+UID:37a1723fd5554c7fb90699999e7d2b61@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2006
+DTSTART;VALUE=DATE:20060213
+DTEND;VALUE=DATE:20060219
+END:VEVENT
+BEGIN:VEVENT
+UID:321dc26db175a64d5688b21025f6f112@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2006
+DTSTART;VALUE=DATE:20060408
+DTEND;VALUE=DATE:20060419
+END:VEVENT
+BEGIN:VEVENT
+UID:ff5e265cb8e5bca40d2cd124072edbef@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2006
+DTSTART;VALUE=DATE:20060603
+DTEND;VALUE=DATE:20060607
+END:VEVENT
+BEGIN:VEVENT
+UID:43819f7e9213281f7f4b8aaa0f25bdc4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2006
+DTSTART;VALUE=DATE:20060708
+DTEND;VALUE=DATE:20060911
+END:VEVENT
+BEGIN:VEVENT
+UID:956938b394970d0936e83288a01ee373@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2006
+DTSTART;VALUE=DATE:20061224
+DTEND;VALUE=DATE:20070107
+END:VEVENT
+BEGIN:VEVENT
+UID:cce4a37f0940e094d8988d35db5609b0@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2006
+DTSTART;VALUE=DATE:20061102
+DTEND;VALUE=DATE:20061103
+END:VEVENT
+BEGIN:VEVENT
+UID:a13474b18e3f3fb097e8a6e150ea4d7b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2006: https://www.feiertage-oesterreich.at/schulferien/2006/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2006
+DTSTART;VALUE=DATE:20060319
+DTEND;VALUE=DATE:20060320
+END:VEVENT
+BEGIN:VEVENT
+UID:f93ab631f114c8e432cf926913025074@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2007
+DTSTART;VALUE=DATE:20070212
+DTEND;VALUE=DATE:20070218
+END:VEVENT
+BEGIN:VEVENT
+UID:6cf3529c9ffda35713dbccbadf74a823@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2007
+DTSTART;VALUE=DATE:20070331
+DTEND;VALUE=DATE:20070411
+END:VEVENT
+BEGIN:VEVENT
+UID:14ff2bf4fa96c94aa55748645c3dd6fc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2007
+DTSTART;VALUE=DATE:20070526
+DTEND;VALUE=DATE:20070530
+END:VEVENT
+BEGIN:VEVENT
+UID:c6ca4c1ede7c6e1e60cb10b6f46fee90@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2007
+DTSTART;VALUE=DATE:20070707
+DTEND;VALUE=DATE:20070910
+END:VEVENT
+BEGIN:VEVENT
+UID:9d4c75e80ac9ab22a46918e0edd422c9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2007
+DTSTART;VALUE=DATE:20071224
+DTEND;VALUE=DATE:20080107
+END:VEVENT
+BEGIN:VEVENT
+UID:7df203ac198cabdf1a0359371838a8ae@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2007
+DTSTART;VALUE=DATE:20071102
+DTEND;VALUE=DATE:20071103
+END:VEVENT
+BEGIN:VEVENT
+UID:36a1bd3f0a90f1c20140fda3e3cb294f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2007: https://www.feiertage-oesterreich.at/schulferien/2007/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2007
+DTSTART;VALUE=DATE:20070319
+DTEND;VALUE=DATE:20070320
+END:VEVENT
+BEGIN:VEVENT
+UID:86fbc232c0fe964aed5947bd1d55291c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2008
+DTSTART;VALUE=DATE:20080211
+DTEND;VALUE=DATE:20080217
+END:VEVENT
+BEGIN:VEVENT
+UID:9e325b04afcebfd08ba9e4ef229ff7c6@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2008
+DTSTART;VALUE=DATE:20080315
+DTEND;VALUE=DATE:20080326
+END:VEVENT
+BEGIN:VEVENT
+UID:2026a1b3081340c5298f3491222584be@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2008
+DTSTART;VALUE=DATE:20080510
+DTEND;VALUE=DATE:20080514
+END:VEVENT
+BEGIN:VEVENT
+UID:fb06e983a860888c3deb6b23bef35dc4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2008
+DTSTART;VALUE=DATE:20080705
+DTEND;VALUE=DATE:20080908
+END:VEVENT
+BEGIN:VEVENT
+UID:313333360e302c072324eda9d3a7c0d5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2008
+DTSTART;VALUE=DATE:20081224
+DTEND;VALUE=DATE:20090107
+END:VEVENT
+BEGIN:VEVENT
+UID:01458f7e7d2157d54b49dd436882d8b7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2008
+DTSTART;VALUE=DATE:20081102
+DTEND;VALUE=DATE:20081103
+END:VEVENT
+BEGIN:VEVENT
+UID:707f298ddece5e521a7f2f246e2386ba@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2008: https://www.feiertage-oesterreich.at/schulferien/2008/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2008
+DTSTART;VALUE=DATE:20080319
+DTEND;VALUE=DATE:20080320
+END:VEVENT
+BEGIN:VEVENT
+UID:5abfa1ec18dbcbb164e7646adcee97d4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2009
+DTSTART;VALUE=DATE:20090209
+DTEND;VALUE=DATE:20090215
+END:VEVENT
+BEGIN:VEVENT
+UID:395a0d9801de44a238e2f8f28cb55d87@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2009
+DTSTART;VALUE=DATE:20090404
+DTEND;VALUE=DATE:20090415
+END:VEVENT
+BEGIN:VEVENT
+UID:c7941f8409d8f31419774013718d5e63@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2009
+DTSTART;VALUE=DATE:20090530
+DTEND;VALUE=DATE:20090603
+END:VEVENT
+BEGIN:VEVENT
+UID:9b1e97d65011affb9adbfcae26585d6b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2009
+DTSTART;VALUE=DATE:20090711
+DTEND;VALUE=DATE:20090914
+END:VEVENT
+BEGIN:VEVENT
+UID:343476a78924f2380cb710c9f66082ed@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2009
+DTSTART;VALUE=DATE:20091224
+DTEND;VALUE=DATE:20100107
+END:VEVENT
+BEGIN:VEVENT
+UID:cbed87ef0f1bd66d754d77ceb2d2f928@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2009
+DTSTART;VALUE=DATE:20091102
+DTEND;VALUE=DATE:20091103
+END:VEVENT
+BEGIN:VEVENT
+UID:0de30db4d3660bd92b261fff01e3df50@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2009: https://www.feiertage-oesterreich.at/schulferien/2009/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2009
+DTSTART;VALUE=DATE:20090319
+DTEND;VALUE=DATE:20090320
+END:VEVENT
+BEGIN:VEVENT
+UID:cb9c309e1a64ff1bbc4a33b47c207c63@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2010
+DTSTART;VALUE=DATE:20100208
+DTEND;VALUE=DATE:20100214
+END:VEVENT
+BEGIN:VEVENT
+UID:564d0d78a061dea1824f42f6a326a230@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2010
+DTSTART;VALUE=DATE:20100327
+DTEND;VALUE=DATE:20100407
+END:VEVENT
+BEGIN:VEVENT
+UID:7a6b4ae00bd3ab2c88beb8c44737547c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2010
+DTSTART;VALUE=DATE:20100522
+DTEND;VALUE=DATE:20100526
+END:VEVENT
+BEGIN:VEVENT
+UID:c17223497055d0a9dec024bffc0ed512@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2010
+DTSTART;VALUE=DATE:20100710
+DTEND;VALUE=DATE:20100913
+END:VEVENT
+BEGIN:VEVENT
+UID:cfa72953fa7c0d6a60f2f88a71ab7759@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2010
+DTSTART;VALUE=DATE:20101224
+DTEND;VALUE=DATE:20110107
+END:VEVENT
+BEGIN:VEVENT
+UID:98cd5280eee7ac303444e3c091a02588@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2010
+DTSTART;VALUE=DATE:20101102
+DTEND;VALUE=DATE:20101103
+END:VEVENT
+BEGIN:VEVENT
+UID:05c633f9363a9a647078ab1acf1946da@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2010: https://www.feiertage-oesterreich.at/schulferien/2010/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2010
+DTSTART;VALUE=DATE:20100319
+DTEND;VALUE=DATE:20100320
+END:VEVENT
+BEGIN:VEVENT
+UID:d867d439e61c25c7a94b17b393a11e8c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2011
+DTSTART;VALUE=DATE:20110214
+DTEND;VALUE=DATE:20110220
+END:VEVENT
+BEGIN:VEVENT
+UID:5dbba54ad732e728961514ab1ef45c8c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2011
+DTSTART;VALUE=DATE:20110416
+DTEND;VALUE=DATE:20110427
+END:VEVENT
+BEGIN:VEVENT
+UID:20e830cf96299112713555d99cd0b931@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2011
+DTSTART;VALUE=DATE:20110611
+DTEND;VALUE=DATE:20110615
+END:VEVENT
+BEGIN:VEVENT
+UID:29e430d2dd110c6bfafd52e2d31f6392@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2011
+DTSTART;VALUE=DATE:20110709
+DTEND;VALUE=DATE:20110912
+END:VEVENT
+BEGIN:VEVENT
+UID:94c6279bfc410e80cdcd5f7bd8cea4f4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2011
+DTSTART;VALUE=DATE:20111224
+DTEND;VALUE=DATE:20120108
+END:VEVENT
+BEGIN:VEVENT
+UID:807d26dea76c8e215892d6ba2d5ec347@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2011
+DTSTART;VALUE=DATE:20111102
+DTEND;VALUE=DATE:20111103
+END:VEVENT
+BEGIN:VEVENT
+UID:9a3cd127c2eaaf758868f3af3cc543fb@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2011: https://www.feiertage-oesterreich.at/schulferien/2011/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2011
+DTSTART;VALUE=DATE:20110319
+DTEND;VALUE=DATE:20110320
+END:VEVENT
+BEGIN:VEVENT
+UID:303a8667250b9bf9129a6797c06b69c8@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2012
+DTSTART;VALUE=DATE:20120213
+DTEND;VALUE=DATE:20120219
+END:VEVENT
+BEGIN:VEVENT
+UID:b1efb126efc5a3ff2ec2df5308d8bfe4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2012
+DTSTART;VALUE=DATE:20120331
+DTEND;VALUE=DATE:20120411
+END:VEVENT
+BEGIN:VEVENT
+UID:a87a0ef857cb8752c3a40a4a105ac482@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2012
+DTSTART;VALUE=DATE:20120526
+DTEND;VALUE=DATE:20120530
+END:VEVENT
+BEGIN:VEVENT
+UID:7c04bcbff381137a36d8b72137783b30@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2012
+DTSTART;VALUE=DATE:20120707
+DTEND;VALUE=DATE:20120910
+END:VEVENT
+BEGIN:VEVENT
+UID:b415455b64c93db5b5342df6f800e356@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2012
+DTSTART;VALUE=DATE:20121224
+DTEND;VALUE=DATE:20130107
+END:VEVENT
+BEGIN:VEVENT
+UID:ac5f85e97f9675ff7f1198379a15af9e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2012
+DTSTART;VALUE=DATE:20121102
+DTEND;VALUE=DATE:20121103
+END:VEVENT
+BEGIN:VEVENT
+UID:bfa2f052e2cad7cf2e175bccab8bad0d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2012: https://www.feiertage-oesterreich.at/schulferien/2012/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2012
+DTSTART;VALUE=DATE:20120319
+DTEND;VALUE=DATE:20120320
+END:VEVENT
+BEGIN:VEVENT
+UID:f212c1067cac82d1bc134ef506108b50@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2013
+DTSTART;VALUE=DATE:20130211
+DTEND;VALUE=DATE:20130217
+END:VEVENT
+BEGIN:VEVENT
+UID:0eb1c0ddce0c98869fdb7be912e8e750@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2013
+DTSTART;VALUE=DATE:20130323
+DTEND;VALUE=DATE:20130403
+END:VEVENT
+BEGIN:VEVENT
+UID:9bccdc95a12749c30c5835263423589f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2013
+DTSTART;VALUE=DATE:20130518
+DTEND;VALUE=DATE:20130522
+END:VEVENT
+BEGIN:VEVENT
+UID:e2676e0947441f72b2d13fb30cea4ab4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2013
+DTSTART;VALUE=DATE:20130706
+DTEND;VALUE=DATE:20130909
+END:VEVENT
+BEGIN:VEVENT
+UID:ae835b7c00ebd4820a6db42eaba8f5ae@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2013
+DTSTART;VALUE=DATE:20131223
+DTEND;VALUE=DATE:20140107
+END:VEVENT
+BEGIN:VEVENT
+UID:275e5e543310a1a48f751a4c8fbffc7a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2013
+DTSTART;VALUE=DATE:20131102
+DTEND;VALUE=DATE:20131103
+END:VEVENT
+BEGIN:VEVENT
+UID:497ff648859ce4b4595f528c7c689b4e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2013: https://www.feiertage-oesterreich.at/schulferien/2013/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2013
+DTSTART;VALUE=DATE:20130319
+DTEND;VALUE=DATE:20130320
+END:VEVENT
+BEGIN:VEVENT
+UID:045d65fbecd32e4ee88866a18fe85c18@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2014
+DTSTART;VALUE=DATE:20140210
+DTEND;VALUE=DATE:20140216
+END:VEVENT
+BEGIN:VEVENT
+UID:bbd6ce4dfb7cd0e44b1d4bfc984e9e63@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2014
+DTSTART;VALUE=DATE:20140412
+DTEND;VALUE=DATE:20140423
+END:VEVENT
+BEGIN:VEVENT
+UID:d29de5b93d180d5818d9fd531c549d9b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2014
+DTSTART;VALUE=DATE:20140607
+DTEND;VALUE=DATE:20140611
+END:VEVENT
+BEGIN:VEVENT
+UID:1a2a3decb9dbd17133aa115a326145cc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2014
+DTSTART;VALUE=DATE:20140705
+DTEND;VALUE=DATE:20140908
+END:VEVENT
+BEGIN:VEVENT
+UID:c7e25c0a0da4f9279e1e39b9f300f7a4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2014
+DTSTART;VALUE=DATE:20141224
+DTEND;VALUE=DATE:20150107
+END:VEVENT
+BEGIN:VEVENT
+UID:8adbe1f450456f2f878d9cea5ca1ebab@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2014
+DTSTART;VALUE=DATE:20141102
+DTEND;VALUE=DATE:20141103
+END:VEVENT
+BEGIN:VEVENT
+UID:a972a90e33573aaa25db2736ed465b16@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2014: https://www.feiertage-oesterreich.at/schulferien/2014/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2014
+DTSTART;VALUE=DATE:20140319
+DTEND;VALUE=DATE:20140320
+END:VEVENT
+BEGIN:VEVENT
+UID:7b37eac314c1a0e9f5534b9cb2021b68@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2015
+DTSTART;VALUE=DATE:20150209
+DTEND;VALUE=DATE:20150215
+END:VEVENT
+BEGIN:VEVENT
+UID:9fb8709e33b773a1c4b975ed823672d5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2015
+DTSTART;VALUE=DATE:20150328
+DTEND;VALUE=DATE:20150408
+END:VEVENT
+BEGIN:VEVENT
+UID:8ccba1e741cdeed913dc3ca0ed7e735a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2015
+DTSTART;VALUE=DATE:20150523
+DTEND;VALUE=DATE:20150527
+END:VEVENT
+BEGIN:VEVENT
+UID:65fb754296a5f1426a19c66c819fb78d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2015
+DTSTART;VALUE=DATE:20150711
+DTEND;VALUE=DATE:20150914
+END:VEVENT
+BEGIN:VEVENT
+UID:c2a28897f75e3405e07694829adfbf0a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2015
+DTSTART;VALUE=DATE:20151224
+DTEND;VALUE=DATE:20160107
+END:VEVENT
+BEGIN:VEVENT
+UID:e2bf223e97367457c70f88c26b73a12f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2015
+DTSTART;VALUE=DATE:20151102
+DTEND;VALUE=DATE:20151103
+END:VEVENT
+BEGIN:VEVENT
+UID:1127999f9ab9676e610967d6b9cf8ea5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2015: https://www.feiertage-oesterreich.at/schulferien/2015/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2015
+DTSTART;VALUE=DATE:20150319
+DTEND;VALUE=DATE:20150320
+END:VEVENT
+BEGIN:VEVENT
+UID:a96c75134d95e4c644d76202ac2dd04f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2016
+DTSTART;VALUE=DATE:20160208
+DTEND;VALUE=DATE:20160214
+END:VEVENT
+BEGIN:VEVENT
+UID:894d2db97d89d5c5bea047407cf04b8f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2016
+DTSTART;VALUE=DATE:20160319
+DTEND;VALUE=DATE:20160330
+END:VEVENT
+BEGIN:VEVENT
+UID:e5dcc6a96af7eeb1f7984a39fc1dcf15@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2016
+DTSTART;VALUE=DATE:20160514
+DTEND;VALUE=DATE:20160518
+END:VEVENT
+BEGIN:VEVENT
+UID:77e7bcd3f5bec96c813c7e4c9326b99d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2016
+DTSTART;VALUE=DATE:20160709
+DTEND;VALUE=DATE:20160912
+END:VEVENT
+BEGIN:VEVENT
+UID:2f7915fc462ca4872e0f09589917763f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2016
+DTSTART;VALUE=DATE:20161224
+DTEND;VALUE=DATE:20170108
+END:VEVENT
+BEGIN:VEVENT
+UID:4c098f25a395a00875e3f1c901f63afc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2016
+DTSTART;VALUE=DATE:20161102
+DTEND;VALUE=DATE:20161103
+END:VEVENT
+BEGIN:VEVENT
+UID:3d5686e23c8e3afc0492aceb5a8d43e5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2016: https://www.feiertage-oesterreich.at/schulferien/2016/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2016
+DTSTART;VALUE=DATE:20160319
+DTEND;VALUE=DATE:20160320
+END:VEVENT
+BEGIN:VEVENT
+UID:7d34c5a7893b0da4773fa2da577eba23@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2017
+DTSTART;VALUE=DATE:20170213
+DTEND;VALUE=DATE:20170219
+END:VEVENT
+BEGIN:VEVENT
+UID:563056fd45445da1d1a30863af436439@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2017
+DTSTART;VALUE=DATE:20170408
+DTEND;VALUE=DATE:20170419
+END:VEVENT
+BEGIN:VEVENT
+UID:24e14ffcd56fffb463f6351a1c067d82@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2017
+DTSTART;VALUE=DATE:20170603
+DTEND;VALUE=DATE:20170607
+END:VEVENT
+BEGIN:VEVENT
+UID:4a2617b7234a9ad8d6d90d0066698e2c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2017
+DTSTART;VALUE=DATE:20170708
+DTEND;VALUE=DATE:20170911
+END:VEVENT
+BEGIN:VEVENT
+UID:e7695ab0763382b9fe8abbf6304a12b3@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2017
+DTSTART;VALUE=DATE:20171224
+DTEND;VALUE=DATE:20180107
+END:VEVENT
+BEGIN:VEVENT
+UID:207b365b0a694763e1bc05229225728d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2017
+DTSTART;VALUE=DATE:20171102
+DTEND;VALUE=DATE:20171103
+END:VEVENT
+BEGIN:VEVENT
+UID:9f35e82a0a756ef59f9fe3eff39382f3@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2017: https://www.feiertage-oesterreich.at/schulferien/2017/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2017
+DTSTART;VALUE=DATE:20170319
+DTEND;VALUE=DATE:20170320
+END:VEVENT
+BEGIN:VEVENT
+UID:ecb09d5c6fb04286e4bae4f45289041a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2018
+DTSTART;VALUE=DATE:20180212
+DTEND;VALUE=DATE:20180218
+END:VEVENT
+BEGIN:VEVENT
+UID:629ecf4e887cee89e859e46a13bea54e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2018
+DTSTART;VALUE=DATE:20180324
+DTEND;VALUE=DATE:20180404
+END:VEVENT
+BEGIN:VEVENT
+UID:520710cf1ea5e21519b4f3f8b165ab74@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2018
+DTSTART;VALUE=DATE:20180519
+DTEND;VALUE=DATE:20180523
+END:VEVENT
+BEGIN:VEVENT
+UID:2ef20cb7525a3075d9a58fbfa40bb161@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2018
+DTSTART;VALUE=DATE:20180707
+DTEND;VALUE=DATE:20180910
+END:VEVENT
+BEGIN:VEVENT
+UID:77c4ad0a6119c6e2792f33624b6927d1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2018
+DTSTART;VALUE=DATE:20181224
+DTEND;VALUE=DATE:20190107
+END:VEVENT
+BEGIN:VEVENT
+UID:b5183ed64160d8e5fdf51b8ccb67bcf0@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2018
+DTSTART;VALUE=DATE:20181102
+DTEND;VALUE=DATE:20181103
+END:VEVENT
+BEGIN:VEVENT
+UID:9b6e47e451f9be91e2834c739f2e6aef@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2018: https://www.feiertage-oesterreich.at/schulferien/2018/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2018
+DTSTART;VALUE=DATE:20180319
+DTEND;VALUE=DATE:20180320
+END:VEVENT
+BEGIN:VEVENT
+UID:abb320d8dbef6f7317b66ef0e210ef27@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2019
+DTSTART;VALUE=DATE:20190211
+DTEND;VALUE=DATE:20190217
+END:VEVENT
+BEGIN:VEVENT
+UID:a4abd6018a3edf6ce45c76dfcea25028@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2019
+DTSTART;VALUE=DATE:20190413
+DTEND;VALUE=DATE:20190424
+END:VEVENT
+BEGIN:VEVENT
+UID:b124f5f9495f18b16d066280991de9b1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2019
+DTSTART;VALUE=DATE:20190608
+DTEND;VALUE=DATE:20190612
+END:VEVENT
+BEGIN:VEVENT
+UID:b210cb43dabecaede3b1248c55796ffa@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2019
+DTSTART;VALUE=DATE:20190706
+DTEND;VALUE=DATE:20190909
+END:VEVENT
+BEGIN:VEVENT
+UID:fd1fb96ea1cfeafb83f1d81ca9a76e4c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2019
+DTSTART;VALUE=DATE:20191223
+DTEND;VALUE=DATE:20200107
+END:VEVENT
+BEGIN:VEVENT
+UID:1c1f2af2d75334bb8a2377025ab1598c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2019
+DTSTART;VALUE=DATE:20191102
+DTEND;VALUE=DATE:20191103
+END:VEVENT
+BEGIN:VEVENT
+UID:9638b33ac04d1e3d488a73048424d759@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2019: https://www.feiertage-oesterreich.at/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2019
+DTSTART;VALUE=DATE:20190319
+DTEND;VALUE=DATE:20190320
+END:VEVENT
+BEGIN:VEVENT
+UID:be91fd9a099ead3d42645584c4cdf9a4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2020
+DTSTART;VALUE=DATE:20200210
+DTEND;VALUE=DATE:20200216
+END:VEVENT
+BEGIN:VEVENT
+UID:98fcbfe023b7cec7a84722911044eb75@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2020
+DTSTART;VALUE=DATE:20200404
+DTEND;VALUE=DATE:20200415
+END:VEVENT
+BEGIN:VEVENT
+UID:1571eb52f730f243410f05214ed6e75f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2020
+DTSTART;VALUE=DATE:20200530
+DTEND;VALUE=DATE:20200603
+END:VEVENT
+BEGIN:VEVENT
+UID:7d13b8d4e20dde4561bac0ddcc620f5b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2020
+DTSTART;VALUE=DATE:20200711
+DTEND;VALUE=DATE:20200914
+END:VEVENT
+BEGIN:VEVENT
+UID:15d4320fcc024cb2d04c3c8a9bf2661d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2020
+DTSTART;VALUE=DATE:20201027
+DTEND;VALUE=DATE:20201101
+END:VEVENT
+BEGIN:VEVENT
+UID:089f9a88e725094ea8a30dfe2845b76f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2020
+DTSTART;VALUE=DATE:20201224
+DTEND;VALUE=DATE:20210107
+END:VEVENT
+BEGIN:VEVENT
+UID:2bb08c7e749fecbb64de4aa79fd82431@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2020
+DTSTART;VALUE=DATE:20201102
+DTEND;VALUE=DATE:20201103
+END:VEVENT
+BEGIN:VEVENT
+UID:d437b94a8727ba610a7ee4b35b01142a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2020: https://www.feiertage-oesterreich.at/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2020
+DTSTART;VALUE=DATE:20200319
+DTEND;VALUE=DATE:20200320
+END:VEVENT
+BEGIN:VEVENT
+UID:35ce6af12b80b68d4c9c5172f1e8fb33@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2021
+DTSTART;VALUE=DATE:20210208
+DTEND;VALUE=DATE:20210214
+END:VEVENT
+BEGIN:VEVENT
+UID:d1c11bc2778943b18357f67a90ad3fb0@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2021
+DTSTART;VALUE=DATE:20210327
+DTEND;VALUE=DATE:20210406
+END:VEVENT
+BEGIN:VEVENT
+UID:65b75d16ffca3649c554652ce4b3e762@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2021
+DTSTART;VALUE=DATE:20210522
+DTEND;VALUE=DATE:20210525
+END:VEVENT
+BEGIN:VEVENT
+UID:f5f46320c4950af58e8802c156ac2155@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2021
+DTSTART;VALUE=DATE:20210710
+DTEND;VALUE=DATE:20210913
+END:VEVENT
+BEGIN:VEVENT
+UID:70a4b989c7276080452f44562167047a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2021
+DTSTART;VALUE=DATE:20211027
+DTEND;VALUE=DATE:20211101
+END:VEVENT
+BEGIN:VEVENT
+UID:d8709a749db483ddb0f3cc069c96884d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2021
+DTSTART;VALUE=DATE:20211224
+DTEND;VALUE=DATE:20220107
+END:VEVENT
+BEGIN:VEVENT
+UID:2201a40d04c43a22d9acd54fb3cc3e2c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2021
+DTSTART;VALUE=DATE:20211102
+DTEND;VALUE=DATE:20211103
+END:VEVENT
+BEGIN:VEVENT
+UID:963734e010524eb855d3129d8ab75814@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2021: https://www.feiertage-oesterreich.at/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2021
+DTSTART;VALUE=DATE:20210319
+DTEND;VALUE=DATE:20210320
+END:VEVENT
+BEGIN:VEVENT
+UID:08baf6258360562af75d800da6f3d0a1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2022
+DTSTART;VALUE=DATE:20220214
+DTEND;VALUE=DATE:20220220
+END:VEVENT
+BEGIN:VEVENT
+UID:44f185c56a1dc9a2f4a5339c39aff186@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2022
+DTSTART;VALUE=DATE:20220409
+DTEND;VALUE=DATE:20220419
+END:VEVENT
+BEGIN:VEVENT
+UID:b333065e4bf26cf15806855a99bd310b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2022
+DTSTART;VALUE=DATE:20220604
+DTEND;VALUE=DATE:20220607
+END:VEVENT
+BEGIN:VEVENT
+UID:deb73a0c6f4c4f6461f2dbfb6bc1f3c1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2022
+DTSTART;VALUE=DATE:20220709
+DTEND;VALUE=DATE:20220912
+END:VEVENT
+BEGIN:VEVENT
+UID:f534b3efc5fe2af143907aeb5302bddb@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2022
+DTSTART;VALUE=DATE:20221027
+DTEND;VALUE=DATE:20221101
+END:VEVENT
+BEGIN:VEVENT
+UID:5e279297e90d2102bc3a56a7ac642770@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2022
+DTSTART;VALUE=DATE:20221224
+DTEND;VALUE=DATE:20230108
+END:VEVENT
+BEGIN:VEVENT
+UID:8ff38115c020661c66497e8c0ffe33bf@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2022
+DTSTART;VALUE=DATE:20221102
+DTEND;VALUE=DATE:20221103
+END:VEVENT
+BEGIN:VEVENT
+UID:46c449a5830cd523f293b169493dbd63@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2022: https://www.feiertage-oesterreich.at/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2022
+DTSTART;VALUE=DATE:20220319
+DTEND;VALUE=DATE:20220320
+END:VEVENT
+BEGIN:VEVENT
+UID:967b058740b1fad5a35f1739f51266b5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2023
+DTSTART;VALUE=DATE:20230213
+DTEND;VALUE=DATE:20230219
+END:VEVENT
+BEGIN:VEVENT
+UID:73c3c3554d43d7e992c1e384fcea76ec@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2023
+DTSTART;VALUE=DATE:20230401
+DTEND;VALUE=DATE:20230411
+END:VEVENT
+BEGIN:VEVENT
+UID:100e92b919540f4e8600a710f6638959@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2023
+DTSTART;VALUE=DATE:20230527
+DTEND;VALUE=DATE:20230530
+END:VEVENT
+BEGIN:VEVENT
+UID:5a663639eb19be987a4066164340ba1b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2023
+DTSTART;VALUE=DATE:20230708
+DTEND;VALUE=DATE:20230911
+END:VEVENT
+BEGIN:VEVENT
+UID:db7c0760cd4a649d21b0f418a14eda1c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2023
+DTSTART;VALUE=DATE:20231027
+DTEND;VALUE=DATE:20231101
+END:VEVENT
+BEGIN:VEVENT
+UID:254f9d7fe00b7ccd5d108295738fb17b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2023
+DTSTART;VALUE=DATE:20231224
+DTEND;VALUE=DATE:20240107
+END:VEVENT
+BEGIN:VEVENT
+UID:97024e0a87257a963cafad26f558b050@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2023
+DTSTART;VALUE=DATE:20231102
+DTEND;VALUE=DATE:20231103
+END:VEVENT
+BEGIN:VEVENT
+UID:c63e1da2380bb9cca2d5977b86bf0c3d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2023: https://www.feiertage-oesterreich.at/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2023
+DTSTART;VALUE=DATE:20230319
+DTEND;VALUE=DATE:20230320
+END:VEVENT
+BEGIN:VEVENT
+UID:29abfb06ca430befef4669f0846a2742@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2024
+DTSTART;VALUE=DATE:20240212
+DTEND;VALUE=DATE:20240218
+END:VEVENT
+BEGIN:VEVENT
+UID:96834a9734f187bf747f1c4eb52edd27@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2024
+DTSTART;VALUE=DATE:20240323
+DTEND;VALUE=DATE:20240402
+END:VEVENT
+BEGIN:VEVENT
+UID:c32243bd35e3408d154d6611af8fa620@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2024
+DTSTART;VALUE=DATE:20240518
+DTEND;VALUE=DATE:20240521
+END:VEVENT
+BEGIN:VEVENT
+UID:8a8d21768d5255601966eba4d26fc4e0@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2024
+DTSTART;VALUE=DATE:20240706
+DTEND;VALUE=DATE:20240909
+END:VEVENT
+BEGIN:VEVENT
+UID:def30e29cad782e5c651d06ed396c472@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2024
+DTSTART;VALUE=DATE:20241027
+DTEND;VALUE=DATE:20241101
+END:VEVENT
+BEGIN:VEVENT
+UID:992450eb3fb5c4b048e3e60c196ea62f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2024
+DTSTART;VALUE=DATE:20241223
+DTEND;VALUE=DATE:20250107
+END:VEVENT
+BEGIN:VEVENT
+UID:d063b33a90dee9539eab1483d939401c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2024
+DTSTART;VALUE=DATE:20241102
+DTEND;VALUE=DATE:20241103
+END:VEVENT
+BEGIN:VEVENT
+UID:1cdb939d90d9e352e513afce71213896@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2024: https://www.feiertage-oesterreich.at/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2024
+DTSTART;VALUE=DATE:20240319
+DTEND;VALUE=DATE:20240320
+END:VEVENT
+BEGIN:VEVENT
+UID:da56b41bfb3cb105915c06f713926460@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2025
+DTSTART;VALUE=DATE:20250210
+DTEND;VALUE=DATE:20250216
+END:VEVENT
+BEGIN:VEVENT
+UID:616351d4cbb1e5c87d11ff2a477567e9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2025
+DTSTART;VALUE=DATE:20250412
+DTEND;VALUE=DATE:20250422
+END:VEVENT
+BEGIN:VEVENT
+UID:b81b7fecd08c6241285c4f5584ec77d5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2025
+DTSTART;VALUE=DATE:20250607
+DTEND;VALUE=DATE:20250610
+END:VEVENT
+BEGIN:VEVENT
+UID:36f0b2569e892a4f282771f07e912608@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2025
+DTSTART;VALUE=DATE:20250705
+DTEND;VALUE=DATE:20250908
+END:VEVENT
+BEGIN:VEVENT
+UID:24e242e024adccf5ae290b99ca4ef3dd@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2025
+DTSTART;VALUE=DATE:20251027
+DTEND;VALUE=DATE:20251101
+END:VEVENT
+BEGIN:VEVENT
+UID:26c74708f42f55814c643591b83569f5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2025
+DTSTART;VALUE=DATE:20251224
+DTEND;VALUE=DATE:20260107
+END:VEVENT
+BEGIN:VEVENT
+UID:d4604e15a21914a6d129842eb9022a8c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2025
+DTSTART;VALUE=DATE:20251102
+DTEND;VALUE=DATE:20251103
+END:VEVENT
+BEGIN:VEVENT
+UID:3855f0e0a5cf876b87f165aefea98816@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2025: https://www.feiertage-oesterreich.at/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2025
+DTSTART;VALUE=DATE:20250319
+DTEND;VALUE=DATE:20250320
+END:VEVENT
+BEGIN:VEVENT
+UID:2c7537307dd4d204ab25e0039e9723a7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2026
+DTSTART;VALUE=DATE:20260209
+DTEND;VALUE=DATE:20260215
+END:VEVENT
+BEGIN:VEVENT
+UID:f4139f1e22854a09274130081de48d56@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2026
+DTSTART;VALUE=DATE:20260328
+DTEND;VALUE=DATE:20260407
+END:VEVENT
+BEGIN:VEVENT
+UID:297cb00a0f116406593429abcedb5547@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2026
+DTSTART;VALUE=DATE:20260523
+DTEND;VALUE=DATE:20260526
+END:VEVENT
+BEGIN:VEVENT
+UID:09c05f45ffc84245596279094b386a55@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2026
+DTSTART;VALUE=DATE:20260711
+DTEND;VALUE=DATE:20260914
+END:VEVENT
+BEGIN:VEVENT
+UID:34a52f933bf4eb53052a2f720d1f1445@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2026
+DTSTART;VALUE=DATE:20261027
+DTEND;VALUE=DATE:20261101
+END:VEVENT
+BEGIN:VEVENT
+UID:a7f59b52747fa098a5e0f8d9cc1974ff@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2026
+DTSTART;VALUE=DATE:20261224
+DTEND;VALUE=DATE:20270107
+END:VEVENT
+BEGIN:VEVENT
+UID:78509ebb64c40eed58a3f986cc0f24cd@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2026
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261103
+END:VEVENT
+BEGIN:VEVENT
+UID:8dc0f89b9977eb641700771f141c5bc4@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2026: https://www.feiertage-oesterreich.at/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2026
+DTSTART;VALUE=DATE:20260319
+DTEND;VALUE=DATE:20260320
+END:VEVENT
+BEGIN:VEVENT
+UID:9146d137f6042c00b932576c19bbd8fc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:OÖ\,St\,S\,T\,V
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2027
+DTSTART;VALUE=DATE:20270215
+DTEND;VALUE=DATE:20270221
+END:VEVENT
+BEGIN:VEVENT
+UID:9e18daa1603cdd29f3ff42f4eaae923e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2027
+DTSTART;VALUE=DATE:20270320
+DTEND;VALUE=DATE:20270330
+END:VEVENT
+BEGIN:VEVENT
+UID:1bb1cc4e5f22ec719a56cc7f0e670f54@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2027
+DTSTART;VALUE=DATE:20270515
+DTEND;VALUE=DATE:20270518
+END:VEVENT
+BEGIN:VEVENT
+UID:9ed4635f237fb4c9f74bec02a25f9b18@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2027
+DTSTART;VALUE=DATE:20270710
+DTEND;VALUE=DATE:20270913
+END:VEVENT
+BEGIN:VEVENT
+UID:693d40457b2ad23ed696d2060acea24d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2027
+DTSTART;VALUE=DATE:20271027
+DTEND;VALUE=DATE:20271101
+END:VEVENT
+BEGIN:VEVENT
+UID:fdd5c6c734d60ddddb9320cc82de82d7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2027
+DTSTART;VALUE=DATE:20271224
+DTEND;VALUE=DATE:20280107
+END:VEVENT
+BEGIN:VEVENT
+UID:e5ddf3041b7361fca0921027cae73302@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2027
+DTSTART;VALUE=DATE:20271102
+DTEND;VALUE=DATE:20271103
+END:VEVENT
+BEGIN:VEVENT
+UID:1e7d4f841d152444b89ef7b7bfd0c9a0@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2027: https://www.feiertage-oesterreich.at/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2027
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+END:VEVENT
+BEGIN:VEVENT
+UID:7fd5b0fb79867082a7b2d2e6a7964071@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2028
+DTSTART;VALUE=DATE:20280214
+DTEND;VALUE=DATE:20280220
+END:VEVENT
+BEGIN:VEVENT
+UID:2e3ea6c5d086833a97a625f7839f0e65@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2028
+DTSTART;VALUE=DATE:20280408
+DTEND;VALUE=DATE:20280418
+END:VEVENT
+BEGIN:VEVENT
+UID:b7a5c971009accb463fbbddf3bc38cdc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2028
+DTSTART;VALUE=DATE:20280603
+DTEND;VALUE=DATE:20280606
+END:VEVENT
+BEGIN:VEVENT
+UID:635e34d9494bdbb5471e868c1fea7b3a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2028
+DTSTART;VALUE=DATE:20280708
+DTEND;VALUE=DATE:20280911
+END:VEVENT
+BEGIN:VEVENT
+UID:7ab9bf335bec35985e71b28c1600e561@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2028
+DTSTART;VALUE=DATE:20281027
+DTEND;VALUE=DATE:20281101
+END:VEVENT
+BEGIN:VEVENT
+UID:478de3ed6750e49b3c76bdbb8d2820cb@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2028
+DTSTART;VALUE=DATE:20281224
+DTEND;VALUE=DATE:20290107
+END:VEVENT
+BEGIN:VEVENT
+UID:60a5389ac97238ee8ceabf0a79f608b7@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2028
+DTSTART;VALUE=DATE:20281102
+DTEND;VALUE=DATE:20281103
+END:VEVENT
+BEGIN:VEVENT
+UID:578bbbc8d2db7bd53ca992ef64723818@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2028: https://www.feiertage-oesterreich.at/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2028
+DTSTART;VALUE=DATE:20280319
+DTEND;VALUE=DATE:20280320
+END:VEVENT
+BEGIN:VEVENT
+UID:b9512504ff2ce12cc43d38d0318ab1a5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2029
+DTSTART;VALUE=DATE:20290212
+DTEND;VALUE=DATE:20290218
+END:VEVENT
+BEGIN:VEVENT
+UID:aa42ad10e9992955e7d7c3fb5472f330@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2029
+DTSTART;VALUE=DATE:20290324
+DTEND;VALUE=DATE:20290403
+END:VEVENT
+BEGIN:VEVENT
+UID:fe71b9c6c1eda27deb3a6668726b38d9@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2029
+DTSTART;VALUE=DATE:20290519
+DTEND;VALUE=DATE:20290522
+END:VEVENT
+BEGIN:VEVENT
+UID:b3549c36b15a601d1521dd502a8f0b71@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2029
+DTSTART;VALUE=DATE:20290707
+DTEND;VALUE=DATE:20290910
+END:VEVENT
+BEGIN:VEVENT
+UID:dc76e81e09a57a49e1de9e5207f8f5cd@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2029
+DTSTART;VALUE=DATE:20291027
+DTEND;VALUE=DATE:20291101
+END:VEVENT
+BEGIN:VEVENT
+UID:296142fc4782adab7234c5a25869c02e@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2029
+DTSTART;VALUE=DATE:20291224
+DTEND;VALUE=DATE:20300107
+END:VEVENT
+BEGIN:VEVENT
+UID:f78875691594c6feccdc8eb11dc87008@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2029
+DTSTART;VALUE=DATE:20291102
+DTEND;VALUE=DATE:20291103
+END:VEVENT
+BEGIN:VEVENT
+UID:e8c8c44f8e2998dcb825e60a5a31c5ba@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2029: https://www.feiertage-oesterreich.at/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2029
+DTSTART;VALUE=DATE:20290319
+DTEND;VALUE=DATE:20290320
+END:VEVENT
+BEGIN:VEVENT
+UID:71aea028eb3618e2cdd96ec9961ad6fd@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2030
+DTSTART;VALUE=DATE:20300211
+DTEND;VALUE=DATE:20300217
+END:VEVENT
+BEGIN:VEVENT
+UID:e46d5e8260f501ce06c6153f36fdba42@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2030
+DTSTART;VALUE=DATE:20300413
+DTEND;VALUE=DATE:20300423
+END:VEVENT
+BEGIN:VEVENT
+UID:0046dca8313d9a3a4d76419fcc4dfedc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2030
+DTSTART;VALUE=DATE:20300608
+DTEND;VALUE=DATE:20300611
+END:VEVENT
+BEGIN:VEVENT
+UID:64c3bcc2d35dcbf1cc060256c7c3005f@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2030
+DTSTART;VALUE=DATE:20300706
+DTEND;VALUE=DATE:20300909
+END:VEVENT
+BEGIN:VEVENT
+UID:729615d224c84af600d4b605f6f2b744@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2030
+DTSTART;VALUE=DATE:20301027
+DTEND;VALUE=DATE:20301101
+END:VEVENT
+BEGIN:VEVENT
+UID:37884bb445fa41fa571dabb88aec4bcf@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2030
+DTSTART;VALUE=DATE:20301223
+DTEND;VALUE=DATE:20310107
+END:VEVENT
+BEGIN:VEVENT
+UID:bd23cfd5778b9c9e328ef966930f81fe@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2030
+DTSTART;VALUE=DATE:20301102
+DTEND;VALUE=DATE:20301103
+END:VEVENT
+BEGIN:VEVENT
+UID:5751a4b08355f57adac7d5c32e2a8521@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2030: https://www.feiertage-oesterreich.at/schulferien/2030/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2030
+DTSTART;VALUE=DATE:20300319
+DTEND;VALUE=DATE:20300320
+END:VEVENT
+BEGIN:VEVENT
+UID:104ccbd31c678d3b5b126e9feaad4452@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2031
+DTSTART;VALUE=DATE:20310210
+DTEND;VALUE=DATE:20310216
+END:VEVENT
+BEGIN:VEVENT
+UID:64c53ef874f0dee4aa697cd9ed931a27@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2031
+DTSTART;VALUE=DATE:20310405
+DTEND;VALUE=DATE:20310415
+END:VEVENT
+BEGIN:VEVENT
+UID:c3a5dfe01de6ee5e9f0f5dca75452f8b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2031
+DTSTART;VALUE=DATE:20310531
+DTEND;VALUE=DATE:20310603
+END:VEVENT
+BEGIN:VEVENT
+UID:34023e3b6f20ed46507b164641830897@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2031
+DTSTART;VALUE=DATE:20310705
+DTEND;VALUE=DATE:20310908
+END:VEVENT
+BEGIN:VEVENT
+UID:e3211f58e878cb09db406d6d9e85824d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2031
+DTSTART;VALUE=DATE:20311027
+DTEND;VALUE=DATE:20311101
+END:VEVENT
+BEGIN:VEVENT
+UID:89344b75f73615228198aba27ae716f1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2031
+DTSTART;VALUE=DATE:20311224
+DTEND;VALUE=DATE:20320107
+END:VEVENT
+BEGIN:VEVENT
+UID:a43518d2ec3c795c8793b6f942202520@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2031
+DTSTART;VALUE=DATE:20311102
+DTEND;VALUE=DATE:20311103
+END:VEVENT
+BEGIN:VEVENT
+UID:f2992a7646020a3888a1db4d72a58dd3@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2031: https://www.feiertage-oesterreich.at/schulferien/2031/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2031
+DTSTART;VALUE=DATE:20310319
+DTEND;VALUE=DATE:20310320
+END:VEVENT
+BEGIN:VEVENT
+UID:ff771b2e2bc2ac586bd293b92758f9b5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2032
+DTSTART;VALUE=DATE:20320209
+DTEND;VALUE=DATE:20320215
+END:VEVENT
+BEGIN:VEVENT
+UID:305af2a64fa8fd56916904bec377804d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2032
+DTSTART;VALUE=DATE:20320320
+DTEND;VALUE=DATE:20320330
+END:VEVENT
+BEGIN:VEVENT
+UID:34271bd14401639c86032dabd7f69467@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2032
+DTSTART;VALUE=DATE:20320515
+DTEND;VALUE=DATE:20320518
+END:VEVENT
+BEGIN:VEVENT
+UID:4482d1fc204adc85d3fe990ade2ff8a1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2032
+DTSTART;VALUE=DATE:20320710
+DTEND;VALUE=DATE:20320913
+END:VEVENT
+BEGIN:VEVENT
+UID:eb17c70e41e2d1bfece0cce9571ca71b@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2032
+DTSTART;VALUE=DATE:20321027
+DTEND;VALUE=DATE:20321101
+END:VEVENT
+BEGIN:VEVENT
+UID:96ae88630240b64fcb0ad578280c8ac5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2032
+DTSTART;VALUE=DATE:20321224
+DTEND;VALUE=DATE:20330107
+END:VEVENT
+BEGIN:VEVENT
+UID:e0eb35e36ea30847543016e7beb80915@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2032
+DTSTART;VALUE=DATE:20321102
+DTEND;VALUE=DATE:20321103
+END:VEVENT
+BEGIN:VEVENT
+UID:9016b98ffe3e9ba6be530f1f30cacb6a@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2032: https://www.feiertage-oesterreich.at/schulferien/2032/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2032
+DTSTART;VALUE=DATE:20320319
+DTEND;VALUE=DATE:20320320
+END:VEVENT
+BEGIN:VEVENT
+UID:0eebda9cf27b4fb01ba588c1040026bf@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2033
+DTSTART;VALUE=DATE:20330214
+DTEND;VALUE=DATE:20330220
+END:VEVENT
+BEGIN:VEVENT
+UID:332b7537625fea02ae026bf3a35967b1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2033
+DTSTART;VALUE=DATE:20330409
+DTEND;VALUE=DATE:20330419
+END:VEVENT
+BEGIN:VEVENT
+UID:3a8847987da060d254c4cff5c04cbed3@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2033
+DTSTART;VALUE=DATE:20330604
+DTEND;VALUE=DATE:20330607
+END:VEVENT
+BEGIN:VEVENT
+UID:3d262131afc9e47ead468e64d4ebe7d1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2033
+DTSTART;VALUE=DATE:20330709
+DTEND;VALUE=DATE:20330912
+END:VEVENT
+BEGIN:VEVENT
+UID:2fa480865a70e16b0542c2a0e6bdc020@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2033
+DTSTART;VALUE=DATE:20331027
+DTEND;VALUE=DATE:20331101
+END:VEVENT
+BEGIN:VEVENT
+UID:85ae0e315d6228588f381e8e6cc5cb48@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2033
+DTSTART;VALUE=DATE:20331224
+DTEND;VALUE=DATE:20340108
+END:VEVENT
+BEGIN:VEVENT
+UID:0079092e2767d7e2fef09806a770f3cb@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2033
+DTSTART;VALUE=DATE:20331102
+DTEND;VALUE=DATE:20331103
+END:VEVENT
+BEGIN:VEVENT
+UID:9f63d43f76eea8c9f27f26b2e55e1ecc@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2033: https://www.feiertage-oesterreich.at/schulferien/2033/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2033
+DTSTART;VALUE=DATE:20330319
+DTEND;VALUE=DATE:20330320
+END:VEVENT
+BEGIN:VEVENT
+UID:21cc4d72cc4070e4a64c781362863303@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2034
+DTSTART;VALUE=DATE:20340213
+DTEND;VALUE=DATE:20340219
+END:VEVENT
+BEGIN:VEVENT
+UID:732dfd161d1687acc13d7f6488aaa21c@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2034
+DTSTART;VALUE=DATE:20340401
+DTEND;VALUE=DATE:20340411
+END:VEVENT
+BEGIN:VEVENT
+UID:7097f4a5ee40c37dbb0cedf7a6151adb@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2034
+DTSTART;VALUE=DATE:20340527
+DTEND;VALUE=DATE:20340530
+END:VEVENT
+BEGIN:VEVENT
+UID:c753879104846d1a4f11053c6abd42a6@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2034
+DTSTART;VALUE=DATE:20340708
+DTEND;VALUE=DATE:20340911
+END:VEVENT
+BEGIN:VEVENT
+UID:f9e1d7df6513f27d3d8b19395710854d@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2034
+DTSTART;VALUE=DATE:20341027
+DTEND;VALUE=DATE:20341101
+END:VEVENT
+BEGIN:VEVENT
+UID:b5ef915c8528a19f18b2ff811d400399@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2034
+DTSTART;VALUE=DATE:20341224
+DTEND;VALUE=DATE:20350107
+END:VEVENT
+BEGIN:VEVENT
+UID:2093a9f82e82af095ba251ce2f1f43d0@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2034
+DTSTART;VALUE=DATE:20341102
+DTEND;VALUE=DATE:20341103
+END:VEVENT
+BEGIN:VEVENT
+UID:d5a26e95beba3b3a796b55ec940160e6@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2034: https://www.feiertage-oesterreich.at/schulferien/2034/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2034
+DTSTART;VALUE=DATE:20340319
+DTEND;VALUE=DATE:20340320
+END:VEVENT
+BEGIN:VEVENT
+UID:17b679159887bc533dc24c68c0182a27@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:B\,K\,S\,T\,V
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/semesterferien/
+SUMMARY:Semesterferien Tirol 2035
+DTSTART;VALUE=DATE:20350212
+DTEND;VALUE=DATE:20350218
+END:VEVENT
+BEGIN:VEVENT
+UID:090c581db14dc2ba857446070a3c88d5@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/osterferien/
+SUMMARY:Osterferien Tirol 2035
+DTSTART;VALUE=DATE:20350317
+DTEND;VALUE=DATE:20350327
+END:VEVENT
+BEGIN:VEVENT
+UID:50f3c80a3945c7b0d29fba856d5a3a47@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Tirol 2035
+DTSTART;VALUE=DATE:20350512
+DTEND;VALUE=DATE:20350515
+END:VEVENT
+BEGIN:VEVENT
+UID:4c61db57e815f5a548ec516f5b5a7342@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,OÖ\,S\,St\,T\,V
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/sommerferien/
+SUMMARY:Sommerferien Tirol 2035
+DTSTART;VALUE=DATE:20350707
+DTEND;VALUE=DATE:20350910
+END:VEVENT
+BEGIN:VEVENT
+UID:0bc4bb4a43bcf749ec94cbce1fbe5e18@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/herbstferien/
+SUMMARY:Herbstferien Tirol 2035
+DTSTART;VALUE=DATE:20351027
+DTEND;VALUE=DATE:20351101
+END:VEVENT
+BEGIN:VEVENT
+UID:14a8f00221ed4d0bee44645f5ce29e03@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Tirol 2035
+DTSTART;VALUE=DATE:20351224
+DTEND;VALUE=DATE:20360107
+END:VEVENT
+BEGIN:VEVENT
+UID:a3bc13249e01b69dc1ffa0b14b340844@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/festtage/allerseelen/
+SUMMARY:Allerseelen Tirol 2035
+DTSTART;VALUE=DATE:20351102
+DTEND;VALUE=DATE:20351103
+END:VEVENT
+BEGIN:VEVENT
+UID:9d1522333387024fa204b24fc61d48e1@feiertage-oesterreich.at
+DTSTAMP:20260619T215554Z
+LOCATION:K\,St\,T\,V
+DESCRIPTION:Schulferien 2035: https://www.feiertage-oesterreich.at/schulferien/2035/
+URL;VALUE=URI:https://www.feiertage-oesterreich.at/hl-josef-19-maerz/
+SUMMARY:St. Josef Tirol 2035
+DTSTART;VALUE=DATE:20350319
+DTEND;VALUE=DATE:20350320
+END:VEVENT
+END:VCALENDAR
