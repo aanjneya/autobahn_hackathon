@@ -25,15 +25,29 @@ def get_stau_points(row):
         return 4
 
 
+def assign_time_slot(hour):
+    if 0 <= hour < 4:
+        return "00-04"
+    elif 4 <= hour < 8:
+        return "04-08"
+    elif 8 <= hour < 12:
+        return "08-12"
+    elif 12 <= hour < 16:
+        return "12-16"
+    elif 16 <= hour < 20:
+        return "16-20"
+    else:
+        return "20-24"
+
 def get_category(score):
     if pd.isna(score): return np.nan
-    if score <= 30:
+    if score <= 5:
         return 1
-    elif score <= 150:
+    elif score <= 25:
         return 2
-    elif score <= 400:
+    elif score <= 65:
         return 3
-    elif score <= 1000:
+    elif score <= 165:
         return 4
     else:
         return 5
@@ -55,17 +69,25 @@ def process_file(input_path):
     # Identify valid measurements (sensor active)
     df['is_valid'] = ~df['q_kfz'].isna()
 
-    # Format date properly (assuming format DD.MM.YYYY from raw)
-    df['date'] = pd.to_datetime(df['datum'], format='%d.%m.%Y').dt.strftime('%Y-%m-%d')
+    # Format datetime and extract slots
+    if 't_start' in df.columns and 'datum' in df.columns:
+        df['datetime'] = pd.to_datetime(df['datum'] + ' ' + df['t_start'], format='%d.%m.%Y %H:%M:%S', errors='coerce')
+    else:
+        # Fallback if t_start contains full date
+        df['datetime'] = pd.to_datetime(df['t_start'], errors='coerce')
 
-    # Group by device and date
-    grouped = df.groupby(['devices', 'date']).agg(
+    df['date'] = df['datetime'].dt.strftime('%Y-%m-%d')
+    # Use fillna(-1) so that we don't crash on NaNs
+    df['time_slot'] = df['datetime'].dt.hour.fillna(0).astype(int).apply(assign_time_slot)
+
+    # Group by device, date, and time_slot
+    grouped = df.groupby(['devices', 'date', 'time_slot']).agg(
         stau_score=('stau_points', 'sum'),
         valid_mins=('is_valid', 'sum')
     ).reset_index()
 
-    # Filter out days with less than 1000 valid minutes
-    grouped.loc[grouped['valid_mins'] < 1000, 'stau_score'] = np.nan
+    # Filter out 4-hour slots with less than 160 valid minutes (out of 240)
+    grouped.loc[grouped['valid_mins'] < 160, 'stau_score'] = np.nan
 
     # Assign categories
     grouped['category'] = grouped['stau_score'].apply(get_category)
