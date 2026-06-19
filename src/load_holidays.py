@@ -147,8 +147,10 @@ if __name__ == "__main__":
 
     # test
 
+"""
     tag = date(2026, 12, 28)
 
     print(tag in feiertage_by)
     print(tag in ferien_by)
     print(tag in feiertage_by or tag in ferien_by)
+"""
