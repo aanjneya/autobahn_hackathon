@@ -1,0 +1,725 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//https://www.feiertage-deutschland.de/kalender-download/
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:31ad580aa56c0070951df7f340ea6ef1@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2019: https://www.feiertage-deutschland.de/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2019
+DTSTART;VALUE=DATE:20190304
+DTEND;VALUE=DATE:20190309
+END:VEVENT
+BEGIN:VEVENT
+UID:4ea3555593a4b45c43bbcb930a5f221d@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2019: https://www.feiertage-deutschland.de/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2019
+DTSTART;VALUE=DATE:20190415
+DTEND;VALUE=DATE:20190428
+END:VEVENT
+BEGIN:VEVENT
+UID:4fc501941164247abdc42d474b94882e@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2019: https://www.feiertage-deutschland.de/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2019
+DTSTART;VALUE=DATE:20190611
+DTEND;VALUE=DATE:20190622
+END:VEVENT
+BEGIN:VEVENT
+UID:1c443721ab28731e5698a82685579325@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2019: https://www.feiertage-deutschland.de/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2019
+DTSTART;VALUE=DATE:20190729
+DTEND;VALUE=DATE:20190910
+END:VEVENT
+BEGIN:VEVENT
+UID:221c1e4fe1c03be01144c840f47605af@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2019: https://www.feiertage-deutschland.de/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2019
+DTSTART;VALUE=DATE:20191028
+DTEND;VALUE=DATE:20191101
+END:VEVENT
+BEGIN:VEVENT
+UID:ca6695405a9f32f8ccc958cd5a3f4ebc@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2019: https://www.feiertage-deutschland.de/schulferien/2019/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2019
+DTSTART;VALUE=DATE:20191223
+DTEND;VALUE=DATE:20200105
+END:VEVENT
+BEGIN:VEVENT
+UID:271c2a6c47584419dbc53c40fd05c0fe@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2020: https://www.feiertage-deutschland.de/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2020
+DTSTART;VALUE=DATE:20200224
+DTEND;VALUE=DATE:20200229
+END:VEVENT
+BEGIN:VEVENT
+UID:0f47204d123f5c3cfe901315d03f2c6c@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2020: https://www.feiertage-deutschland.de/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2020
+DTSTART;VALUE=DATE:20200406
+DTEND;VALUE=DATE:20200419
+END:VEVENT
+BEGIN:VEVENT
+UID:192beb24b3fa3ebba8b7fdb09e966542@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2020: https://www.feiertage-deutschland.de/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2020
+DTSTART;VALUE=DATE:20200602
+DTEND;VALUE=DATE:20200614
+END:VEVENT
+BEGIN:VEVENT
+UID:86a441121b5c117acb80170c06be1334@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2020: https://www.feiertage-deutschland.de/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2020
+DTSTART;VALUE=DATE:20200727
+DTEND;VALUE=DATE:20200908
+END:VEVENT
+BEGIN:VEVENT
+UID:2c7269b5d733c01826996e4fc3e30459@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2020: https://www.feiertage-deutschland.de/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2020
+DTSTART;VALUE=DATE:20201031
+DTEND;VALUE=DATE:20201107
+END:VEVENT
+BEGIN:VEVENT
+UID:b0acd42ce5da2e41fc12a68c9b63cc42@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2020: https://www.feiertage-deutschland.de/schulferien/2020/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2020
+DTSTART;VALUE=DATE:20201223
+DTEND;VALUE=DATE:20210110
+END:VEVENT
+BEGIN:VEVENT
+UID:b9cf0b5dbc9a798e3649a02576c025c9@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2021: https://www.feiertage-deutschland.de/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2021
+DTSTART;VALUE=DATE:20210215
+DTEND;VALUE=DATE:20210220
+END:VEVENT
+BEGIN:VEVENT
+UID:5eb46495609857034b69c9b3321280a9@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2021: https://www.feiertage-deutschland.de/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2021
+DTSTART;VALUE=DATE:20210329
+DTEND;VALUE=DATE:20210411
+END:VEVENT
+BEGIN:VEVENT
+UID:66dff72a2706fb9a9f151067a89a6034@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2021: https://www.feiertage-deutschland.de/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2021
+DTSTART;VALUE=DATE:20210525
+DTEND;VALUE=DATE:20210605
+END:VEVENT
+BEGIN:VEVENT
+UID:d8d80184844a33290423f1a5643c4a00@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2021: https://www.feiertage-deutschland.de/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2021
+DTSTART;VALUE=DATE:20210730
+DTEND;VALUE=DATE:20210914
+END:VEVENT
+BEGIN:VEVENT
+UID:dbc85b71d318831f6f951fd7af176944@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2021: https://www.feiertage-deutschland.de/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2021
+DTSTART;VALUE=DATE:20211102
+DTEND;VALUE=DATE:20211106
+END:VEVENT
+BEGIN:VEVENT
+UID:2b78520511357c32d689ff3cd07d3c43@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2021: https://www.feiertage-deutschland.de/schulferien/2021/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2021
+DTSTART;VALUE=DATE:20211224
+DTEND;VALUE=DATE:20220109
+END:VEVENT
+BEGIN:VEVENT
+UID:151e6f7c7c992835534e6d74d430f803@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2022: https://www.feiertage-deutschland.de/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2022
+DTSTART;VALUE=DATE:20220228
+DTEND;VALUE=DATE:20220305
+END:VEVENT
+BEGIN:VEVENT
+UID:3efb81b9c91f969e05fdb5a045bf56a2@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2022: https://www.feiertage-deutschland.de/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2022
+DTSTART;VALUE=DATE:20220411
+DTEND;VALUE=DATE:20220424
+END:VEVENT
+BEGIN:VEVENT
+UID:da4fcda62b8e0878a1a49b843cb1f1a2@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2022: https://www.feiertage-deutschland.de/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2022
+DTSTART;VALUE=DATE:20220607
+DTEND;VALUE=DATE:20220619
+END:VEVENT
+BEGIN:VEVENT
+UID:0d4b9572e55b34081b13b2055414025c@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2022: https://www.feiertage-deutschland.de/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2022
+DTSTART;VALUE=DATE:20220801
+DTEND;VALUE=DATE:20220913
+END:VEVENT
+BEGIN:VEVENT
+UID:55de1ce9152d0734b9d5eb7d7599c025@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2022: https://www.feiertage-deutschland.de/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2022
+DTSTART;VALUE=DATE:20221031
+DTEND;VALUE=DATE:20221105
+END:VEVENT
+BEGIN:VEVENT
+UID:b746c726cc90778d341ee1ee0784c2af@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2022: https://www.feiertage-deutschland.de/schulferien/2022/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2022
+DTSTART;VALUE=DATE:20221224
+DTEND;VALUE=DATE:20230108
+END:VEVENT
+BEGIN:VEVENT
+UID:a43ca3b13e3bd8864777033a3d8caf56@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2023: https://www.feiertage-deutschland.de/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2023
+DTSTART;VALUE=DATE:20230220
+DTEND;VALUE=DATE:20230225
+END:VEVENT
+BEGIN:VEVENT
+UID:648e171e7bc525a1ba4333490d1ed56d@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2023: https://www.feiertage-deutschland.de/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2023
+DTSTART;VALUE=DATE:20230403
+DTEND;VALUE=DATE:20230416
+END:VEVENT
+BEGIN:VEVENT
+UID:6781f1cdd4ad60cd21f8ca2c8eda34df@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2023: https://www.feiertage-deutschland.de/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2023
+DTSTART;VALUE=DATE:20230530
+DTEND;VALUE=DATE:20230610
+END:VEVENT
+BEGIN:VEVENT
+UID:cbca76893e7eb1ec9cc604e7bb1c301f@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2023: https://www.feiertage-deutschland.de/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2023
+DTSTART;VALUE=DATE:20230731
+DTEND;VALUE=DATE:20230912
+END:VEVENT
+BEGIN:VEVENT
+UID:b375b9e4f4319961e9409439be4078eb@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2023: https://www.feiertage-deutschland.de/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2023
+DTSTART;VALUE=DATE:20231030
+DTEND;VALUE=DATE:20231104
+END:VEVENT
+BEGIN:VEVENT
+UID:fc667baea7cf3803df88caed979ade4d@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2023: https://www.feiertage-deutschland.de/schulferien/2023/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2023
+DTSTART;VALUE=DATE:20231223
+DTEND;VALUE=DATE:20240106
+END:VEVENT
+BEGIN:VEVENT
+UID:243cb80f850db35182a3264add1b5ac0@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2024
+DTSTART;VALUE=DATE:20240212
+DTEND;VALUE=DATE:20240217
+END:VEVENT
+BEGIN:VEVENT
+UID:578b221583e5344fc8d3b4f768bc5628@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2024
+DTSTART;VALUE=DATE:20240325
+DTEND;VALUE=DATE:20240407
+END:VEVENT
+BEGIN:VEVENT
+UID:a831451285091d8592a2fab9928609cf@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2024
+DTSTART;VALUE=DATE:20240521
+DTEND;VALUE=DATE:20240602
+END:VEVENT
+BEGIN:VEVENT
+UID:aad543c1e0ab45878234527e69c44859@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2024
+DTSTART;VALUE=DATE:20240729
+DTEND;VALUE=DATE:20240910
+END:VEVENT
+BEGIN:VEVENT
+UID:454584b8b8efc05f42944ddbd2fbb5b8@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2024
+DTSTART;VALUE=DATE:20241028
+DTEND;VALUE=DATE:20241101
+END:VEVENT
+BEGIN:VEVENT
+UID:39d52ef31e151543b0e647972455d0ec@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2024
+DTSTART;VALUE=DATE:20241223
+DTEND;VALUE=DATE:20250104
+END:VEVENT
+BEGIN:VEVENT
+UID:eac688c35fb2e56b848d278bf8832938@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2024: https://www.feiertage-deutschland.de/schulferien/2024/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/bewegliche-ferientage/
+SUMMARY:Schulfreier Tag Bayern 2024
+DTSTART;VALUE=DATE:20241120
+DTEND;VALUE=DATE:20241121
+END:VEVENT
+BEGIN:VEVENT
+UID:19a7448152098e499fec3e1ff0d28522@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2025
+DTSTART;VALUE=DATE:20250303
+DTEND;VALUE=DATE:20250308
+END:VEVENT
+BEGIN:VEVENT
+UID:58a21dcab93064fabb19302b32730ca9@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2025
+DTSTART;VALUE=DATE:20250414
+DTEND;VALUE=DATE:20250426
+END:VEVENT
+BEGIN:VEVENT
+UID:22fe03b14ea545719bbf00a0c15aeda3@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2025
+DTSTART;VALUE=DATE:20250610
+DTEND;VALUE=DATE:20250621
+END:VEVENT
+BEGIN:VEVENT
+UID:300769765917fc45023e315dc594f317@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2025
+DTSTART;VALUE=DATE:20250801
+DTEND;VALUE=DATE:20250916
+END:VEVENT
+BEGIN:VEVENT
+UID:97e8573c1c4f5993dd9da6ad51a91382@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2025
+DTSTART;VALUE=DATE:20251103
+DTEND;VALUE=DATE:20251108
+END:VEVENT
+BEGIN:VEVENT
+UID:05c96271a559fb889e12cfbbcb5fcc6e@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2025
+DTSTART;VALUE=DATE:20251222
+DTEND;VALUE=DATE:20260106
+END:VEVENT
+BEGIN:VEVENT
+UID:45fffae212a6da6e99652376c1ab8edf@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2025: https://www.feiertage-deutschland.de/schulferien/2025/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/bewegliche-ferientage/
+SUMMARY:Schulfreier Tag Bayern 2025
+DTSTART;VALUE=DATE:20251119
+DTEND;VALUE=DATE:20251120
+END:VEVENT
+BEGIN:VEVENT
+UID:d191a312d52ea244b9c06506b3309991@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2026
+DTSTART;VALUE=DATE:20260216
+DTEND;VALUE=DATE:20260221
+END:VEVENT
+BEGIN:VEVENT
+UID:dfbfb7913509aad049d7591234c49d94@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2026
+DTSTART;VALUE=DATE:20260330
+DTEND;VALUE=DATE:20260411
+END:VEVENT
+BEGIN:VEVENT
+UID:1fad57e1dde6c678ac1c9b0fd3496846@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2026
+DTSTART;VALUE=DATE:20260526
+DTEND;VALUE=DATE:20260606
+END:VEVENT
+BEGIN:VEVENT
+UID:49dd4be92eb189a0da90a2fc93ba5fcd@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2026
+DTSTART;VALUE=DATE:20260803
+DTEND;VALUE=DATE:20260915
+END:VEVENT
+BEGIN:VEVENT
+UID:c1f21493d8f2f98c113a3405e66737b0@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2026
+DTSTART;VALUE=DATE:20261102
+DTEND;VALUE=DATE:20261107
+END:VEVENT
+BEGIN:VEVENT
+UID:bc88841bb58b634b8f9898f39d88190f@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2026
+DTSTART;VALUE=DATE:20261224
+DTEND;VALUE=DATE:20270109
+END:VEVENT
+BEGIN:VEVENT
+UID:b6a2f0a12ba96f6f5b78d9c62541ae5e@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2026: https://www.feiertage-deutschland.de/schulferien/2026/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/bewegliche-ferientage/
+SUMMARY:Schulfreier Tag Bayern 2026
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+END:VEVENT
+BEGIN:VEVENT
+UID:539d1c30d94d3c8089e91abff913031b@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2027
+DTSTART;VALUE=DATE:20270208
+DTEND;VALUE=DATE:20270213
+END:VEVENT
+BEGIN:VEVENT
+UID:bb23fd0ab9e6ed9096833032ba54061f@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2027
+DTSTART;VALUE=DATE:20270322
+DTEND;VALUE=DATE:20270403
+END:VEVENT
+BEGIN:VEVENT
+UID:6d2ac8c2932287adae6aabaa76d7cf70@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2027
+DTSTART;VALUE=DATE:20270518
+DTEND;VALUE=DATE:20270529
+END:VEVENT
+BEGIN:VEVENT
+UID:cfe78b1482558be2da6c8ec492708610@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2027
+DTSTART;VALUE=DATE:20270802
+DTEND;VALUE=DATE:20270914
+END:VEVENT
+BEGIN:VEVENT
+UID:d2b043c7a3b5a445771f09a2b6f04c5d@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2027
+DTSTART;VALUE=DATE:20271102
+DTEND;VALUE=DATE:20271106
+END:VEVENT
+BEGIN:VEVENT
+UID:80fd9b077f8d4c3d50dd50bdb97a62fb@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2027
+DTSTART;VALUE=DATE:20271224
+DTEND;VALUE=DATE:20280108
+END:VEVENT
+BEGIN:VEVENT
+UID:893721bc6244c692694fcd3970d6e7e4@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2027: https://www.feiertage-deutschland.de/schulferien/2027/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/bewegliche-ferientage/
+SUMMARY:Schulfreier Tag Bayern 2027
+DTSTART;VALUE=DATE:20271117
+DTEND;VALUE=DATE:20271118
+END:VEVENT
+BEGIN:VEVENT
+UID:a7a9bbe924ebbd422866ea8dc99beacb@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2028
+DTSTART;VALUE=DATE:20280228
+DTEND;VALUE=DATE:20280304
+END:VEVENT
+BEGIN:VEVENT
+UID:eb8295a01ae884022e30cc034f4cdc7a@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2028
+DTSTART;VALUE=DATE:20280410
+DTEND;VALUE=DATE:20280422
+END:VEVENT
+BEGIN:VEVENT
+UID:15c15096cfa9bd81f4b57b3d5b6857bb@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2028
+DTSTART;VALUE=DATE:20280606
+DTEND;VALUE=DATE:20280617
+END:VEVENT
+BEGIN:VEVENT
+UID:d10ad0e28aa31e2ad2eb9acfb8370cb9@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2028
+DTSTART;VALUE=DATE:20280731
+DTEND;VALUE=DATE:20280912
+END:VEVENT
+BEGIN:VEVENT
+UID:e1a51675d739ea5ded9e8c7c2efe0782@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2028
+DTSTART;VALUE=DATE:20281030
+DTEND;VALUE=DATE:20281104
+END:VEVENT
+BEGIN:VEVENT
+UID:6efdba22bfb67d645a421740e3962f87@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2028
+DTSTART;VALUE=DATE:20281223
+DTEND;VALUE=DATE:20290106
+END:VEVENT
+BEGIN:VEVENT
+UID:9fd0564f4f642e6e664af2e4ca21abf6@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2028: https://www.feiertage-deutschland.de/schulferien/2028/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/bewegliche-ferientage/
+SUMMARY:Schulfreier Tag Bayern 2028
+DTSTART;VALUE=DATE:20281122
+DTEND;VALUE=DATE:20281123
+END:VEVENT
+BEGIN:VEVENT
+UID:5df82f7b16c339700050d8eeecac43c6@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/winterferien/
+SUMMARY:Frühjahrsferien Bayern 2029
+DTSTART;VALUE=DATE:20290212
+DTEND;VALUE=DATE:20290217
+END:VEVENT
+BEGIN:VEVENT
+UID:525ea5fb3e5d4e262eb126d73a11e851@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/osterferien/
+SUMMARY:Osterferien Bayern 2029
+DTSTART;VALUE=DATE:20290326
+DTEND;VALUE=DATE:20290407
+END:VEVENT
+BEGIN:VEVENT
+UID:c0db47b978c967e8c8acc6d94ccb9ee4@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/pfingstferien/
+SUMMARY:Pfingstferien Bayern 2029
+DTSTART;VALUE=DATE:20290522
+DTEND;VALUE=DATE:20290602
+END:VEVENT
+BEGIN:VEVENT
+UID:7b4f86c6ae948645e25a79dd43e97054@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/sommerferien/
+SUMMARY:Sommerferien Bayern 2029
+DTSTART;VALUE=DATE:20290730
+DTEND;VALUE=DATE:20290911
+END:VEVENT
+BEGIN:VEVENT
+UID:82c1993785ce6993a2be027a776229c4@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/herbstferien/
+SUMMARY:Herbstferien Bayern 2029
+DTSTART;VALUE=DATE:20291029
+DTEND;VALUE=DATE:20291103
+END:VEVENT
+BEGIN:VEVENT
+UID:e75023ee14651a19529c836fa50d87ac@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/weihnachtsferien/
+SUMMARY:Weihnachtsferien Bayern 2029
+DTSTART;VALUE=DATE:20291224
+DTEND;VALUE=DATE:20300105
+END:VEVENT
+BEGIN:VEVENT
+UID:d07485f4127bcc5cd52a5255daf9dad6@feiertage-deutschland.de
+DTSTAMP:20260619T215650Z
+LOCATION:BY
+DESCRIPTION:Schulferien 2029: https://www.feiertage-deutschland.de/schulferien/2029/
+URL;VALUE=URI:https://www.feiertage-deutschland.de/schulferien/bewegliche-ferientage/
+SUMMARY:Schulfreier Tag Bayern 2029
+DTSTART;VALUE=DATE:20291121
+DTEND;VALUE=DATE:20291122
+END:VEVENT
+END:VCALENDAR
