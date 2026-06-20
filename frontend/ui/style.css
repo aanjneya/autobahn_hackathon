@@ -57,12 +57,39 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 8px;
+  gap: 10px;
 }
 
 .hdr__logo {
   height: 48px;
   width: auto;
+}
+
+/* Streckenbild rechts neben Toggle-Reihen, gleiche Breite wie Sidebar */
+.ctrl-wrap {
+  display: grid;
+  grid-template-columns: 38fr 38fr 24fr;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+.ctrl-left {
+  grid-column: 1 / 3;
+  min-width: 0;
+}
+.ctrl-left .toggle { margin-bottom: 10px; }
+.ctrl-left .monthnav { margin-bottom: 0; }
+
+.ctrl-map {
+  grid-column: 3;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background: #ffffff;
+  align-self: center;
+  justify-self: stretch;
 }
 
 .print-btn {

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fahrkalender – Die Autobahn</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=29">
+  <link rel="stylesheet" href="style.css?v=32">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
 </head>
 <body>
@@ -26,7 +26,11 @@
       </div>
     </header>
 
-    <nav class="toggle modebar">
+    <div class="ctrl-wrap">
+
+      <div class="ctrl-left">
+
+        <nav class="toggle modebar">
       <button type="button" class="toggle__btn" onclick="window.location.href='index.html'">Standard</button>
       <button type="button" class="toggle__btn" onclick="window.location.href='index_tourist.html'">Tourist</button>
       <button type="button" class="toggle__btn" onclick="window.location.href='index_resident.html'">Anwohner</button>
@@ -56,12 +60,14 @@
       <button class="monthnav__arrow" id="navNext" aria-label="Vor">›</button>
     </div>
 
+      </div>
+      <img id="mapBox" class="ctrl-map" src="img.png" alt="Streckenkarte">
+    </div>
     <!-- 4. HAUPTBEREICH -->
     <main class="grid">
       <section class="cal cal--detail" id="calA"></section>
       <section class="cal cal--detail" id="calB"></section>
       <aside class="cal cal--mini" id="calMini">
-        <img id="mapBox" class="mapbox" src="img.png" alt="Streckenkarte">
         <div id="miniList" class="mini-list-wrap"></div>
       </aside>
     </main>
