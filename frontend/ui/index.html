@@ -6,7 +6,7 @@
   <title>Fahrkalender – Die Autobahn</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css?v=32">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
 </head>
 <body>
   <div class="page" id="page">
@@ -31,12 +31,12 @@
       <div class="ctrl-left">
 
         <nav class="toggle modebar">
-      <button type="button" class="toggle__btn active" onclick="window.location.href='index.html'">Standard</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_tourist.html'">Tourist</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_resident.html'">Anwohner</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_logistics.html'">Logistik</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_tourism.html'">Tourismus</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_authority.html'">Behörde</button>
+      <button type="button" class="toggle__btn active" onclick="NavState.navigateTo('index.html')">Standard</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourist.html')">Tourist</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_resident.html')">Anwohner</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_logistics.html')">Logistik</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourism.html')">Tourismus</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_authority.html')">Behörde</button>
     </nav>
 
 
@@ -99,6 +99,7 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="nav-state.js"></script>
   <script src="sidebar.js?v=1"></script>
   <script src="app.js"></script>
 </body>

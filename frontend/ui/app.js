@@ -115,8 +115,8 @@ const HOLIDAYS = {
 // ────────────────────────────────────────────────────────────
 
 const state = {
-  strecke: 'A93',
-  richtung: 'Sued',
+  strecke: (typeof NavState !== 'undefined' ? NavState.getStrecke() : 'A93'),
+  richtung: (typeof NavState !== 'undefined' ? NavState.getRichtung() : 'Sued'),
   // Index des linken Detailmonats (0-basiert ab Januar 2026).
   // 0 = Jan 2026, 1 = Feb 2026, ... 12 = Jan 2027, ...
   monthIndex: 5, // Juni 2026 als sinnvoller Default (Feriensaison)
@@ -156,12 +156,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function setupEvents() {
-  document.querySelectorAll('.toggle__btn').forEach(btn => {
+  // Route toggle buttons (have data-strecke)
+  document.querySelectorAll('#toggle .toggle__btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.toggle__btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#toggle .toggle__btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       state.strecke = btn.dataset.strecke;
       state.richtung = btn.dataset.richtung;
+      if (typeof NavState !== 'undefined') NavState.save(state.strecke, state.richtung);
       render();
     });
   });
