@@ -149,8 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       state.forecasts = rows;
 
-      updateSiteSelect();
       updateDirectionSelect();
+      updateSiteSelect();
       applyFilters();
     } catch (err) {
       console.error("Failed to load forecast.csv:", err);
@@ -161,19 +161,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function setupEventListeners() {
     elements.corridorSelect.addEventListener('change', (e) => {
       state.corridor = e.target.value;
+      updateDirectionSelect();
       updateSiteSelect();
-      updateDirectionSelect();
-      applyFilters();
-    });
-
-    elements.siteSelect.addEventListener('change', (e) => {
-      state.site = e.target.value;
-      updateDirectionSelect();
       applyFilters();
     });
 
     elements.directionSelect.addEventListener('change', (e) => {
       state.direction = e.target.value;
+      updateSiteSelect();
+      applyFilters();
+    });
+
+    elements.siteSelect.addEventListener('change', (e) => {
+      state.site = e.target.value;
       applyFilters();
     });
 
@@ -190,44 +190,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Filtering ---
-  function updateSiteSelect() {
-    const corridorDef = state.corridorsDef[state.corridor];
-    const currentSelection = elements.siteSelect.value;
-
-    elements.siteSelect.innerHTML = '';
-    corridorDef.strecken.forEach((strecke, index) => {
-      const option = document.createElement('option');
-      option.value = strecke;
-      option.textContent = siteLabel(strecke);
-      elements.siteSelect.appendChild(option);
-
-      // If the old selection is valid for the new corridor, keep it, otherwise default to first
-      if (strecke === currentSelection) {
-        option.selected = true;
-        state.site = strecke;
-      } else if (index === 0 && !corridorDef.strecken.includes(currentSelection)) {
-        option.selected = true;
-        state.site = strecke;
-      }
-    });
-  }
-
   function updateDirectionSelect() {
     const corridorDef = state.corridorsDef[state.corridor];
     const labels = state.directionLabels[state.corridor];
 
-    // Not every measurement site has data for both directions of a corridor
-    // (e.g. a sensor excluded due to a permanent speed limit) - only offer
-    // directions that actually have forecast rows for the selected site.
-    const availableForSite = state.forecasts.length
+    // Welche Richtungen existieren für den gewählten Korridor überhaupt?
+    const availableForCorridor = state.forecasts.length
       ? corridorDef.richtungen.filter(r =>
-          state.forecasts.some(row => row.strecke === state.site && row.richtung === r))
+          state.forecasts.some(row =>
+            corridorDef.strecken.includes(row.strecke) && row.richtung === r))
       : corridorDef.richtungen;
-    const richtungen = availableForSite.length ? availableForSite : corridorDef.richtungen;
+    const richtungen = availableForCorridor.length ? availableForCorridor : corridorDef.richtungen;
 
-    // Remember current selection to try and preserve it if possible
     const currentSelection = elements.directionSelect.value;
-
     elements.directionSelect.innerHTML = '';
     richtungen.forEach((richtung, index) => {
       const option = document.createElement('option');
@@ -235,13 +210,40 @@ document.addEventListener('DOMContentLoaded', () => {
       option.textContent = labels[richtung];
       elements.directionSelect.appendChild(option);
 
-      // If the old selection is valid for the new site, keep it, otherwise default to first
       if (richtung === currentSelection) {
         option.selected = true;
         state.direction = richtung;
       } else if (index === 0 && !richtungen.includes(currentSelection)) {
         option.selected = true;
         state.direction = richtung;
+      }
+    });
+  }
+
+  function updateSiteSelect() {
+    const corridorDef = state.corridorsDef[state.corridor];
+
+    // Messstellen, die für (Korridor, Richtung) tatsächlich Daten haben.
+    const availableForPair = state.forecasts.length
+      ? corridorDef.strecken.filter(s =>
+          state.forecasts.some(row => row.strecke === s && row.richtung === state.direction))
+      : corridorDef.strecken;
+    const strecken = availableForPair.length ? availableForPair : corridorDef.strecken;
+
+    const currentSelection = elements.siteSelect.value;
+    elements.siteSelect.innerHTML = '';
+    strecken.forEach((strecke, index) => {
+      const option = document.createElement('option');
+      option.value = strecke;
+      option.textContent = siteLabel(strecke);
+      elements.siteSelect.appendChild(option);
+
+      if (strecke === currentSelection) {
+        option.selected = true;
+        state.site = strecke;
+      } else if (index === 0 && !strecken.includes(currentSelection)) {
+        option.selected = true;
+        state.site = strecke;
       }
     });
   }
