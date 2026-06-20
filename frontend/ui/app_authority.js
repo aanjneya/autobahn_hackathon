@@ -638,24 +638,25 @@ function showReasonPopover(anchorEl, ds, k) {
 
   let tips = [];
   
+  const _t = (k, fb) => (typeof I18n !== 'undefined') ? I18n.t(k) : fb;
   if (cat === 5 && conf >= 0.8) {
-      tips.push({ text: "Dosierung / LKW-Verbot aktivieren", title: "🚧 Maßnahme empfohlen:", color: "#721c24", bg: "#f8d7da" });
+      tips.push({ text: _t('popover.measure_action', 'Dosierung / LKW-Verbot aktivieren'), title: _t('popover.measure_label', '🚧 Maßnahme empfohlen:'), color: "#721c24", bg: "#f8d7da" });
   } else if (cat === 4) {
-      tips.push({ text: "Stauwarnung & Tempolimits vorbereiten", title: "⚠️ VBA-Schaltung:", color: "#856404", bg: "#fff3cd" });
+      tips.push({ text: _t('tip.vba.text', 'Stauwarnung & Tempolimits vorbereiten'), title: _t('tip.vba.title', '⚠️ VBA-Schaltung:'), color: "#856404", bg: "#fff3cd" });
   } else if (cat <= 2) {
       const daySlots = lookup(ds) || [0, 0, 0, 0, 0, 0];
       let safeForWork = Math.max(...daySlots) <= 2;
       if (safeForWork) {
-          tips.push({ text: "Ideal für Tagesbaustellen & Sperrungen", title: "✅ Wartungsfenster:", color: "#155724", bg: "#d4edda" });
+          tips.push({ text: _t('tip.maintenance.text', 'Ideal für Tagesbaustellen & Sperrungen'), title: _t('tip.maintenance.title', '✅ Wartungsfenster:'), color: "#155724", bg: "#d4edda" });
       }
   }
 
   const rsStr = rs.join(',');
   if (rsStr.includes('Oktoberfest') || rsStr.includes('Ferienbeginn')) {
-      tips.push({ text: "Polizei & Pannenhilfe aufstocken", title: "🚓 Einsatzplanung:", color: "#0c5460", bg: "#d1ecf1" });
+      tips.push({ text: _t('tip.police.text', 'Polizei & Pannenhilfe aufstocken'), title: _t('tip.police.title', '🚓 Einsatzplanung:'), color: "#0c5460", bg: "#d1ecf1" });
   }
   if (key.includes('A8') && key.includes('München') && (rsStr.includes('Ferienende') || rsStr.includes('Rückreise'))) {
-      tips.push({ text: "Mit Bundespolizei abstimmen", title: "🛂 Grenzkontrolle:", color: "#721c24", bg: "#f8d7da" });
+      tips.push({ text: _t('tip.border.text', 'Mit Bundespolizei abstimmen'), title: _t('tip.border.title', '🛂 Grenzkontrolle:'), color: "#721c24", bg: "#f8d7da" });
   }
 
   for (const t of tips) {
@@ -673,7 +674,7 @@ function showReasonPopover(anchorEl, ds, k) {
   const moreBtn = document.createElement('button');
   moreBtn.className = 'reason-popover__more';
   moreBtn.type = 'button';
-  moreBtn.textContent = 'Mehr Infos →';
+  moreBtn.textContent = (typeof I18n !== 'undefined') ? I18n.t('popover.more_info') : 'Mehr Infos →';
   moreBtn.addEventListener('click', () => {
     closeReasonPopover();
     showDayDetailView(ds);
@@ -685,7 +686,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);
@@ -838,7 +839,7 @@ function showDayDetailView(ds) {
 
   view.innerHTML = `
     <div class="day-view__head">
-      <button class="day-view__back" type="button">← Zurück zur Übersicht</button>
+      <button class="day-view__back" type="button">${(typeof I18n !== 'undefined') ? I18n.t('dayview.back') : '← Zurück zur Übersicht'}</button>
       <div class="day-view__head-text">
         <div class="day-view__date">${formatReasonDate(ds)}${hol ? ' · <span class="day-view__hol">' + escapeHtml(hol) + '</span>' : ''}</div>
         <div class="day-view__sub">${escapeHtml(txt.title)} — ${escapeHtml(txt.sub)}</div>
@@ -846,14 +847,14 @@ function showDayDetailView(ds) {
       <div class="day-view__worst">
         <span class="day-view__swatch cat-${worst}"></span>
         <div>
-          <div class="day-view__worst-label">Tages-Maximum</div>
+          <div class="day-view__worst-label">${(typeof I18n !== 'undefined') ? I18n.t('dayview.day_max') : 'Tages-Maximum'}</div>
           <div class="day-view__worst-cat">${CAT_LABELS[worst]}</div>
         </div>
       </div>
     </div>
     <div class="day-view__daynav">
-      <button class="day-view__navbtn" type="button" data-dir="-1">‹ Vorheriger Tag</button>
-      <button class="day-view__navbtn" type="button" data-dir="1">Nächster Tag ›</button>
+      <button class="day-view__navbtn" type="button" data-dir="-1">${(typeof I18n !== 'undefined') ? I18n.t('dayview.prev_day') : '‹ Vorheriger Tag'}</button>
+      <button class="day-view__navbtn" type="button" data-dir="1">${(typeof I18n !== 'undefined') ? I18n.t('dayview.next_day') : 'Nächster Tag ›'}</button>
     </div>
     <div class="day-view__slots"></div>
     <div class="day-view__hourly"></div>
@@ -887,7 +888,7 @@ function showDayDetailView(ds) {
       </div>
       <div class="day-view__slot-reasons-label">${(typeof I18n !== 'undefined') ? I18n.t('dayview.factors') : 'Einflussfaktoren'}</div>
       <ul class="day-view__slot-reasons">
-        ${reasons.length ? reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast').replace(/\.$/, '') : 'Keine Prognose') : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason').split(/[–—.]/)[0].trim() : 'Kein besonderer Grund')) + '</li>'}
+        ${reasons.length ? reasons.map(r => `<li>${escapeHtml((typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast').replace(/\.$/, '') : 'Keine Prognose') : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason').split(/[–—.]/)[0].trim() : 'Kein besonderer Grund')) + '</li>'}
       </ul>
     `;
     slotsCt.appendChild(card);

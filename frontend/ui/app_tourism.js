@@ -627,7 +627,9 @@ function showReasonPopover(anchorEl, ds, k) {
     tourEl.style.padding = '4px 8px';
     tourEl.style.borderRadius = '4px';
     tourEl.style.marginTop = '8px';
-    tourEl.innerHTML = '<span>🛎️ Rezeptions-Auslastung:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Extrem Hoch (Personal planen!)</span>';
+    const tourTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.tourism.title') : '🛎️ Rezeptions-Auslastung:';
+    const tourText = (typeof I18n !== 'undefined') ? I18n.t('tip.tourism.text') : 'Extrem Hoch (Personal planen!)';
+    tourEl.innerHTML = '<span>' + tourTitle + '</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + tourText + '</span>';
     pop.appendChild(tourEl);
   }
 
@@ -636,7 +638,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);

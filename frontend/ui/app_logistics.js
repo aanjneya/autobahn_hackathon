@@ -620,7 +620,8 @@ function showReasonPopover(anchorEl, ds, k) {
   }
 
   if (cat > 0) {
-    const delayMap = {1: '+0 Min', 2: '+10 Min', 3: '+25 Min', 4: '+45 Min', 5: '> 90 Min'};
+    const unit = (typeof I18n !== 'undefined') ? I18n.t('tip.logistics.min') : 'Min';
+    const delayMap = {1: '+0 ' + unit, 2: '+10 ' + unit, 3: '+25 ' + unit, 4: '+45 ' + unit, 5: '> 90 ' + unit};
     const logEl = document.createElement('div');
     logEl.className = 'reason-popover__confidence';
     logEl.style.color = '#856404';
@@ -628,7 +629,8 @@ function showReasonPopover(anchorEl, ds, k) {
     logEl.style.padding = '4px 8px';
     logEl.style.borderRadius = '4px';
     logEl.style.marginTop = '8px';
-    logEl.innerHTML = '<span>⏱️ Erwarteter Zeitverlust:</span><span style="margin-left:auto; font-weight:bold;">' + delayMap[cat] + '</span>';
+    const logTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.logistics.title') : '⏱️ Erwarteter Zeitverlust:';
+    logEl.innerHTML = '<span>' + logTitle + '</span><span style="margin-left:auto; font-weight:bold;">' + delayMap[cat] + '</span>';
     pop.appendChild(logEl);
   }
 
@@ -637,7 +639,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);
