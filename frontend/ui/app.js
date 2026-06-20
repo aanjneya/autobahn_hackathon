@@ -658,7 +658,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);
@@ -866,6 +866,16 @@ function initMap() {
 
 function updateMapRoutes() {
   initMap();
+
+  const el = document.getElementById('mapBox');
+  if (el && el.tagName === 'IMG') {
+    const newSrc = state.strecke === 'A8' ? 'a8.png' : 'a93.png';
+    if (el.getAttribute('src') !== newSrc) {
+      el.setAttribute('src', newSrc);
+    }
+    return;
+  }
+
   if (!mapState.map) return;
   const active = state.strecke;
 

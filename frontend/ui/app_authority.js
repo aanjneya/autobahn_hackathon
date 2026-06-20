@@ -109,7 +109,9 @@ const state = {
   monthIndex: 5, // Juni 2026 als sinnvoller Default (Feriensaison)
   data: {}, // key "YYYY-MM-DD|A93|Sued" → [c1, c2, c3, c4, c5, c6]
   reasons: {}, // key "YYYY-MM-DD|A93|Sued" → [ [r0..], [r1..], ... ] (6 4h-Blöcke)
-  confidence: {} // key "YYYY-MM-DD|A93|Sued" → [p0..p5] (Modell-Konfidenz je 4h-Block, 0..1)
+  confidence: {}, // key "YYYY-MM-DD|A93|Sued" → [p0..p5] (Modell-Konfidenz je 4h-Block, 0..1)
+  currentDayDs: null,
+  dayAnchor: null // Tag-des-Monats, der bei Monats-Shifts erhalten bleibt
 };
 
 // Kategorie → Klartext (gleiche Bezeichnungen wie die Legende im Footer).
@@ -150,11 +152,7 @@ function setupEvents() {
   });
   document.getElementById('navPrev').addEventListener('click', () => {
     if (isDayViewOpen() && state.currentDayDs) {
-      const newDs = shiftDsByMonths(state.currentDayDs, -1);
-      const newIdx = dsToMonthIndex(newDs);
-      if (newIdx < MIN_INDEX) return;
-      state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
-      showDayDetailView(newDs);
+      shiftDayViewByMonths(-1);
       return;
     }
     state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 1);
@@ -162,11 +160,7 @@ function setupEvents() {
   });
   document.getElementById('navNext').addEventListener('click', () => {
     if (isDayViewOpen() && state.currentDayDs) {
-      const newDs = shiftDsByMonths(state.currentDayDs, 1);
-      const newIdx = dsToMonthIndex(newDs);
-      if (newIdx > MAX_INDEX + 3) return; // forecast endet Ende 2029
-      state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
-      showDayDetailView(newDs);
+      shiftDayViewByMonths(1);
       return;
     }
     state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 1);
@@ -645,24 +639,25 @@ function showReasonPopover(anchorEl, ds, k) {
 
   let tips = [];
   
+  const _t = (k, fb) => (typeof I18n !== 'undefined') ? I18n.t(k) : fb;
   if (cat === 5 && conf >= 0.8) {
-      tips.push({ text: "Dosierung / LKW-Verbot aktivieren", title: "🚧 Maßnahme empfohlen:", color: "#721c24", bg: "#f8d7da" });
+      tips.push({ text: _t('popover.measure_action', 'Dosierung / LKW-Verbot aktivieren'), title: _t('popover.measure_label', '🚧 Maßnahme empfohlen:'), color: "#721c24", bg: "#f8d7da" });
   } else if (cat === 4) {
-      tips.push({ text: "Stauwarnung & Tempolimits vorbereiten", title: "⚠️ VBA-Schaltung:", color: "#856404", bg: "#fff3cd" });
+      tips.push({ text: _t('tip.vba.text', 'Stauwarnung & Tempolimits vorbereiten'), title: _t('tip.vba.title', '⚠️ VBA-Schaltung:'), color: "#856404", bg: "#fff3cd" });
   } else if (cat <= 2) {
       const daySlots = lookup(ds) || [0, 0, 0, 0, 0, 0];
       let safeForWork = Math.max(...daySlots) <= 2;
       if (safeForWork) {
-          tips.push({ text: "Ideal für Tagesbaustellen & Sperrungen", title: "✅ Wartungsfenster:", color: "#155724", bg: "#d4edda" });
+          tips.push({ text: _t('tip.maintenance.text', 'Ideal für Tagesbaustellen & Sperrungen'), title: _t('tip.maintenance.title', '✅ Wartungsfenster:'), color: "#155724", bg: "#d4edda" });
       }
   }
 
   const rsStr = rs.join(',');
   if (rsStr.includes('Oktoberfest') || rsStr.includes('Ferienbeginn')) {
-      tips.push({ text: "Polizei & Pannenhilfe aufstocken", title: "🚓 Einsatzplanung:", color: "#0c5460", bg: "#d1ecf1" });
+      tips.push({ text: _t('tip.police.text', 'Polizei & Pannenhilfe aufstocken'), title: _t('tip.police.title', '🚓 Einsatzplanung:'), color: "#0c5460", bg: "#d1ecf1" });
   }
   if (key.includes('A8') && key.includes('München') && (rsStr.includes('Ferienende') || rsStr.includes('Rückreise'))) {
-      tips.push({ text: "Mit Bundespolizei abstimmen", title: "🛂 Grenzkontrolle:", color: "#721c24", bg: "#f8d7da" });
+      tips.push({ text: _t('tip.border.text', 'Mit Bundespolizei abstimmen'), title: _t('tip.border.title', '🛂 Grenzkontrolle:'), color: "#721c24", bg: "#f8d7da" });
   }
 
   for (const t of tips) {
@@ -680,7 +675,7 @@ function showReasonPopover(anchorEl, ds, k) {
   const moreBtn = document.createElement('button');
   moreBtn.className = 'reason-popover__more';
   moreBtn.type = 'button';
-  moreBtn.textContent = 'Mehr Infos →';
+  moreBtn.textContent = (typeof I18n !== 'undefined') ? I18n.t('popover.more_info') : 'Mehr Infos →';
   moreBtn.addEventListener('click', () => {
     closeReasonPopover();
     showDayDetailView(ds);
@@ -692,7 +687,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);
@@ -859,11 +854,32 @@ function getDayView() {
 }
 function closeDayView() {
   state.currentDayDs = null;
+  state.dayAnchor = null;
   if (!dayViewEl) return;
   dayViewEl.hidden = true;
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = '';
   try { render(); } catch (_) {}
+}
+
+// Verschiebt die Day-View um ±n Monate, ohne den Tag-des-Monats über
+// mehrere Sprünge zu verlieren (z. B. 31. Jan → 28. Feb → 31. Mär statt 28.).
+function shiftDayViewByMonths(delta) {
+  if (!state.currentDayDs) return;
+  const [y, m, d] = state.currentDayDs.split('-').map(Number);
+  if (state.dayAnchor == null) state.dayAnchor = d;
+  const target = new Date(y, m - 1 + delta, 1);
+  const ty = target.getFullYear();
+  const tm = target.getMonth();
+  // Grenzen einhalten (forecast endet 31.12.2029).
+  if (ty < BASE_YEAR || ty > 2029) return;
+  const lastDay = new Date(ty, tm + 1, 0).getDate();
+  const day = Math.min(state.dayAnchor, lastDay);
+  const newDs = `${ty}-${String(tm + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  // Kalender unter der Day-View mit dem Ziel-Monat in Sync halten.
+  const newIdx = (ty - BASE_YEAR) * 12 + tm;
+  state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
+  showDayDetailView(newDs);
 }
 function isDayViewOpen() {
   return !!(dayViewEl && !dayViewEl.hidden);
@@ -875,6 +891,9 @@ function escapeHtml(s) {
 function showDayDetailView(ds) {
   closeReasonPopover();
   state.currentDayDs = ds;
+  if (state.dayAnchor == null) {
+    state.dayAnchor = parseInt(ds.split('-')[2], 10);
+  }
   const view = getDayView();
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = 'none';
@@ -898,7 +917,7 @@ function showDayDetailView(ds) {
 
   view.innerHTML = `
     <div class="day-view__head">
-      <button class="day-view__back" type="button">← Zurück zur Übersicht</button>
+      <button class="day-view__back" type="button">${(typeof I18n !== 'undefined') ? I18n.t('dayview.back') : '← Zurück zur Übersicht'}</button>
       <div class="day-view__head-text">
         <div class="day-view__date">${formatReasonDate(ds)}${hol ? ' · <span class="day-view__hol">' + escapeHtml(hol) + '</span>' : ''}</div>
         <div class="day-view__sub">${escapeHtml(txt.title)} — ${escapeHtml(txt.sub)}</div>
@@ -906,14 +925,14 @@ function showDayDetailView(ds) {
       <div class="day-view__worst">
         <span class="day-view__swatch cat-${worst}"></span>
         <div>
-          <div class="day-view__worst-label">Tages-Maximum</div>
+          <div class="day-view__worst-label">${(typeof I18n !== 'undefined') ? I18n.t('dayview.day_max') : 'Tages-Maximum'}</div>
           <div class="day-view__worst-cat">${CAT_LABELS[worst]}</div>
         </div>
       </div>
     </div>
     <div class="day-view__daynav">
-      <button class="day-view__navbtn" type="button" data-dir="-1">‹ Vorheriger Tag</button>
-      <button class="day-view__navbtn" type="button" data-dir="1">Nächster Tag ›</button>
+      <button class="day-view__navbtn" type="button" data-dir="-1">${(typeof I18n !== 'undefined') ? I18n.t('dayview.prev_day') : '‹ Vorheriger Tag'}</button>
+      <button class="day-view__navbtn" type="button" data-dir="1">${(typeof I18n !== 'undefined') ? I18n.t('dayview.next_day') : 'Nächster Tag ›'}</button>
     </div>
     <div class="day-view__slots"></div>
     <div class="day-view__hourly"></div>
@@ -922,6 +941,8 @@ function showDayDetailView(ds) {
   view.querySelectorAll('.day-view__navbtn').forEach(btn => {
     btn.addEventListener('click', () => {
       const newDs = shiftDate(parseInt(btn.dataset.dir, 10));
+      // Day-Arrow = expliziter Tagwechsel → Anker auf neuen Tag setzen.
+      state.dayAnchor = parseInt(newDs.split('-')[2], 10);
       showDayDetailView(newDs);
     });
   });
@@ -947,7 +968,7 @@ function showDayDetailView(ds) {
       </div>
       <div class="day-view__slot-reasons-label">${(typeof I18n !== 'undefined') ? I18n.t('dayview.factors') : 'Einflussfaktoren'}</div>
       <ul class="day-view__slot-reasons">
-        ${reasons.length ? reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast').replace(/\.$/, '') : 'Keine Prognose') : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason').split(/[–—.]/)[0].trim() : 'Kein besonderer Grund')) + '</li>'}
+        ${reasons.length ? reasons.map(r => `<li>${escapeHtml((typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast').replace(/\.$/, '') : 'Keine Prognose') : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason').split(/[–—.]/)[0].trim() : 'Kein besonderer Grund')) + '</li>'}
       </ul>
     `;
     slotsCt.appendChild(card);
@@ -999,16 +1020,32 @@ function showDayDetailView(ds) {
 
   const wasVisible = !view.hidden;
   view.hidden = false;
-  if (!wasVisible) view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Nach ganz oben scrollen, damit Header + Monatspfeile (navPrev/navNext)
+  // sichtbar bleiben — sonst kann der User die Monatsnavigation nicht erreichen.
+  if (!wasVisible) window.scrollTo({ top: 0, behavior: 'smooth' });
   updateNavLabelsForDayView(ds);
 }
 
 function updateNavLabelsForDayView(ds) {
-  const [y, m] = ds.split('-').map(Number);
   const labelA = document.getElementById('navLabelA');
   const labelB = document.getElementById('navLabelB');
-  if (labelA) labelA.textContent = `${MONTHS[m - 1]} ${y}`;
-  if (labelB) labelB.textContent = formatReasonDate(ds);
+  const [y, m, d] = ds.split('-').map(Number);
+  const anchor = (state.dayAnchor != null) ? state.dayAnchor : d;
+  // Vorheriger / nächster Monat, jeweils mit dem Anker-Tag (geclampt
+  // auf die Monatslänge), damit der User sieht, wohin ‹ und › springen.
+  const fmt = (date) => {
+    const dd = date.getDate();
+    const mm = MONTHS[date.getMonth()];
+    return `${dd}. ${mm} ${date.getFullYear()}`;
+  };
+  const prev = new Date(y, m - 2, 1);
+  const prevLast = new Date(prev.getFullYear(), prev.getMonth() + 1, 0).getDate();
+  prev.setDate(Math.min(anchor, prevLast));
+  const next = new Date(y, m, 1);
+  const nextLast = new Date(next.getFullYear(), next.getMonth() + 1, 0).getDate();
+  next.setDate(Math.min(anchor, nextLast));
+  if (labelA) labelA.textContent = (prev.getFullYear() >= BASE_YEAR) ? fmt(prev) : '—';
+  if (labelB) labelB.textContent = (next.getFullYear() <= 2029) ? fmt(next) : '—';
 }
 
 function shiftDsByMonths(ds, delta) {

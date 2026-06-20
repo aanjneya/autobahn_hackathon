@@ -188,6 +188,14 @@ html, body {
   font-size: 14px;
   font-weight: 600;
 }
+/* Feste Mindestbreite je Label, damit die Pfeile beim Wechsel zwischen
+   Monatsname ("Juli 2026") und vollem Datum ("Mo 6. Juli 2026") nicht
+   nach links/rechts springen. */
+.monthnav__label {
+  min-width: 160px;
+  text-align: center;
+  white-space: nowrap;
+}
 .monthnav__sep { color: #ccc; }
 
 /* ---------- 4. HAUPT-GRID ------------------------------------ */

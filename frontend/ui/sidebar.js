@@ -118,6 +118,7 @@ const Sidebar = {
     if (this.mapState.map || typeof L === 'undefined') return;
     const el = document.getElementById('mapBox');
     if (!el) return;
+    if (el.tagName === 'IMG') return; // Statisches Bild statt Leaflet-Karte
 
     const map = L.map(el, {
       zoomControl: false,
@@ -178,6 +179,14 @@ const Sidebar = {
 
   updateMapRoutes: function() {
     this.initMap();
+    const el = document.getElementById('mapBox');
+    if (el && el.tagName === 'IMG') {
+      const newSrc = state.strecke === 'A8' ? 'a8.png' : 'a93.png';
+      if (el.getAttribute('src') !== newSrc) {
+        el.setAttribute('src', newSrc);
+      }
+      return;
+    }
     if (!this.mapState.map) return;
     const active = state.strecke;
 

@@ -634,7 +634,9 @@ function showReasonPopover(anchorEl, ds, k) {
     resEl.style.padding = '4px 8px';
     resEl.style.borderRadius = '4px';
     resEl.style.marginTop = '8px';
-    resEl.innerHTML = '<span>⚠️ Schleichverkehr-Risiko:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Hoch (Dorfstraßen meiden)</span>';
+    const resTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.resident.title') : '⚠️ Schleichverkehr-Risiko:';
+    const resText = (typeof I18n !== 'undefined') ? I18n.t('tip.resident.text') : 'Hoch (Dorfstraßen meiden)';
+    resEl.innerHTML = '<span>' + resTitle + '</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + resText + '</span>';
     pop.appendChild(resEl);
   }
 
@@ -643,7 +645,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);

@@ -58,6 +58,33 @@
       'dayview.map_label': 'Verlauf (30-Minuten Takt):',
       'dayview.hourly_label': '30-Minuten-Verlauf (gesamter Tag)',
       'dayview.factors': 'Einflussfaktoren',
+      'dayview.back': '← Zurück zur Übersicht',
+      'dayview.day_max': 'Tages-Maximum',
+      'dayview.prev_day': '‹ Vorheriger Tag',
+      'dayview.next_day': 'Nächster Tag ›',
+      'popover.more_info': 'Mehr Infos →',
+      'popover.measure_label': '🚧 Maßnahme empfohlen:',
+      'popover.measure_action': 'Dosierung / LKW-Verbot aktivieren',
+      'tip.vba.title': '⚠️ VBA-Schaltung:',
+      'tip.vba.text': 'Stauwarnung & Tempolimits vorbereiten',
+      'tip.maintenance.title': '✅ Wartungsfenster:',
+      'tip.maintenance.text': 'Ideal für Tagesbaustellen & Sperrungen',
+      'tip.police.title': '🚓 Einsatzplanung:',
+      'tip.police.text': 'Polizei & Pannenhilfe aufstocken',
+      'tip.border.title': '🛂 Grenzkontrolle:',
+      'tip.border.text': 'Mit Bundespolizei abstimmen',
+      'tip.logistics.title': '⏱️ Erwarteter Zeitverlust:',
+      'tip.logistics.min': 'Min',
+      'tip.resident.title': '⚠️ Schleichverkehr-Risiko:',
+      'tip.resident.text': 'Hoch (Dorfstraßen meiden)',
+      'tip.tourism.title': '🛎️ Rezeptions-Auslastung:',
+      'tip.tourism.text': 'Extrem hoch (Personal planen!)',
+      'tip.tourist.title': '💡 Tipp:',
+      'tip.tourist.depart_before_or_after': 'Fahren Sie vor {a} oder nach {b} Uhr ab.',
+      'tip.tourist.depart_before': 'Fahren Sie idealerweise vor {a} Uhr ab.',
+      'tip.tourist.depart_after': 'Fahren Sie idealerweise nach {a} Uhr ab.',
+      'tip.tourist.check_detail': 'Prüfen Sie den detaillierten 30-Minuten-Verlauf.',
+      'tip.tourist.other_day': 'Suchen Sie einen anderen Reisetag.',
       'lang.label': 'Sprache',
       'lang.de': 'DE',
       'lang.en': 'EN'
@@ -115,11 +142,67 @@
       'dayview.map_label': 'Course (30-minute intervals):',
       'dayview.hourly_label': '30-minute course (full day)',
       'dayview.factors': 'Influencing factors',
+      'dayview.back': '← Back to overview',
+      'dayview.day_max': 'Daily maximum',
+      'dayview.prev_day': '‹ Previous day',
+      'dayview.next_day': 'Next day ›',
+      'popover.more_info': 'More info →',
+      'popover.measure_label': '🚧 Action recommended:',
+      'popover.measure_action': 'Activate metering / HGV ban',
+      'tip.vba.title': '⚠️ Variable signs:',
+      'tip.vba.text': 'Prepare jam warnings & speed limits',
+      'tip.maintenance.title': '✅ Maintenance window:',
+      'tip.maintenance.text': 'Ideal for daytime works & closures',
+      'tip.police.title': '🚓 Operational planning:',
+      'tip.police.text': 'Increase police & breakdown assistance',
+      'tip.border.title': '🛂 Border control:',
+      'tip.border.text': 'Coordinate with federal police',
+      'tip.logistics.title': '⏱️ Expected delay:',
+      'tip.logistics.min': 'min',
+      'tip.resident.title': '⚠️ Rat-run risk:',
+      'tip.resident.text': 'High (avoid village roads)',
+      'tip.tourism.title': '🛎️ Reception load:',
+      'tip.tourism.text': 'Extremely high (plan staffing!)',
+      'tip.tourist.title': '💡 Tip:',
+      'tip.tourist.depart_before_or_after': 'Depart before {a} or after {b}.',
+      'tip.tourist.depart_before': 'Ideally depart before {a}.',
+      'tip.tourist.depart_after': 'Ideally depart after {a}.',
+      'tip.tourist.check_detail': 'Check the detailed 30-minute course.',
+      'tip.tourist.other_day': 'Pick another travel day.',
       'lang.label': 'Language',
       'lang.de': 'DE',
       'lang.en': 'EN'
     }
   };
+
+  // Verkehrs-„reasons" aus dem Modell. Schlüssel = exakter DE-String aus
+  // forecast.csv, Wert = Übersetzung. Unbekannte Reasons werden unverändert
+  // durchgereicht.
+  const reasonMap = {
+    en: {
+      'Berufsverkehr': 'Commuter traffic',
+      'Blockabfertigung Tirol': 'Block clearance Tyrol',
+      'Feiertag': 'Public holiday',
+      'Ferienbeginn': 'Start of school holidays',
+      'Ferienende (Rückreiseverkehr)': 'End of holidays (return traffic)',
+      'Ferienverkehr': 'Holiday traffic',
+      'Hohes Verkehrsaufkommen': 'High traffic volume',
+      'Messe München': 'Munich trade fair',
+      'Oktoberfest': 'Oktoberfest',
+      'Tag vor Feiertag (Kurzurlauber)': 'Day before holiday (short-break travellers)',
+      'Verlängertes Wochenende': 'Long weekend',
+      'Vorferien-Wochenende': 'Pre-holiday weekend',
+      'Wochenendpendler': 'Weekend commuters',
+      'Wochenendverkehr': 'Weekend traffic',
+    },
+  };
+
+  function tReason(s) {
+    if (!s) return s;
+    if (current === 'de') return s;
+    const m = reasonMap[current];
+    return (m && m[s] !== undefined) ? m[s] : s;
+  }
 
   const listeners = [];
   let current = 'de';
@@ -202,6 +285,7 @@
   window.I18n = {
     get: get,
     t: get,
+    tReason: tReason,
     lang: function () { return current; },
     setLang: setLang,
     onChange: onChange,

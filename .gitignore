@@ -8,7 +8,6 @@ venv/
 data/raw/
 output/plots
 data/rawdata
-data/clean
 # Generierte ML-Tabellen > GitHubs 100 MB Limit
 data/processed/*
 
@@ -22,3 +21,4 @@ data/processed/*
 # Env / Secrets
 .env
 PITCH_BRIEF.md
+/data/clean/lt und fbt/

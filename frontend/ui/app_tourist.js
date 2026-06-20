@@ -662,20 +662,26 @@ function showReasonPopover(anchorEl, ds, k) {
         }
     }
 
-    let tipText = "Suchen Sie einen anderen Reisetag.";
+    const _tt = (k, fb) => (typeof I18n !== 'undefined') ? I18n.t(k) : fb;
+    let tipText = _tt('tip.tourist.other_day', 'Suchen Sie einen anderen Reisetag.');
     if (firstBad && lastBad) {
         let bStr = firstBad.split('-')[0];
         let aStr = lastBad.split('-')[1];
-        
+
         if (bStr !== "00:00" && aStr !== "24:00" && aStr !== "00:00") {
-            tipText = "Fahren Sie vor " + bStr + " oder nach " + aStr + " Uhr ab.";
+            tipText = _tt('tip.tourist.depart_before_or_after',
+                'Fahren Sie vor {a} oder nach {b} Uhr ab.')
+                .replace('{a}', bStr).replace('{b}', aStr);
         } else if (bStr !== "00:00") {
-            tipText = "Fahren Sie idealerweise vor " + bStr + " Uhr ab.";
+            tipText = _tt('tip.tourist.depart_before',
+                'Fahren Sie idealerweise vor {a} Uhr ab.').replace('{a}', bStr);
         } else if (aStr !== "24:00" && aStr !== "00:00") {
-            tipText = "Fahren Sie idealerweise nach " + aStr + " Uhr ab.";
+            tipText = _tt('tip.tourist.depart_after',
+                'Fahren Sie idealerweise nach {a} Uhr ab.').replace('{a}', aStr);
         }
     } else {
-        tipText = "Prüfen Sie den detaillierten 30-Minuten Verlauf.";
+        tipText = _tt('tip.tourist.check_detail',
+            'Prüfen Sie den detaillierten 30-Minuten-Verlauf.');
     }
 
     const tipEl = document.createElement('div');
@@ -685,7 +691,8 @@ function showReasonPopover(anchorEl, ds, k) {
     tipEl.style.padding = '4px 8px';
     tipEl.style.borderRadius = '4px';
     tipEl.style.marginTop = '8px';
-    tipEl.innerHTML = '<span>💡 Tipp:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + tipText + '</span>';
+    const tipTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.tourist.title') : '💡 Tipp:';
+    tipEl.innerHTML = '<span>' + tipTitle + '</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + tipText + '</span>';
     pop.appendChild(tipEl);
   }
 
@@ -694,7 +701,7 @@ function showReasonPopover(anchorEl, ds, k) {
     ul.className = 'reason-popover__list';
     for (const r of rs) {
       const li = document.createElement('li');
-      li.textContent = r;
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
       ul.appendChild(li);
     }
     pop.appendChild(ul);
