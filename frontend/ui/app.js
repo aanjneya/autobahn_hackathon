@@ -1,5 +1,5 @@
 /**
- * app.js – Hauptlogik für den Autobahn Fahrkalender
+ * app.js – Die Hauptlogik für den Autobahn Fahrkalender
  */
 
 // Global close function for the onclick handler in HTML
