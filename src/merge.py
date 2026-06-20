@@ -1,3 +1,5 @@
+import re
+
 import pandas as pd
 from pathlib import Path
 
@@ -15,24 +17,42 @@ def _build_time_slots() -> list[str]:
 
 
 TIME_SLOTS = _build_time_slots()
-ROUTES = [("A93", "Sued"), ("A93", "Nord"), ("A8", "Ost"), ("A8", "West")]
+
+# A93 measurement stations, keyed by the substring that identifies them in
+# the raw device id -> human-readable site name.
+A93_SITES = {
+    "kiefersfelden": "Kiefersfelden",
+    "inntal": "Inntal",
+    "gletschergarten": "Gletschergarten",
+}
 
 # Sensoren mit struktureller Geschwindigkeitsbegrenzung (Tempolimit, nicht Stau).
-# Diese werden bei der Aggregation pro Route ausgeschlossen, damit ihre
-# künstlich niedrigen Werte nicht die ganze Strecke runterziehen.
+# Diese werden bei der Aggregation ausgeschlossen, damit ihre künstlich
+# niedrigen Werte nicht als Stau gewertet werden.
 EXCLUDED_DEVICES = {
-    "MQDZ_Kiefersfelden_(S)_Ro,DE1,2",  # A93 Nord, ~60 km/h Mittel = dauerhaftes Tempolimit
+    "MQDZ_Kiefersfelden_(S)_Ro,DE1,2",  # A93 Kiefersfelden/Rosenheim, ~60 km/h Mittel = dauerhaftes Tempolimit
 }
 
 
-def device_to_route(device: str) -> tuple[str, str] | None:
-    s = str(device).lower()
-    if "kiefersfelden" in s or "inntal" in s or "gletschergarten" in s:
-        return ("A93", "Sued") if "kff" in s else ("A93", "Nord")
-    if "sbg" in s:
-        return ("A8", "Ost")
-    if "mch" in s:
-        return ("A8", "West")
+def device_to_site(device: str) -> tuple[str, str] | None:
+    """Map a sensor device id to its own (strecke, richtung), keeping each
+    physical measurement station distinct instead of collapsing all sensors
+    on a corridor into one route+direction.
+
+    richtung is named after the destination city (matches the frontend's
+    convention) rather than compass points: Kufstein/Rosenheim for A93,
+    München/Salzburg for A8.
+    """
+    s = str(device)
+    sl = s.lower()
+    for key, name in A93_SITES.items():
+        if key in sl:
+            richtung = "Kufstein" if "kff" in sl else "Rosenheim"
+            return (f"A93_{name}", richtung)
+    if "sbg" in sl or "mch" in sl:
+        site = re.split(r"_(?:Mch|Sbg)", s, maxsplit=1, flags=re.IGNORECASE)[0]
+        richtung = "Salzburg" if "sbg" in sl else "München"
+        return (f"A8_{site}", richtung)
     return None
 
 
@@ -43,7 +63,7 @@ def build_train() -> pd.DataFrame:
         print(f"[merge] excluded {excluded_n} rows from "
               f"{len(EXCLUDED_DEVICES)} tempolimit sensor(s)")
     labels = labels[~labels["devices"].isin(EXCLUDED_DEVICES)]
-    routes = labels["devices"].apply(device_to_route)
+    routes = labels["devices"].apply(device_to_site)
     labels = labels.assign(
         strecke=routes.apply(lambda r: r[0] if r else None),
         richtung=routes.apply(lambda r: r[1] if r else None),
@@ -62,10 +82,21 @@ def build_train() -> pd.DataFrame:
     return train
 
 
+def known_routes() -> list[tuple[str, str]]:
+    """All (strecke, richtung) pairs with real sensor data, derived from the
+    actual device list rather than hardcoded, so it stays in sync with
+    whatever stations exist (minus excluded tempolimit sensors)."""
+    devices = pd.read_csv(PROC / "daily_labels.csv", usecols=["devices"])["devices"].unique()
+    devices = [d for d in devices if d not in EXCLUDED_DEVICES]
+    routes = {device_to_site(d) for d in devices}
+    routes.discard(None)
+    return sorted(routes)
+
+
 def build_forecast_scaffold() -> pd.DataFrame:
     feats = pd.read_csv(PROC / "features_2026_2029.csv")
     rows = []
-    for strecke, richtung in ROUTES:
+    for strecke, richtung in known_routes():
         for i, slot in enumerate(TIME_SLOTS):
             tmp = feats.copy()
             tmp["strecke"] = strecke

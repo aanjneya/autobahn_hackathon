@@ -18,6 +18,7 @@ Writes:  data/processed/train.csv          (overwrites with extra cols)
 from __future__ import annotations
 
 import glob
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -30,17 +31,8 @@ PROC = ROOT / "data" / "processed"
 DAUZ_DIR = CLEAN / "DAUZ_2+0_1h_2023-2026"
 LT_FBT_DIR = CLEAN / "lt_und_fbt"
 
-
-def device_to_route(device: str) -> tuple[str, str] | None:
-    """Same mapping as merge.py."""
-    s = str(device).lower()
-    if "kiefersfelden" in s or "inntal" in s or "gletschergarten" in s:
-        return ("A93", "Sued") if "kff" in s else ("A93", "Nord")
-    if "sbg" in s:
-        return ("A8", "Ost")
-    if "mch" in s:
-        return ("A8", "West")
-    return None
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from merge import device_to_site as device_to_route  # noqa: E402  (same mapping as merge.py)
 
 
 def slot_to_4h_bucket(slot: str) -> str:

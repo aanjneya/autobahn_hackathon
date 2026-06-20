@@ -8,6 +8,9 @@ venv/
 data/raw/
 output/plots
 data/rawdata
+# Generierte ML-Tabellen > GitHubs 100 MB Limit
+data/processed/forecast_input.csv
+data/processed/train.csv
 
 # IDE
 .idea/
