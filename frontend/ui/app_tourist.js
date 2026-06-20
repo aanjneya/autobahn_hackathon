@@ -628,6 +628,18 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
+  if (cat >= 3) {
+    const tipEl = document.createElement('div');
+    tipEl.className = 'reason-popover__confidence';
+    tipEl.style.color = '#155724';
+    tipEl.style.backgroundColor = '#d4edda';
+    tipEl.style.padding = '4px 8px';
+    tipEl.style.borderRadius = '4px';
+    tipEl.style.marginTop = '8px';
+    tipEl.innerHTML = '<span>💡 Tipp:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Fahren Sie vor 08:00 oder nach 19:00 Uhr ab.</span>';
+    pop.appendChild(tipEl);
+  }
+
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';

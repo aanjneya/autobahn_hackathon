@@ -628,6 +628,19 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
+  if (cat > 0) {
+    const delayMap = {1: '+0 Min', 2: '+10 Min', 3: '+25 Min', 4: '+45 Min', 5: '> 90 Min'};
+    const logEl = document.createElement('div');
+    logEl.className = 'reason-popover__confidence';
+    logEl.style.color = '#856404';
+    logEl.style.backgroundColor = '#fff3cd';
+    logEl.style.padding = '4px 8px';
+    logEl.style.borderRadius = '4px';
+    logEl.style.marginTop = '8px';
+    logEl.innerHTML = '<span>⏱️ Erwarteter Zeitverlust:</span><span style="margin-left:auto; font-weight:bold;">' + delayMap[cat] + '</span>';
+    pop.appendChild(logEl);
+  }
+
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';

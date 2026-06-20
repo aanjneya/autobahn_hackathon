@@ -628,6 +628,18 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
+  if (cat >= 4) {
+    const tourEl = document.createElement('div');
+    tourEl.className = 'reason-popover__confidence';
+    tourEl.style.color = '#0c5460';
+    tourEl.style.backgroundColor = '#d1ecf1';
+    tourEl.style.padding = '4px 8px';
+    tourEl.style.borderRadius = '4px';
+    tourEl.style.marginTop = '8px';
+    tourEl.innerHTML = '<span>🛎️ Rezeptions-Auslastung:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Extrem Hoch (Personal planen!)</span>';
+    pop.appendChild(tourEl);
+  }
+
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';

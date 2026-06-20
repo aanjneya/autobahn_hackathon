@@ -628,6 +628,18 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
+  if (cat >= 4) {
+    const resEl = document.createElement('div');
+    resEl.className = 'reason-popover__confidence';
+    resEl.style.color = '#721c24';
+    resEl.style.backgroundColor = '#f8d7da';
+    resEl.style.padding = '4px 8px';
+    resEl.style.borderRadius = '4px';
+    resEl.style.marginTop = '8px';
+    resEl.innerHTML = '<span>⚠️ Schleichverkehr-Risiko:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Hoch (Dorfstraßen meiden)</span>';
+    pop.appendChild(resEl);
+  }
+
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';

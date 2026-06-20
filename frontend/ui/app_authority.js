@@ -628,6 +628,18 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
+  if (cat === 5 && conf >= 0.8) {
+    const authEl = document.createElement('div');
+    authEl.className = 'reason-popover__confidence';
+    authEl.style.color = '#721c24';
+    authEl.style.backgroundColor = '#f8d7da';
+    authEl.style.padding = '4px 8px';
+    authEl.style.borderRadius = '4px';
+    authEl.style.marginTop = '8px';
+    authEl.innerHTML = '<span>🚧 Maßnahme empfohlen:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Dosierung / LKW-Verbot aktivieren</span>';
+    pop.appendChild(authEl);
+  }
+
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';
