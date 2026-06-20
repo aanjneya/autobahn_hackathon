@@ -640,6 +640,16 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(authEl);
   }
 
+  const moreBtn = document.createElement('button');
+  moreBtn.className = 'reason-popover__more';
+  moreBtn.type = 'button';
+  moreBtn.textContent = 'Mehr Infos →';
+  moreBtn.addEventListener('click', () => {
+    closeReasonPopover();
+    showDayDetailView(ds);
+  });
+  pop.appendChild(moreBtn);
+
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';
@@ -739,3 +749,126 @@ function showReasonPopover(anchorEl, ds, k) {
 }
 
 // Map logic moved to sidebar.js
+
+// ────────────────────────────────────────────────────────────
+// Tag-Detailansicht (Behörden-Modus) — ersetzt Monatsgrid
+// ────────────────────────────────────────────────────────────
+
+let dayViewEl = null;
+function getDayView() {
+  if (dayViewEl) return dayViewEl;
+  dayViewEl = document.createElement('section');
+  dayViewEl.className = 'day-view';
+  dayViewEl.hidden = true;
+  const grid = document.querySelector('.grid');
+  grid.parentNode.insertBefore(dayViewEl, grid.nextSibling);
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') closeDayView();
+  });
+  return dayViewEl;
+}
+function closeDayView() {
+  if (!dayViewEl) return;
+  dayViewEl.hidden = true;
+  const grid = document.querySelector('.grid');
+  if (grid) grid.style.display = '';
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+
+function showDayDetailView(ds) {
+  closeReasonPopover();
+  const view = getDayView();
+  const grid = document.querySelector('.grid');
+  if (grid) grid.style.display = 'none';
+  const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
+  const key = `${ds}|${state.strecke}|${state.richtung}`;
+  const reasonsArr = state.reasons[key] || [];
+  const confArr = state.confidence[key] || [];
+  const kfzArr = (state.kfz && state.kfz[key]) || [];
+  const hourlyArr = (state.hourly && state.hourly[key]) || [];
+  const hol = HOLIDAYS[ds];
+  const worst = Math.max(...slots);
+  const speedMap = { 1: '> 100 km/h', 2: '80–100 km/h', 3: '60–80 km/h', 4: '40–60 km/h', 5: '< 40 km/h' };
+  const txt = ROUTE_TEXT[`${state.strecke}|${state.richtung}`] || { title: '', sub: '' };
+
+  view.innerHTML = `
+    <div class="day-view__head">
+      <button class="day-view__back" type="button">← Zurück zur Übersicht</button>
+      <div class="day-view__head-text">
+        <div class="day-view__date">${formatReasonDate(ds)}${hol ? ' · <span class="day-view__hol">' + escapeHtml(hol) + '</span>' : ''}</div>
+        <div class="day-view__sub">${escapeHtml(txt.title)} — ${escapeHtml(txt.sub)}</div>
+      </div>
+      <div class="day-view__worst">
+        <span class="day-view__swatch cat-${worst}"></span>
+        <div>
+          <div class="day-view__worst-label">Tages-Maximum</div>
+          <div class="day-view__worst-cat">${CAT_LABELS[worst]}</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-view__slots"></div>
+    <div class="day-view__hourly"></div>
+  `;
+  view.querySelector('.day-view__back').addEventListener('click', closeDayView);
+
+  const slotsCt = view.querySelector('.day-view__slots');
+  for (let k = 0; k < 6; k++) {
+    const cat = slots[k] || 0;
+    const reasons = reasonsArr[k] || [];
+    const conf = confArr[k];
+    const kfz = kfzArr[k];
+    const card = document.createElement('div');
+    card.className = 'day-view__slot';
+    card.innerHTML = `
+      <div class="day-view__slot-bar cat-${cat}"></div>
+      <div class="day-view__slot-head">
+        <div class="day-view__slot-time">${SLOT_LABELS[k]}</div>
+        <div class="day-view__slot-cat">${CAT_LABELS[cat]}</div>
+      </div>
+      <div class="day-view__slot-stats">
+        ${cat > 0 ? `<div><span>Ø Geschwindigkeit</span><b>${speedMap[cat]}</b></div>` : ''}
+        ${kfz ? `<div><span>Volumen (Peak)</span><b>~${kfz} Kfz/h</b></div>` : ''}
+        ${conf != null ? `<div><span>Konfidenz</span><b>${Math.round(conf * 100)} %</b></div>` : ''}
+      </div>
+      <div class="day-view__slot-reasons-label">Einflussfaktoren</div>
+      <ul class="day-view__slot-reasons">
+        ${reasons.length ? reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? 'Keine Prognose' : 'Kein besonderer Grund') + '</li>'}
+      </ul>
+    `;
+    slotsCt.appendChild(card);
+  }
+
+  const allHours = [];
+  for (let k = 0; k < 6; k++) {
+    const h = hourlyArr[k];
+    if (h) allHours.push(...h);
+  }
+  if (allHours.length) {
+    allHours.sort((a, b) => a.slot.localeCompare(b.slot));
+    const colors = { 1: '#95c258', 2: '#cfdb1f', 3: '#efa82a', 4: '#e8624a', 5: '#b3271a' };
+    const hCt = view.querySelector('.day-view__hourly');
+    hCt.innerHTML = '<div class="day-view__hourly-label">30-Minuten-Verlauf (gesamter Tag)</div><div class="day-view__hourly-bars"></div><div class="day-view__hourly-ticks"></div>';
+    const bars = hCt.querySelector('.day-view__hourly-bars');
+    const ticks = hCt.querySelector('.day-view__hourly-ticks');
+    const maxVal = Math.max(...allHours.map(h => h.val || 0)) || 1;
+    for (const h of allHours) {
+      const height = Math.max(4, Math.round((h.val || 0) / maxVal * 100));
+      const bar = document.createElement('div');
+      bar.className = 'day-view__hourly-bar';
+      bar.style.background = colors[h.cat] || '#eee';
+      bar.style.height = `${height}%`;
+      bar.title = `${h.slot} · ~${h.val} Kfz/h`;
+      bars.appendChild(bar);
+
+      const tick = document.createElement('div');
+      tick.className = 'day-view__hourly-tick';
+      tick.textContent = h.slot.split('-')[0];
+      ticks.appendChild(tick);
+    }
+  }
+
+  view.hidden = false;
+  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
