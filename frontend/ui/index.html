@@ -31,12 +31,12 @@
       <div class="ctrl-left">
 
         <nav class="toggle modebar">
-      <button type="button" class="toggle__btn active" onclick="window.location.href='index.html'">Standard</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_tourist.html'">Tourist</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_resident.html'">Anwohner</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_logistics.html'">Logistik</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_tourism.html'">Tourismus</button>
-      <button type="button" class="toggle__btn" onclick="window.location.href='index_authority.html'">Behörde</button>
+      <button type="button" class="toggle__btn active" onclick="NavState.navigateTo('index.html')">Standard</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourist.html')">Tourist</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_resident.html')">Anwohner</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_logistics.html')">Logistik</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourism.html')">Tourismus</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_authority.html')">Behörde</button>
     </nav>
 
 
@@ -99,6 +99,7 @@
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="nav-state.js"></script>
   <script src="sidebar.js?v=1"></script>
   <script src="app.js"></script>
 </body>
