@@ -29,16 +29,7 @@ html, body {
   margin-bottom: 18px;
 }
 
-.mode-select {
-  padding: 4px 8px;
-  border: 1px solid #cfd4da;
-  border-radius: 4px;
-  font-size: 12px;
-  background-color: #f3f5f8;
-  color: #1a1a1a;
-  cursor: pointer;
-  font-family: inherit;
-}
+.modebar { margin-top: 2px; }
 
 .hdr__title {
   font-size: 28px;

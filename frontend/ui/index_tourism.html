@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fahrkalender – Die Autobahn</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="style.css?v=26">
+  <link rel="stylesheet" href="style.css?v=29">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
 </head>
 <body>
@@ -23,16 +23,19 @@
           <button class="print-btn" id="printBtn" title="Drucken">🖨️ Drucken</button>
           <img class="hdr__logo" src="https://www.autobahn.de/_assets/4483a80560873394161ba712d6ca7e9e/Images/Logo.svg" alt="Die Autobahn">
         </div>
-        <select class="mode-select" onchange="window.location.href=this.value">
-          <option value="index.html">Mode: Standard / Base</option>
-          <option value="index_tourist.html">1. Private Traveler / Tourist</option>
-          <option value="index_resident.html">2. Local Resident</option>
-          <option value="index_logistics.html">3. Logistics / Freight / Bus</option>
-          <option value="index_tourism.html" selected>4. Tourism Business</option>
-          <option value="index_authority.html">5. Traffic Management Authority</option>
-        </select>
       </div>
     </header>
+
+    <nav class="toggle modebar">
+      <button type="button" class="toggle__btn" onclick="window.location.href='index.html'">Standard</button>
+      <button type="button" class="toggle__btn" onclick="window.location.href='index_tourist.html'">Tourist</button>
+      <button type="button" class="toggle__btn" onclick="window.location.href='index_resident.html'">Anwohner</button>
+      <button type="button" class="toggle__btn" onclick="window.location.href='index_logistics.html'">Logistik</button>
+      <button type="button" class="toggle__btn active" onclick="window.location.href='index_tourism.html'">Tourismus</button>
+      <button type="button" class="toggle__btn" onclick="window.location.href='index_authority.html'">Behörde</button>
+    </nav>
+
+
 
     <!-- 2. STRECKEN-TOGGLE -->
     <nav class="toggle" id="toggle">
