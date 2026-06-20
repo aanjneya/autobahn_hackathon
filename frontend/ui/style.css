@@ -70,7 +70,7 @@ html, body {
   display: grid;
   grid-template-columns: 38fr 38fr 24fr;
   gap: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 18px;
 }
 .ctrl-left {
   grid-column: 1 / 3;
