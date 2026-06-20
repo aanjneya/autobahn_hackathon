@@ -334,10 +334,7 @@ function render() {
   renderDetail(document.getElementById('calA'), mA.y, mA.m);
   renderDetail(document.getElementById('calB'), mB.y, mB.m);
 
-  const mini = document.getElementById('calMini');
-  mini.innerHTML = '';
-  if (mC) mini.appendChild(renderMini(mC.y, mC.m));
-  if (mD) mini.appendChild(renderMini(mD.y, mD.m));
+  Sidebar.render(mC, mD);
 }
 
 function monthFromIndex(idx) {
@@ -425,52 +422,16 @@ function renderDetail(container, year, month) {
       });
       tr.appendChild(td);
     }
+    const worst = Math.max(...slots);
+    tr.addEventListener('mouseenter', () => Sidebar.updateMapColor(worst, ds));
+    tr.addEventListener('mouseleave', () => Sidebar.updateMapColor(0, null));
     tbody.appendChild(tr);
   }
   table.appendChild(tbody);
   container.appendChild(table);
 }
 
-function renderMini(year, month) {
-  const wrap = document.createElement('div');
-  wrap.className = 'mini';
-
-  const hdr = document.createElement('div');
-  hdr.className = 'mini__month';
-  hdr.textContent = `${MONTHS[month]} ${year}`;
-  wrap.appendChild(hdr);
-
-  const list = document.createElement('div');
-  list.className = 'mini__list';
-
-  const last = new Date(year, month + 1, 0).getDate();
-  for (let d = 1; d <= last; d++) {
-    const ds = dateStr(year, month, d);
-    const dow = new Date(year, month, d).getDay();
-    const isWE = dow === 0 || dow === 6;
-    const hol = HOLIDAYS[ds];
-
-    const row = document.createElement('div');
-    row.className = 'mini__row';
-    if (hol) row.classList.add('is-holiday');
-    else if (isWE) row.classList.add('is-weekend');
-
-    const dayEl = document.createElement('span');
-    dayEl.className = 'mini__day';
-    dayEl.innerHTML = `<b>${d}</b><i>${DOW_SHORT[dow]}</i>`;
-    row.appendChild(dayEl);
-
-    const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
-    const worst = Math.max(...slots);
-    const box = document.createElement('span');
-    box.className = `mini__box cat-${worst || 0}`;
-    row.appendChild(box);
-
-    list.appendChild(row);
-  }
-  wrap.appendChild(list);
-  return wrap;
-}
+// renderMini moved to sidebar.js
 
 // ────────────────────────────────────────────────────────────
 // Reason-Popover (Klick auf einen Zeitslot)
@@ -581,3 +542,5 @@ function showReasonPopover(anchorEl, ds, k) {
   const arrowLeft = Math.max(12, Math.min(anchorCenter - left, pw - 12));
   pop.style.setProperty('--arrow-left', `${Math.round(arrowLeft)}px`);
 }
+
+// Map logic moved to sidebar.js

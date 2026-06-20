@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fahrkalender – Die Autobahn</title>
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css?v=26">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
 </head>
 <body>
@@ -12,24 +13,7 @@
 
     <!-- 1. HEADER -->
     <header class="hdr">
-      <div class="hdr__text">        <div class="hdr__title">FAHRKALENDER</div>
-        <div class="hdr__route" id="hdrRoute">A93 RICHTUNG SÜDEN</div>
-        <div class="hdr__sub" id="hdrSub">Rosenheim, München → Kufstein, Innsbruck</div>
-      </div>
-      <div class="hdr__right">
-        <div style="display: flex; gap: 14px; align-items: center;">
-          <button class="print-btn" id="printBtn" title="Drucken">🖨️ Drucken</button>
-          <img class="hdr__logo" src="https://www.autobahn.de/_assets/4483a80560873394161ba712d6ca7e9e/Images/Logo.svg" alt="Die Autobahn">
-        </div>
-        <select class="mode-select" onchange="window.location.href=this.value">
-          <option value="index.html">Mode: Standard / Base</option>
-          <option value="index_tourist.html">1. Private Traveler / Tourist</option>
-          <option value="index_resident.html" selected>2. Local Resident</option>
-          <option value="index_logistics.html">3. Logistics / Freight / Bus</option>
-          <option value="index_tourism.html">4. Tourism Business</option>
-          <option value="index_authority.html">5. Traffic Management Authority</option>
-        </select>
-      </div>
+      <div class="hdr__text">      </div>
     </header>
 
     <!-- 2. STRECKEN-TOGGLE -->
@@ -55,7 +39,10 @@
     <main class="grid">
       <section class="cal cal--detail" id="calA"></section>
       <section class="cal cal--detail" id="calB"></section>
-      <aside class="cal cal--mini" id="calMini"></aside>
+      <aside class="cal cal--mini" id="calMini">
+        <div id="mapBox" class="mapbox"></div>
+        <div id="miniList" class="mini-list-wrap"></div>
+      </aside>
     </main>
 
     <!-- 5. FOOTER -->
@@ -84,6 +71,8 @@
     </footer>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="sidebar.js?v=1"></script>
   <script src="app_resident.js"></script>
 </body>
 </html>
