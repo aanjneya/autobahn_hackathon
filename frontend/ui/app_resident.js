@@ -165,11 +165,11 @@ function setupEvents() {
     });
   });
   document.getElementById('navPrev').addEventListener('click', () => {
-    state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 2);
+    state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 1);
     render();
   });
   document.getElementById('navNext').addEventListener('click', () => {
-    state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 2);
+    state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 1);
     render();
   });
   document.getElementById('printBtn').addEventListener('click', () => window.print());
