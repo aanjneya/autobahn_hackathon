@@ -101,7 +101,26 @@ const HOLIDAYS = {
 // State
 // ────────────────────────────────────────────────────────────
 
+
+const STRETCHES = {
+  'A8': [
+    { label: 'Alle', segments: [] },
+    { label: 'München - Holzkirchen', segments: ['A8_MQB25', 'A8_MQQ37'] },
+    { label: 'Holzkirchen - Siegsdorf', segments: ['A8_MQQ209'] },
+    { label: 'Siegsdorf - Teisendorf', segments: ['A8_MQQ213'] },
+    { label: 'Teisendorf - Salzburg', segments: ['A8_MQQ245'] }
+  ],
+  'A93': [
+    { label: 'Alle', segments: [] },
+    { label: 'Rosenheim - Inntal', segments: ['A93_Inntal'] },
+    { label: 'Inntal - Gletschergarten', segments: ['A93_Gletschergarten'] },
+    { label: 'Gletschergarten - Kiefersfelden', segments: ['A93_Kiefersfelden'] }
+  ]
+};
+
 const state = {
+  wohnort: 'Alle',
+
   strecke: (typeof NavState !== 'undefined' ? NavState.getStrecke() : 'A93'),
   richtung: (typeof NavState !== 'undefined' ? NavState.getRichtung() : 'Sued'),
   // Index des linken Detailmonats (0-basiert ab Januar 2026).
@@ -126,6 +145,7 @@ const MAX_INDEX = (2029 - BASE_YEAR + 1) * 12 - 4; // 4 sichtbare Monate
 document.addEventListener('DOMContentLoaded', async () => {
   setupEvents();
   setStandDate();
+  renderWohnortToggle();
   try {
     await loadCsv();
   } catch (err) {
@@ -135,6 +155,42 @@ document.addEventListener('DOMContentLoaded', async () => {
   render();
 });
 
+
+function renderWohnortToggle() {
+  const container = document.getElementById('wohnortToggle');
+  if (!container) return;
+  container.innerHTML = '';
+  const rawStretches = STRETCHES[state.strecke] || [];
+  const stretches = [...rawStretches];
+  
+  const isReverse = (state.richtung === 'Nord' || state.richtung === 'West');
+  
+  if (isReverse && stretches.length > 0) {
+      const alle = stretches.shift();
+      stretches.reverse();
+      stretches.unshift(alle);
+  }
+  
+  stretches.forEach(str => {
+    const btn = document.createElement('button');
+    btn.className = 'toggle__btn';
+    if (state.wohnort === str.label) btn.classList.add('active');
+    
+    let displayLabel = str.label;
+    if (isReverse && displayLabel !== 'Alle') {
+        displayLabel = displayLabel.split(' - ').reverse().join(' - ');
+    }
+    
+    btn.textContent = displayLabel;
+    btn.addEventListener('click', () => {
+      state.wohnort = str.label;
+      renderWohnortToggle();
+      render();
+    });
+    container.appendChild(btn);
+  });
+}
+
 function setupEvents() {
   // Route toggle buttons (have data-strecke)
   document.querySelectorAll('#toggle .toggle__btn').forEach(btn => {
@@ -143,7 +199,9 @@ function setupEvents() {
       btn.classList.add('active');
       state.strecke = btn.dataset.strecke;
       state.richtung = btn.dataset.richtung;
+      state.wohnort = 'Alle';
       if (typeof NavState !== 'undefined') NavState.save(state.strecke, state.richtung);
+      renderWohnortToggle();
       render();
     });
   });
@@ -440,7 +498,27 @@ function dateStr(y, m, d) {
 }
 
 function lookup(ds) {
-  return state.data[`${ds}|${state.strecke}|${state.richtung}`];
+  const key = `${ds}|${state.strecke}|${state.richtung}`;
+  if (state.wohnort && state.wohnort !== 'Alle') {
+     const stretches = STRETCHES[state.strecke] || [];
+     const stretch = stretches.find(s => s.label === state.wohnort);
+     if (stretch && stretch.segments.length > 0 && window.__segMax) {
+         const blocks = [0, 0, 0, 0, 0, 0];
+         let hasData = false;
+         for (let k = 0; k < 6; k++) {
+             let maxCat = 0;
+             stretch.segments.forEach(seg => {
+                 const segKey = `${key}|${k}|${seg}`;
+                 const c = window.__segMax[segKey] || 0;
+                 if (c > maxCat) maxCat = c;
+             });
+             blocks[k] = maxCat;
+             if (maxCat > 0) hasData = true;
+         }
+         return hasData ? blocks : state.data[key];
+     }
+  }
+  return state.data[key];
 }
 
 function renderDetail(container, year, month) {
