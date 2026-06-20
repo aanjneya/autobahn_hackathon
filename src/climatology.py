@@ -30,6 +30,7 @@ PROC = ROOT / "data" / "processed"
 
 DAUZ_DIR = CLEAN / "DAUZ_2+0_1h_2023-2026"
 LT_FBT_DIR = CLEAN / "lt_und_fbt"
+TRAFFIC_1MIN_DIR = CLEAN / "2023-2025_1min_2+0_v"  # fallback source if DAUZ missing
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from merge import device_to_site as device_to_route  # noqa: E402  (same mapping as merge.py)
@@ -98,10 +99,59 @@ def _load_lt_fbt() -> pd.DataFrame:
     return merged
 
 
+def _load_traffic_1min_as_dauz() -> pd.DataFrame:
+    """Fallback: aggregate the 30-min q_kfz / q_lkw from the 1min cleaned files
+    into a DAUZ-shaped DataFrame (columns: devices, date, time_slot, kfz_h, sv_h).
+
+    q_kfz is the vehicle count in a 30-min slot, so kfz_h = q_kfz * 2.
+    """
+    files = glob.glob(str(TRAFFIC_1MIN_DIR / "*.csv"))
+    parts = []
+    needed = {"devices", "date", "time_slot", "q_kfz"}
+    for f in files:
+        df = pd.read_csv(f)
+        if not needed.issubset(df.columns):
+            continue
+        df = df.dropna(subset=["q_kfz"])
+        out = pd.DataFrame({
+            "devices": df["devices"],
+            "date": df["date"],
+            "time_slot": df["time_slot"],
+            "kfz_h": df["q_kfz"].astype(float) * 2.0,
+            "sv_h": (df["q_lkw"].astype(float) * 2.0) if "q_lkw" in df.columns else 0.0,
+        })
+        parts.append(out)
+    if not parts:
+        raise FileNotFoundError(
+            f"No 1min traffic files found in {TRAFFIC_1MIN_DIR} either"
+        )
+    df = pd.concat(parts, ignore_index=True)
+    routes = df["devices"].apply(device_to_route)
+    df = df.assign(
+        strecke=routes.apply(lambda r: r[0] if r else None),
+        richtung=routes.apply(lambda r: r[1] if r else None),
+    ).dropna(subset=["strecke"])
+    df["date"] = pd.to_datetime(df["date"])
+    df["weekday"] = df["date"].dt.dayofweek
+    df["month"] = df["date"].dt.month
+    df["sv_share"] = np.where(df["kfz_h"] > 0, df["sv_h"] / df["kfz_h"], 0.0)
+    df["slot_4h"] = df["time_slot"].apply(slot_to_4h_bucket)
+    return df
+
+
 def build_dauz_climatology() -> pd.DataFrame:
     """Per (strecke, richtung, month, weekday, slot_4h)
-    -> kfz_expected, sv_expected, sv_share_expected."""
-    df = _load_dauz()
+    -> kfz_expected, sv_expected, sv_share_expected.
+
+    Prefers DAUZ; falls back to aggregated 1min traffic data when DAUZ
+    is not present.
+    """
+    try:
+        df = _load_dauz()
+    except FileNotFoundError as e:
+        print(f"  [climatology] DAUZ missing ({e}); "
+              f"falling back to 1min traffic data.")
+        df = _load_traffic_1min_as_dauz()
     grp = df.groupby(["strecke", "richtung", "month", "weekday", "slot_4h"]).agg(
         kfz_expected=("kfz_h", "mean"),
         sv_expected=("sv_h", "mean"),
