@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Map-Component Demo</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #ffffff;
+      padding: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #1a1a1a;
+    }
+    h1 { font-size: 18px; margin: 0 0 12px; }
+    .row { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+    .col { flex: 0 0 320px; }
+    .controls { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .controls button {
+      font: inherit; font-size: 12px; padding: 5px 10px;
+      border: 1px solid #cfd4da; background: #fff; border-radius: 3px;
+      cursor: pointer;
+    }
+    .controls button:hover { border-color: #003466; }
+    .controls button.active { background: #003466; color: #fff; border-color: #003466; }
+    .cat-row button { font-size: 11px; }
+  </style>
+  <script src="map-component.js"></script>
+</head>
+<body>
+  <h1>Autobahn-Map Component — Demo</h1>
+
+  <div class="row">
+    <div class="col">
+      <div id="mapBox"></div>
+      <div class="controls" id="routeCtrl">
+        <button data-r="A93" data-d="Sued" class="active">A93 Süd</button>
+        <button data-r="A93" data-d="Nord">A93 Nord</button>
+        <button data-r="A8"  data-d="Ost">A8 Ost</button>
+        <button data-r="A8"  data-d="West">A8 West</button>
+      </div>
+      <div class="controls cat-row" id="catCtrl">
+        <button data-c="#f0a02a" class="active">Default</button>
+        <button data-c="#6db33f">Kat 1</button>
+        <button data-c="#f0c040">Kat 2</button>
+        <button data-c="#e8732a">Kat 3</button>
+        <button data-c="#c0392b">Kat 4</button>
+        <button data-c="#8b1a0e">Kat 5</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const map = createMapComponent(document.getElementById('mapBox'));
+
+    function bindGroup(id, onClick) {
+      const el = document.getElementById(id);
+      el.addEventListener('click', (e) => {
+        const btn = e.target.closest('button');
+        if (!btn) return;
+        el.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        onClick(btn);
+      });
+    }
+
+    bindGroup('routeCtrl', (btn) => {
+      map.setActiveRoute(btn.dataset.r, btn.dataset.d);
+    });
+    bindGroup('catCtrl', (btn) => {
+      map.setColor(btn.dataset.c);
+    });
+  </script>
+</body>
+</html>
