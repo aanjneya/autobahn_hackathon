@@ -148,27 +148,36 @@ def evaluate(train: pd.DataFrame) -> None:
     ))
 
 
-def forecast(train: pd.DataFrame) -> pd.DataFrame:
-    """Refit on all data, score forecast_input.csv -> forecast.csv."""
-    X_all, y_all = prepare(train), make_target(train["category"])
-    model = fit_model(X_all, y_all)
+def forecast(train: pd.DataFrame, fc_input: pd.DataFrame) -> pd.DataFrame:
+    """Train on ALL available data, forecast for 2026."""
+    
+    # Train on all available train data
+    X_train, y_train = prepare(train), make_target(train["category"])
+    model = fit_model(X_train, y_train)
 
-    scaffold = pd.read_csv(PROC / "forecast_input.csv")
+    # Forecast exactly for 2026
+    year = pd.to_datetime(fc_input["datum"]).dt.year
+    scaffold = fc_input[year == 2026].copy()
+    if scaffold.empty:
+        print("[warn] No 2026 data found to forecast!")
+        return pd.DataFrame()
+
     X_fc = prepare(scaffold)
     proba = model.predict_proba(X_fc)
     pred = label_to_category(np.asarray(model.classes_)[proba.argmax(axis=1)])
 
     out = scaffold[["datum", "strecke", "richtung", "time_slot"]].copy()
     out["pred_category"] = pred.astype(int)
+
     # model.classes_ are 0-indexed labels; map columns back to category 1..5.
     for col_idx, label in enumerate(model.classes_):
         out[f"prob_{label_to_category(label)}"] = proba[:, col_idx].round(4)
 
     OUT.mkdir(exist_ok=True)
-    out_path = OUT / "forecast.csv"
+    out_path = OUT / "forecast_2026.csv"
     out.to_csv(out_path, index=False)
-    print(f"\nforecast.csv: {len(out)} rows -> {out_path}")
-    print("\nPredicted category distribution (2026-2029):")
+    print(f"\nforecast_2026.csv: {len(out)} rows -> {out_path}")
+    print("\nPredicted category distribution (2026):")
     print(out["pred_category"].value_counts().sort_index())
 
     print("\nFeature importances (top 12):")
@@ -179,8 +188,9 @@ def forecast(train: pd.DataFrame) -> pd.DataFrame:
 
 def main() -> None:
     train = pd.read_csv(PROC / "train.csv")
+    fc_input = pd.read_csv(PROC / "forecast_input.csv")
     evaluate(train)
-    forecast(train)
+    forecast(train, fc_input)
 
 
 if __name__ == "__main__":

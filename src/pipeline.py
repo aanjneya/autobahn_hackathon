@@ -74,9 +74,10 @@ def process_data(input_path, output_path, dataset_type="1min_traffic"):
         
         df['date'] = df['datetime'].dt.strftime('%Y-%m-%d')
         df['time_slot'] = df['datetime'].apply(assign_time_slot)
+        df['devices'] = os.path.basename(input_path).replace(".csv", "")
         
         agg_funcs = {metric_col: 'mean'}
-        aggregated = df.groupby(['date', 'time_slot']).agg(agg_funcs).reset_index()
+        aggregated = df.groupby(['devices', 'date', 'time_slot']).agg(agg_funcs).reset_index()
         aggregated[metric_col] = aggregated[metric_col].round(2)
         
     else:

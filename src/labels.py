@@ -4,20 +4,24 @@ import argparse
 import os
 import glob
 
-def get_category(v):
-    """Map 4-hour average speed to Category 1-5"""
-    if pd.isna(v):
-        return np.nan
-    if v >= 80:
-        return 1
-    elif v >= 55:
-        return 2
-    elif v >= 35:
-        return 3
-    elif v >= 20:
-        return 4
-    else:
-        return 5
+def get_speed_category(v):
+    """Fallback: Map average speed to Category 1-5"""
+    if pd.isna(v): return np.nan
+    if v >= 80: return 1
+    elif v >= 55: return 2
+    elif v >= 35: return 3
+    elif v >= 20: return 4
+    else: return 5
+
+def get_density_category(v, q):
+    """Fuzzy Logic Density Index: k = Volume / Speed mapped to HCM LOS"""
+    if pd.isna(v) or pd.isna(q): return np.nan
+    k = q / max(v, 1)
+    if k <= 11: return 1
+    elif k <= 18: return 2
+    elif k <= 28: return 3
+    elif k <= 40: return 4
+    else: return 5
 
 def process_file(input_path):
     print(f"Processing {input_path}...")
@@ -30,17 +34,23 @@ def process_file(input_path):
         print(f"Skipping {input_path}: no 'v_kfz' column found.")
         return None
 
-    # Calculate category from the 4-hour average speed
-    df['category'] = df['v_kfz'].apply(get_category)
+    # Calculate category using Density if volume is available, else fallback to Speed
+    if 'q_kfz' in df.columns:
+        df['k_density'] = (df['q_kfz'] / df['v_kfz'].clip(lower=1)).round(2)
+        df['category'] = df.apply(lambda row: get_density_category(row['v_kfz'], row['q_kfz']), axis=1)
+        df['category_speed_fallback'] = df['v_kfz'].apply(get_speed_category)
+    else:
+        df['k_density'] = np.nan
+        df['q_kfz'] = np.nan
+        df['category'] = df['v_kfz'].apply(get_speed_category)
+        df['category_speed_fallback'] = df['category']
     
     # Select only the relevant label columns
+    cols = ['date', 'time_slot', 'v_kfz', 'q_kfz', 'k_density', 'category', 'category_speed_fallback']
     if 'devices' in df.columns:
-        result = df[['devices', 'date', 'time_slot', 'v_kfz', 'category']].copy()
-    else:
-        # For LT/FBT data without devices column
-        result = df[['date', 'time_slot', 'v_kfz', 'category']].copy()
+        cols.insert(0, 'devices')
         
-    return result
+    return df[cols].copy()
 
 def generate_daily_labels(input_dir, output_file):
     """
@@ -73,7 +83,7 @@ def generate_daily_labels(input_dir, output_file):
         print(f"\nSuccessfully saved labels to {output_file}")
 
         # Print summary
-        print("\nLabel Distribution (4-hour blocks per Category):")
+        print("\nLabel Distribution (30-Minutes blocks per Category):")
         print(final_df['category'].value_counts().sort_index())
         return final_df
     return None
