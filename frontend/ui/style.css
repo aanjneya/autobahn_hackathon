@@ -759,6 +759,7 @@ html, body {
   border-radius: 6px;
   padding: 8px 12px;
   flex-shrink: 0;
+  width: 210px;
 }
 .day-view__swatch {
   width: 22px;
