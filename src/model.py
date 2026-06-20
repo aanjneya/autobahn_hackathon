@@ -169,6 +169,42 @@ def forecast(train: pd.DataFrame, fc_input: pd.DataFrame) -> pd.DataFrame:
     out = scaffold[["datum", "strecke", "richtung", "time_slot"]].copy()
     out["pred_category"] = pred.astype(int)
 
+    def generate_reason(row):
+        import json
+        if row['pred_category'] < 2:
+            return json.dumps([], ensure_ascii=False)
+            
+        r = []
+        if row.get('is_ferien_by', 0) == 1 or row.get('is_ferien_at', 0) == 1:
+            r.append("Ferienverkehr")
+        elif row.get('is_long_weekend_by', 0) == 1 or row.get('is_brueckentag_by', 0) == 1:
+            r.append("Brückentag/Langes Wochenende")
+        elif row.get('is_feiertag_by', 0) == 1 or row.get('is_feiertag_at', 0) == 1:
+            r.append("Feiertag")
+            
+        if row.get('is_dosierung', 0) == 1:
+            r.append("Blockabfertigung Tirol")
+        if row.get('is_oktoberfest', 0) == 1:
+            r.append("Oktoberfest")
+            
+        if row.get('is_weekend', 0) == 1:
+            if "Ferienverkehr" not in r:
+                r.append("Wochenendverkehr")
+        else:
+            if row.get('is_friday', 0) == 1 and "13:00" <= str(row['time_slot']) <= "19:00":
+                r.append("Wochenendpendler")
+            elif "06:00" <= str(row['time_slot']) <= "09:00" or "15:00" <= str(row['time_slot']) <= "18:00":
+                r.append("Berufsverkehr")
+                
+        if not r:
+            r.append("Hohes Verkehrsaufkommen")
+            
+        return json.dumps(r, ensure_ascii=False)
+
+    scaffold_with_pred = scaffold.copy()
+    scaffold_with_pred["pred_category"] = pred.astype(int)
+    out["reason"] = scaffold_with_pred.apply(generate_reason, axis=1)
+
     # model.classes_ are 0-indexed labels; map columns back to category 1..5.
     for col_idx, label in enumerate(model.classes_):
         out[f"prob_{label_to_category(label)}"] = proba[:, col_idx].round(4)
