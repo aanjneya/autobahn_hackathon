@@ -51,6 +51,10 @@ def device_to_site(device: str) -> tuple[str, str] | None:
             return (f"A93_{name}", richtung)
     if "sbg" in sl or "mch" in sl:
         site = re.split(r"_(?:Mch|Sbg)", s, maxsplit=1, flags=re.IGNORECASE)[0]
+        # Extract the MQ part if it exists (e.g. FG1_Lang_9171_MQB25 -> MQB25)
+        mq_match = re.search(r'(MQ[a-zA-Z0-9]+)', site, flags=re.IGNORECASE)
+        if mq_match:
+            site = mq_match.group(1).upper()
         richtung = "Salzburg" if "sbg" in sl else "München"
         return (f"A8_{site}", richtung)
     return None
