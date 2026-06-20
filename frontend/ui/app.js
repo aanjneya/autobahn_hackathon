@@ -806,6 +806,16 @@ function initMap() {
 
 function updateMapRoutes() {
   initMap();
+
+  const el = document.getElementById('mapBox');
+  if (el && el.tagName === 'IMG') {
+    const newSrc = state.strecke === 'A8' ? 'a8.png' : 'a93.png';
+    if (el.getAttribute('src') !== newSrc) {
+      el.setAttribute('src', newSrc);
+    }
+    return;
+  }
+
   if (!mapState.map) return;
   const active = state.strecke;
 
