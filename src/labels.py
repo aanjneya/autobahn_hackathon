@@ -10,11 +10,11 @@ def get_category(v):
         return np.nan
     if v >= 80:
         return 1
-    elif v >= 60:
+    elif v >= 55:
         return 2
-    elif v >= 40:
+    elif v >= 35:
         return 3
-    elif v >= 25:
+    elif v >= 20:
         return 4
     else:
         return 5
