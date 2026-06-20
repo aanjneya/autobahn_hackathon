@@ -81,4 +81,13 @@ frontend/       React calendar viewer (fahrkalender.jsx) — in progress
 
 `LGBMClassifier` (multiclass, 5 classes, class-weighted for imbalance), trained on 2023–2024 data and validated on 2025 as a time-based holdout. Running `model.py` prints accuracy, macro-F1, a per-class report, a confusion matrix, and the top feature importances before writing the final forecast.
 
+## Web GUI (Frontend)
+
+To run the frontend GUI locally:
+
+1. Start the simple Python HTTP server:
+```bash
+python3 serve.py
+```
+2. Open your browser and navigate to `http://localhost:8080`.
 
