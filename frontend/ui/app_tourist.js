@@ -239,6 +239,7 @@ function parseCsv(text) {
   const iCat = headers.indexOf('pred_category');
   const iReason = headers.indexOf('reason');
   const iProbCols = [1, 2, 3, 4, 5].map(k => headers.indexOf(`prob_${k}`));
+  const iKfz = headers.indexOf('kfz_expected');
 
   // Falls schon im wide-Format (slot0..slot5)
   const iSlotCols = [0, 1, 2, 3, 4, 5].map(k => headers.indexOf(`slot${k}`));
@@ -247,6 +248,7 @@ function parseCsv(text) {
   const agg = {};
   const reasons = {};
   const confidence = {};
+  const kfz = {};
   for (let l = 1; l < lines.length; l++) {
     const cols = splitCsvLine(lines[l]);
     if (cols.length < 4) continue;
@@ -294,9 +296,18 @@ function parseCsv(text) {
           for (const r of rs) if (!bucket.includes(r)) bucket.push(r);
         }
       }
+
+      if (iKfz >= 0) {
+        const val = parseInt(cols[iKfz]);
+        if (!isNaN(val)) {
+          if (!kfz[key]) kfz[key] = [0, 0, 0, 0, 0, 0];
+          if (val > kfz[key][block]) kfz[key][block] = val;
+        }
+      }
     }
   }
   state.data = agg;
+  state.kfz = kfz;
   state.reasons = reasons;
   state.confidence = confidence;
 }
@@ -490,6 +501,7 @@ function showReasonPopover(anchorEl, ds, k) {
   const key = `${ds}|${state.strecke}|${state.richtung}`;
   const rs = (state.reasons[key] || [])[k] || [];
   const conf = (state.confidence[key] || [])[k];
+  const kfzVal = (state.kfz && state.kfz[key]) ? state.kfz[key][k] : null;
 
   pop.innerHTML = '';
 
@@ -534,6 +546,21 @@ function showReasonPopover(anchorEl, ds, k) {
     confEl.appendChild(bar);
     confEl.appendChild(val);
     pop.appendChild(confEl);
+  }
+
+  if (kfzVal) {
+    const kfzEl = document.createElement('div');
+    kfzEl.className = 'reason-popover__confidence';
+    kfzEl.innerHTML = '<span>Volumen (Peak):</span><span style="margin-left:auto; font-weight:bold;">~' + kfzVal + ' Kfz/h</span>';
+    pop.appendChild(kfzEl);
+  }
+
+  const speedMap = {1: "> 80 km/h", 2: "60 - 80 km/h", 3: "40 - 60 km/h", 4: "20 - 40 km/h", 5: "< 20 km/h"};
+  if (cat > 0) {
+    const spdEl = document.createElement('div');
+    spdEl.className = 'reason-popover__confidence';
+    spdEl.innerHTML = '<span>Ø Geschwindigkeit:</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
+    pop.appendChild(spdEl);
   }
 
   if (rs.length) {

@@ -166,7 +166,8 @@ def forecast(train: pd.DataFrame, fc_input: pd.DataFrame) -> pd.DataFrame:
     proba = model.predict_proba(X_fc)
     pred = label_to_category(np.asarray(model.classes_)[proba.argmax(axis=1)])
 
-    out = scaffold[["datum", "strecke", "richtung", "time_slot"]].copy()
+    out = scaffold[["datum", "strecke", "richtung", "time_slot", "kfz_expected"]].copy()
+    out["kfz_expected"] = out["kfz_expected"].round(0).astype(int) # Round vehicles to whole numbers
     out["pred_category"] = pred.astype(int)
 
     def generate_reason(row):
