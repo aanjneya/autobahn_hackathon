@@ -14,13 +14,13 @@ def get_speed_category(v):
     else: return 5
 
 def get_density_category(v, q):
-    """Fuzzy Logic Density Index: k = Volume / Speed mapped to HCM LOS"""
+    """Fuzzy Logic Density Index: k = Volume / Speed mapped to metric HCM LOS"""
     if pd.isna(v) or pd.isna(q): return np.nan
     k = q / max(v, 1)
     if k <= 11: return 1
-    elif k <= 18: return 2
-    elif k <= 28: return 3
-    elif k <= 40: return 4
+    elif k <= 16: return 2
+    elif k <= 22: return 3
+    elif k <= 28: return 4
     else: return 5
 
 def process_file(input_path):

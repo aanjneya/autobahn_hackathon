@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
-FORECAST = ROOT / "output" / "forecast.csv"
+FORECAST = ROOT / "output" / "forecast_2026.csv"
 PLOTS = ROOT / "output" / "plots"
 
 WEEKDAYS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"]
