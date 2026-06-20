@@ -33,7 +33,7 @@ LT_FBT_DIR = CLEAN / "lt_und_fbt"
 TRAFFIC_1MIN_DIR = CLEAN / "2023-2025_1min_2+0_v"  # fallback source if DAUZ missing
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from merge import device_to_site as device_to_route  # noqa: E402  (same mapping as merge.py)
+from merge import device_to_site as device_to_route  # noqa: E402
 
 
 def slot_to_4h_bucket(slot: str) -> str:
@@ -160,6 +160,73 @@ def build_dauz_climatology() -> pd.DataFrame:
     return grp
 
 
+_SLOT_4H_CENTERS = {  # Mittelpunkt jedes 4h-Buckets in Stunden
+    "00-04": 2.0, "04-08": 6.0, "08-12": 10.0,
+    "12-16": 14.0, "16-20": 18.0, "20-24": 22.0,
+}
+
+
+def _slot_center_hour(slot: str) -> float:
+    """Mittelpunkt eines 30-Min-Slots, z. B. '17:00-17:30' -> 17.25."""
+    start = slot.split("-")[0]
+    h, m = start.split(":")
+    return int(h) + (int(m) + 15) / 60.0
+
+
+def build_dauz_climatology_30min(
+    dauz_clim_4h: pd.DataFrame,
+) -> pd.DataFrame | None:
+    """Per (strecke, richtung, month, weekday, time_slot).
+
+    Wird durch periodische lineare Interpolation der 4h-Climatology auf
+    die 48 Halbstunden-Slots erzeugt. Damit haben benachbarte Slots eine
+    glatte Kurve statt eines Treppenprofils.
+    """
+    from merge import TIME_SLOTS  # lokal, vermeidet Kreis-Import beim Modul-Load
+
+    if dauz_clim_4h is None or dauz_clim_4h.empty:
+        return None
+
+    anchor_hours = np.array(
+        [_SLOT_4H_CENTERS[s] for s in ["00-04", "04-08", "08-12",
+                                       "12-16", "16-20", "20-24"]]
+    )
+    # Periodisch: 22:00 < 02:00+24 < ...
+    xp = np.concatenate([anchor_hours - 24, anchor_hours, anchor_hours + 24])
+    slot_centers = np.array([_slot_center_hour(s) for s in TIME_SLOTS])
+    value_cols = ["kfz_expected", "sv_expected", "sv_share_expected"]
+
+    out_rows = []
+    for keys, sub in dauz_clim_4h.groupby(
+        ["strecke", "richtung", "month", "weekday"], sort=False,
+    ):
+        sub = sub.set_index("slot_4h").reindex(
+            ["00-04", "04-08", "08-12", "12-16", "16-20", "20-24"]
+        )
+        interp = {}
+        for col in value_cols:
+            vals = sub[col].to_numpy(dtype=float)
+            if np.isnan(vals).all():
+                interp[col] = np.zeros(len(TIME_SLOTS))
+                continue
+            # Lücken zwischen Buckets ggf. mit Bucket-Mittelwert füllen.
+            mean = np.nanmean(vals)
+            vals = np.where(np.isnan(vals), mean, vals)
+            yp = np.concatenate([vals, vals, vals])  # periodisch
+            interp[col] = np.interp(slot_centers, xp, yp)
+        strecke, richtung, month, weekday = keys
+        for i, slot in enumerate(TIME_SLOTS):
+            out_rows.append({
+                "strecke": strecke,
+                "richtung": richtung,
+                "month": month,
+                "weekday": weekday,
+                "time_slot": slot,
+                **{c: interp[c][i] for c in value_cols},
+            })
+    return pd.DataFrame(out_rows)
+
+
 def build_weather_climatology() -> pd.DataFrame:
     """Per (month, weekday, slot_4h)
     -> lt_expected, fbt_expected, fbt_below_0_prob."""
@@ -187,17 +254,41 @@ def _add_lookup_keys(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def enrich(df: pd.DataFrame, dauz_clim: pd.DataFrame,
-           weather_clim: pd.DataFrame) -> pd.DataFrame:
-    cols_to_drop = ["kfz_expected", "sv_expected", "sv_share_expected", 
-                    "lt_expected", "fbt_expected", "fbt_below_0_prob", "slot_4h"]
+           weather_clim: pd.DataFrame,
+           dauz_clim_30min: pd.DataFrame | None = None) -> pd.DataFrame:
+    traffic_cols = ["kfz_expected", "sv_expected", "sv_share_expected"]
+    cols_to_drop = traffic_cols + ["lt_expected", "fbt_expected",
+                                   "fbt_below_0_prob", "slot_4h"]
     df = df.drop(columns=[c for c in cols_to_drop if c in df.columns])
-    
+
     df = _add_lookup_keys(df)
-    df = df.merge(
-        dauz_clim,
-        on=["strecke", "richtung", "month", "weekday", "slot_4h"],
-        how="left",
-    )
+
+    if dauz_clim_30min is not None and not dauz_clim_30min.empty:
+        df = df.merge(
+            dauz_clim_30min,
+            on=["strecke", "richtung", "month", "weekday", "time_slot"],
+            how="left",
+        )
+        # Fehlende 30-Min-Zellen mit 4h-Climatology auffüllen.
+        coarse = dauz_clim.rename(columns={
+            c: c + "_4h" for c in traffic_cols if c in dauz_clim.columns
+        })
+        df = df.merge(
+            coarse,
+            on=["strecke", "richtung", "month", "weekday", "slot_4h"],
+            how="left",
+        )
+        for c in traffic_cols:
+            if c in df.columns and (c + "_4h") in df.columns:
+                df[c] = df[c].fillna(df[c + "_4h"])
+                df = df.drop(columns=[c + "_4h"])
+    else:
+        df = df.merge(
+            dauz_clim,
+            on=["strecke", "richtung", "month", "weekday", "slot_4h"],
+            how="left",
+        )
+
     df = df.merge(
         weather_clim,
         on=["month", "weekday", "slot_4h"],
@@ -209,6 +300,8 @@ def enrich(df: pd.DataFrame, dauz_clim: pd.DataFrame,
     new_cols += [c for c in weather_clim.columns if c not in
                  ("month", "weekday", "slot_4h")]
     for c in new_cols:
+        if c not in df.columns:
+            continue
         med = df[c].median()
         if pd.isna(med):
             med = 0.0
@@ -222,10 +315,17 @@ def main() -> None:
     print("Building DAUZ climatology...")
     try:
         dauz_clim = build_dauz_climatology()
-        print(f"  -> {len(dauz_clim)} (route, month, weekday, slot) cells")
+        print(f"  -> {len(dauz_clim)} (route, month, weekday, slot_4h) cells")
     except FileNotFoundError as e:
         print(f"  [skip] {e}")
         dauz_clim = None
+
+    print("Building 30-min traffic climatology (interpolated from 4h)...")
+    dauz_clim_30min = build_dauz_climatology_30min(dauz_clim)
+    if dauz_clim_30min is not None:
+        print(f"  -> {len(dauz_clim_30min)} (route, month, weekday, time_slot) cells")
+    else:
+        print("  [skip] no 1min traffic data available")
 
     print("Building weather climatology...")
     try:
@@ -257,7 +357,7 @@ def main() -> None:
             continue
         df = pd.read_csv(path)
         before = df.shape[1]
-        df = enrich(df, dauz_clim, weather_clim)
+        df = enrich(df, dauz_clim, weather_clim, dauz_clim_30min)
         df.to_csv(path, index=False)
         added = df.shape[1] - before
         print(f"  {fname}: +{added} cols, {len(df)} rows -> {path}")

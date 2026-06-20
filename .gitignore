@@ -8,6 +8,7 @@ venv/
 data/raw/
 output/plots
 data/rawdata
+data/clean
 # Generierte ML-Tabellen > GitHubs 100 MB Limit
 data/processed/*
 
