@@ -75,6 +75,7 @@ html, body {
 .ctrl-left {
   grid-column: 1 / 3;
   min-width: 0;
+  align-self: center;
 }
 .ctrl-left .toggle { margin-bottom: 10px; }
 .ctrl-left .monthnav { margin-bottom: 0; }
