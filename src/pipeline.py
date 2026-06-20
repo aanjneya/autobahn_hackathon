@@ -4,19 +4,15 @@ import argparse
 import os
 import glob
 
-def assign_time_slot(hour):
-    if 0 <= hour < 4:
-        return "00-04"
-    elif 4 <= hour < 8:
-        return "04-08"
-    elif 8 <= hour < 12:
-        return "08-12"
-    elif 12 <= hour < 16:
-        return "12-16"
-    elif 16 <= hour < 20:
-        return "16-20"
+def assign_time_slot(dt):
+    hour_str = f"{dt.hour:02d}"
+    if dt.minute < 30:
+        return f"{hour_str}:00-{hour_str}:30"
     else:
-        return "20-24"
+        next_hour_str = f"{(dt.hour + 1) % 24:02d}"
+        if dt.hour == 23:
+            return "23:30-00:00"
+        return f"{hour_str}:30-{next_hour_str}:00"
 
 def process_data(input_path, output_path, dataset_type="1min_traffic"):
     print(f"Loading data from {input_path} as type '{dataset_type}'...")
@@ -32,7 +28,7 @@ def process_data(input_path, output_path, dataset_type="1min_traffic"):
         df[vol_cols] = df.groupby('devices')[vol_cols].transform(lambda x: x.interpolate(method='linear', limit=15))
         df[vol_cols] = df[vol_cols].fillna(0)
         df['date'] = df['datetime'].dt.strftime('%Y-%m-%d')
-        df['time_slot'] = df['datetime'].dt.hour.apply(assign_time_slot)
+        df['time_slot'] = df['datetime'].apply(assign_time_slot)
         agg_funcs = {'q_kfz': 'sum', 'q_lkw': 'sum', 'q_pkw': 'sum', 'v_kfz': 'mean'}
         aggregated = df.groupby(['devices', 'date', 'time_slot']).agg(agg_funcs).reset_index()
         aggregated['v_kfz'] = aggregated['v_kfz'].round(2)
@@ -46,10 +42,15 @@ def process_data(input_path, output_path, dataset_type="1min_traffic"):
         # Interpolate only 1 hour (limit=1) before zeroing out
         df[numeric_cols] = df.groupby('devices')[numeric_cols].transform(lambda x: x.interpolate(method='linear', limit=1))
         df[numeric_cols] = df[numeric_cols].fillna(0)
-        df['date'] = df['datetime'].dt.strftime('%Y-%m-%d')
-        df['time_slot'] = df['datetime'].dt.hour.apply(assign_time_slot)
+        df['kfz_h'] = df['kfz_h'] / 2.0
+        df['sv_h'] = df['sv_h'] / 2.0
+        df_second_half = df.copy()
+        df_second_half['datetime'] = df_second_half['datetime'] + pd.Timedelta(minutes=30)
+        df_expanded = pd.concat([df, df_second_half], ignore_index=True)
+        df_expanded['date'] = df_expanded['datetime'].dt.strftime('%Y-%m-%d')
+        df_expanded['time_slot'] = df_expanded['datetime'].apply(assign_time_slot)
         agg_funcs = {'kfz_h': 'sum', 'sv_h': 'sum'}
-        aggregated = df.groupby(['devices', 'date', 'time_slot']).agg(agg_funcs).reset_index()
+        aggregated = df_expanded.groupby(['devices', 'date', 'time_slot']).agg(agg_funcs).reset_index()
         
     elif dataset_type == "lt_fbt":
         # Check if t_start is full datetime
@@ -72,7 +73,7 @@ def process_data(input_path, output_path, dataset_type="1min_traffic"):
         df = df.dropna(subset=[metric_col])
         
         df['date'] = df['datetime'].dt.strftime('%Y-%m-%d')
-        df['time_slot'] = df['datetime'].dt.hour.apply(assign_time_slot)
+        df['time_slot'] = df['datetime'].apply(assign_time_slot)
         
         agg_funcs = {metric_col: 'mean'}
         aggregated = df.groupby(['date', 'time_slot']).agg(agg_funcs).reset_index()
