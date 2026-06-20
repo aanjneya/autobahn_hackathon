@@ -658,6 +658,26 @@ html, body {
 }
 .day-view__back:hover { background: #f3f5f8; border-color: #003466; }
 
+.day-view__daynav {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.day-view__navbtn {
+  background: #ffffff;
+  border: 1px solid #cfd4da;
+  color: #1a1a1a;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.day-view__navbtn:hover { background: #f3f5f8; border-color: #003466; }
+
 .reason-popover__more {
   display: block;
   width: 100%;

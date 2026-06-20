@@ -793,6 +793,13 @@ function showDayDetailView(ds) {
   const speedMap = { 1: '> 100 km/h', 2: '80–100 km/h', 3: '60–80 km/h', 4: '40–60 km/h', 5: '< 40 km/h' };
   const txt = ROUTE_TEXT[`${state.strecke}|${state.richtung}`] || { title: '', sub: '' };
 
+  const shiftDate = (delta) => {
+    const [y, m, d] = ds.split('-').map(Number);
+    const dt = new Date(y, m - 1, d);
+    dt.setDate(dt.getDate() + delta);
+    return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
+  };
+
   view.innerHTML = `
     <div class="day-view__head">
       <button class="day-view__back" type="button">← Zurück zur Übersicht</button>
@@ -808,10 +815,20 @@ function showDayDetailView(ds) {
         </div>
       </div>
     </div>
+    <div class="day-view__daynav">
+      <button class="day-view__navbtn" type="button" data-dir="-1">‹ Vorheriger Tag</button>
+      <button class="day-view__navbtn" type="button" data-dir="1">Nächster Tag ›</button>
+    </div>
     <div class="day-view__slots"></div>
     <div class="day-view__hourly"></div>
   `;
   view.querySelector('.day-view__back').addEventListener('click', closeDayView);
+  view.querySelectorAll('.day-view__navbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const newDs = shiftDate(parseInt(btn.dataset.dir, 10));
+      showDayDetailView(newDs);
+    });
+  });
 
   const slotsCt = view.querySelector('.day-view__slots');
   for (let k = 0; k < 6; k++) {
