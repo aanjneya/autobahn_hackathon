@@ -7,31 +7,18 @@
 // Konstanten
 // ────────────────────────────────────────────────────────────
 
-const MONTHS = [
-  'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
-];
-const DOW_SHORT = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
-const SLOT_LABELS = ['00-04 Uhr', '04-08 Uhr', '08-12 Uhr', '12-16 Uhr', '16-20 Uhr', '20-24 Uhr'];
+let MONTHS = (typeof I18n !== 'undefined') ? I18n.get('months').slice() : ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+let DOW_SHORT = (typeof I18n !== 'undefined') ? I18n.get('dow_short').slice() : ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+let SLOT_LABELS = (typeof I18n !== 'undefined') ? I18n.get('slot_labels').slice() : ['00-04 Uhr', '04-08 Uhr', '08-12 Uhr', '12-16 Uhr', '16-20 Uhr', '20-24 Uhr'];
 
-const ROUTE_TEXT = {
-  'A93|Sued': {
-    title: 'A93 RICHTUNG SÜDEN',
-    sub: 'Rosenheim, München, Deutschland → Brenner, Italien – Kufstein, Innsbruck, Österreich'
-  },
-  'A93|Nord': {
-    title: 'A93 RICHTUNG NORDEN',
-    sub: 'Kufstein, Innsbruck, Österreich → Rosenheim, München, Deutschland'
-  },
-  'A8|Ost': {
-    title: 'A8 RICHTUNG OSTEN',
-    sub: 'München → Salzburg'
-  },
-  'A8|West': {
-    title: 'A8 RICHTUNG WESTEN',
-    sub: 'Salzburg → München'
-  }
-};
+function ROUTE_TEXT_FOR(strecke, richtung) {
+  const map = { 'A93|Sued': 'route.a93_sued', 'A93|Nord': 'route.a93_nord', 'A8|Ost': 'route.a8_ost', 'A8|West': 'route.a8_west' };
+  const base = map[strecke + '|' + richtung];
+  if (!base) return { title: '', sub: '' };
+  const t = (typeof I18n !== 'undefined') ? I18n.t : (k => k);
+  return { title: t(base + '.title'), sub: t(base + '.sub') };
+}
+let ROUTE_TEXT = new Proxy({}, { get: (_, key) => { const parts = String(key).split('|'); return ROUTE_TEXT_FOR(parts[0], parts[1]); } });
 
 // CSV richtung → kanonische Richtung (Sued/Nord/Ost/West)
 const RICHTUNG_MAP = {
@@ -126,14 +113,7 @@ const state = {
 };
 
 // Kategorie → Klartext (gleiche Bezeichnungen wie die Legende im Footer).
-const CAT_LABELS = {
-  0: 'Keine Prognose',
-  1: 'Flüssiger Verkehr',
-  2: 'Verstärkter Verkehr',
-  3: 'Starker Verkehr',
-  4: 'Sehr starker Verkehr',
-  5: 'Stillstand'
-};
+let CAT_LABELS = (typeof I18n !== 'undefined') ? Object.assign({}, I18n.get('cat_labels')) : {0:'Keine Prognose',1:'Flüssiger Verkehr',2:'Verstärkter Verkehr',3:'Starker Verkehr',4:'Sehr starker Verkehr',5:'Stillstand'};
 
 const BASE_YEAR = 2026;
 const MIN_INDEX = 0;
@@ -179,9 +159,12 @@ function setupEvents() {
 }
 
 function setStandDate() {
-  const d = new Date();
-  const s = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
-  document.getElementById('stand').textContent = `Stand ${s}`;
+  const lang = (typeof I18n !== 'undefined') ? I18n.lang() : 'de';
+  const locale = lang === 'en' ? 'en-GB' : 'de-DE';
+  const s = new Date().toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric' });
+  const raw = (typeof I18n !== 'undefined') ? I18n.t('footer.stand') : 'Stand –';
+  const prefix = raw.replace(/[–\-]\s*$/, '').trim();
+  document.getElementById('stand').textContent = prefix + ' ' + s;
 }
 
 // ────────────────────────────────────────────────────────────
@@ -572,7 +555,7 @@ function showReasonPopover(anchorEl, ds, k) {
 
   const close = document.createElement('button');
   close.className = 'reason-popover__close';
-  close.setAttribute('aria-label', 'Schließen');
+  close.setAttribute('aria-label', (typeof I18n !== 'undefined') ? I18n.t('popover.close') : 'Schließen');
   close.textContent = '×';
   close.addEventListener('click', closeReasonPopover);
   pop.appendChild(close);
@@ -597,7 +580,7 @@ function showReasonPopover(anchorEl, ds, k) {
     const confEl = document.createElement('div');
     confEl.className = 'reason-popover__confidence';
     const confLbl = document.createElement('span');
-    confLbl.textContent = 'Konfidenz';
+    confLbl.textContent = (typeof I18n !== 'undefined') ? I18n.t('popover.confidence') : 'Konfidenz';
     const bar = document.createElement('span');
     bar.className = 'reason-popover__confidence-bar';
     const fill = document.createElement('span');
@@ -616,7 +599,7 @@ function showReasonPopover(anchorEl, ds, k) {
   if (kfzVal) {
     const kfzEl = document.createElement('div');
     kfzEl.className = 'reason-popover__confidence';
-    kfzEl.innerHTML = '<span>Volumen (Peak):</span><span style="margin-left:auto; font-weight:bold;">~' + kfzVal + ' Kfz/h</span>';
+    kfzEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.volume') : 'Volumen (Peak):') + '</span><span style="margin-left:auto; font-weight:bold;">~' + kfzVal + ' ' + ((typeof I18n !== 'undefined') ? I18n.t('popover.kfz_per_h') : 'Kfz/h') + '</span>';
     pop.appendChild(kfzEl);
   }
 
@@ -624,7 +607,7 @@ function showReasonPopover(anchorEl, ds, k) {
   if (cat > 0) {
     const spdEl = document.createElement('div');
     spdEl.className = 'reason-popover__confidence';
-    spdEl.innerHTML = '<span>Ø Geschwindigkeit:</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
+    spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Ø Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
     pop.appendChild(spdEl);
   }
 
@@ -653,8 +636,8 @@ function showReasonPopover(anchorEl, ds, k) {
     const note = document.createElement('div');
     note.className = 'reason-popover__note';
     note.textContent = cat === 0
-      ? 'Keine Prognose verfügbar.'
-      : 'Kein besonderer Grund – normaler Verkehr.';
+      ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast') : 'Keine Prognose verfügbar.')
+      : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason') : 'Kein besonderer Grund – normaler Verkehr.');
     pop.appendChild(note);
   }
 
@@ -664,7 +647,7 @@ function showReasonPopover(anchorEl, ds, k) {
     mapContainer.style.marginTop = '12px';
     
     const mapLbl = document.createElement('div');
-    mapLbl.textContent = 'Verlauf (30-Minuten Takt):';
+    mapLbl.textContent = (typeof I18n !== 'undefined') ? I18n.t('dayview.map_label') : 'Verlauf (30-Minuten Takt):';
     mapLbl.style.fontSize = '12px';
     mapLbl.style.color = '#888';
     mapLbl.style.marginBottom = '4px';
@@ -739,3 +722,16 @@ function showReasonPopover(anchorEl, ds, k) {
 }
 
 // Map logic moved to sidebar.js
+
+
+// ── i18n: re-localize dynamic content on language change ───────
+if (typeof I18n !== 'undefined') {
+  I18n.onChange(function () {
+    MONTHS = I18n.get('months').slice();
+    DOW_SHORT = I18n.get('dow_short').slice();
+    SLOT_LABELS = I18n.get('slot_labels').slice();
+    CAT_LABELS = Object.assign({}, I18n.get('cat_labels'));
+    try { setStandDate(); } catch (_) {}
+    try { render(); } catch (_) {}
+  });
+}

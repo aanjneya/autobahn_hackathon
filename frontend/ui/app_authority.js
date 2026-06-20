@@ -7,31 +7,18 @@
 // Konstanten
 // ────────────────────────────────────────────────────────────
 
-const MONTHS = [
-  'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
-];
-const DOW_SHORT = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
-const SLOT_LABELS = ['00-04 Uhr', '04-08 Uhr', '08-12 Uhr', '12-16 Uhr', '16-20 Uhr', '20-24 Uhr'];
+let MONTHS = (typeof I18n !== 'undefined') ? I18n.get('months').slice() : ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+let DOW_SHORT = (typeof I18n !== 'undefined') ? I18n.get('dow_short').slice() : ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+let SLOT_LABELS = (typeof I18n !== 'undefined') ? I18n.get('slot_labels').slice() : ['00-04 Uhr', '04-08 Uhr', '08-12 Uhr', '12-16 Uhr', '16-20 Uhr', '20-24 Uhr'];
 
-const ROUTE_TEXT = {
-  'A93|Sued': {
-    title: 'A93 RICHTUNG SÜDEN',
-    sub: 'Rosenheim, München, Deutschland → Brenner, Italien – Kufstein, Innsbruck, Österreich'
-  },
-  'A93|Nord': {
-    title: 'A93 RICHTUNG NORDEN',
-    sub: 'Kufstein, Innsbruck, Österreich → Rosenheim, München, Deutschland'
-  },
-  'A8|Ost': {
-    title: 'A8 RICHTUNG OSTEN',
-    sub: 'München → Salzburg'
-  },
-  'A8|West': {
-    title: 'A8 RICHTUNG WESTEN',
-    sub: 'Salzburg → München'
-  }
-};
+function ROUTE_TEXT_FOR(strecke, richtung) {
+  const map = { 'A93|Sued': 'route.a93_sued', 'A93|Nord': 'route.a93_nord', 'A8|Ost': 'route.a8_ost', 'A8|West': 'route.a8_west' };
+  const base = map[strecke + '|' + richtung];
+  if (!base) return { title: '', sub: '' };
+  const t = (typeof I18n !== 'undefined') ? I18n.t : (k => k);
+  return { title: t(base + '.title'), sub: t(base + '.sub') };
+}
+let ROUTE_TEXT = new Proxy({}, { get: (_, key) => { const parts = String(key).split('|'); return ROUTE_TEXT_FOR(parts[0], parts[1]); } });
 
 // CSV richtung → kanonische Richtung (Sued/Nord/Ost/West)
 const RICHTUNG_MAP = {
@@ -126,14 +113,7 @@ const state = {
 };
 
 // Kategorie → Klartext (gleiche Bezeichnungen wie die Legende im Footer).
-const CAT_LABELS = {
-  0: 'Keine Prognose',
-  1: 'Flüssiger Verkehr',
-  2: 'Verstärkter Verkehr',
-  3: 'Starker Verkehr',
-  4: 'Sehr starker Verkehr',
-  5: 'Stillstand'
-};
+let CAT_LABELS = (typeof I18n !== 'undefined') ? Object.assign({}, I18n.get('cat_labels')) : {0:'Keine Prognose',1:'Flüssiger Verkehr',2:'Verstärkter Verkehr',3:'Starker Verkehr',4:'Sehr starker Verkehr',5:'Stillstand'};
 
 const BASE_YEAR = 2026;
 const MIN_INDEX = 0;
@@ -165,13 +145,16 @@ function setupEvents() {
       state.richtung = btn.dataset.richtung;
       if (typeof NavState !== 'undefined') NavState.save(state.strecke, state.richtung);
       render();
+      if (isDayViewOpen() && state.currentDayDs) showDayDetailView(state.currentDayDs);
     });
   });
   document.getElementById('navPrev').addEventListener('click', () => {
+    if (isDayViewOpen()) closeDayView();
     state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 1);
     render();
   });
   document.getElementById('navNext').addEventListener('click', () => {
+    if (isDayViewOpen()) closeDayView();
     state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 1);
     render();
   });
@@ -179,9 +162,12 @@ function setupEvents() {
 }
 
 function setStandDate() {
-  const d = new Date();
-  const s = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
-  document.getElementById('stand').textContent = `Stand ${s}`;
+  const lang = (typeof I18n !== 'undefined') ? I18n.lang() : 'de';
+  const locale = lang === 'en' ? 'en-GB' : 'de-DE';
+  const s = new Date().toLocaleDateString(locale, { day: '2-digit', month: '2-digit', year: 'numeric' });
+  const raw = (typeof I18n !== 'undefined') ? I18n.t('footer.stand') : 'Stand –';
+  const prefix = raw.replace(/[–\-]\s*$/, '').trim();
+  document.getElementById('stand').textContent = prefix + ' ' + s;
 }
 
 // ────────────────────────────────────────────────────────────
@@ -572,7 +558,7 @@ function showReasonPopover(anchorEl, ds, k) {
 
   const close = document.createElement('button');
   close.className = 'reason-popover__close';
-  close.setAttribute('aria-label', 'Schließen');
+  close.setAttribute('aria-label', (typeof I18n !== 'undefined') ? I18n.t('popover.close') : 'Schließen');
   close.textContent = '×';
   close.addEventListener('click', closeReasonPopover);
   pop.appendChild(close);
@@ -597,7 +583,7 @@ function showReasonPopover(anchorEl, ds, k) {
     const confEl = document.createElement('div');
     confEl.className = 'reason-popover__confidence';
     const confLbl = document.createElement('span');
-    confLbl.textContent = 'Konfidenz';
+    confLbl.textContent = (typeof I18n !== 'undefined') ? I18n.t('popover.confidence') : 'Konfidenz';
     const bar = document.createElement('span');
     bar.className = 'reason-popover__confidence-bar';
     const fill = document.createElement('span');
@@ -616,7 +602,7 @@ function showReasonPopover(anchorEl, ds, k) {
   if (kfzVal) {
     const kfzEl = document.createElement('div');
     kfzEl.className = 'reason-popover__confidence';
-    kfzEl.innerHTML = '<span>Volumen (Peak):</span><span style="margin-left:auto; font-weight:bold;">~' + kfzVal + ' Kfz/h</span>';
+    kfzEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.volume') : 'Volumen (Peak):') + '</span><span style="margin-left:auto; font-weight:bold;">~' + kfzVal + ' ' + ((typeof I18n !== 'undefined') ? I18n.t('popover.kfz_per_h') : 'Kfz/h') + '</span>';
     pop.appendChild(kfzEl);
   }
 
@@ -624,7 +610,7 @@ function showReasonPopover(anchorEl, ds, k) {
   if (cat > 0) {
     const spdEl = document.createElement('div');
     spdEl.className = 'reason-popover__confidence';
-    spdEl.innerHTML = '<span>Ø Geschwindigkeit:</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
+    spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Ø Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
     pop.appendChild(spdEl);
   }
 
@@ -663,8 +649,8 @@ function showReasonPopover(anchorEl, ds, k) {
     const note = document.createElement('div');
     note.className = 'reason-popover__note';
     note.textContent = cat === 0
-      ? 'Keine Prognose verfügbar.'
-      : 'Kein besonderer Grund – normaler Verkehr.';
+      ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast') : 'Keine Prognose verfügbar.')
+      : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason') : 'Kein besonderer Grund – normaler Verkehr.');
     pop.appendChild(note);
   }
 
@@ -674,7 +660,7 @@ function showReasonPopover(anchorEl, ds, k) {
     mapContainer.style.marginTop = '12px';
     
     const mapLbl = document.createElement('div');
-    mapLbl.textContent = 'Verlauf (30-Minuten Takt):';
+    mapLbl.textContent = (typeof I18n !== 'undefined') ? I18n.t('dayview.map_label') : 'Verlauf (30-Minuten Takt):';
     mapLbl.style.fontSize = '11px';
     mapLbl.style.color = '#888';
     mapLbl.style.marginBottom = '4px';
@@ -768,10 +754,14 @@ function getDayView() {
   return dayViewEl;
 }
 function closeDayView() {
+  state.currentDayDs = null;
   if (!dayViewEl) return;
   dayViewEl.hidden = true;
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = '';
+}
+function isDayViewOpen() {
+  return !!(dayViewEl && !dayViewEl.hidden);
 }
 function escapeHtml(s) {
   return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -779,6 +769,7 @@ function escapeHtml(s) {
 
 function showDayDetailView(ds) {
   closeReasonPopover();
+  state.currentDayDs = ds;
   const view = getDayView();
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = 'none';
@@ -845,13 +836,13 @@ function showDayDetailView(ds) {
         <div class="day-view__slot-cat">${CAT_LABELS[cat]}</div>
       </div>
       <div class="day-view__slot-stats">
-        ${cat > 0 ? `<div><span>Ø Geschwindigkeit</span><b>${speedMap[cat]}</b></div>` : ''}
-        ${kfz ? `<div><span>Volumen (Peak)</span><b>~${kfz} Kfz/h</b></div>` : ''}
-        ${conf != null ? `<div><span>Konfidenz</span><b>${Math.round(conf * 100)} %</b></div>` : ''}
+        ${cat > 0 ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.speed').replace(/:$/, '') : 'Ø Geschwindigkeit'}</span><b>${speedMap[cat]}</b></div>` : ''}
+        ${kfz ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.volume').replace(/:$/, '') : 'Volumen (Peak)'}</span><b>~${kfz} ${(typeof I18n !== 'undefined') ? I18n.t('popover.kfz_per_h') : 'Kfz/h'}</b></div>` : ''}
+        ${conf != null ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.confidence') : 'Konfidenz'}</span><b>${Math.round(conf * 100)} %</b></div>` : ''}
       </div>
-      <div class="day-view__slot-reasons-label">Einflussfaktoren</div>
+      <div class="day-view__slot-reasons-label">${(typeof I18n !== 'undefined') ? I18n.t('dayview.factors') : 'Einflussfaktoren'}</div>
       <ul class="day-view__slot-reasons">
-        ${reasons.length ? reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? 'Keine Prognose' : 'Kein besonderer Grund') + '</li>'}
+        ${reasons.length ? reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('') : '<li class="day-view__slot-note">' + (cat === 0 ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast').replace(/\.$/, '') : 'Keine Prognose') : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason').split(/[–—.]/)[0].trim() : 'Kein besonderer Grund')) + '</li>'}
       </ul>
     `;
     slotsCt.appendChild(card);
@@ -866,17 +857,27 @@ function showDayDetailView(ds) {
     allHours.sort((a, b) => a.slot.localeCompare(b.slot));
     const colors = { 1: '#95c258', 2: '#cfdb1f', 3: '#efa82a', 4: '#e8624a', 5: '#b3271a' };
     const hCt = view.querySelector('.day-view__hourly');
-    hCt.innerHTML = '<div class="day-view__hourly-label">30-Minuten-Verlauf (gesamter Tag)</div><div class="day-view__hourly-bars"></div><div class="day-view__hourly-ticks"></div>';
+    hCt.innerHTML = '<div class="day-view__hourly-label">' + ((typeof I18n !== "undefined") ? I18n.t("dayview.hourly_label") : "30-Minuten-Verlauf (gesamter Tag)") + '</div><div class="day-view__hourly-bars"></div><div class="day-view__hourly-ticks"></div>';
     const bars = hCt.querySelector('.day-view__hourly-bars');
     const ticks = hCt.querySelector('.day-view__hourly-ticks');
     const maxVal = Math.max(...allHours.map(h => h.val || 0)) || 1;
-    const minVal = Math.min(...allHours.filter(h => h.val > 0).map(h => h.val)) || 0;
-    const range = Math.max(1, maxVal - minVal);
+    const positiveVals = allHours.filter(h => h.val > 0).map(h => h.val);
+    const minVal = positiveVals.length ? Math.min(...positiveVals) : 0;
+    const kfzRange = maxVal - minVal;
+    // Fallback: wenn kfz_expected im Tagesverlauf konstant ist (z. B. A8),
+    // skaliere die Balkenhöhe stattdessen nach Verkehrskategorie (1–5).
+    const useCatScale = kfzRange < Math.max(1, maxVal * 0.05);
+    const range = Math.max(1, kfzRange);
     for (const h of allHours) {
       const v = h.val || 0;
-      // Normalisiert auf [10%, 95%] mit linearer Skalierung zwischen min und max.
-      const norm = v > 0 ? (v - minVal) / range : 0;
-      const height = v > 0 ? Math.round(10 + norm * 85) : 4;
+      let height;
+      if (useCatScale) {
+        const c = Math.max(0, Math.min(5, h.cat || 0));
+        height = c > 0 ? Math.round(15 + ((c - 1) / 4) * 80) : 4;
+      } else {
+        const norm = v > 0 ? (v - minVal) / range : 0;
+        height = v > 0 ? Math.round(10 + norm * 85) : 4;
+      }
       const bar = document.createElement('div');
       bar.className = 'day-view__hourly-bar';
       bar.style.background = colors[h.cat] || '#eee';
@@ -893,4 +894,18 @@ function showDayDetailView(ds) {
 
   view.hidden = false;
   view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+
+// ── i18n: re-localize dynamic content on language change ───────
+if (typeof I18n !== 'undefined') {
+  I18n.onChange(function () {
+    MONTHS = I18n.get('months').slice();
+    DOW_SHORT = I18n.get('dow_short').slice();
+    SLOT_LABELS = I18n.get('slot_labels').slice();
+    CAT_LABELS = Object.assign({}, I18n.get('cat_labels'));
+    try { setStandDate(); } catch (_) {}
+    try { render(); } catch (_) {}
+    try { if (typeof isDayViewOpen === 'function' && isDayViewOpen() && state.currentDayDs) showDayDetailView(state.currentDayDs); } catch (_) {}
+  });
 }

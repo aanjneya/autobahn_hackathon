@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahrkalender – Die Autobahn</title>
+  <title data-i18n-static>Fahrkalender – Die Autobahn</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css?v=32">
   <link rel="icon" type="image/png" href="favicon.png?v=2">
@@ -14,13 +14,13 @@
     <!-- 1. HEADER -->
         <header class="hdr">
       <div class="hdr__text">
-        <div class="hdr__title">FAHRKALENDER</div>
+        <div class="hdr__title" data-i18n="app.title">FAHRKALENDER</div>
         <div class="hdr__route" id="hdrRoute">A93 RICHTUNG SÜDEN</div>
         <div class="hdr__sub" id="hdrSub">Rosenheim, München → Kufstein, Innsbruck</div>
       </div>
       <div class="hdr__right">
         <div style="display: flex; gap: 14px; align-items: center;">
-          <button class="print-btn" id="printBtn" title="Drucken">🖨️ Drucken</button>
+          <button class="print-btn" id="printBtn" data-i18n="app.print" data-i18n-attr="title:app.print" title="Drucken">🖨️ Drucken</button>
           <img class="hdr__logo" src="https://www.autobahn.de/_assets/4483a80560873394161ba712d6ca7e9e/Images/Logo.svg" alt="Die Autobahn">
         </div>
       </div>
@@ -31,33 +31,33 @@
       <div class="ctrl-left">
 
         <nav class="toggle modebar">
-      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index.html')">Standard</button>
-      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourist.html')">Tourist</button>
-      <button type="button" class="toggle__btn active" onclick="NavState.navigateTo('index_resident.html')">Anwohner</button>
-      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_logistics.html')">Logistik</button>
-      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourism.html')">Tourismus</button>
-      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_authority.html')">Behörde</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index.html')" data-i18n="mode.standard">Standard</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourist.html')" data-i18n="mode.tourist">Tourist</button>
+      <button type="button" class="toggle__btn active" onclick="NavState.navigateTo('index_resident.html')" data-i18n="mode.resident">Anwohner</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_logistics.html')" data-i18n="mode.logistics">Logistik</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_tourism.html')" data-i18n="mode.tourism">Tourismus</button>
+      <button type="button" class="toggle__btn" onclick="NavState.navigateTo('index_authority.html')" data-i18n="mode.authority">Behörde</button>
     </nav>
 
 
 
     <!-- 2. STRECKEN-TOGGLE -->
     <nav class="toggle" id="toggle">
-      <button class="toggle__btn active" data-strecke="A93" data-richtung="Sued">A93 Richtung Süden</button>
-      <button class="toggle__btn" data-strecke="A93" data-richtung="Nord">A93 Richtung Norden</button>
-      <button class="toggle__btn" data-strecke="A8" data-richtung="Ost">A8 Richtung Osten</button>
-      <button class="toggle__btn" data-strecke="A8" data-richtung="West">A8 Richtung Westen</button>
+      <button class="toggle__btn active" data-strecke="A93" data-richtung="Sued" data-i18n="route.a93_sued">A93 Richtung Süden</button>
+      <button class="toggle__btn" data-strecke="A93" data-richtung="Nord" data-i18n="route.a93_nord">A93 Richtung Norden</button>
+      <button class="toggle__btn" data-strecke="A8" data-richtung="Ost" data-i18n="route.a8_ost">A8 Richtung Osten</button>
+      <button class="toggle__btn" data-strecke="A8" data-richtung="West" data-i18n="route.a8_west">A8 Richtung Westen</button>
     </nav>
 
     <!-- 3. NAVIGATION -->
     <div class="monthnav">
-      <button class="monthnav__arrow" id="navPrev" aria-label="Zurück">‹</button>
+      <button class="monthnav__arrow" id="navPrev" aria-label="Zurück" data-i18n-attr="aria-label:nav.prev">‹</button>
       <div class="monthnav__labels">
         <span class="monthnav__label" id="navLabelA">–</span>
         <span class="monthnav__sep">|</span>
         <span class="monthnav__label" id="navLabelB">–</span>
       </div>
-      <button class="monthnav__arrow" id="navNext" aria-label="Vor">›</button>
+      <button class="monthnav__arrow" id="navNext" aria-label="Vor" data-i18n-attr="aria-label:nav.next">›</button>
     </div>
 
       </div>
@@ -76,24 +76,24 @@
     <footer class="ftr">
       <div class="legend">
         <div class="legend__row">
-          <span class="legend__item"><span class="sw sw--weekend"></span>Wochenende</span>
-          <span class="legend__item"><span class="sw sw--holiday"></span>Feiertag</span>
+          <span class="legend__item"><span class="sw sw--weekend"></span><span data-i18n="legend.weekend">Wochenende</span></span>
+          <span class="legend__item"><span class="sw sw--holiday"></span><span data-i18n="legend.holiday">Feiertag</span></span>
         </div>
         <div class="legend__row">
-          <span class="legend__item"><span class="sw sw--cat1"></span>Flüssiger Verkehr</span>
-          <span class="legend__item"><span class="sw sw--cat2"></span>Verstärkter Verkehr</span>
+          <span class="legend__item"><span class="sw sw--cat1"></span><span data-i18n="legend.cat1">Flüssiger Verkehr</span></span>
+          <span class="legend__item"><span class="sw sw--cat2"></span><span data-i18n="legend.cat2">Verstärkter Verkehr</span></span>
         </div>
         <div class="legend__row">
-          <span class="legend__item"><span class="sw sw--cat3"></span>Starker Verkehr</span>
-          <span class="legend__item"><span class="sw sw--cat4"></span>Sehr starker Verkehr</span>
+          <span class="legend__item"><span class="sw sw--cat3"></span><span data-i18n="legend.cat3">Starker Verkehr</span></span>
+          <span class="legend__item"><span class="sw sw--cat4"></span><span data-i18n="legend.cat4">Sehr starker Verkehr</span></span>
         </div>
         <div class="legend__row">
-          <span class="legend__item"><span class="sw sw--cat5"></span>Stillstand</span>
+          <span class="legend__item"><span class="sw sw--cat5"></span><span data-i18n="legend.cat5">Stillstand</span></span>
         </div>
       </div>
       <div class="disclaimer">
         <p>* Die Verkehrsprognosen wurden auf Grundlage eines Verkehrsaufkommens erarbeitet, das durch keine Störungen wie Unfälle, Baustellen, Wetterbedingungen usw. beeinflusst wurde. Als Grundlage für die Einschätzung der erwarteten Verkehrslage wurde unter anderem die Verkehrsnachfrage aus der Vergangenheit in den Prognosehorizont eingeschätzt. Ungeplante spontane Ereignisse und Events wie Unfälle, kurzfristig notwendige Baustellen und witterungsbedingte Einflüsse können die Verkehrslage beeinflussen und sind in der Prognose nicht enthalten.</p>
-        <p class="stand" id="stand">Stand –</p>
+        <p class="stand" id="stand" data-i18n="footer.stand">Stand –</p>
       </div>
     </footer>
   </div>
@@ -101,6 +101,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="nav-state.js"></script>
   <script src="sidebar.js?v=1"></script>
+  <script src="i18n.js?v=1"></script>
   <script src="app_resident.js"></script>
 </body>
 </html>

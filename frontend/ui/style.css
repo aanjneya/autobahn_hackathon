@@ -106,6 +106,28 @@ html, body {
 }
 .print-btn:hover { background: #f3f5f8; border-color: #003466; }
 
+/* ---------- LANGUAGE TOGGLE ---------------------------------- */
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid #cfd4da;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.lang-toggle__btn {
+  border: 0;
+  background: transparent;
+  color: #1a1a1a;
+  font: inherit;
+  font-size: 12px;
+  padding: 6px 10px;
+  cursor: pointer;
+  line-height: 1;
+}
+.lang-toggle__btn + .lang-toggle__btn { border-left: 1px solid #cfd4da; }
+.lang-toggle__btn:hover { background: #f3f5f8; }
+.lang-toggle__btn.is-active { background: #003466; color: #ffffff; }
+
 /* ---------- 2. STRECKEN-TOGGLE ------------------------------- */
 .toggle {
   display: flex;
@@ -764,6 +786,10 @@ html, body {
   border: 1px solid #e0e0e0;
   border-radius: 6px;
   padding: 10px 10px 12px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: #ffffff;
   overflow: hidden;
 }
@@ -824,6 +850,9 @@ html, body {
   list-style: none;
   margin: 0; padding: 0;
   font-size: 11px;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
 }
 .day-view__slot-reasons li {
   position: relative;
@@ -840,7 +869,10 @@ html, body {
 .day-view__slot-note { color: #888 !important; font-style: italic; }
 .day-view__slot-note::before { content: '' !important; }
 
-.day-view__hourly { margin-top: 4px; }
+.day-view__hourly {
+  margin-top: 4px;
+  min-height: 190px; /* Label (~18px) + Bars (140px) + Ticks (~20px) + Gaps */
+}
 .day-view__hourly-label {
   font-size: 11px;
   color: #6a7280;
