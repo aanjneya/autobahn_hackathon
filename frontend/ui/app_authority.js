@@ -109,7 +109,9 @@ const state = {
   monthIndex: 5, // Juni 2026 als sinnvoller Default (Feriensaison)
   data: {}, // key "YYYY-MM-DD|A93|Sued" → [c1, c2, c3, c4, c5, c6]
   reasons: {}, // key "YYYY-MM-DD|A93|Sued" → [ [r0..], [r1..], ... ] (6 4h-Blöcke)
-  confidence: {} // key "YYYY-MM-DD|A93|Sued" → [p0..p5] (Modell-Konfidenz je 4h-Block, 0..1)
+  confidence: {}, // key "YYYY-MM-DD|A93|Sued" → [p0..p5] (Modell-Konfidenz je 4h-Block, 0..1)
+  currentDayDs: null,
+  dayAnchor: null // Tag-des-Monats, der bei Monats-Shifts erhalten bleibt
 };
 
 // Kategorie → Klartext (gleiche Bezeichnungen wie die Legende im Footer).
@@ -150,11 +152,7 @@ function setupEvents() {
   });
   document.getElementById('navPrev').addEventListener('click', () => {
     if (isDayViewOpen() && state.currentDayDs) {
-      const newDs = shiftDsByMonths(state.currentDayDs, -1);
-      const newIdx = dsToMonthIndex(newDs);
-      if (newIdx < MIN_INDEX) return;
-      state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
-      showDayDetailView(newDs);
+      shiftDayViewByMonths(-1);
       return;
     }
     state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 1);
@@ -162,11 +160,7 @@ function setupEvents() {
   });
   document.getElementById('navNext').addEventListener('click', () => {
     if (isDayViewOpen() && state.currentDayDs) {
-      const newDs = shiftDsByMonths(state.currentDayDs, 1);
-      const newIdx = dsToMonthIndex(newDs);
-      if (newIdx > MAX_INDEX + 3) return; // forecast endet Ende 2029
-      state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
-      showDayDetailView(newDs);
+      shiftDayViewByMonths(1);
       return;
     }
     state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 1);
@@ -800,11 +794,32 @@ function getDayView() {
 }
 function closeDayView() {
   state.currentDayDs = null;
+  state.dayAnchor = null;
   if (!dayViewEl) return;
   dayViewEl.hidden = true;
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = '';
   try { render(); } catch (_) {}
+}
+
+// Verschiebt die Day-View um ±n Monate, ohne den Tag-des-Monats über
+// mehrere Sprünge zu verlieren (z. B. 31. Jan → 28. Feb → 31. Mär statt 28.).
+function shiftDayViewByMonths(delta) {
+  if (!state.currentDayDs) return;
+  const [y, m, d] = state.currentDayDs.split('-').map(Number);
+  if (state.dayAnchor == null) state.dayAnchor = d;
+  const target = new Date(y, m - 1 + delta, 1);
+  const ty = target.getFullYear();
+  const tm = target.getMonth();
+  // Grenzen einhalten (forecast endet 31.12.2029).
+  if (ty < BASE_YEAR || ty > 2029) return;
+  const lastDay = new Date(ty, tm + 1, 0).getDate();
+  const day = Math.min(state.dayAnchor, lastDay);
+  const newDs = `${ty}-${String(tm + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  // Kalender unter der Day-View mit dem Ziel-Monat in Sync halten.
+  const newIdx = (ty - BASE_YEAR) * 12 + tm;
+  state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
+  showDayDetailView(newDs);
 }
 function isDayViewOpen() {
   return !!(dayViewEl && !dayViewEl.hidden);
@@ -816,6 +831,9 @@ function escapeHtml(s) {
 function showDayDetailView(ds) {
   closeReasonPopover();
   state.currentDayDs = ds;
+  if (state.dayAnchor == null) {
+    state.dayAnchor = parseInt(ds.split('-')[2], 10);
+  }
   const view = getDayView();
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = 'none';
@@ -863,6 +881,8 @@ function showDayDetailView(ds) {
   view.querySelectorAll('.day-view__navbtn').forEach(btn => {
     btn.addEventListener('click', () => {
       const newDs = shiftDate(parseInt(btn.dataset.dir, 10));
+      // Day-Arrow = expliziter Tagwechsel → Anker auf neuen Tag setzen.
+      state.dayAnchor = parseInt(newDs.split('-')[2], 10);
       showDayDetailView(newDs);
     });
   });
@@ -940,16 +960,32 @@ function showDayDetailView(ds) {
 
   const wasVisible = !view.hidden;
   view.hidden = false;
-  if (!wasVisible) view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Nach ganz oben scrollen, damit Header + Monatspfeile (navPrev/navNext)
+  // sichtbar bleiben — sonst kann der User die Monatsnavigation nicht erreichen.
+  if (!wasVisible) window.scrollTo({ top: 0, behavior: 'smooth' });
   updateNavLabelsForDayView(ds);
 }
 
 function updateNavLabelsForDayView(ds) {
-  const [y, m] = ds.split('-').map(Number);
   const labelA = document.getElementById('navLabelA');
   const labelB = document.getElementById('navLabelB');
-  if (labelA) labelA.textContent = `${MONTHS[m - 1]} ${y}`;
-  if (labelB) labelB.textContent = formatReasonDate(ds);
+  const [y, m, d] = ds.split('-').map(Number);
+  const anchor = (state.dayAnchor != null) ? state.dayAnchor : d;
+  // Vorheriger / nächster Monat, jeweils mit dem Anker-Tag (geclampt
+  // auf die Monatslänge), damit der User sieht, wohin ‹ und › springen.
+  const fmt = (date) => {
+    const dd = date.getDate();
+    const mm = MONTHS[date.getMonth()];
+    return `${dd}. ${mm} ${date.getFullYear()}`;
+  };
+  const prev = new Date(y, m - 2, 1);
+  const prevLast = new Date(prev.getFullYear(), prev.getMonth() + 1, 0).getDate();
+  prev.setDate(Math.min(anchor, prevLast));
+  const next = new Date(y, m, 1);
+  const nextLast = new Date(next.getFullYear(), next.getMonth() + 1, 0).getDate();
+  next.setDate(Math.min(anchor, nextLast));
+  if (labelA) labelA.textContent = (prev.getFullYear() >= BASE_YEAR) ? fmt(prev) : '—';
+  if (labelB) labelB.textContent = (next.getFullYear() <= 2029) ? fmt(next) : '—';
 }
 
 function shiftDsByMonths(ds, delta) {
