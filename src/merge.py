@@ -3,7 +3,18 @@ from pathlib import Path
 
 PROC = Path(__file__).resolve().parent.parent / "data" / "processed"
 
-TIME_SLOTS = ["00-04", "04-08", "08-12", "12-16", "16-20", "20-24"]
+def _build_time_slots() -> list[str]:
+    slots = []
+    for h in range(24):
+        start = f"{h:02d}:00"
+        mid = f"{h:02d}:30"
+        end = "00:00" if h == 23 else f"{h + 1:02d}:00"
+        slots.append(f"{start}-{mid}")
+        slots.append(f"{mid}-{end}")
+    return slots
+
+
+TIME_SLOTS = _build_time_slots()
 ROUTES = [("A93", "Sued"), ("A93", "Nord"), ("A8", "Ost"), ("A8", "West")]
 
 
