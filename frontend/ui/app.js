@@ -1,480 +1,410 @@
 /**
- * app.js – Die Hauptlogik für den Autobahn Fahrkalender
+ * Autobahn Fahrkalender — Layout nach offizieller PDF-Vorlage.
+ * Lädt forecast.csv, aggregiert auf 4h-Blöcke pro (datum, strecke, richtung).
  */
 
-// Global close function for the onclick handler in HTML
-window.closeDetailPanel = function () {
-  const panel = document.getElementById('detailPanel');
-  if (panel) panel.classList.add('hidden');
-  document.querySelectorAll('.day-cell.selected').forEach(cell => cell.classList.remove('selected'));
+// ────────────────────────────────────────────────────────────
+// Konstanten
+// ────────────────────────────────────────────────────────────
+
+const MONTHS = [
+  'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
+  'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
+];
+const DOW_SHORT = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
+const SLOT_LABELS = ['00-04 Uhr', '04-08 Uhr', '08-12 Uhr', '12-16 Uhr', '16-20 Uhr', '20-24 Uhr'];
+
+const ROUTE_TEXT = {
+  'A93|Sued': {
+    title: 'A93 RICHTUNG SÜDEN',
+    sub: 'Rosenheim, München, Deutschland → Brenner, Italien – Kufstein, Innsbruck, Österreich'
+  },
+  'A93|Nord': {
+    title: 'A93 RICHTUNG NORDEN',
+    sub: 'Kufstein, Innsbruck, Österreich → Rosenheim, München, Deutschland'
+  },
+  'A8|Ost': {
+    title: 'A8 RICHTUNG OSTEN',
+    sub: 'München → Salzburg'
+  },
+  'A8|West': {
+    title: 'A8 RICHTUNG WESTEN',
+    sub: 'Salzburg → München'
+  }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  // --- Constants ---
-  const CORRIDORS_DEF = {
-    A93: {
-      strecken: ['A93_Inntal', 'A93_Kiefersfelden', 'A93_Gletschergarten'],
-      richtungen: ['Kufstein', 'Rosenheim']
-    },
-    A8: {
-      strecken: ['A8_MQB25', 'A8_MQQ209', 'A8_MQQ213', 'A8_MQQ245', 'A8_MQQ37'],
-      richtungen: ['München', 'Salzburg']
-    }
-  };
+// CSV richtung → kanonische Richtung (Sued/Nord/Ost/West)
+const RICHTUNG_MAP = {
+  'Kufstein': 'Sued',
+  'Rosenheim': 'Nord',
+  'Salzburg': 'Ost',
+  'München': 'West',
+  'Sued': 'Sued', 'Nord': 'Nord', 'Ost': 'Ost', 'West': 'West'
+};
 
-  const DIRECTION_LABELS = {
-    A93: { Kufstein: 'Richtung Kufstein (Süd)', Rosenheim: 'Richtung Rosenheim (Nord)' },
-    A8: { München: 'Richtung München (West)', Salzburg: 'Richtung Salzburg (Ost)' }
-  };
+// strecke prefix → A93 / A8
+function streckeToCorridor(strecke) {
+  if (!strecke) return null;
+  if (strecke.startsWith('A93')) return 'A93';
+  if (strecke.startsWith('A8')) return 'A8';
+  return null;
+}
 
-  function isFerien(d) {
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
-    if (month === 8) return true;
-    if (month === 12 && day > 23) return true;
-    return false;
+// Bayerische Feiertage 2026–2029 (per 'YYYY-MM-DD' → Name).
+const HOLIDAYS = {
+  // 2026
+  '2026-01-01': 'Neujahr',
+  '2026-01-06': 'Hl. Drei Könige',
+  '2026-04-03': 'Karfreitag',
+  '2026-04-06': 'Ostermontag',
+  '2026-05-01': 'Tag der Arbeit',
+  '2026-05-14': 'Christi Himmelfahrt',
+  '2026-05-25': 'Pfingstmontag',
+  '2026-06-04': 'Fronleichnam',
+  '2026-08-15': 'Mariä Himmelfahrt',
+  '2026-10-03': 'Tag d. Dt. Einheit',
+  '2026-11-01': 'Allerheiligen',
+  '2026-12-25': '1. Weihnachtstag',
+  '2026-12-26': '2. Weihnachtstag',
+  // 2027
+  '2027-01-01': 'Neujahr',
+  '2027-01-06': 'Hl. Drei Könige',
+  '2027-03-26': 'Karfreitag',
+  '2027-03-29': 'Ostermontag',
+  '2027-05-01': 'Tag der Arbeit',
+  '2027-05-06': 'Christi Himmelfahrt',
+  '2027-05-17': 'Pfingstmontag',
+  '2027-05-27': 'Fronleichnam',
+  '2027-08-15': 'Mariä Himmelfahrt',
+  '2027-10-03': 'Tag d. Dt. Einheit',
+  '2027-11-01': 'Allerheiligen',
+  '2027-12-25': '1. Weihnachtstag',
+  '2027-12-26': '2. Weihnachtstag',
+  // 2028
+  '2028-01-01': 'Neujahr',
+  '2028-01-06': 'Hl. Drei Könige',
+  '2028-04-14': 'Karfreitag',
+  '2028-04-17': 'Ostermontag',
+  '2028-05-01': 'Tag der Arbeit',
+  '2028-05-25': 'Christi Himmelfahrt',
+  '2028-06-05': 'Pfingstmontag',
+  '2028-06-15': 'Fronleichnam',
+  '2028-08-15': 'Mariä Himmelfahrt',
+  '2028-10-03': 'Tag d. Dt. Einheit',
+  '2028-11-01': 'Allerheiligen',
+  '2028-12-25': '1. Weihnachtstag',
+  '2028-12-26': '2. Weihnachtstag',
+  // 2029
+  '2029-01-01': 'Neujahr',
+  '2029-01-06': 'Hl. Drei Könige',
+  '2029-03-30': 'Karfreitag',
+  '2029-04-02': 'Ostermontag',
+  '2029-05-01': 'Tag der Arbeit',
+  '2029-05-10': 'Christi Himmelfahrt',
+  '2029-05-21': 'Pfingstmontag',
+  '2029-05-31': 'Fronleichnam',
+  '2029-08-15': 'Mariä Himmelfahrt',
+  '2029-10-03': 'Tag d. Dt. Einheit',
+  '2029-11-01': 'Allerheiligen',
+  '2029-12-25': '1. Weihnachtstag',
+  '2029-12-26': '2. Weihnachtstag'
+};
+
+// ────────────────────────────────────────────────────────────
+// State
+// ────────────────────────────────────────────────────────────
+
+const state = {
+  strecke: 'A93',
+  richtung: 'Sued',
+  // Index des linken Detailmonats (0-basiert ab Januar 2026).
+  // 0 = Jan 2026, 1 = Feb 2026, ... 12 = Jan 2027, ...
+  monthIndex: 5, // Juni 2026 als sinnvoller Default (Feriensaison)
+  data: {} // key "YYYY-MM-DD|A93|Sued" → [c1, c2, c3, c4, c5, c6]
+};
+
+const BASE_YEAR = 2026;
+const MIN_INDEX = 0;
+const MAX_INDEX = (2029 - BASE_YEAR + 1) * 12 - 4; // 4 sichtbare Monate
+
+// ────────────────────────────────────────────────────────────
+// Boot
+// ────────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', async () => {
+  setupEvents();
+  setStandDate();
+  try {
+    await loadCsv();
+  } catch (err) {
+    console.warn('forecast.csv konnte nicht geladen werden, versuche Demo-Daten:', err);
+    await loadDemo();
   }
-
-  function isOktoberfest(d) {
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
-    if (month === 9 && day > 18) return true;
-    if (month === 10 && day < 5) return true;
-    return false;
-  }
-
-  function isDosierung(d) {
-    const dow = d.getDay(); // 0=Sun, 1=Mon
-    const month = d.getMonth() + 1;
-    return dow === 1 && [2, 3, 7, 9].includes(month);
-  }
-
-  // --- State ---
-  const state = {
-    corridor: 'A93',
-    site: CORRIDORS_DEF.A93.strecken[0],
-    direction: 'Kufstein',
-    year: 2026,
-    forecasts: [],
-    filteredData: [],
-    corridorsDef: CORRIDORS_DEF,
-    directionLabels: DIRECTION_LABELS
-  };
-
-  // Strip the 'A93_'/'A8_' prefix for a short display label, e.g. 'A93_Inntal' -> 'Inntal'.
-  function siteLabel(strecke) {
-    return strecke.replace(/^A\d+_/, '');
-  }
-
-  // --- DOM Elements ---
-  const elements = {
-    corridorSelect: document.getElementById('corridorSelect'),
-    siteSelect: document.getElementById('siteSelect'),
-    directionSelect: document.getElementById('directionSelect'),
-    yearTabs: document.getElementById('yearTabs'),
-    calendarGrid: document.getElementById('calendarGrid'),
-    detailPanel: document.getElementById('detailPanel'),
-    detailClose: document.getElementById('detailClose'),
-    detailDate: document.getElementById('detailDate'),
-    detailBadges: document.getElementById('detailBadges'),
-    slotBars: document.getElementById('slotBars'),
-    statTotalDays: document.getElementById('statTotalDays'),
-    statFreeDays: document.getElementById('statFreeDays'),
-    statStauDays: document.getElementById('statStauDays'),
-    statCriticalDays: document.getElementById('statCriticalDays'),
-    criticalSection: document.getElementById('criticalSection'),
-    criticalList: document.getElementById('criticalList'),
-    demoBanner: document.getElementById('demoBanner')
-  };
-
-  // --- Initialize ---
-  function init() {
-    // 1. Load Data
-    loadData();
-
-    // 2. Setup Event Listeners
-    setupEventListeners();
-  }
-
-  async function loadData() {
-    try {
-      const response = await fetch('forecast.csv');
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const csvText = await response.text();
-
-      const lines = csvText.trim().split('\n');
-      const headers = lines[0].split(',');
-      const rows = [];
-
-      const idxDatum = headers.indexOf('datum');
-      const idxStrecke = headers.indexOf('strecke');
-      const idxRichtung = headers.indexOf('richtung');
-      const idxSlot = headers.indexOf('time_slot');
-      const idxCat = headers.indexOf('pred_category');
-
-      const idxProb1 = headers.indexOf('prob_1');
-      const idxProb2 = headers.indexOf('prob_2');
-      const idxProb3 = headers.indexOf('prob_3');
-      const idxProb4 = headers.indexOf('prob_4');
-      const idxProb5 = headers.indexOf('prob_5');
-
-      for (let i = 1; i < lines.length; i++) {
-        const cols = lines[i].split(',');
-        if (cols.length < 5) continue;
-
-        const datumStr = cols[idxDatum];
-        const [y, m, d] = datumStr.split('-');
-        const dateObj = new Date(parseInt(y), parseInt(m) - 1, parseInt(d));
-        const dow = dateObj.getDay();
-
-        rows.push({
-          datum: datumStr,
-          strecke: cols[idxStrecke],
-          richtung: cols[idxRichtung],
-          time_slot: cols[idxSlot],
-          pred_category: parseInt(cols[idxCat]),
-          prob_1: parseFloat(cols[idxProb1]),
-          prob_2: parseFloat(cols[idxProb2]),
-          prob_3: parseFloat(cols[idxProb3]),
-          prob_4: parseFloat(cols[idxProb4]),
-          prob_5: parseFloat(cols[idxProb5]),
-          // Metadata for UI
-          _isWeekend: dow === 0 || dow === 6,
-          _isFeiertag: false, // simplified
-          _isFerien: isFerien(dateObj),
-          _isOktoberfest: isOktoberfest(dateObj),
-          _isDosierung: isDosierung(dateObj)
-        });
-      }
-
-      state.forecasts = rows;
-
-      updateDirectionSelect();
-      updateSiteSelect();
-      applyFilters();
-    } catch (err) {
-      console.error("Failed to load forecast.csv:", err);
-      alert("Fehler beim Laden der Daten (forecast.csv). Siehe Konsole.");
-    }
-  }
-
-  function setupEventListeners() {
-    elements.corridorSelect.addEventListener('change', (e) => {
-      state.corridor = e.target.value;
-      updateDirectionSelect();
-      updateSiteSelect();
-      applyFilters();
-    });
-
-    elements.directionSelect.addEventListener('change', (e) => {
-      state.direction = e.target.value;
-      updateSiteSelect();
-      applyFilters();
-    });
-
-    elements.siteSelect.addEventListener('change', (e) => {
-      state.site = e.target.value;
-      applyFilters();
-    });
-
-    elements.yearTabs.addEventListener('click', (e) => {
-      if (e.target.classList.contains('year-tab')) {
-        // Update active tab
-        Array.from(elements.yearTabs.children).forEach(tab => tab.classList.remove('active'));
-        e.target.classList.add('active');
-
-        state.year = parseInt(e.target.dataset.year);
-        applyFilters();
-      }
-    });
-  }
-
-  // --- Filtering ---
-  function updateDirectionSelect() {
-    const corridorDef = state.corridorsDef[state.corridor];
-    const labels = state.directionLabels[state.corridor];
-
-    // Welche Richtungen existieren für den gewählten Korridor überhaupt?
-    const availableForCorridor = state.forecasts.length
-      ? corridorDef.richtungen.filter(r =>
-          state.forecasts.some(row =>
-            corridorDef.strecken.includes(row.strecke) && row.richtung === r))
-      : corridorDef.richtungen;
-    const richtungen = availableForCorridor.length ? availableForCorridor : corridorDef.richtungen;
-
-    const currentSelection = elements.directionSelect.value;
-    elements.directionSelect.innerHTML = '';
-    richtungen.forEach((richtung, index) => {
-      const option = document.createElement('option');
-      option.value = richtung;
-      option.textContent = labels[richtung];
-      elements.directionSelect.appendChild(option);
-
-      if (richtung === currentSelection) {
-        option.selected = true;
-        state.direction = richtung;
-      } else if (index === 0 && !richtungen.includes(currentSelection)) {
-        option.selected = true;
-        state.direction = richtung;
-      }
-    });
-  }
-
-  function updateSiteSelect() {
-    const corridorDef = state.corridorsDef[state.corridor];
-
-    // Messstellen, die für (Korridor, Richtung) tatsächlich Daten haben.
-    const availableForPair = state.forecasts.length
-      ? corridorDef.strecken.filter(s =>
-          state.forecasts.some(row => row.strecke === s && row.richtung === state.direction))
-      : corridorDef.strecken;
-    const strecken = availableForPair.length ? availableForPair : corridorDef.strecken;
-
-    const currentSelection = elements.siteSelect.value;
-    elements.siteSelect.innerHTML = '';
-    strecken.forEach((strecke, index) => {
-      const option = document.createElement('option');
-      option.value = strecke;
-      option.textContent = siteLabel(strecke);
-      elements.siteSelect.appendChild(option);
-
-      if (strecke === currentSelection) {
-        option.selected = true;
-        state.site = strecke;
-      } else if (index === 0 && !strecken.includes(currentSelection)) {
-        option.selected = true;
-        state.site = strecke;
-      }
-    });
-  }
-
-  function applyFilters() {
-    // Filter the huge forecast array down to what we need right now
-    state.filteredData = state.forecasts.filter(row => {
-      const targetStrecke = state.site;
-      const rowYear = parseInt(row.datum.split('-')[0]);
-
-      return row.strecke === targetStrecke &&
-        row.richtung === state.direction &&
-        rowYear === state.year;
-    });
-
-    // Group by date
-    const dataByDate = {};
-    state.filteredData.forEach(row => {
-      if (!dataByDate[row.datum]) {
-        dataByDate[row.datum] = {
-          slots: [],
-          maxCategory: 1,
-          sumCategory: 0,
-          _isFerien: row._isFerien,
-          _isFeiertag: row._isFeiertag,
-          _isOktoberfest: row._isOktoberfest,
-          _isDosierung: row._isDosierung,
-          _isWeekend: row._isWeekend
-        };
-      }
-      dataByDate[row.datum].slots.push(row);
-      dataByDate[row.datum].maxCategory = Math.max(dataByDate[row.datum].maxCategory, row.pred_category);
-      dataByDate[row.datum].sumCategory += row.pred_category;
-    });
-
-    renderCalendar(dataByDate);
-    updateStats(dataByDate);
-    renderCriticalDays(dataByDate);
-    elements.detailPanel.classList.add('hidden'); // Hide detail panel on filter change
-  }
-
-  // --- Rendering ---
-  function renderCalendar(dataByDate) {
-    elements.calendarGrid.innerHTML = '';
-
-    const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-    const weekdays = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
-
-    for (let month = 0; month < 12; month++) {
-      const monthCard = document.createElement('div');
-      monthCard.className = 'month-card';
-
-      // Header
-      const header = document.createElement('div');
-      header.className = 'month-card__header';
-      header.textContent = months[month];
-      monthCard.appendChild(header);
-
-      // Weekdays
-      const weekdaysGrid = document.createElement('div');
-      weekdaysGrid.className = 'month-card__weekdays';
-      weekdays.forEach(wd => {
-        const wdEl = document.createElement('div');
-        wdEl.className = 'month-card__weekday';
-        wdEl.textContent = wd;
-        weekdaysGrid.appendChild(wdEl);
-      });
-      monthCard.appendChild(weekdaysGrid);
-
-      // Days
-      const daysGrid = document.createElement('div');
-      daysGrid.className = 'month-card__days';
-
-      const firstDay = new Date(state.year, month, 1);
-      const lastDay = new Date(state.year, month + 1, 0);
-
-      // Pad empty days at start of month (adjust for Monday start)
-      let startDow = firstDay.getDay() - 1;
-      if (startDow === -1) startDow = 6; // Sunday is 0 -> 6
-
-      for (let i = 0; i < startDow; i++) {
-        const emptyDay = document.createElement('div');
-        emptyDay.className = 'day-cell day-cell--empty';
-        daysGrid.appendChild(emptyDay);
-      }
-
-      // Actual days
-      for (let d = 1; d <= lastDay.getDate(); d++) {
-        const currentDate = new Date(state.year, month, d);
-        // Format as YYYY-MM-DD local time ignoring timezone offset issues
-        const dateStr = `${state.year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-        const dayData = dataByDate[dateStr];
-
-        const dayCell = document.createElement('div');
-
-        // Determine category for the day (we use maxCategory for worst-case coloring)
-        const cat = dayData ? dayData.maxCategory : 0;
-
-        let className = `day-cell day-cell--cat-${cat}`;
-        if (dayData && dayData._isWeekend) className += ' is-weekend';
-        dayCell.className = className;
-        dayCell.textContent = d;
-        dayCell.dataset.date = dateStr;
-
-        if (dayData) {
-          // Badges
-          if (dayData._isFerien || dayData._isFeiertag || dayData._isDosierung || dayData._isOktoberfest) {
-            const badge = document.createElement('div');
-            badge.className = 'day-cell__badge';
-            dayCell.appendChild(badge);
-          }
-
-          // Click handler
-          dayCell.addEventListener('click', () => {
-            document.querySelectorAll('.day-cell.selected').forEach(c => c.classList.remove('selected'));
-            dayCell.classList.add('selected');
-            showDetailPanel(dateStr, dayData);
-          });
-        }
-
-        daysGrid.appendChild(dayCell);
-      }
-
-      monthCard.appendChild(daysGrid);
-      elements.calendarGrid.appendChild(monthCard);
-    }
-  }
-
-  function showDetailPanel(dateStr, dayData) {
-    // Date formatting
-    const dateObj = new Date(dateStr);
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    elements.detailDate.textContent = dateObj.toLocaleDateString('de-DE', options);
-
-    // Badges
-    elements.detailBadges.innerHTML = '';
-    const createBadge = (text, type) => `<span class="badge badge--${type}">${text}</span>`;
-    let badgesHTML = '';
-    if (dayData._isFerien) badgesHTML += createBadge('Schulferien', 'ferien');
-    if (dayData._isFeiertag) badgesHTML += createBadge('Feiertag', 'feiertag');
-    if (dayData._isDosierung) badgesHTML += createBadge('Blockabfertigung', 'dosierung');
-    if (dayData._isOktoberfest) badgesHTML += createBadge('Oktoberfest', 'oktoberfest');
-    if (dayData._isWeekend) badgesHTML += createBadge('Wochenende', 'weekend');
-    elements.detailBadges.innerHTML = badgesHTML;
-
-    // Slots
-    elements.slotBars.className = 'slot-columns';
-    elements.slotBars.innerHTML = '';
-    // Sort slots chronologically
-    const sortedSlots = [...dayData.slots].sort((a, b) => a.time_slot.localeCompare(b.time_slot));
-
-    sortedSlots.forEach(slot => {
-      const cat = slot.pred_category;
-      const probKey = `prob_${cat}`;
-      const confidence = (slot[probKey] * 100).toFixed(0);
-
-      // Visual height (min 15% so it's visible, max 100%)
-      const height = 15 + ((cat - 1) / 4) * 85;
-
-      const slotHTML = `
-        <div class="slot-col">
-          <div class="slot-col__track">
-            <div class="slot-col__fill slot-bar__fill--${cat}" style="height: ${height}%;"></div>
-          </div>
-          <div class="slot-col__category slot-bar__category--${cat}">${cat}</div>
-          <div class="slot-col__label">${slot.time_slot.replace('-', '-\n')}</div>
-          <div class="slot-col__confidence">${confidence}%</div>
-        </div>
-      `;
-      elements.slotBars.insertAdjacentHTML('beforeend', slotHTML);
-    });
-
-    elements.detailPanel.classList.remove('hidden');
-
-    // Scroll to panel
-    elements.detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function updateStats(dataByDate) {
-    let total = 0, free = 0, stau = 0, critical = 0;
-
-    Object.values(dataByDate).forEach(day => {
-      total++;
-      if (day.maxCategory === 1) free++;
-      if (day.maxCategory >= 4) stau++;
-      if (day.maxCategory === 5) critical++;
-    });
-
-    elements.statTotalDays.textContent = total;
-    elements.statFreeDays.textContent = free;
-    elements.statStauDays.textContent = stau;
-    elements.statCriticalDays.textContent = critical;
-  }
-
-  function renderCriticalDays(dataByDate) {
-    elements.criticalList.innerHTML = '';
-
-    // Find days with maxCategory >= 4, sort by sumCategory (severity)
-    const criticalDays = Object.entries(dataByDate)
-      .filter(([date, data]) => data.maxCategory >= 4)
-      .map(([date, data]) => ({ date, data }))
-      .sort((a, b) => b.data.sumCategory - a.data.sumCategory)
-      .slice(0, 15); // Top 15
-
-    if (criticalDays.length === 0) {
-      elements.criticalSection.style.display = 'none';
-      return;
-    }
-
-    elements.criticalSection.style.display = 'block';
-
-    criticalDays.forEach(item => {
-      const dateObj = new Date(item.date);
-      const formatOpts = { weekday: 'short', day: '2-digit', month: '2-digit' };
-      const shortDate = dateObj.toLocaleDateString('de-DE', formatOpts);
-      const cat = item.data.maxCategory;
-
-      const chip = document.createElement('div');
-      chip.className = `critical-chip critical-chip--${cat}`;
-      chip.innerHTML = `<span>⚠️</span> ${shortDate}`;
-
-      chip.addEventListener('click', () => {
-        // Find and click the corresponding day cell
-        const cell = document.querySelector(`.day-cell[data-date="${item.date}"]`);
-        if (cell) cell.click();
-      });
-
-      elements.criticalList.appendChild(chip);
-    });
-  }
-
-  // Boot
-  init();
+  render();
 });
+
+function setupEvents() {
+  document.querySelectorAll('.toggle__btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle__btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.strecke = btn.dataset.strecke;
+      state.richtung = btn.dataset.richtung;
+      render();
+    });
+  });
+  document.getElementById('navPrev').addEventListener('click', () => {
+    state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 2);
+    render();
+  });
+  document.getElementById('navNext').addEventListener('click', () => {
+    state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 2);
+    render();
+  });
+  document.getElementById('printBtn').addEventListener('click', () => window.print());
+}
+
+function setStandDate() {
+  const d = new Date();
+  const s = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  document.getElementById('stand').textContent = `Stand ${s}`;
+}
+
+// ────────────────────────────────────────────────────────────
+// CSV laden + aggregieren
+// ────────────────────────────────────────────────────────────
+
+async function loadCsv() {
+  const resp = await fetch('./forecast.csv');
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  const text = await resp.text();
+  parseCsv(text);
+  if (Object.keys(state.data).length === 0) throw new Error('empty');
+}
+
+function parseCsv(text) {
+  const lines = text.trim().split('\n');
+  if (lines.length < 2) return;
+  const headers = lines[0].split(',');
+  const iDatum = headers.indexOf('datum');
+  const iStrecke = headers.indexOf('strecke');
+  const iRichtung = headers.indexOf('richtung');
+  const iSlot = headers.indexOf('time_slot');
+  const iCat = headers.indexOf('pred_category');
+
+  // Falls schon im wide-Format (slot0..slot5)
+  const iSlotCols = [0, 1, 2, 3, 4, 5].map(k => headers.indexOf(`slot${k}`));
+  const wide = iSlotCols.every(i => i >= 0);
+
+  const agg = {};
+  for (let l = 1; l < lines.length; l++) {
+    const cols = lines[l].split(',');
+    if (cols.length < 4) continue;
+    const datum = cols[iDatum];
+    const corridor = streckeToCorridor(cols[iStrecke]);
+    if (!corridor) continue;
+    const rich = RICHTUNG_MAP[cols[iRichtung]] || cols[iRichtung];
+    if (!rich) continue;
+    const key = `${datum}|${corridor}|${rich}`;
+    if (!agg[key]) agg[key] = [0, 0, 0, 0, 0, 0];
+
+    if (wide) {
+      for (let k = 0; k < 6; k++) {
+        const c = parseInt(cols[iSlotCols[k]]);
+        if (!isNaN(c) && c > agg[key][k]) agg[key][k] = c;
+      }
+    } else {
+      const slot = cols[iSlot];
+      const cat = parseInt(cols[iCat]);
+      if (isNaN(cat) || !slot) continue;
+      const startHour = parseInt(slot.split(':')[0]);
+      if (isNaN(startHour)) continue;
+      const block = Math.floor(startHour / 4);
+      if (block < 0 || block > 5) continue;
+      if (cat > agg[key][block]) agg[key][block] = cat;
+    }
+  }
+  state.data = agg;
+}
+
+async function loadDemo() {
+  // Sehr einfacher Fallback: zufällige Demo-Daten.
+  const corridors = [['A93', 'Sued'], ['A93', 'Nord'], ['A8', 'Ost'], ['A8', 'West']];
+  const data = {};
+  for (let y = 2026; y <= 2029; y++) {
+    for (let m = 0; m < 12; m++) {
+      const last = new Date(y, m + 1, 0).getDate();
+      for (let d = 1; d <= last; d++) {
+        const dateStr = `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+        const isWE = [0, 6].includes(new Date(y, m, d).getDay());
+        const isSummer = m >= 5 && m <= 8;
+        for (const [s, r] of corridors) {
+          const slots = [];
+          for (let k = 0; k < 6; k++) {
+            let p = 1;
+            if (k >= 2 && k <= 4 && (isWE || isSummer)) p = Math.random() < 0.25 ? 3 : 2;
+            if (isWE && isSummer && k === 3) p = Math.random() < 0.3 ? 4 : 3;
+            slots.push(p);
+          }
+          data[`${dateStr}|${s}|${r}`] = slots;
+        }
+      }
+    }
+  }
+  state.data = data;
+}
+
+// ────────────────────────────────────────────────────────────
+// Rendering
+// ────────────────────────────────────────────────────────────
+
+function render() {
+  // Header-Route-Text
+  const txt = ROUTE_TEXT[`${state.strecke}|${state.richtung}`];
+  document.getElementById('hdrRoute').textContent = txt.title;
+  document.getElementById('hdrSub').textContent = txt.sub;
+
+  const mA = monthFromIndex(state.monthIndex);
+  const mB = monthFromIndex(state.monthIndex + 1);
+  const mC = monthFromIndex(state.monthIndex + 2);
+  const mD = monthFromIndex(state.monthIndex + 3);
+
+  document.getElementById('navLabelA').textContent = `${MONTHS[mA.m]} ${mA.y}`;
+  document.getElementById('navLabelB').textContent = `${MONTHS[mB.m]} ${mB.y}`;
+
+  renderDetail(document.getElementById('calA'), mA.y, mA.m);
+  renderDetail(document.getElementById('calB'), mB.y, mB.m);
+
+  const mini = document.getElementById('calMini');
+  mini.innerHTML = '';
+  if (mC) mini.appendChild(renderMini(mC.y, mC.m));
+  if (mD) mini.appendChild(renderMini(mD.y, mD.m));
+}
+
+function monthFromIndex(idx) {
+  if (idx < 0) return null;
+  const total = BASE_YEAR * 12 + idx;
+  const y = Math.floor(total / 12);
+  const m = total % 12;
+  if (y > 2029) return null;
+  return { y, m };
+}
+
+function dateStr(y, m, d) {
+  return `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+}
+
+function lookup(ds) {
+  return state.data[`${ds}|${state.strecke}|${state.richtung}`];
+}
+
+function renderDetail(container, year, month) {
+  container.innerHTML = '';
+  container.classList.remove('cal--empty');
+
+  const hdr = document.createElement('div');
+  hdr.className = 'cal__month';
+  hdr.textContent = MONTHS[month];
+  container.appendChild(hdr);
+
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const trh = document.createElement('tr');
+  const thDay = document.createElement('th');
+  thDay.className = 'col-day';
+  trh.appendChild(thDay);
+  SLOT_LABELS.forEach(lbl => {
+    const th = document.createElement('th');
+    th.className = 'col-slot';
+    const sp = document.createElement('span');
+    sp.textContent = lbl;
+    th.appendChild(sp);
+    trh.appendChild(th);
+  });
+  thead.appendChild(trh);
+  table.appendChild(thead);
+
+  const tbody = document.createElement('tbody');
+  const last = new Date(year, month + 1, 0).getDate();
+  for (let d = 1; d <= last; d++) {
+    const ds = dateStr(year, month, d);
+    const dow = new Date(year, month, d).getDay();
+    const isWE = dow === 0 || dow === 6;
+    const hol = HOLIDAYS[ds];
+    const tr = document.createElement('tr');
+    if (hol) tr.classList.add('is-holiday');
+    else if (isWE) tr.classList.add('is-weekend');
+
+    const tdDay = document.createElement('td');
+    tdDay.className = 'cell-day';
+    const numEl = document.createElement('span');
+    numEl.className = 'cell-day__num';
+    numEl.textContent = d;
+    const dowEl = document.createElement('span');
+    dowEl.className = 'cell-day__dow';
+    dowEl.textContent = DOW_SHORT[dow];
+    tdDay.appendChild(numEl);
+    tdDay.appendChild(dowEl);
+    if (hol) {
+      const h = document.createElement('span');
+      h.className = 'cell-day__hol';
+      h.textContent = hol;
+      tdDay.appendChild(h);
+    }
+    tr.appendChild(tdDay);
+
+    const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
+    for (let k = 0; k < 6; k++) {
+      const td = document.createElement('td');
+      td.className = 'cell-slot';
+      const inner = document.createElement('div');
+      inner.className = `cell-slot__inner cat-${slots[k] || 0}`;
+      td.appendChild(inner);
+      tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+  }
+  table.appendChild(tbody);
+  container.appendChild(table);
+}
+
+function renderMini(year, month) {
+  const wrap = document.createElement('div');
+  wrap.className = 'mini';
+
+  const hdr = document.createElement('div');
+  hdr.className = 'mini__month';
+  hdr.textContent = `${MONTHS[month]} ${year}`;
+  wrap.appendChild(hdr);
+
+  const list = document.createElement('div');
+  list.className = 'mini__list';
+
+  const last = new Date(year, month + 1, 0).getDate();
+  for (let d = 1; d <= last; d++) {
+    const ds = dateStr(year, month, d);
+    const dow = new Date(year, month, d).getDay();
+    const isWE = dow === 0 || dow === 6;
+    const hol = HOLIDAYS[ds];
+
+    const row = document.createElement('div');
+    row.className = 'mini__row';
+    if (hol) row.classList.add('is-holiday');
+    else if (isWE) row.classList.add('is-weekend');
+
+    const dayEl = document.createElement('span');
+    dayEl.className = 'mini__day';
+    dayEl.innerHTML = `<b>${d}</b><i>${DOW_SHORT[dow]}</i>`;
+    row.appendChild(dayEl);
+
+    const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
+    const worst = Math.max(...slots);
+    const box = document.createElement('span');
+    box.className = `mini__box cat-${worst || 0}`;
+    row.appendChild(box);
+
+    list.appendChild(row);
+  }
+  wrap.appendChild(list);
+  return wrap;
+}

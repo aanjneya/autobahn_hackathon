@@ -3,152 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Automatisierter Fahrkalender für die Autobahnkorridore A8 Ost und A93 Süd – Verkehrsprognose 2026-2029 mit farbcodierter Stau-Intensität.">
-  <title>Fahrkalender – Autobahn A8 / A93 Verkehrsprognose</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <title>Fahrkalender – Die Autobahn</title>
+  <link rel="stylesheet" href="style.css?v=10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
 </head>
 <body>
-  <div class="app" id="app">
-    <!-- Header -->
-    <header class="header">
-      <div class="header__brand">
-        <span class="header__icon">🛣️</span>
-        <div>
-          <h1 class="header__title">Autobahn Fahrkalender</h1>
-          <p class="header__subtitle">Verkehrsprognose A 8 Ost &amp; A 93 Süd · Alpenkorridore</p>
-        </div>
+  <div class="page" id="page">
+
+    <!-- 1. HEADER -->
+    <header class="hdr">
+      <div class="hdr__text">
+        <div class="hdr__title">FAHRKALENDER</div>
+        <div class="hdr__route" id="hdrRoute">A93 RICHTUNG SÜDEN</div>
+        <div class="hdr__sub" id="hdrSub">Rosenheim, München → Kufstein, Innsbruck</div>
+      </div>
+      <div class="hdr__right">
+        <button class="print-btn" id="printBtn" title="Drucken">🖨️ Drucken</button>
+        <img class="hdr__logo" src="https://www.autobahn.de/_assets/4483a80560873394161ba712d6ca7e9e/Images/Logo.svg" alt="Die Autobahn">
       </div>
     </header>
 
-    <!-- Demo Banner (shown when using demo data) -->
-    <div class="demo-banner" id="demoBanner" style="display:none;">
-      <span class="demo-banner__icon">⚠️</span>
-      <span>Demo-Modus: Es werden Beispieldaten angezeigt. Sobald die echte <code>forecast.csv</code> vorliegt, werden reale Prognosen geladen.</span>
+    <!-- 2. STRECKEN-TOGGLE -->
+    <nav class="toggle" id="toggle">
+      <button class="toggle__btn active" data-strecke="A93" data-richtung="Sued">A93 Richtung Süden</button>
+      <button class="toggle__btn" data-strecke="A93" data-richtung="Nord">A93 Richtung Norden</button>
+      <button class="toggle__btn" data-strecke="A8" data-richtung="Ost">A8 Richtung Osten</button>
+      <button class="toggle__btn" data-strecke="A8" data-richtung="West">A8 Richtung Westen</button>
+    </nav>
+
+    <!-- 3. NAVIGATION -->
+    <div class="monthnav">
+      <button class="monthnav__arrow" id="navPrev" aria-label="Zurück">‹</button>
+      <div class="monthnav__labels">
+        <span class="monthnav__label" id="navLabelA">–</span>
+        <span class="monthnav__sep">|</span>
+        <span class="monthnav__label" id="navLabelB">–</span>
+      </div>
+      <button class="monthnav__arrow" id="navNext" aria-label="Vor">›</button>
     </div>
 
-    <!-- Controls -->
-    <div class="controls" id="controls">
-      <div class="control-group">
-        <span class="control-group__label">Korridor</span>
-        <select class="select" id="corridorSelect">
-          <option value="A93">A 93 Süd</option>
-          <option value="A8">A 8 Ost</option>
-        </select>
-      </div>
+    <!-- 4. HAUPTBEREICH -->
+    <main class="grid">
+      <section class="cal cal--detail" id="calA"></section>
+      <section class="cal cal--detail" id="calB"></section>
+      <aside class="cal cal--mini" id="calMini"></aside>
+    </main>
 
-      <div class="control-group">
-        <span class="control-group__label">Richtung</span>
-        <select class="select" id="directionSelect">
-          <!-- Options filled dynamically -->
-        </select>
-      </div>
-
-      <div class="control-group">
-        <span class="control-group__label">Messstelle</span>
-        <select class="select" id="siteSelect">
-          <!-- Options filled dynamically -->
-        </select>
-      </div>
-
-      <div class="control-group">
-        <span class="control-group__label">Jahr</span>
-        <div class="year-tabs" id="yearTabs">
-          <button class="year-tab active" data-year="2026">2026</button>
-          <button class="year-tab" data-year="2027">2027</button>
-          <button class="year-tab" data-year="2028">2028</button>
-          <button class="year-tab" data-year="2029">2029</button>
+    <!-- 5. FOOTER -->
+    <footer class="ftr">
+      <div class="legend">
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--weekend"></span>Wochenende</span>
+          <span class="legend__item"><span class="sw sw--holiday"></span>Feiertag</span>
+        </div>
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--cat1"></span>Flüssiger Verkehr</span>
+          <span class="legend__item"><span class="sw sw--cat2"></span>Verstärkter Verkehr</span>
+        </div>
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--cat3"></span>Starker Verkehr</span>
+          <span class="legend__item"><span class="sw sw--cat4"></span>Sehr starker Verkehr</span>
         </div>
       </div>
-    </div>
-
-    <!-- Legend -->
-    <div class="legend" id="legend">
-      <span class="legend__title">Verkehrslage</span>
-      <div class="legend__item">
-        <span class="legend__swatch legend__swatch--1"></span>
-        <span>Frei (Kat. 1)</span>
+      <div class="disclaimer">
+        <p>* Die Verkehrsprognosen wurden auf Grundlage eines Verkehrsaufkommens erarbeitet, das durch keine Störungen wie Unfälle, Baustellen, Wetterbedingungen usw. beeinflusst wurde. Als Grundlage für die Einschätzung der erwarteten Verkehrslage wurde unter anderem die Verkehrsnachfrage aus der Vergangenheit in den Prognosehorizont eingeschätzt. Ungeplante spontane Ereignisse und Events wie Unfälle, kurzfristig notwendige Baustellen und witterungsbedingte Einflüsse können die Verkehrslage beeinflussen und sind in der Prognose nicht enthalten.</p>
+        <p class="stand" id="stand">Stand –</p>
       </div>
-      <div class="legend__item">
-        <span class="legend__swatch legend__swatch--2"></span>
-        <span>Mäßig (Kat. 2)</span>
-      </div>
-      <div class="legend__item">
-        <span class="legend__swatch legend__swatch--3"></span>
-        <span>Dicht (Kat. 3)</span>
-      </div>
-      <div class="legend__item">
-        <span class="legend__swatch legend__swatch--4"></span>
-        <span>Stau (Kat. 4)</span>
-      </div>
-      <div class="legend__item">
-        <span class="legend__swatch legend__swatch--5"></span>
-        <span>Sehr starker Stau (Kat. 5)</span>
-      </div>
-    </div>
-
-    <!-- Stats Row -->
-    <div class="stats-row" id="statsRow">
-      <div class="stat-card">
-        <div class="stat-card__value" id="statTotalDays">–</div>
-        <div class="stat-card__label">Prognosetage</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card__value" style="color:var(--cat-1)" id="statFreeDays">–</div>
-        <div class="stat-card__label">Freie Tage (Kat. 1)</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card__value" style="color:var(--cat-4)" id="statStauDays">–</div>
-        <div class="stat-card__label">Stau-Tage (Kat. 4-5)</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-card__value" style="color:var(--cat-5)" id="statCriticalDays">–</div>
-        <div class="stat-card__label">Kritische Tage (Kat. 5)</div>
-      </div>
-    </div>
-
-    <!-- Day Detail Panel -->
-    <div class="detail-panel hidden" id="detailPanel">
-      <div class="detail-panel__header">
-        <div>
-          <div class="detail-panel__date" id="detailDate">–</div>
-          <div class="detail-panel__badges" id="detailBadges"></div>
-        </div>
-        <button type="button" class="detail-panel__close" id="detailClose" title="Schließen" onclick="window.closeDetailPanel()">✕</button>
-      </div>
-      <div class="slot-bars" id="slotBars">
-        <!-- Slot bars rendered by JS -->
-      </div>
-    </div>
-
-    <!-- Critical Days -->
-    <div class="critical-section" id="criticalSection">
-      <div class="section-title">
-        <span class="section-title__icon">⚠️</span>
-        <span>Kritische Stau-Tage</span>
-      </div>
-      <div class="critical-list" id="criticalList">
-        <!-- Chips rendered by JS -->
-      </div>
-    </div>
-
-    <!-- Calendar Grid -->
-    <div class="calendar" id="calendarGrid">
-      <!-- Month cards rendered by JS -->
-    </div>
-
-    <!-- Loading State -->
-    <div class="loading" id="loadingState" style="display:none;">
-      <div class="loading__spinner"></div>
-      <span>Prognosedaten werden geladen…</span>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-      TUM Hackathon 2026 · Die Autobahn GmbH des Bundes · Automatisierte Verkehrsprognose für Alpen-Ferienkorridore
     </footer>
   </div>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
