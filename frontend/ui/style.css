@@ -169,6 +169,8 @@ html, body {
   table-layout: fixed;
 }
 
+.cal--detail thead th.col-slot { width: 24px; }
+
 .cal--detail thead th {
   font-size: 10px;
   color: #555;
@@ -196,12 +198,14 @@ html, body {
 .cal--detail tbody tr {
   background: #ffffff;
 }
-.cal--detail tbody tr.is-weekend,
+.cal--detail tbody tr.is-weekend {
+  background: #e6eff8;
+}
 .cal--detail tbody tr.is-holiday {
-  background: #f0f0f0;
+  background: #dde9f5;
 }
 .cal--detail tbody tr:hover {
-  background: #e8f0fe;
+  background: #cfe0f2;
 }
 
 .cell-day {
@@ -210,41 +214,70 @@ html, body {
   padding: 3px 6px;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
+  position: relative;
 }
 .cell-day__num { font-weight: 600; }
 .cell-day__dow { color: #555; margin-left: 3px; }
-.cell-day__hol {
-  display: inline-block;
-  font-size: 9px;
-  color: #555;
-  font-style: italic;
-  margin-left: 4px;
-}
-
 .cell-slot {
-  width: 18px;
-  height: 20px;
-  padding: 1px;
+  width: 24px;
+  height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 4px 1px;
 }
 .cell-slot__inner {
+  display: block;
   width: 100%;
   height: 100%;
   background: #e0e0e0;
+  border-radius: 3px;
+  margin: 0 auto;
 }
-.cell-slot__inner.cat-1 { background: #6db33f; }
-.cell-slot__inner.cat-2 { background: #f0c040; }
-.cell-slot__inner.cat-3 { background: #e8732a; }
-.cell-slot__inner.cat-4,
-.cell-slot__inner.cat-5 { background: #c0392b; }
 
-/* Mini-Kalender (rechte Spalte) */
+/* Tabellenzeilen relativ → Feiertags-Overlay kann die ganze Zeile
+   überspannen (funktioniert in modernen Browsern). */
+.cal--detail tbody tr { position: relative; }
+
+.cell-holiday-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(0, 52, 102, 0.55);
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  text-shadow:
+    0 0 2px rgba(255,255,255,0.7), 0 0 2px rgba(255,255,255,0.7);
+  z-index: 2;
+}
+.cell-slot__inner.cat-1 { background: #95c258; }
+.cell-slot__inner.cat-2 { background: #c5cf3a; }
+.cell-slot__inner.cat-3 { background: #f0c040; }
+.cell-slot__inner.cat-4 { background: #ec943a; }
+.cell-slot__inner.cat-5 { background: #d34a2a; }
+
+/* Mini-Kalender (rechte Spalte) — füllt die Spaltenhöhe */
 .cal--mini {
   padding: 6px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  min-height: 0;
 }
 .cal--mini .mini {
-  margin-bottom: 12px;
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
-.cal--mini .mini:last-child { margin-bottom: 0; }
 
 .mini__month {
   font-size: 14px;
@@ -253,12 +286,14 @@ html, body {
   padding: 4px 0 6px 0;
   border-bottom: 1px solid #ddd;
   margin-bottom: 4px;
+  flex-shrink: 0;
 }
 
 .mini__list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1 1 auto;
 }
 
 .mini__row {
@@ -267,9 +302,11 @@ html, body {
   justify-content: space-between;
   gap: 6px;
   font-size: 10px;
-  height: 16px;
+  flex: 1 1 0;
+  min-height: 0;
   padding: 0 4px;
   background: #ffffff;
+  overflow: hidden;
 }
 .mini__row.is-weekend,
 .mini__row.is-holiday {
@@ -292,12 +329,13 @@ html, body {
   height: 12px;
   background: #e0e0e0;
   flex-shrink: 0;
+  border-radius: 3px;
 }
-.mini__box.cat-1 { background: #6db33f; }
-.mini__box.cat-2 { background: #f0c040; }
-.mini__box.cat-3 { background: #e8732a; }
-.mini__box.cat-4,
-.mini__box.cat-5 { background: #c0392b; }
+.mini__box.cat-1 { background: #95c258; }
+.mini__box.cat-2 { background: #c5cf3a; }
+.mini__box.cat-3 { background: #f0c040; }
+.mini__box.cat-4 { background: #ec943a; }
+.mini__box.cat-5 { background: #d34a2a; }
 
 /* ---------- 5. FOOTER ---------------------------------------- */
 .ftr {
@@ -334,12 +372,13 @@ html, body {
   flex-shrink: 0;
   border: 1px solid rgba(0,0,0,0.05);
 }
-.sw--weekend { background: #f0f0f0; border-color: #d0d0d0; }
-.sw--holiday { background: #f0f0f0; border: 1px solid #888; }
-.sw--cat1 { background: #6db33f; }
-.sw--cat2 { background: #f0c040; }
-.sw--cat3 { background: #e8732a; }
-.sw--cat4 { background: #c0392b; }
+.sw--weekend { background: #e6eff8; border-color: #b9cde2; }
+.sw--holiday { background: #dde9f5; border: 1px solid #003466; }
+.sw--cat1 { background: #95c258; }
+.sw--cat2 { background: #c5cf3a; }
+.sw--cat3 { background: #f0c040; }
+.sw--cat4 { background: #ec943a; }
+.sw--cat5 { background: #d34a2a; }
 
 .disclaimer {
   max-width: 420px;
@@ -385,7 +424,8 @@ html, body {
   .toggle__btn:not(.active) { display: none; }
   .grid { grid-template-columns: 38fr 38fr 24fr; gap: 8px; }
   .cal--detail .cal__month { font-size: 18px; padding: 4px 0; }
-  .cell-slot { width: 14px; height: 16px; }
+  .cell-slot { width: 22px; height: 18px; padding: 0 1px; }
+  .cell-slot__inner { width: 100%; height: 12px; border-radius: 2px; }
   .hdr__title { font-size: 22px; }
   .hdr__route { font-size: 14px; }
   @page { size: A4 landscape; margin: 8mm; }

@@ -346,10 +346,10 @@ function renderDetail(container, year, month) {
     tdDay.appendChild(numEl);
     tdDay.appendChild(dowEl);
     if (hol) {
-      const h = document.createElement('span');
-      h.className = 'cell-day__hol';
-      h.textContent = hol;
-      tdDay.appendChild(h);
+      const label = document.createElement('span');
+      label.className = 'cell-holiday-overlay';
+      label.textContent = hol;
+      tdDay.appendChild(label);
     }
     tr.appendChild(tdDay);
 
