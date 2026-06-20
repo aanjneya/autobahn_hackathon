@@ -870,8 +870,13 @@ function showDayDetailView(ds) {
     const bars = hCt.querySelector('.day-view__hourly-bars');
     const ticks = hCt.querySelector('.day-view__hourly-ticks');
     const maxVal = Math.max(...allHours.map(h => h.val || 0)) || 1;
+    const minVal = Math.min(...allHours.filter(h => h.val > 0).map(h => h.val)) || 0;
+    const range = Math.max(1, maxVal - minVal);
     for (const h of allHours) {
-      const height = Math.max(4, Math.round((h.val || 0) / maxVal * 100));
+      const v = h.val || 0;
+      // Normalisiert auf [10%, 95%] mit linearer Skalierung zwischen min und max.
+      const norm = v > 0 ? (v - minVal) / range : 0;
+      const height = v > 0 ? Math.round(10 + norm * 85) : 4;
       const bar = document.createElement('div');
       bar.className = 'day-view__hourly-bar';
       bar.style.background = colors[h.cat] || '#eee';

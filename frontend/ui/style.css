@@ -786,17 +786,29 @@ html, body {
 .day-view__slot-stats {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  font-size: 11px;
+  gap: 6px;
+  font-size: 10px;
   margin-bottom: 8px;
 }
 .day-view__slot-stats div {
   display: flex;
-  justify-content: space-between;
-  gap: 6px;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
 }
-.day-view__slot-stats span { color: #6a7280; }
-.day-view__slot-stats b { font-weight: 600; color: #1a1a1a; }
+.day-view__slot-stats span {
+  color: #6a7280;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+.day-view__slot-stats b {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 12px;
+  white-space: nowrap;
+}
 
 .day-view__slot-reasons-label {
   font-size: 10px;
