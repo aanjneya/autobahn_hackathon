@@ -159,7 +159,10 @@ def enrich(df: pd.DataFrame, dauz_clim: pd.DataFrame,
     new_cols += [c for c in weather_clim.columns if c not in
                  ("month", "weekday", "slot_4h")]
     for c in new_cols:
-        df[c] = df[c].fillna(df[c].median())
+        med = df[c].median()
+        if pd.isna(med):
+            med = 0.0
+        df[c] = df[c].fillna(med)
 
     df = df.drop(columns=["slot_4h", "weekday"])
     return df
@@ -167,15 +170,41 @@ def enrich(df: pd.DataFrame, dauz_clim: pd.DataFrame,
 
 def main() -> None:
     print("Building DAUZ climatology...")
-    dauz_clim = build_dauz_climatology()
-    print(f"  -> {len(dauz_clim)} (route, month, weekday, slot) cells")
+    try:
+        dauz_clim = build_dauz_climatology()
+        print(f"  -> {len(dauz_clim)} (route, month, weekday, slot) cells")
+    except FileNotFoundError as e:
+        print(f"  [skip] {e}")
+        dauz_clim = None
 
     print("Building weather climatology...")
-    weather_clim = build_weather_climatology()
-    print(f"  -> {len(weather_clim)} (month, weekday, slot) cells")
+    try:
+        weather_clim = build_weather_climatology()
+        print(f"  -> {len(weather_clim)} (month, weekday, slot) cells")
+    except FileNotFoundError as e:
+        print(f"  [skip] {e}")
+        weather_clim = None
+
+    if dauz_clim is None and weather_clim is None:
+        print("[climatology] no source data available — "
+              "adding placeholder columns filled with 0.")
+
+    if dauz_clim is None:
+        dauz_clim = pd.DataFrame(
+            columns=["strecke", "richtung", "month", "weekday", "slot_4h",
+                     "kfz_expected", "sv_expected", "sv_share_expected"]
+        )
+    if weather_clim is None:
+        weather_clim = pd.DataFrame(
+            columns=["month", "weekday", "slot_4h",
+                     "lt_expected", "fbt_expected", "fbt_below_0_prob"]
+        )
 
     for fname in ("train.csv", "forecast_input.csv"):
         path = PROC / fname
+        if not path.exists():
+            print(f"  [skip] {fname}: not found at {path}")
+            continue
         df = pd.read_csv(path)
         before = df.shape[1]
         df = enrich(df, dauz_clim, weather_clim)
