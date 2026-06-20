@@ -254,6 +254,7 @@ function parseCsv(text) {
   const reasons = {};
   const confidence = {};
   const kfz = {};
+  const hourly = {};
   for (let l = 1; l < lines.length; l++) {
     const cols = splitCsvLine(lines[l]);
     if (cols.length < 4) continue;
@@ -315,6 +316,18 @@ function parseCsv(text) {
           if (val > kfz[key][block]) kfz[key][block] = val;
         }
       }
+
+      if (!hourly[key]) hourly[key] = [[], [], [], [], [], []];
+      let hVal = 0;
+      if (iKfz >= 0 && !isNaN(parseInt(cols[iKfz]))) hVal = parseInt(cols[iKfz]);
+      
+      const existing = hourly[key][block].find(x => x.slot === slot);
+      if (existing) {
+        if (cat > existing.cat) existing.cat = cat;
+        if (hVal > existing.val) existing.val = hVal;
+      } else {
+        hourly[key][block].push({ slot: slot, cat: cat, val: hVal });
+      }
     }
   }
   // Compute block averages from the 30-minute maximums
@@ -365,6 +378,7 @@ function parseCsv(text) {
   
   state.data = agg;
   state.kfz = kfz;
+  state.hourly = hourly;
   state.reasons = reasons;
   state.confidence = confidence;
 }
@@ -630,6 +644,57 @@ function showReasonPopover(anchorEl, ds, k) {
       ? 'Keine Prognose verfügbar.'
       : 'Kein besonderer Grund – normaler Verkehr.';
     pop.appendChild(note);
+  }
+
+  const hourlyData = (state.hourly && state.hourly[key]) ? state.hourly[key][k] : null;
+  if (hourlyData && hourlyData.length > 0) {
+    const mapContainer = document.createElement('div');
+    mapContainer.style.marginTop = '12px';
+    
+    const mapLbl = document.createElement('div');
+    mapLbl.textContent = 'Verlauf (30-Minuten Takt):';
+    mapLbl.style.fontSize = '11px';
+    mapLbl.style.color = '#888';
+    mapLbl.style.marginBottom = '4px';
+    mapContainer.appendChild(mapLbl);
+
+    const mapEl = document.createElement('div');
+    mapEl.style.display = 'flex';
+    mapEl.style.width = '100%';
+    mapEl.style.gap = '1px';
+    mapEl.style.overflow = 'hidden';
+
+    // Sort to ensure chronological order
+    hourlyData.sort((a, b) => a.slot.localeCompare(b.slot));
+    
+    const colors = {1: '#95c258', 2: '#c5cf3a', 3: '#efa82a', 4: '#e8624a', 5: '#b3271a'};
+
+    for (const h of hourlyData) {
+      const col = document.createElement('div');
+      col.style.flex = '1';
+      col.style.display = 'flex';
+      col.style.flexDirection = 'column';
+      col.style.alignItems = 'center';
+
+      const bar = document.createElement('div');
+      bar.style.width = '75%';
+      bar.style.height = '36px';
+      bar.style.borderRadius = '3px';
+      bar.style.backgroundColor = colors[h.cat] || '#eee';
+      bar.title = h.slot + ' (~' + h.val + ' Kfz/h)';
+      
+      const lbl = document.createElement('div');
+      lbl.style.fontSize = '7.5px';
+      lbl.style.color = '#777';
+      lbl.style.marginTop = '2px';
+      lbl.textContent = h.slot.split('-')[0]; // only show start time (e.g. 16:00)
+      
+      col.appendChild(bar);
+      col.appendChild(lbl);
+      mapEl.appendChild(col);
+    }
+    mapContainer.appendChild(mapEl);
+    pop.appendChild(mapContainer);
   }
 
   // Positionieren: unterhalb der Zelle, im Viewport gehalten.
