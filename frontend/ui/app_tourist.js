@@ -431,12 +431,6 @@ function renderDetail(container, year, month) {
     dowEl.textContent = DOW_SHORT[dow];
     tdDay.appendChild(numEl);
     tdDay.appendChild(dowEl);
-    if (hol) {
-      const label = document.createElement('span');
-      label.className = 'cell-holiday-overlay';
-      label.textContent = hol;
-      tdDay.appendChild(label);
-    }
     tr.appendChild(tdDay);
 
     const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
