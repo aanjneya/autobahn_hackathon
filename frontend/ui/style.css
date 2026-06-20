@@ -603,6 +603,32 @@ html, body {
   color: #5a6976;
   font-style: italic;
 }
+.reason-popover__confidence {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #5a6976;
+}
+.reason-popover__confidence-bar {
+  flex: 1 1 auto;
+  height: 5px;
+  border-radius: 3px;
+  background: #e5eaf0;
+  overflow: hidden;
+}
+.reason-popover__confidence-fill {
+  display: block;
+  height: 100%;
+  background: #00549f;
+  border-radius: 3px;
+}
+.reason-popover__confidence-value {
+  font-weight: 600;
+  color: #1c2b3a;
+  flex: 0 0 auto;
+}
 
 @media print {
   .reason-popover { display: none !important; }

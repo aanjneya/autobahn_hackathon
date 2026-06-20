@@ -121,7 +121,8 @@ const state = {
   // 0 = Jan 2026, 1 = Feb 2026, ... 12 = Jan 2027, ...
   monthIndex: 5, // Juni 2026 als sinnvoller Default (Feriensaison)
   data: {}, // key "YYYY-MM-DD|A93|Sued" → [c1, c2, c3, c4, c5, c6]
-  reasons: {} // key "YYYY-MM-DD|A93|Sued" → [ [r0..], [r1..], ... ] (6 4h-Blöcke)
+  reasons: {}, // key "YYYY-MM-DD|A93|Sued" → [ [r0..], [r1..], ... ] (6 4h-Blöcke)
+  confidence: {} // key "YYYY-MM-DD|A93|Sued" → [p0..p5] (Modell-Konfidenz je 4h-Block, 0..1)
 };
 
 // Kategorie → Klartext (gleiche Bezeichnungen wie die Legende im Footer).
@@ -237,6 +238,7 @@ function parseCsv(text) {
   const iSlot = headers.indexOf('time_slot');
   const iCat = headers.indexOf('pred_category');
   const iReason = headers.indexOf('reason');
+  const iProbCols = [1, 2, 3, 4, 5].map(k => headers.indexOf(`prob_${k}`));
 
   // Falls schon im wide-Format (slot0..slot5)
   const iSlotCols = [0, 1, 2, 3, 4, 5].map(k => headers.indexOf(`slot${k}`));
@@ -244,6 +246,7 @@ function parseCsv(text) {
 
   const agg = {};
   const reasons = {};
+  const confidence = {};
   for (let l = 1; l < lines.length; l++) {
     const cols = splitCsvLine(lines[l]);
     if (cols.length < 4) continue;
@@ -268,7 +271,19 @@ function parseCsv(text) {
       if (isNaN(startHour)) continue;
       const block = Math.floor(startHour / 4);
       if (block < 0 || block > 5) continue;
-      if (cat > agg[key][block]) agg[key][block] = cat;
+      if (cat > agg[key][block]) {
+        agg[key][block] = cat;
+        // Konfidenz = Modellwahrscheinlichkeit der gewählten Kategorie
+        // (nur beim Setzen des neuen Block-Maximums aktualisieren).
+        const iProb = iProbCols[cat - 1];
+        if (iProb >= 0) {
+          const p = parseFloat(cols[iProb]);
+          if (!isNaN(p)) {
+            if (!confidence[key]) confidence[key] = [null, null, null, null, null, null];
+            confidence[key][block] = p;
+          }
+        }
+      }
 
       // Gründe je 4h-Block sammeln (Vereinigung, ohne Duplikate).
       if (iReason >= 0) {
@@ -283,6 +298,7 @@ function parseCsv(text) {
   }
   state.data = agg;
   state.reasons = reasons;
+  state.confidence = confidence;
 }
 
 async function loadDemo() {
@@ -311,6 +327,7 @@ async function loadDemo() {
   }
   state.data = data;
   state.reasons = {}; // Demo-Daten haben keine Gründe.
+  state.confidence = {}; // Demo-Daten haben keine Konfidenzwerte.
 }
 
 // ────────────────────────────────────────────────────────────
@@ -470,7 +487,9 @@ function formatReasonDate(ds) {
 function showReasonPopover(anchorEl, ds, k) {
   const pop = getPopover();
   const cat = (lookup(ds) || [])[k] || 0;
-  const rs = (state.reasons[`${ds}|${state.strecke}|${state.richtung}`] || [])[k] || [];
+  const key = `${ds}|${state.strecke}|${state.richtung}`;
+  const rs = (state.reasons[key] || [])[k] || [];
+  const conf = (state.confidence[key] || [])[k];
 
   pop.innerHTML = '';
 
@@ -495,6 +514,27 @@ function showReasonPopover(anchorEl, ds, k) {
   sev.appendChild(sw);
   sev.appendChild(sevLbl);
   pop.appendChild(sev);
+
+  if (conf != null && cat > 0) {
+    const pct = Math.round(conf * 100);
+    const confEl = document.createElement('div');
+    confEl.className = 'reason-popover__confidence';
+    const confLbl = document.createElement('span');
+    confLbl.textContent = 'Konfidenz';
+    const bar = document.createElement('span');
+    bar.className = 'reason-popover__confidence-bar';
+    const fill = document.createElement('span');
+    fill.className = 'reason-popover__confidence-fill';
+    fill.style.width = `${pct}%`;
+    bar.appendChild(fill);
+    const val = document.createElement('span');
+    val.className = 'reason-popover__confidence-value';
+    val.textContent = `${pct}%`;
+    confEl.appendChild(confLbl);
+    confEl.appendChild(bar);
+    confEl.appendChild(val);
+    pop.appendChild(confEl);
+  }
 
   if (rs.length) {
     const ul = document.createElement('ul');

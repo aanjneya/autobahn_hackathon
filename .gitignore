@@ -20,3 +20,4 @@ data/processed/*
 
 # Env / Secrets
 .env
+PITCH_BRIEF.md
