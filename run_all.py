@@ -97,6 +97,7 @@ def run_model() -> dict:
     )
 
     train = pd.read_csv(PROC / "train.csv")
+    fc_input = pd.read_csv(PROC / "forecast_input.csv")
     year = pd.to_datetime(train["datum"]).dt.year
     tr, va = train[year < VAL_YEAR], train[year == VAL_YEAR]
 
@@ -128,7 +129,7 @@ def run_model() -> dict:
     ))
 
     per_class_f1 = f1_score(y_va, pred, average=None, labels=np.arange(len(CLASSES)))
-    fc = forecast(train)
+    fc = forecast(train, fc_input)
 
     return {
         "train_rows": len(tr),
