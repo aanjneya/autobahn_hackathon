@@ -1,0 +1,192 @@
+"""Build climatology features from DAUZ + lt_fbt clean data.
+
+DAUZ provides historical traffic volumes per device (kfz_h, sv_h) in 4h slots.
+lt_fbt provides air/road temperatures from one station (AD Rosenheim).
+
+We aggregate them to expected values keyed by (strecke, richtung, month,
+weekday, slot_4h) resp. (month, weekday, slot_4h) and merge into both
+train.csv and forecast_input.csv. That way 2026-2029 rows get historically
+plausible feature values via the same lookup.
+
+Reads :  data/clean/DAUZ_2+0_1h_2023-2026/*.csv
+         data/clean/lt_und_fbt/*.csv
+         data/processed/train.csv
+         data/processed/forecast_input.csv
+Writes:  data/processed/train.csv          (overwrites with extra cols)
+         data/processed/forecast_input.csv (overwrites with extra cols)
+"""
+from __future__ import annotations
+
+import glob
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parent.parent
+CLEAN = ROOT / "data" / "clean"
+PROC = ROOT / "data" / "processed"
+
+DAUZ_DIR = CLEAN / "DAUZ_2+0_1h_2023-2026"
+LT_FBT_DIR = CLEAN / "lt_und_fbt"
+
+
+def device_to_route(device: str) -> tuple[str, str] | None:
+    """Same mapping as merge.py."""
+    s = str(device).lower()
+    if "kiefersfelden" in s or "inntal" in s or "gletschergarten" in s:
+        return ("A93", "Sued") if "kff" in s else ("A93", "Nord")
+    if "sbg" in s:
+        return ("A8", "Ost")
+    if "mch" in s:
+        return ("A8", "West")
+    return None
+
+
+def slot_to_4h_bucket(slot: str) -> str:
+    """Map '17:00-17:30' or '17:30-18:00' -> '16-20'.
+
+    DAUZ/lt_fbt clean files use buckets '00-04', '04-08', '08-12', '12-16',
+    '16-20', '20-24'. The 4h start is hour // 4 * 4.
+    """
+    if "-" not in slot:
+        return slot
+    start = slot.split("-")[0]
+    if ":" in start:
+        h = int(start.split(":")[0])
+    else:
+        h = int(start)
+    bucket_start = (h // 4) * 4
+    bucket_end = bucket_start + 4
+    return f"{bucket_start:02d}-{bucket_end:02d}"
+
+
+def _load_dauz() -> pd.DataFrame:
+    files = glob.glob(str(DAUZ_DIR / "*.csv"))
+    parts = []
+    for f in files:
+        df = pd.read_csv(f)
+        if not {"devices", "date", "time_slot", "kfz_h", "sv_h"}.issubset(df.columns):
+            continue
+        parts.append(df)
+    if not parts:
+        raise FileNotFoundError(f"No DAUZ files found in {DAUZ_DIR}")
+    df = pd.concat(parts, ignore_index=True)
+    routes = df["devices"].apply(device_to_route)
+    df = df.assign(
+        strecke=routes.apply(lambda r: r[0] if r else None),
+        richtung=routes.apply(lambda r: r[1] if r else None),
+    ).dropna(subset=["strecke"])
+    df["date"] = pd.to_datetime(df["date"])
+    df["weekday"] = df["date"].dt.dayofweek
+    df["month"] = df["date"].dt.month
+    df["sv_share"] = np.where(df["kfz_h"] > 0, df["sv_h"] / df["kfz_h"], 0.0)
+    return df
+
+
+def _load_lt_fbt() -> pd.DataFrame:
+    """Combine lt and fbt files on (date, time_slot)."""
+    parts_lt, parts_fbt = [], []
+    for f in glob.glob(str(LT_FBT_DIR / "*.csv")):
+        df = pd.read_csv(f)
+        if "lt" in df.columns:
+            parts_lt.append(df[["date", "time_slot", "lt"]])
+        elif "fbt" in df.columns:
+            parts_fbt.append(df[["date", "time_slot", "fbt"]])
+    lt = pd.concat(parts_lt, ignore_index=True) if parts_lt else pd.DataFrame()
+    fbt = pd.concat(parts_fbt, ignore_index=True) if parts_fbt else pd.DataFrame()
+    if lt.empty and fbt.empty:
+        raise FileNotFoundError(f"No lt_fbt files in {LT_FBT_DIR}")
+    merged = lt.merge(fbt, on=["date", "time_slot"], how="outer") if not lt.empty and not fbt.empty else (lt if not lt.empty else fbt)
+    merged["date"] = pd.to_datetime(merged["date"])
+    merged["month"] = merged["date"].dt.month
+    merged["weekday"] = merged["date"].dt.dayofweek
+    return merged
+
+
+def build_dauz_climatology() -> pd.DataFrame:
+    """Per (strecke, richtung, month, weekday, slot_4h)
+    -> kfz_expected, sv_expected, sv_share_expected."""
+    df = _load_dauz()
+    grp = df.groupby(["strecke", "richtung", "month", "weekday", "time_slot"]).agg(
+        kfz_expected=("kfz_h", "mean"),
+        sv_expected=("sv_h", "mean"),
+        sv_share_expected=("sv_share", "mean"),
+    ).reset_index()
+    grp = grp.rename(columns={"time_slot": "slot_4h"})
+    return grp
+
+
+def build_weather_climatology() -> pd.DataFrame:
+    """Per (month, weekday, slot_4h)
+    -> lt_expected, fbt_expected, fbt_below_0_prob."""
+    df = _load_lt_fbt()
+    df["fbt_below_0"] = (df.get("fbt", pd.Series(np.nan, index=df.index)) < 0).astype(float)
+    agg = {}
+    if "lt" in df.columns:
+        agg["lt_expected"] = ("lt", "mean")
+    if "fbt" in df.columns:
+        agg["fbt_expected"] = ("fbt", "mean")
+        agg["fbt_below_0_prob"] = ("fbt_below_0", "mean")
+    grp = df.groupby(["month", "weekday", "time_slot"]).agg(**agg).reset_index()
+    grp = grp.rename(columns={"time_slot": "slot_4h"})
+    return grp
+
+
+def _add_lookup_keys(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    df["slot_4h"] = df["time_slot"].apply(slot_to_4h_bucket)
+    if "month" not in df.columns or "dow" not in df.columns:
+        dt = pd.to_datetime(df["datum"])
+        df["month"] = dt.dt.month
+        df["dow"] = dt.dt.dayofweek
+    df["weekday"] = df["dow"]
+    return df
+
+
+def enrich(df: pd.DataFrame, dauz_clim: pd.DataFrame,
+           weather_clim: pd.DataFrame) -> pd.DataFrame:
+    df = _add_lookup_keys(df)
+    df = df.merge(
+        dauz_clim,
+        on=["strecke", "richtung", "month", "weekday", "slot_4h"],
+        how="left",
+    )
+    df = df.merge(
+        weather_clim,
+        on=["month", "weekday", "slot_4h"],
+        how="left",
+    )
+
+    new_cols = [c for c in dauz_clim.columns if c not in
+                ("strecke", "richtung", "month", "weekday", "slot_4h")]
+    new_cols += [c for c in weather_clim.columns if c not in
+                 ("month", "weekday", "slot_4h")]
+    for c in new_cols:
+        df[c] = df[c].fillna(df[c].median())
+
+    df = df.drop(columns=["slot_4h", "weekday"])
+    return df
+
+
+def main() -> None:
+    print("Building DAUZ climatology...")
+    dauz_clim = build_dauz_climatology()
+    print(f"  -> {len(dauz_clim)} (route, month, weekday, slot) cells")
+
+    print("Building weather climatology...")
+    weather_clim = build_weather_climatology()
+    print(f"  -> {len(weather_clim)} (month, weekday, slot) cells")
+
+    for fname in ("train.csv", "forecast_input.csv"):
+        path = PROC / fname
+        df = pd.read_csv(path)
+        before = df.shape[1]
+        df = enrich(df, dauz_clim, weather_clim)
+        df.to_csv(path, index=False)
+        added = df.shape[1] - before
+        print(f"  {fname}: +{added} cols, {len(df)} rows -> {path}")
+
+
+if __name__ == "__main__":
+    main()
