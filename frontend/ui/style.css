@@ -77,7 +77,7 @@ html, body {
   min-width: 0;
   align-self: center;
 }
-.ctrl-left .toggle { margin-bottom: 10px; }
+.ctrl-left .toggle { margin-bottom: 10px; justify-content: center; }
 .ctrl-left .monthnav { margin-bottom: 0; }
 
 .ctrl-map {
