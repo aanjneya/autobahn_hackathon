@@ -4,7 +4,7 @@ Pipeline position (final stage):
     pipeline.py -> labels.py -> features.py -> merge.py -> model.py
 
 Reads  : data/processed/train.csv, data/processed/forecast_input.csv
-Writes : data/processed/forecast.csv
+outpWrites : output/forecast.csv
 
 Run    : python src/model.py
 """
@@ -24,6 +24,7 @@ from sklearn.metrics import (
 from sklearn.utils.class_weight import compute_class_weight
 
 PROC = Path(__file__).resolve().parent.parent / "data" / "processed"
+OUT = Path(__file__).resolve().parent.parent / "output"
 
 # --- Adjustable knobs ------------------------------------------------------
 VAL_YEAR = 2025  # rows with year < VAL_YEAR train, year == VAL_YEAR validate
@@ -151,7 +152,8 @@ def forecast(train: pd.DataFrame) -> pd.DataFrame:
     for col_idx, label in enumerate(model.classes_):
         out[f"prob_{label_to_category(label)}"] = proba[:, col_idx].round(4)
 
-    out_path = PROC / "forecast.csv"
+    OUT.mkdir(exist_ok=True)
+    out_path = OUT / "forecast.csv"
     out.to_csv(out_path, index=False)
     print(f"\nforecast.csv: {len(out)} rows -> {out_path}")
     print("\nPredicted category distribution (2026-2029):")
