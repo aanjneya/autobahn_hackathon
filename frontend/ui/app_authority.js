@@ -287,6 +287,13 @@ function parseCsv(text) {
       if (!window.__slotMax) window.__slotMax = {};
       if (!window.__slotMaxConf) window.__slotMaxConf = {};
       
+      const subStrecke = cols[iStrecke];
+      if (!window.__segMax) window.__segMax = {};
+      const segKey = `${key}|${block}|${subStrecke}`;
+      if (!window.__segMax[segKey] || cat > window.__segMax[segKey]) {
+        window.__segMax[segKey] = cat;
+      }
+      
       if (!window.__slotMax[slotKey] || cat > window.__slotMax[slotKey]) {
         window.__slotMax[slotKey] = cat;
         
@@ -751,7 +758,60 @@ function showReasonPopover(anchorEl, ds, k) {
 
   // Positionieren: unterhalb der Zelle, im Viewport gehalten.
   pop.hidden = false;
+
+  const DETECTORS_UI = {
+      "A8_MQB25": "Holzkirchen",
+      "A8_MQQ37": "Holzkirchen (Süd)",
+      "A8_MQQ209": "Traunstein/Siegsdorf",
+      "A8_MQQ213": "Siegsdorf (Ost)",
+      "A8_MQQ245": "Teisendorf",
+      "A93_Kiefersfelden": "Kiefersfelden",
+      "A93_Inntal": "Inntal",
+      "A93_Gletschergarten": "Gletschergarten"
+  };
+
+  const segWrap = document.createElement('div');
+  segWrap.className = 'reason-popover__confidence';
+  segWrap.style.flexDirection = 'column';
+  segWrap.style.alignItems = 'flex-start';
+  segWrap.innerHTML = '<span style="margin-bottom: 4px; font-weight: bold;">📍 Stau-Hotspots:</span>';
+  
+  let foundSegs = false;
+  for (const det in DETECTORS_UI) {
+      if (det.startsWith(state.strecke)) {
+          const segKey = `${key}|${k}|${det}`;
+          const segCat = window.__segMax ? window.__segMax[segKey] : 0;
+          if (segCat >= 3) {
+              foundSegs = true;
+              const row = document.createElement('div');
+              row.style.display = 'flex';
+              row.style.width = '100%';
+              row.style.alignItems = 'center';
+              row.style.marginBottom = '2px';
+              
+              const dot = document.createElement('div');
+              dot.className = `cat-${segCat}`;
+              dot.style.width = '8px';
+              dot.style.height = '8px';
+              dot.style.borderRadius = '50%';
+              dot.style.marginRight = '6px';
+              
+              const name = document.createElement('span');
+              name.textContent = DETECTORS_UI[det];
+              name.style.fontSize = '11px';
+              
+              row.appendChild(dot);
+              row.appendChild(name);
+              segWrap.appendChild(row);
+          }
+      }
+  }
+  if (foundSegs) {
+      pop.appendChild(segWrap);
+  }
+
   const rect = anchorEl.getBoundingClientRect();
+
   const sx = window.pageXOffset;
   const sy = window.pageYOffset;
   const pw = pop.offsetWidth;
