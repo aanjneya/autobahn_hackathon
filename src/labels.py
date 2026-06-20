@@ -83,7 +83,7 @@ def main():
     default_input = os.path.join(BASE_DIR, "data", "clean", "2023-2025_1min_2+0_v")
     default_output = os.path.join(BASE_DIR, "data", "processed", "daily_labels.csv")
 
-    parser = argparse.ArgumentParser(description="Calculate Stau Categories from clean 4-hour data.")
+    parser = argparse.ArgumentParser(description="Calculate Stau Categories from clean 30 minutes data.")
     parser.add_argument("--input_dir", type=str, default=default_input, help="Path to directory containing clean 4-hour CSV files")
     parser.add_argument("--output_file", type=str, default=default_output, help="Path to output labels CSV file")
     
