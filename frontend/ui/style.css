@@ -258,9 +258,9 @@ html, body {
 }
 .cell-slot__inner.cat-1 { background: #95c258; }
 .cell-slot__inner.cat-2 { background: #c5cf3a; }
-.cell-slot__inner.cat-3 { background: #f0c040; }
-.cell-slot__inner.cat-4 { background: #ec943a; }
-.cell-slot__inner.cat-5 { background: #d34a2a; }
+.cell-slot__inner.cat-3 { background: #efa82a; }
+.cell-slot__inner.cat-4 { background: #e8624a; }
+.cell-slot__inner.cat-5 { background: #b3271a; }
 
 /* Mini-Kalender (rechte Spalte) — füllt die Spaltenhöhe */
 .cal--mini {
@@ -333,9 +333,9 @@ html, body {
 }
 .mini__box.cat-1 { background: #95c258; }
 .mini__box.cat-2 { background: #c5cf3a; }
-.mini__box.cat-3 { background: #f0c040; }
-.mini__box.cat-4 { background: #ec943a; }
-.mini__box.cat-5 { background: #d34a2a; }
+.mini__box.cat-3 { background: #efa82a; }
+.mini__box.cat-4 { background: #e8624a; }
+.mini__box.cat-5 { background: #b3271a; }
 
 /* ---------- 5. FOOTER ---------------------------------------- */
 .ftr {
@@ -376,9 +376,9 @@ html, body {
 .sw--holiday { background: #dde9f5; border: 1px solid #003466; }
 .sw--cat1 { background: #95c258; }
 .sw--cat2 { background: #c5cf3a; }
-.sw--cat3 { background: #f0c040; }
-.sw--cat4 { background: #ec943a; }
-.sw--cat5 { background: #d34a2a; }
+.sw--cat3 { background: #efa82a; }
+.sw--cat4 { background: #e8624a; }
+.sw--cat5 { background: #b3271a; }
 
 .disclaimer {
   max-width: 420px;
