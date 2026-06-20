@@ -498,8 +498,16 @@ function renderDetail(container, year, month) {
       });
       tr.appendChild(td);
     }
-    const worst = Math.max(...slots);
-    tr.addEventListener('mouseenter', () => Sidebar.updateMapColor(worst, ds));
+    let dSum = 0;
+    let dCnt = 0;
+    for (const c of slots) {
+      if (c > 0) {
+        dSum += c * c;
+        dCnt += c;
+      }
+    }
+    const overall = dCnt > 0 ? Math.round(dSum / dCnt) : 0;
+    tr.addEventListener('mouseenter', () => Sidebar.updateMapColor(overall, ds));
     tr.addEventListener('mouseleave', () => Sidebar.updateMapColor(0, null));
     tbody.appendChild(tr);
   }
