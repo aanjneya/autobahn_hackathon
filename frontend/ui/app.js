@@ -334,10 +334,12 @@ function render() {
   renderDetail(document.getElementById('calA'), mA.y, mA.m);
   renderDetail(document.getElementById('calB'), mB.y, mB.m);
 
-  const mini = document.getElementById('calMini');
+  const mini = document.getElementById('miniList') || document.getElementById('calMini');
   mini.innerHTML = '';
   if (mC) mini.appendChild(renderMini(mC.y, mC.m));
   if (mD) mini.appendChild(renderMini(mD.y, mD.m));
+
+  updateMapRoutes();
 }
 
 function monthFromIndex(idx) {
@@ -425,6 +427,9 @@ function renderDetail(container, year, month) {
       });
       tr.appendChild(td);
     }
+    const worst = Math.max(...slots);
+    tr.addEventListener('mouseenter', () => updateMapColor(worst, ds));
+    tr.addEventListener('mouseleave', () => updateMapColor(0, null));
     tbody.appendChild(tr);
   }
   table.appendChild(tbody);
@@ -444,14 +449,19 @@ function renderMini(year, month) {
   list.className = 'mini__list';
 
   const last = new Date(year, month + 1, 0).getDate();
-  for (let d = 1; d <= last; d++) {
+  for (let d = 1; d <= 31; d++) {
+    const row = document.createElement('div');
+    row.className = 'mini__row';
+    if (d > last) {
+      row.classList.add('mini__row--empty');
+      list.appendChild(row);
+      continue;
+    }
+
     const ds = dateStr(year, month, d);
     const dow = new Date(year, month, d).getDay();
     const isWE = dow === 0 || dow === 6;
     const hol = HOLIDAYS[ds];
-
-    const row = document.createElement('div');
-    row.className = 'mini__row';
     if (hol) row.classList.add('is-holiday');
     else if (isWE) row.classList.add('is-weekend');
 
@@ -580,4 +590,151 @@ function showReasonPopover(anchorEl, ds, k) {
   // Pfeil horizontal auf die Zellenmitte ausrichten.
   const arrowLeft = Math.max(12, Math.min(anchorCenter - left, pw - 12));
   pop.style.setProperty('--arrow-left', `${Math.round(arrowLeft)}px`);
+}
+
+// ────────────────────────────────────────────────────────────
+// Leaflet-Karte (rechte Spalte, oberhalb der Mini-Kalender)
+// Schlicht und hell — CartoDB Positron (light, no labels).
+// ────────────────────────────────────────────────────────────
+
+const ROUTES_GEO = {
+  A93: [
+    [47.856, 12.121],  // Rosenheim Zentrum
+    [47.820, 12.133],  // Rosenheim Süd
+    [47.790, 12.143],  // Rohrdorf
+    [47.760, 12.155],  // Brannenburg
+    [47.730, 12.162],  // Flintsbach
+    [47.700, 12.168],  // Oberaudorf
+    [47.677, 12.172],  // Kiefersfelden
+    [47.583, 12.167],  // Kufstein (Österreich)
+  ],
+  A8: [
+    [48.137, 11.660],  // München Ost (A8 Beginn)
+    [48.070, 11.820],  // Vaterstetten
+    [48.010, 11.980],  // Rohrdorf/Inntaldreieck
+    [47.975, 12.100],  // Rosenheim Ost
+    [47.900, 12.380],  // Bernau am Chiemsee
+    [47.860, 12.560],  // Traunstein
+    [47.820, 12.780],  // Bad Reichenhall
+    [47.800, 13.000],  // Salzburg Grenze
+  ]
+};
+
+const MAP_BOUNDS = [[47.50, 11.50], [48.25, 13.10]];
+
+const MAP_CAT_COLOR = {
+  0: '#f4a12a',
+  1: '#6db33f',
+  2: '#f0c040',
+  3: '#e8732a',
+  4: '#c0392b',
+  5: '#8b1a0e'
+};
+
+const mapState = {
+  map: null,
+  lines: {},
+  arrow: null
+};
+
+function initMap() {
+  if (mapState.map || typeof L === 'undefined') return;
+  const el = document.getElementById('mapBox');
+  if (!el) return;
+
+  const map = L.map(el, {
+    zoomControl: false,
+    dragging: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    keyboard: false,
+    touchZoom: false,
+    attributionControl: false,
+    zoomSnap: 0.1
+  });
+  map.fitBounds(MAP_BOUNDS);
+  map.setMaxBounds(MAP_BOUNDS);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Feste Beschriftungen (wie im Referenzbild)
+  L.marker([48.155, 11.580], {
+    icon: L.divIcon({
+      className: 'map-label map-label--city',
+      html: '<span>München</span>',
+      iconSize: [80, 16],
+      iconAnchor: [-4, 8]
+    }),
+    interactive: false,
+    keyboard: false
+  }).addTo(map);
+
+  L.marker([47.550, 12.500], {
+    icon: L.divIcon({
+      className: 'map-label map-label--region',
+      html: '<span>Österreich</span>',
+      iconSize: [90, 16],
+      iconAnchor: [45, 8]
+    }),
+    interactive: false,
+    keyboard: false
+  }).addTo(map);
+
+  // Polylines beider Routen
+  for (const [name, coords] of Object.entries(ROUTES_GEO)) {
+    const line = L.polyline(coords, {
+      color: '#bbbbbb',
+      weight: 3,
+      opacity: 0.5,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(map);
+    mapState.lines[name] = line;
+  }
+
+  mapState.map = map;
+  setTimeout(() => map.invalidateSize(), 50);
+}
+
+function updateMapRoutes() {
+  initMap();
+  if (!mapState.map) return;
+  const active = state.strecke;
+
+  for (const [name, line] of Object.entries(mapState.lines)) {
+    if (name === active) {
+      line.setStyle({ color: MAP_CAT_COLOR[0], weight: 6, opacity: 1.0 });
+    } else {
+      line.setStyle({ color: '#bbbbbb', weight: 3, opacity: 0.5 });
+    }
+  }
+  updateMapColor(0, null);
+}
+
+function updateMapColor(cat, _ds) {
+  if (!mapState.map) return;
+  const active = state.strecke;
+  const line = mapState.lines[active];
+  if (!line) return;
+  const color = MAP_CAT_COLOR[cat] || MAP_CAT_COLOR[0];
+  line.setStyle({ color });
+
+  // Endpunkt-Marker als kleiner gefüllter Kreis
+  const coords = ROUTES_GEO[active];
+  const reverse = (state.richtung === 'Nord' || state.richtung === 'West');
+  const endpoint = reverse ? coords[0] : coords[coords.length - 1];
+  if (mapState.arrow) mapState.arrow.remove();
+  mapState.arrow = L.circleMarker(endpoint, {
+    radius: 6,
+    fillColor: color,
+    color: '#ffffff',
+    weight: 2,
+    fillOpacity: 1,
+    interactive: false
+  }).addTo(mapState.map);
 }

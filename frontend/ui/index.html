@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fahrkalender – Die Autobahn</title>
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css?v=26">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
 </head>
 <body>
@@ -55,7 +56,10 @@
     <main class="grid">
       <section class="cal cal--detail" id="calA"></section>
       <section class="cal cal--detail" id="calB"></section>
-      <aside class="cal cal--mini" id="calMini"></aside>
+      <aside class="cal cal--mini" id="calMini">
+        <div id="mapBox" class="mapbox"></div>
+        <div id="miniList" class="mini-list-wrap"></div>
+      </aside>
     </main>
 
     <!-- 5. FOOTER -->
@@ -84,6 +88,7 @@
     </footer>
   </div>
 
-  <script src="app.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>
