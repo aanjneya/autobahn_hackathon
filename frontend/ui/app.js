@@ -120,7 +120,18 @@ const state = {
   // Index des linken Detailmonats (0-basiert ab Januar 2026).
   // 0 = Jan 2026, 1 = Feb 2026, ... 12 = Jan 2027, ...
   monthIndex: 5, // Juni 2026 als sinnvoller Default (Feriensaison)
-  data: {} // key "YYYY-MM-DD|A93|Sued" → [c1, c2, c3, c4, c5, c6]
+  data: {}, // key "YYYY-MM-DD|A93|Sued" → [c1, c2, c3, c4, c5, c6]
+  reasons: {} // key "YYYY-MM-DD|A93|Sued" → [ [r0..], [r1..], ... ] (6 4h-Blöcke)
+};
+
+// Kategorie → Klartext (gleiche Bezeichnungen wie die Legende im Footer).
+const CAT_LABELS = {
+  0: 'Keine Prognose',
+  1: 'Flüssiger Verkehr',
+  2: 'Verstärkter Verkehr',
+  3: 'Starker Verkehr',
+  4: 'Sehr starker Verkehr',
+  5: 'Stillstand'
 };
 
 const BASE_YEAR = 2026;
@@ -182,23 +193,59 @@ async function loadCsv() {
   if (Object.keys(state.data).length === 0) throw new Error('empty');
 }
 
+// CSV-Zeile zerlegen, die in Anführungszeichen gesetzte Felder mit Kommas
+// enthalten kann (z. B. die reason-Spalte: "[""A"", ""B""]"). "" → ".
+function splitCsvLine(line) {
+  const out = [];
+  let cur = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { cur += '"'; i++; }
+        else inQuotes = false;
+      } else cur += ch;
+    } else {
+      if (ch === '"') inQuotes = true;
+      else if (ch === ',') { out.push(cur); cur = ''; }
+      else cur += ch;
+    }
+  }
+  out.push(cur);
+  return out;
+}
+
+// reason-Zelle (JSON-Array) → Liste von Strings, tolerant gegenüber Müll.
+function parseReason(cell) {
+  if (!cell) return [];
+  try {
+    const arr = JSON.parse(cell);
+    return Array.isArray(arr) ? arr.filter(Boolean) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
 function parseCsv(text) {
   const lines = text.trim().split('\n');
   if (lines.length < 2) return;
-  const headers = lines[0].split(',');
+  const headers = splitCsvLine(lines[0]);
   const iDatum = headers.indexOf('datum');
   const iStrecke = headers.indexOf('strecke');
   const iRichtung = headers.indexOf('richtung');
   const iSlot = headers.indexOf('time_slot');
   const iCat = headers.indexOf('pred_category');
+  const iReason = headers.indexOf('reason');
 
   // Falls schon im wide-Format (slot0..slot5)
   const iSlotCols = [0, 1, 2, 3, 4, 5].map(k => headers.indexOf(`slot${k}`));
   const wide = iSlotCols.every(i => i >= 0);
 
   const agg = {};
+  const reasons = {};
   for (let l = 1; l < lines.length; l++) {
-    const cols = lines[l].split(',');
+    const cols = splitCsvLine(lines[l]);
     if (cols.length < 4) continue;
     const datum = cols[iDatum];
     const corridor = streckeToCorridor(cols[iStrecke]);
@@ -222,9 +269,20 @@ function parseCsv(text) {
       const block = Math.floor(startHour / 4);
       if (block < 0 || block > 5) continue;
       if (cat > agg[key][block]) agg[key][block] = cat;
+
+      // Gründe je 4h-Block sammeln (Vereinigung, ohne Duplikate).
+      if (iReason >= 0) {
+        const rs = parseReason(cols[iReason]);
+        if (rs.length) {
+          if (!reasons[key]) reasons[key] = [[], [], [], [], [], []];
+          const bucket = reasons[key][block];
+          for (const r of rs) if (!bucket.includes(r)) bucket.push(r);
+        }
+      }
     }
   }
   state.data = agg;
+  state.reasons = reasons;
 }
 
 async function loadDemo() {
@@ -252,6 +310,7 @@ async function loadDemo() {
     }
   }
   state.data = data;
+  state.reasons = {}; // Demo-Daten haben keine Gründe.
 }
 
 // ────────────────────────────────────────────────────────────
@@ -356,10 +415,14 @@ function renderDetail(container, year, month) {
     const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
     for (let k = 0; k < 6; k++) {
       const td = document.createElement('td');
-      td.className = 'cell-slot';
+      td.className = 'cell-slot cell-slot--clickable';
       const inner = document.createElement('div');
       inner.className = `cell-slot__inner cat-${slots[k] || 0}`;
       td.appendChild(inner);
+      td.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        showReasonPopover(td, ds, k);
+      });
       tr.appendChild(td);
     }
     tbody.appendChild(tr);
@@ -407,4 +470,114 @@ function renderMini(year, month) {
   }
   wrap.appendChild(list);
   return wrap;
+}
+
+// ────────────────────────────────────────────────────────────
+// Reason-Popover (Klick auf einen Zeitslot)
+// ────────────────────────────────────────────────────────────
+
+let popoverEl = null;
+
+function getPopover() {
+  if (popoverEl) return popoverEl;
+  popoverEl = document.createElement('div');
+  popoverEl.className = 'reason-popover';
+  popoverEl.hidden = true;
+  document.body.appendChild(popoverEl);
+  // Klicks innerhalb des Popovers sollen es nicht schließen.
+  popoverEl.addEventListener('click', (ev) => ev.stopPropagation());
+  // Globale Schließ-Handler (einmalig).
+  document.addEventListener('click', closeReasonPopover);
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape') closeReasonPopover();
+  });
+  window.addEventListener('scroll', closeReasonPopover, true);
+  window.addEventListener('resize', closeReasonPopover);
+  return popoverEl;
+}
+
+function closeReasonPopover() {
+  if (popoverEl) popoverEl.hidden = true;
+}
+
+function formatReasonDate(ds) {
+  const [y, m, d] = ds.split('-').map(Number);
+  const dow = new Date(y, m - 1, d).getDay();
+  return `${DOW_SHORT[dow]} ${d}. ${MONTHS[m - 1]} ${y}`;
+}
+
+function showReasonPopover(anchorEl, ds, k) {
+  const pop = getPopover();
+  const cat = (lookup(ds) || [])[k] || 0;
+  const rs = (state.reasons[`${ds}|${state.strecke}|${state.richtung}`] || [])[k] || [];
+
+  pop.innerHTML = '';
+
+  const close = document.createElement('button');
+  close.className = 'reason-popover__close';
+  close.setAttribute('aria-label', 'Schließen');
+  close.textContent = '×';
+  close.addEventListener('click', closeReasonPopover);
+  pop.appendChild(close);
+
+  const title = document.createElement('div');
+  title.className = 'reason-popover__title';
+  title.textContent = `${formatReasonDate(ds)} · ${SLOT_LABELS[k]}`;
+  pop.appendChild(title);
+
+  const sev = document.createElement('div');
+  sev.className = 'reason-popover__severity';
+  const sw = document.createElement('span');
+  sw.className = `reason-popover__swatch cat-${cat}`;
+  const sevLbl = document.createElement('span');
+  sevLbl.textContent = CAT_LABELS[cat] || CAT_LABELS[0];
+  sev.appendChild(sw);
+  sev.appendChild(sevLbl);
+  pop.appendChild(sev);
+
+  if (rs.length) {
+    const ul = document.createElement('ul');
+    ul.className = 'reason-popover__list';
+    for (const r of rs) {
+      const li = document.createElement('li');
+      li.textContent = r;
+      ul.appendChild(li);
+    }
+    pop.appendChild(ul);
+  } else {
+    const note = document.createElement('div');
+    note.className = 'reason-popover__note';
+    note.textContent = cat === 0
+      ? 'Keine Prognose verfügbar.'
+      : 'Kein besonderer Grund – normaler Verkehr.';
+    pop.appendChild(note);
+  }
+
+  // Positionieren: unterhalb der Zelle, im Viewport gehalten.
+  pop.hidden = false;
+  const rect = anchorEl.getBoundingClientRect();
+  const sx = window.pageXOffset;
+  const sy = window.pageYOffset;
+  const pw = pop.offsetWidth;
+  const ph = pop.offsetHeight;
+  const margin = 8;
+
+  const anchorCenter = rect.left + rect.width / 2 + sx;
+  let left = anchorCenter - pw / 2;
+  left = Math.max(sx + margin, Math.min(left, sx + window.innerWidth - pw - margin));
+
+  let top = rect.bottom + sy + 6;
+  let above = false;
+  if (rect.bottom + ph + 6 > window.innerHeight) {
+    top = rect.top + sy - ph - 6;
+    above = true;
+  }
+
+  pop.style.left = `${Math.round(left)}px`;
+  pop.style.top = `${Math.round(top)}px`;
+  pop.classList.toggle('reason-popover--above', above);
+
+  // Pfeil horizontal auf die Zellenmitte ausrichten.
+  const arrowLeft = Math.max(12, Math.min(anchorCenter - left, pw - 12));
+  pop.style.setProperty('--arrow-left', `${Math.round(arrowLeft)}px`);
 }

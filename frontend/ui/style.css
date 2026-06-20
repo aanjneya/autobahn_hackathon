@@ -262,6 +262,12 @@ html, body {
 .cell-slot__inner.cat-4 { background: #e8624a; }
 .cell-slot__inner.cat-5 { background: #b3271a; }
 
+.cell-slot--clickable { cursor: pointer; }
+.cell-slot--clickable:hover .cell-slot__inner {
+  outline: 2px solid rgba(0, 52, 102, 0.55);
+  outline-offset: 1px;
+}
+
 /* Mini-Kalender (rechte Spalte) — füllt die Spaltenhöhe */
 .cal--mini {
   padding: 6px 8px 8px 8px;
@@ -414,7 +420,95 @@ html, body {
 }
 
 /* ---------- PRINT -------------------------------------------- */
+/* ── Reason-Popover ──────────────────────────────────────── */
+.reason-popover {
+  position: absolute;
+  z-index: 50;
+  min-width: 180px;
+  max-width: 260px;
+  background: #fff;
+  border: 1px solid #c9d4e0;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 30, 60, 0.18);
+  padding: 10px 12px 11px;
+  font-size: 12px;
+  color: #1c2b3a;
+}
+.reason-popover[hidden] { display: none; }
+
+/* Pfeil, der auf die Zelle zeigt (Position via --arrow-left). */
+.reason-popover::before,
+.reason-popover::after {
+  content: '';
+  position: absolute;
+  left: var(--arrow-left, 24px);
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+.reason-popover::before { top: -8px; border-bottom: 8px solid #c9d4e0; }
+.reason-popover::after  { top: -7px; border-bottom: 8px solid #fff; }
+.reason-popover--above::before { top: auto; bottom: -8px; border-bottom: none; border-top: 8px solid #c9d4e0; }
+.reason-popover--above::after  { top: auto; bottom: -7px; border-bottom: none; border-top: 8px solid #fff; }
+
+.reason-popover__close {
+  position: absolute;
+  top: 4px; right: 6px;
+  border: none; background: none;
+  font-size: 16px; line-height: 1;
+  color: #8a98a6; cursor: pointer;
+  padding: 2px;
+}
+.reason-popover__close:hover { color: #1c2b3a; }
+
+.reason-popover__title {
+  font-weight: 700;
+  padding-right: 16px;
+  margin-bottom: 6px;
+}
+.reason-popover__severity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.reason-popover__swatch {
+  display: inline-block;
+  width: 12px; height: 12px;
+  border-radius: 2px;
+  background: #e0e0e0;
+  flex: 0 0 auto;
+}
+.reason-popover__swatch.cat-1 { background: #95c258; }
+.reason-popover__swatch.cat-2 { background: #c5cf3a; }
+.reason-popover__swatch.cat-3 { background: #f0c040; }
+.reason-popover__swatch.cat-4 { background: #ec943a; }
+.reason-popover__swatch.cat-5 { background: #d34a2a; }
+
+.reason-popover__list {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.reason-popover__list li {
+  position: relative;
+  padding-left: 14px;
+  margin: 3px 0;
+}
+.reason-popover__list li::before {
+  content: '•';
+  position: absolute;
+  left: 2px;
+  color: #00549f;
+}
+.reason-popover__note {
+  color: #5a6976;
+  font-style: italic;
+}
+
 @media print {
+  .reason-popover { display: none !important; }
   body { font-size: 11px; }
   .page { max-width: none; padding: 8mm; }
   .print-btn { display: none; }
