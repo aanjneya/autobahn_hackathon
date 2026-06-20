@@ -68,6 +68,12 @@ def run_merge() -> None:
     print(f"forecast_input.csv: {len(scaffold)} rows")
 
 
+def run_climatology() -> None:
+    from climatology import main as clim_main
+
+    clim_main()
+
+
 def run_model() -> dict:
     """Run evaluation + forecast, return summary metrics."""
     import numpy as np
@@ -166,6 +172,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--skip-clean", action="store_true",
                         help="Skip raw->clean step (pipeline.py)")
+    parser.add_argument("--tune", type=int, default=0, metavar="TRIALS",
+                        help="Run Optuna with N trials before model step (e.g. --tune 40)")
     args = parser.parse_args()
 
     t0 = time.time()
@@ -176,6 +184,17 @@ def main() -> None:
     step("labels", run_labels)
     step("features", run_features)
     step("merge", run_merge)
+    step("climatology (DAUZ + lt_fbt)", run_climatology)
+
+    if args.tune > 0:
+        from tune import main as tune_main
+        import sys as _sys
+        orig_argv = _sys.argv
+        _sys.argv = ["tune.py", "--trials", str(args.tune)]
+        try:
+            step(f"optuna tuning ({args.tune} trials)", tune_main)
+        finally:
+            _sys.argv = orig_argv
 
     print(f"\n{'=' * 70}\n[STEP] model\n{'=' * 70}")
     tm = time.time()

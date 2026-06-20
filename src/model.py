@@ -10,6 +10,7 @@ Run    : python src/model.py
 """
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 import numpy as np
@@ -30,6 +31,8 @@ OUT = Path(__file__).resolve().parent.parent / "output"
 VAL_YEAR = 2025  # rows with year < VAL_YEAR train, year == VAL_YEAR validate
 CLASSES = [1, 2, 3, 4, 5]  # ordered congestion categories (1 = frei, 5 = Stau)
 
+_BEST_PARAMS_PATH = PROC / "best_params.json"
+
 LGBM_PARAMS = dict(
     objective="multiclass",
     num_class=len(CLASSES),
@@ -45,6 +48,10 @@ LGBM_PARAMS = dict(
     verbose=-1,
 )
 
+if _BEST_PARAMS_PATH.exists():
+    LGBM_PARAMS.update(json.loads(_BEST_PARAMS_PATH.read_text()))
+    print(f"[model] loaded tuned params from {_BEST_PARAMS_PATH.name}")
+
 NUMERIC_FEATURES = [
     "dow", "month", "week", "is_weekend", "is_friday", "is_sunday",
     "sin_week", "cos_week",
@@ -54,8 +61,13 @@ NUMERIC_FEATURES = [
     "is_brueckentag_by", "is_brueckentag_at",
     "is_long_weekend_by", "is_long_weekend_at",
     "is_ferien_by", "is_ferien_at", "is_ferien_overlap",
+    "is_ferien_start_by", "is_ferien_end_by",
+    "is_ferien_start_at", "is_ferien_end_at",
+    "is_pre_ferien_weekend_by", "is_pre_ferien_weekend_at",
     "is_oktoberfest", "is_messe_mch", "is_dosierung",
     "time_slot_idx",
+    "kfz_expected", "sv_expected", "sv_share_expected",
+    "lt_expected", "fbt_expected", "fbt_below_0_prob",
 ]
 CATEGORICAL_FEATURES = ["strecke", "richtung"]
 FEATURES = NUMERIC_FEATURES + CATEGORICAL_FEATURES

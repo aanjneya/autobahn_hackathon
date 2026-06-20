@@ -177,6 +177,24 @@ def build_features(start: str, end: str) -> pd.DataFrame:
     df["is_ferien_at"] = d.isin(ferien_at).astype(int)
     df["is_ferien_overlap"] = (df["is_ferien_by"] & df["is_ferien_at"]).astype(int)
 
+    # Ferien-Übergangstage: Reisewellen am Anfang und Ende der Ferien.
+    df["is_ferien_start_by"] = (d.isin(ferien_by) & ~d_minus1.isin(ferien_by)).astype(int)
+    df["is_ferien_end_by"] = (d.isin(ferien_by) & ~d_plus1.isin(ferien_by)).astype(int)
+    df["is_ferien_start_at"] = (d.isin(ferien_at) & ~d_minus1.isin(ferien_at)).astype(int)
+    df["is_ferien_end_at"] = (d.isin(ferien_at) & ~d_plus1.isin(ferien_at)).astype(int)
+    # Wochenende direkt vor Ferienbeginn (Reisetag): Sa/So und Mo ist Ferienstart.
+    d_plus2 = (df["datum"] + pd.Timedelta(days=2)).dt.date
+    df["is_pre_ferien_weekend_by"] = (
+        (df["dow"] >= 5)
+        & (d_plus1.isin(ferien_by) | d_plus2.isin(ferien_by))
+        & ~d.isin(ferien_by)
+    ).astype(int)
+    df["is_pre_ferien_weekend_at"] = (
+        (df["dow"] >= 5)
+        & (d_plus1.isin(ferien_at) | d_plus2.isin(ferien_at))
+        & ~d.isin(ferien_at)
+    ).astype(int)
+
     of_dates: set = set()
     for _, (s, e) in OKTOBERFEST.items():
         of_dates.update(pd.date_range(s, e).date)
