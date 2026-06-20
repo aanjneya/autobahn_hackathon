@@ -181,7 +181,7 @@ const Sidebar = {
     this.initMap();
     const el = document.getElementById('mapBox');
     if (el && el.tagName === 'IMG') {
-      const newSrc = state.strecke === 'A8' ? 'a8.png' : 'a93.png';
+      const newSrc = state.strecke === 'A8' ? 'a8.png?v=2' : 'a93.png?v=2';
       if (el.getAttribute('src') !== newSrc) {
         el.setAttribute('src', newSrc);
       }
