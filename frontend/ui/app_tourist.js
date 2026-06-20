@@ -245,10 +245,14 @@ function parseCsv(text) {
   const iSlotCols = [0, 1, 2, 3, 4, 5].map(k => headers.indexOf(`slot${k}`));
   const wide = iSlotCols.every(i => i >= 0);
 
+  const aggSum = {};
+  const aggCnt = {};
+  const confSum = {};
   const agg = {};
   const reasons = {};
   const confidence = {};
   const kfz = {};
+  const hourly = {};
   for (let l = 1; l < lines.length; l++) {
     const cols = splitCsvLine(lines[l]);
     if (cols.length < 4) continue;
@@ -258,6 +262,9 @@ function parseCsv(text) {
     const rich = RICHTUNG_MAP[cols[iRichtung]] || cols[iRichtung];
     if (!rich) continue;
     const key = `${datum}|${corridor}|${rich}`;
+    if (!aggSum[key]) aggSum[key] = [0, 0, 0, 0, 0, 0];
+    if (!aggCnt[key]) aggCnt[key] = [0, 0, 0, 0, 0, 0];
+    if (!confSum[key]) confSum[key] = [0, 0, 0, 0, 0, 0];
     if (!agg[key]) agg[key] = [0, 0, 0, 0, 0, 0];
 
     if (wide) {
@@ -273,19 +280,22 @@ function parseCsv(text) {
       if (isNaN(startHour)) continue;
       const block = Math.floor(startHour / 4);
       if (block < 0 || block > 5) continue;
-      if (cat > agg[key][block]) {
-        agg[key][block] = cat;
-        // Konfidenz = Modellwahrscheinlichkeit der gewählten Kategorie
-        // (nur beim Setzen des neuen Block-Maximums aktualisieren).
+      // First, track the MAX cat per 30-min slot across sub-segments.
+      const slotKey = `${key}|${slot}`;
+      if (!window.__slotMax) window.__slotMax = {};
+      if (!window.__slotMaxConf) window.__slotMaxConf = {};
+      
+      if (!window.__slotMax[slotKey] || cat > window.__slotMax[slotKey]) {
+        window.__slotMax[slotKey] = cat;
+        
         const iProb = iProbCols[cat - 1];
         if (iProb >= 0) {
           const p = parseFloat(cols[iProb]);
-          if (!isNaN(p)) {
-            if (!confidence[key]) confidence[key] = [null, null, null, null, null, null];
-            confidence[key][block] = p;
-          }
+          if (!isNaN(p)) window.__slotMaxConf[slotKey] = p;
         }
       }
+      
+      // We will compute agg after the loop!
 
       // Gründe je 4h-Block sammeln (Vereinigung, ohne Duplikate).
       if (iReason >= 0) {
@@ -304,10 +314,69 @@ function parseCsv(text) {
           if (val > kfz[key][block]) kfz[key][block] = val;
         }
       }
+
+      if (!hourly[key]) hourly[key] = [[], [], [], [], [], []];
+      let hVal = 0;
+      if (iKfz >= 0 && !isNaN(parseInt(cols[iKfz]))) hVal = parseInt(cols[iKfz]);
+      
+      const existing = hourly[key][block].find(x => x.slot === slot);
+      if (existing) {
+        if (cat > existing.cat) existing.cat = cat;
+        if (hVal > existing.val) existing.val = hVal;
+      } else {
+        hourly[key][block].push({ slot: slot, cat: cat, val: hVal });
+      }
     }
   }
+  // Compute block averages from the 30-minute maximums
+  if (window.__slotMax) {
+    const blockSums = {};
+    const blockCnts = {};
+    const blockConfSums = {};
+    const blockConfCnts = {};
+    
+    for (const sk in window.__slotMax) {
+       const parts = sk.split('|');
+       const baseKey = parts[0] + '|' + parts[1] + '|' + parts[2];
+       const slotStr = parts[3];
+       const startHour = parseInt(slotStr.split(':')[0]);
+       const block = Math.floor(startHour / 4);
+       
+       if (!blockSums[baseKey]) {
+          blockSums[baseKey] = [0,0,0,0,0,0];
+          blockCnts[baseKey] = [0,0,0,0,0,0];
+          blockConfSums[baseKey] = [0,0,0,0,0,0];
+          blockConfCnts[baseKey] = [0,0,0,0,0,0];
+       }
+       const c = window.__slotMax[sk];
+       const w = c; // simple linear weighting (Cat 5 is weighted 5x more than Cat 1)
+       blockSums[baseKey][block] += c * w;
+       blockCnts[baseKey][block] += w;
+       
+       if (window.__slotMaxConf[sk] != null) {
+          blockConfSums[baseKey][block] += window.__slotMaxConf[sk];
+          blockConfCnts[baseKey][block] += 1;
+       }
+    }
+    
+    for (const baseKey in blockSums) {
+       for (let b=0; b<6; b++) {
+          if (blockCnts[baseKey][b] > 0) {
+             agg[baseKey][b] = Math.round(blockSums[baseKey][b] / blockCnts[baseKey][b]);
+             if (blockConfCnts[baseKey][b] > 0) {
+                if (!confidence[baseKey]) confidence[baseKey] = [null,null,null,null,null,null];
+                confidence[baseKey][b] = blockConfSums[baseKey][b] / blockConfCnts[baseKey][b];
+             }
+          }
+       }
+    }
+    window.__slotMax = null;
+    window.__slotMaxConf = null;
+  }
+  
   state.data = agg;
   state.kfz = kfz;
+  state.hourly = hourly;
   state.reasons = reasons;
   state.confidence = confidence;
 }
@@ -555,7 +624,7 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(kfzEl);
   }
 
-  const speedMap = {1: "> 80 km/h", 2: "60 - 80 km/h", 3: "40 - 60 km/h", 4: "20 - 40 km/h", 5: "< 20 km/h"};
+  const speedMap = {1: "> 100 km/h", 2: "80 - 100 km/h", 3: "60 - 80 km/h", 4: "40 - 60 km/h", 5: "< 40 km/h"};
   if (cat > 0) {
     const spdEl = document.createElement('div');
     spdEl.className = 'reason-popover__confidence';
@@ -579,6 +648,57 @@ function showReasonPopover(anchorEl, ds, k) {
       ? 'Keine Prognose verfügbar.'
       : 'Kein besonderer Grund – normaler Verkehr.';
     pop.appendChild(note);
+  }
+
+  const hourlyData = (state.hourly && state.hourly[key]) ? state.hourly[key][k] : null;
+  if (hourlyData && hourlyData.length > 0) {
+    const mapContainer = document.createElement('div');
+    mapContainer.style.marginTop = '12px';
+    
+    const mapLbl = document.createElement('div');
+    mapLbl.textContent = 'Verlauf (30-Minuten Takt):';
+    mapLbl.style.fontSize = '12px';
+    mapLbl.style.color = '#888';
+    mapLbl.style.marginBottom = '4px';
+    mapContainer.appendChild(mapLbl);
+
+    const mapEl = document.createElement('div');
+    mapEl.style.display = 'flex';
+    mapEl.style.width = '100%';
+    mapEl.style.gap = '0.5px';
+    mapEl.style.overflow = 'hidden';
+
+    // Sort to ensure chronological order
+    hourlyData.sort((a, b) => a.slot.localeCompare(b.slot));
+    
+    const colors = {1: '#95c258', 2: '#c5cf3a', 3: '#efa82a', 4: '#e8624a', 5: '#b3271a'};
+
+    for (const h of hourlyData) {
+      const col = document.createElement('div');
+      col.style.flex = '1';
+      col.style.display = 'flex';
+      col.style.flexDirection = 'column';
+      col.style.alignItems = 'center';
+
+      const bar = document.createElement('div');
+      bar.style.width = '80%';
+      bar.style.height = '36px';
+      bar.style.borderRadius = '3px';
+      bar.style.backgroundColor = colors[h.cat] || '#eee';
+      bar.title = h.slot + ' (~' + h.val + ' Kfz/h)';
+      
+      const lbl = document.createElement('div');
+      lbl.style.fontSize = '7.5px';
+      lbl.style.color = '#777';
+      lbl.style.marginTop = '2px';
+      lbl.textContent = h.slot.split('-')[0]; // only show start time (e.g. 16:00)
+      
+      col.appendChild(bar);
+      col.appendChild(lbl);
+      mapEl.appendChild(col);
+    }
+    mapContainer.appendChild(mapEl);
+    pop.appendChild(mapContainer);
   }
 
   // Positionieren: unterhalb der Zelle, im Viewport gehalten.
