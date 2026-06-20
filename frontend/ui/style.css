@@ -483,9 +483,9 @@ html, body {
 }
 .reason-popover__swatch.cat-1 { background: #95c258; }
 .reason-popover__swatch.cat-2 { background: #c5cf3a; }
-.reason-popover__swatch.cat-3 { background: #f0c040; }
-.reason-popover__swatch.cat-4 { background: #ec943a; }
-.reason-popover__swatch.cat-5 { background: #d34a2a; }
+.reason-popover__swatch.cat-3 { background: #efa82a; }
+.reason-popover__swatch.cat-4 { background: #e8624a; }
+.reason-popover__swatch.cat-5 { background: #b3271a; }
 
 .reason-popover__list {
   list-style: none;
