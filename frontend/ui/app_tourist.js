@@ -620,20 +620,39 @@ function showReasonPopover(anchorEl, ds, k) {
   }
 
   if (cat >= 3) {
+    let allSlots = [];
+    for (let blk = 0; blk < 6; blk++) {
+      const hData = (state.hourly && state.hourly[key]) ? state.hourly[key][blk] : [];
+      if (hData && hData.length > 0) {
+        const sorted = [...hData].sort((a, b) => a.slot.localeCompare(b.slot));
+        sorted.forEach(s => allSlots.push({ ...s, blkIndex: blk }));
+      }
+    }
+
     let firstBad = null;
     let lastBad = null;
-    
-    for (let blk = 0; blk < 6; blk++) {
-      const hData = (state.hourly && state.hourly[key]) ? state.hourly[key][blk] : null;
-      if (hData) {
-        const sorted = [...hData].sort((a, b) => a.slot.localeCompare(b.slot));
-        for (const h of sorted) {
-          if (h.cat >= 3) {
-            if (!firstBad) firstBad = h.slot;
-            lastBad = h.slot;
-          }
+
+    if (allSlots.length > 0) {
+        let jamIndex = -1;
+        for (let i = 0; i < allSlots.length; i++) {
+            if (allSlots[i].blkIndex === k && allSlots[i].cat >= 3) {
+                jamIndex = i;
+                break;
+            }
         }
-      }
+
+        if (jamIndex !== -1) {
+            let sIdx = jamIndex;
+            while (sIdx > 0 && allSlots[sIdx - 1].cat >= 3) {
+                sIdx--;
+            }
+            let eIdx = jamIndex;
+            while (eIdx < allSlots.length - 1 && allSlots[eIdx + 1].cat >= 3) {
+                eIdx++;
+            }
+            firstBad = allSlots[sIdx].slot;
+            lastBad = allSlots[eIdx].slot;
+        }
     }
 
     let tipText = "Suchen Sie einen anderen Reisetag.";

@@ -622,15 +622,37 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
+  let tips = [];
+  
   if (cat === 5 && conf >= 0.8) {
+      tips.push({ text: "Dosierung / LKW-Verbot aktivieren", title: "🚧 Maßnahme empfohlen:", color: "#721c24", bg: "#f8d7da" });
+  } else if (cat === 4) {
+      tips.push({ text: "Stauwarnung & Tempolimits vorbereiten", title: "⚠️ VBA-Schaltung:", color: "#856404", bg: "#fff3cd" });
+  } else if (cat <= 2) {
+      const daySlots = lookup(ds) || [0, 0, 0, 0, 0, 0];
+      let safeForWork = Math.max(...daySlots) <= 2;
+      if (safeForWork) {
+          tips.push({ text: "Ideal für Tagesbaustellen & Sperrungen", title: "✅ Wartungsfenster:", color: "#155724", bg: "#d4edda" });
+      }
+  }
+
+  const rsStr = rs.join(',');
+  if (rsStr.includes('Oktoberfest') || rsStr.includes('Ferienbeginn')) {
+      tips.push({ text: "Polizei & Pannenhilfe aufstocken", title: "🚓 Einsatzplanung:", color: "#0c5460", bg: "#d1ecf1" });
+  }
+  if (key.includes('A8') && key.includes('München') && (rsStr.includes('Ferienende') || rsStr.includes('Rückreise'))) {
+      tips.push({ text: "Mit Bundespolizei abstimmen", title: "🛂 Grenzkontrolle:", color: "#721c24", bg: "#f8d7da" });
+  }
+
+  for (const t of tips) {
     const authEl = document.createElement('div');
     authEl.className = 'reason-popover__confidence';
-    authEl.style.color = '#721c24';
-    authEl.style.backgroundColor = '#f8d7da';
+    authEl.style.color = t.color;
+    authEl.style.backgroundColor = t.bg;
     authEl.style.padding = '4px 8px';
     authEl.style.borderRadius = '4px';
     authEl.style.marginTop = '8px';
-    authEl.innerHTML = '<span>🚧 Maßnahme empfohlen:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Dosierung / LKW-Verbot aktivieren</span>';
+    authEl.innerHTML = `<span>${t.title}</span><span style="margin-left:auto; font-weight:bold; font-size:10px; max-width:60%; text-align:right;">${t.text}</span>`;
     pop.appendChild(authEl);
   }
 
