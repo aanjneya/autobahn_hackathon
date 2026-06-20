@@ -17,6 +17,13 @@ def _build_time_slots() -> list[str]:
 TIME_SLOTS = _build_time_slots()
 ROUTES = [("A93", "Sued"), ("A93", "Nord"), ("A8", "Ost"), ("A8", "West")]
 
+# Sensoren mit struktureller Geschwindigkeitsbegrenzung (Tempolimit, nicht Stau).
+# Diese werden bei der Aggregation pro Route ausgeschlossen, damit ihre
+# künstlich niedrigen Werte nicht die ganze Strecke runterziehen.
+EXCLUDED_DEVICES = {
+    "MQDZ_Kiefersfelden_(S)_Ro,DE1,2",  # A93 Nord, ~60 km/h Mittel = dauerhaftes Tempolimit
+}
+
 
 def device_to_route(device: str) -> tuple[str, str] | None:
     s = str(device).lower()
@@ -31,6 +38,11 @@ def device_to_route(device: str) -> tuple[str, str] | None:
 
 def build_train() -> pd.DataFrame:
     labels = pd.read_csv(PROC / "daily_labels.csv")
+    excluded_n = labels["devices"].isin(EXCLUDED_DEVICES).sum()
+    if excluded_n:
+        print(f"[merge] excluded {excluded_n} rows from "
+              f"{len(EXCLUDED_DEVICES)} tempolimit sensor(s)")
+    labels = labels[~labels["devices"].isin(EXCLUDED_DEVICES)]
     routes = labels["devices"].apply(device_to_route)
     labels = labels.assign(
         strecke=routes.apply(lambda r: r[0] if r else None),

@@ -6,6 +6,7 @@ venv/
 
 # Data (groß / generiert)
 data/raw/
+output/plots
 
 # IDE
 .idea/

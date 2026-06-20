@@ -5,3 +5,4 @@ lightgbm
 holidays
 icalendar
 optuna
+matplotlib
