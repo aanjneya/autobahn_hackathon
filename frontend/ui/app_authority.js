@@ -149,12 +149,26 @@ function setupEvents() {
     });
   });
   document.getElementById('navPrev').addEventListener('click', () => {
-    if (isDayViewOpen()) closeDayView();
+    if (isDayViewOpen() && state.currentDayDs) {
+      const newDs = shiftDsByMonths(state.currentDayDs, -1);
+      const newIdx = dsToMonthIndex(newDs);
+      if (newIdx < MIN_INDEX) return;
+      state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
+      showDayDetailView(newDs);
+      return;
+    }
     state.monthIndex = Math.max(MIN_INDEX, state.monthIndex - 1);
     render();
   });
   document.getElementById('navNext').addEventListener('click', () => {
-    if (isDayViewOpen()) closeDayView();
+    if (isDayViewOpen() && state.currentDayDs) {
+      const newDs = shiftDsByMonths(state.currentDayDs, 1);
+      const newIdx = dsToMonthIndex(newDs);
+      if (newIdx > MAX_INDEX + 3) return; // forecast endet Ende 2029
+      state.monthIndex = Math.max(MIN_INDEX, Math.min(MAX_INDEX, newIdx));
+      showDayDetailView(newDs);
+      return;
+    }
     state.monthIndex = Math.min(MAX_INDEX, state.monthIndex + 1);
     render();
   });
@@ -767,6 +781,7 @@ function closeDayView() {
   dayViewEl.hidden = true;
   const grid = document.querySelector('.grid');
   if (grid) grid.style.display = '';
+  try { render(); } catch (_) {}
 }
 function isDayViewOpen() {
   return !!(dayViewEl && !dayViewEl.hidden);
@@ -900,8 +915,32 @@ function showDayDetailView(ds) {
     }
   }
 
+  const wasVisible = !view.hidden;
   view.hidden = false;
-  view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (!wasVisible) view.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  updateNavLabelsForDayView(ds);
+}
+
+function updateNavLabelsForDayView(ds) {
+  const [y, m] = ds.split('-').map(Number);
+  const labelA = document.getElementById('navLabelA');
+  const labelB = document.getElementById('navLabelB');
+  if (labelA) labelA.textContent = `${MONTHS[m - 1]} ${y}`;
+  if (labelB) labelB.textContent = formatReasonDate(ds);
+}
+
+function shiftDsByMonths(ds, delta) {
+  const [y, m, d] = ds.split('-').map(Number);
+  const dt = new Date(y, m - 1 + delta, 1);
+  // Klemmen auf gültigen Tag im Zielmonat.
+  const lastDay = new Date(dt.getFullYear(), dt.getMonth() + 1, 0).getDate();
+  dt.setDate(Math.min(d, lastDay));
+  return `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}-${String(dt.getDate()).padStart(2, '0')}`;
+}
+
+function dsToMonthIndex(ds) {
+  const [y, m] = ds.split('-').map(Number);
+  return (y - BASE_YEAR) * 12 + (m - 1);
 }
 
 
