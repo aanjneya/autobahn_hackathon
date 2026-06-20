@@ -620,6 +620,38 @@ function showReasonPopover(anchorEl, ds, k) {
   }
 
   if (cat >= 3) {
+    let firstBad = null;
+    let lastBad = null;
+    
+    for (let blk = 0; blk < 6; blk++) {
+      const hData = (state.hourly && state.hourly[key]) ? state.hourly[key][blk] : null;
+      if (hData) {
+        const sorted = [...hData].sort((a, b) => a.slot.localeCompare(b.slot));
+        for (const h of sorted) {
+          if (h.cat >= 3) {
+            if (!firstBad) firstBad = h.slot;
+            lastBad = h.slot;
+          }
+        }
+      }
+    }
+
+    let tipText = "Suchen Sie einen anderen Reisetag.";
+    if (firstBad && lastBad) {
+        let bStr = firstBad.split('-')[0];
+        let aStr = lastBad.split('-')[1];
+        
+        if (bStr !== "00:00" && aStr !== "24:00" && aStr !== "00:00") {
+            tipText = "Fahren Sie vor " + bStr + " oder nach " + aStr + " Uhr ab.";
+        } else if (bStr !== "00:00") {
+            tipText = "Fahren Sie idealerweise vor " + bStr + " Uhr ab.";
+        } else if (aStr !== "24:00" && aStr !== "00:00") {
+            tipText = "Fahren Sie idealerweise nach " + aStr + " Uhr ab.";
+        }
+    } else {
+        tipText = "Prüfen Sie den detaillierten 30-Minuten Verlauf.";
+    }
+
     const tipEl = document.createElement('div');
     tipEl.className = 'reason-popover__confidence';
     tipEl.style.color = '#155724';
@@ -627,7 +659,7 @@ function showReasonPopover(anchorEl, ds, k) {
     tipEl.style.padding = '4px 8px';
     tipEl.style.borderRadius = '4px';
     tipEl.style.marginTop = '8px';
-    tipEl.innerHTML = '<span>💡 Tipp:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">Fahren Sie vor 08:00 oder nach 19:00 Uhr ab.</span>';
+    tipEl.innerHTML = '<span>💡 Tipp:</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + tipText + '</span>';
     pop.appendChild(tipEl);
   }
 
