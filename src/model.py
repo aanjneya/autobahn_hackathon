@@ -175,26 +175,45 @@ def forecast(train: pd.DataFrame, fc_input: pd.DataFrame) -> pd.DataFrame:
             return json.dumps([], ensure_ascii=False)
             
         r = []
-        if row.get('is_ferien_by', 0) == 1 or row.get('is_ferien_at', 0) == 1:
-            r.append("Ferienverkehr")
-        elif row.get('is_long_weekend_by', 0) == 1 or row.get('is_brueckentag_by', 0) == 1:
-            r.append("Brückentag/Langes Wochenende")
-        elif row.get('is_feiertag_by', 0) == 1 or row.get('is_feiertag_at', 0) == 1:
-            r.append("Feiertag")
-            
-        if row.get('is_dosierung', 0) == 1:
-            r.append("Blockabfertigung Tirol")
+        
         if row.get('is_oktoberfest', 0) == 1:
             r.append("Oktoberfest")
+        if row.get('is_messe_mch', 0) == 1:
+            r.append("Messe München")
+        if row.get('is_dosierung', 0) == 1:
+            r.append("Blockabfertigung Tirol")
+
+        if row.get('is_ferien_start_by', 0) == 1 or row.get('is_ferien_start_at', 0) == 1:
+            r.append("Ferienbeginn")
+        elif row.get('is_ferien_end_by', 0) == 1 or row.get('is_ferien_end_at', 0) == 1:
+            r.append("Ferienende (Rückreiseverkehr)")
+        elif row.get('is_pre_ferien_weekend_by', 0) == 1 or row.get('is_pre_ferien_weekend_at', 0) == 1:
+            r.append("Vorferien-Wochenende")
+        elif row.get('is_ferien_by', 0) == 1 or row.get('is_ferien_at', 0) == 1:
+            r.append("Ferienverkehr")
+
+        if row.get('is_feiertag_by', 0) == 1 or row.get('is_feiertag_at', 0) == 1:
+            r.append("Feiertag")
+        elif row.get('is_pre_feiertag_by', 0) == 1 or row.get('is_pre_feiertag_at', 0) == 1:
+            r.append("Tag vor Feiertag (Kurzurlauber)")
+        elif row.get('is_brueckentag_by', 0) == 1 or row.get('is_brueckentag_at', 0) == 1:
+            r.append("Brückentag")
+        elif row.get('is_long_weekend_by', 0) == 1 or row.get('is_long_weekend_at', 0) == 1:
+            r.append("Verlängertes Wochenende")
             
         if row.get('is_weekend', 0) == 1:
-            if "Ferienverkehr" not in r:
+            if not any(x in ["Ferienverkehr", "Ferienbeginn", "Vorferien-Wochenende"] for x in r):
                 r.append("Wochenendverkehr")
+            if row.get('month', 0) in [1, 2, 3]:
+                r.append("Wintersportverkehr")
+            if row.get('month', 0) in [7, 8] and not any(x in ["Ferienverkehr", "Ferienbeginn"] for x in r):
+                r.append("Sommerreiseverkehr")
         else:
             if row.get('is_friday', 0) == 1 and "13:00" <= str(row['time_slot']) <= "19:00":
                 r.append("Wochenendpendler")
             elif "06:00" <= str(row['time_slot']) <= "09:00" or "15:00" <= str(row['time_slot']) <= "18:00":
-                r.append("Berufsverkehr")
+                if "Feiertag" not in r and "Brückentag" not in r:
+                    r.append("Berufsverkehr")
                 
         if not r:
             r.append("Hohes Verkehrsaufkommen")
