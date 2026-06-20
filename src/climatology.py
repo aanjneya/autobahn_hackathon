@@ -73,6 +73,7 @@ def _load_dauz() -> pd.DataFrame:
     df["weekday"] = df["date"].dt.dayofweek
     df["month"] = df["date"].dt.month
     df["sv_share"] = np.where(df["kfz_h"] > 0, df["sv_h"] / df["kfz_h"], 0.0)
+    df["slot_4h"] = df["time_slot"].apply(slot_to_4h_bucket)
     return df
 
 
@@ -93,6 +94,7 @@ def _load_lt_fbt() -> pd.DataFrame:
     merged["date"] = pd.to_datetime(merged["date"])
     merged["month"] = merged["date"].dt.month
     merged["weekday"] = merged["date"].dt.dayofweek
+    merged["slot_4h"] = merged["time_slot"].apply(slot_to_4h_bucket)
     return merged
 
 
@@ -100,12 +102,11 @@ def build_dauz_climatology() -> pd.DataFrame:
     """Per (strecke, richtung, month, weekday, slot_4h)
     -> kfz_expected, sv_expected, sv_share_expected."""
     df = _load_dauz()
-    grp = df.groupby(["strecke", "richtung", "month", "weekday", "time_slot"]).agg(
+    grp = df.groupby(["strecke", "richtung", "month", "weekday", "slot_4h"]).agg(
         kfz_expected=("kfz_h", "mean"),
         sv_expected=("sv_h", "mean"),
         sv_share_expected=("sv_share", "mean"),
     ).reset_index()
-    grp = grp.rename(columns={"time_slot": "slot_4h"})
     return grp
 
 
@@ -120,8 +121,7 @@ def build_weather_climatology() -> pd.DataFrame:
     if "fbt" in df.columns:
         agg["fbt_expected"] = ("fbt", "mean")
         agg["fbt_below_0_prob"] = ("fbt_below_0", "mean")
-    grp = df.groupby(["month", "weekday", "time_slot"]).agg(**agg).reset_index()
-    grp = grp.rename(columns={"time_slot": "slot_4h"})
+    grp = df.groupby(["month", "weekday", "slot_4h"]).agg(**agg).reset_index()
     return grp
 
 
@@ -138,6 +138,10 @@ def _add_lookup_keys(df: pd.DataFrame) -> pd.DataFrame:
 
 def enrich(df: pd.DataFrame, dauz_clim: pd.DataFrame,
            weather_clim: pd.DataFrame) -> pd.DataFrame:
+    cols_to_drop = ["kfz_expected", "sv_expected", "sv_share_expected", 
+                    "lt_expected", "fbt_expected", "fbt_below_0_prob", "slot_4h"]
+    df = df.drop(columns=[c for c in cols_to_drop if c in df.columns])
+    
     df = _add_lookup_keys(df)
     df = df.merge(
         dauz_clim,
