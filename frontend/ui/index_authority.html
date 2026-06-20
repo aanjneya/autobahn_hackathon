@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahrkalender – Die Autobahn</title>
+  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='85'>🛣️</text></svg>">
+</head>
+<body>
+  <div class="page" id="page">
+
+    <!-- 1. HEADER -->
+    <header class="hdr">
+      <div class="hdr__text">        <div class="hdr__title">FAHRKALENDER</div>
+        <div class="hdr__route" id="hdrRoute">A93 RICHTUNG SÜDEN</div>
+        <div class="hdr__sub" id="hdrSub">Rosenheim, München → Kufstein, Innsbruck</div>
+      </div>
+      <div class="hdr__right">
+        <div style="display: flex; gap: 14px; align-items: center;">
+          <button class="print-btn" id="printBtn" title="Drucken">🖨️ Drucken</button>
+          <img class="hdr__logo" src="https://www.autobahn.de/_assets/4483a80560873394161ba712d6ca7e9e/Images/Logo.svg" alt="Die Autobahn">
+        </div>
+        <select class="mode-select" onchange="window.location.href=this.value">
+          <option value="index.html">Mode: Standard / Base</option>
+          <option value="index_tourist.html">1. Private Traveler / Tourist</option>
+          <option value="index_resident.html">2. Local Resident</option>
+          <option value="index_logistics.html">3. Logistics / Freight / Bus</option>
+          <option value="index_tourism.html">4. Tourism Business</option>
+          <option value="index_authority.html" selected>5. Traffic Management Authority</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- 2. STRECKEN-TOGGLE -->
+    <nav class="toggle" id="toggle">
+      <button class="toggle__btn active" data-strecke="A93" data-richtung="Sued">A93 Richtung Süden</button>
+      <button class="toggle__btn" data-strecke="A93" data-richtung="Nord">A93 Richtung Norden</button>
+      <button class="toggle__btn" data-strecke="A8" data-richtung="Ost">A8 Richtung Osten</button>
+      <button class="toggle__btn" data-strecke="A8" data-richtung="West">A8 Richtung Westen</button>
+    </nav>
+
+    <!-- 3. NAVIGATION -->
+    <div class="monthnav">
+      <button class="monthnav__arrow" id="navPrev" aria-label="Zurück">‹</button>
+      <div class="monthnav__labels">
+        <span class="monthnav__label" id="navLabelA">–</span>
+        <span class="monthnav__sep">|</span>
+        <span class="monthnav__label" id="navLabelB">–</span>
+      </div>
+      <button class="monthnav__arrow" id="navNext" aria-label="Vor">›</button>
+    </div>
+
+    <!-- 4. HAUPTBEREICH -->
+    <main class="grid">
+      <section class="cal cal--detail" id="calA"></section>
+      <section class="cal cal--detail" id="calB"></section>
+      <aside class="cal cal--mini" id="calMini"></aside>
+    </main>
+
+    <!-- 5. FOOTER -->
+    <footer class="ftr">
+      <div class="legend">
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--weekend"></span>Wochenende</span>
+          <span class="legend__item"><span class="sw sw--holiday"></span>Feiertag</span>
+        </div>
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--cat1"></span>Flüssiger Verkehr</span>
+          <span class="legend__item"><span class="sw sw--cat2"></span>Verstärkter Verkehr</span>
+        </div>
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--cat3"></span>Starker Verkehr</span>
+          <span class="legend__item"><span class="sw sw--cat4"></span>Sehr starker Verkehr</span>
+        </div>
+        <div class="legend__row">
+          <span class="legend__item"><span class="sw sw--cat5"></span>Stillstand</span>
+        </div>
+      </div>
+      <div class="disclaimer">
+        <p>* Die Verkehrsprognosen wurden auf Grundlage eines Verkehrsaufkommens erarbeitet, das durch keine Störungen wie Unfälle, Baustellen, Wetterbedingungen usw. beeinflusst wurde. Als Grundlage für die Einschätzung der erwarteten Verkehrslage wurde unter anderem die Verkehrsnachfrage aus der Vergangenheit in den Prognosehorizont eingeschätzt. Ungeplante spontane Ereignisse und Events wie Unfälle, kurzfristig notwendige Baustellen und witterungsbedingte Einflüsse können die Verkehrslage beeinflussen und sind in der Prognose nicht enthalten.</p>
+        <p class="stand" id="stand">Stand –</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app_authority.js"></script>
+</body>
+</html>
