@@ -105,7 +105,7 @@ def process_directory(input_dir, output_dir, dataset_type="1min_traffic"):
 
 if __name__ == "__main__":
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    default_input_dir = os.path.join(BASE_DIR, "data", "rawdata", "2023-2025_1min_2+0_v")
+    default_input_dir = os.path.join(BASE_DIR, "data", "raw", "2023-2025_1min_2+0_v")
     default_output_dir = os.path.join(BASE_DIR, "data", "clean", "2023-2025_1min_2+0_v")
 
     parser = argparse.ArgumentParser(description="Process minute-by-minute highway sensor data into 4-hour aggregated blocks.")
