@@ -135,7 +135,7 @@
       'popover.close': 'Close',
       'popover.confidence': 'Confidence',
       'popover.volume': 'Volume (peak):',
-      'popover.speed': 'Avg. speed:',
+      'popover.speed': 'Min. speed:',
       'popover.kfz_per_h': 'veh/h',
       'popover.no_forecast': 'No forecast available.',
       'popover.no_reason': 'No specific reason — normal traffic.',
