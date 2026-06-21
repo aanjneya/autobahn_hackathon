@@ -51,7 +51,7 @@
       'popover.close': 'Schließen',
       'popover.confidence': 'Konfidenz',
       'popover.volume': 'Volumen (Peak):',
-      'popover.speed': 'Ø Geschwindigkeit:',
+      'popover.speed': 'Min. Geschwindigkeit:',
       'popover.kfz_per_h': 'Kfz/h',
       'popover.no_forecast': 'Keine Prognose verfügbar.',
       'popover.no_reason': 'Kein besonderer Grund – normaler Verkehr.',

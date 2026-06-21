@@ -668,7 +668,7 @@ function showReasonPopover(anchorEl, ds, k) {
   if (cat > 0) {
     const spdEl = document.createElement('div');
     spdEl.className = 'reason-popover__confidence';
-    spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Ø Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
+    spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Min. Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
     pop.appendChild(spdEl);
   if (rs.length) {
     const ul = document.createElement('ul');
@@ -1035,7 +1035,7 @@ function showDayDetailView(ds) {
         <div class="day-view__slot-cat">${CAT_LABELS[cat]}</div>
       </div>
       <div class="day-view__slot-stats">
-        ${cat > 0 ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.speed').replace(/:$/, '') : 'Ø Geschwindigkeit'}</span><b>${speedMap[cat]}</b></div>` : ''}
+        ${cat > 0 ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.speed').replace(/:$/, '') : 'Min. Geschwindigkeit'}</span><b>${speedMap[cat]}</b></div>` : ''}
         ${kfz ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.volume').replace(/:$/, '') : 'Volumen (Peak)'}</span><b>~${kfz} ${(typeof I18n !== 'undefined') ? I18n.t('popover.kfz_per_h') : 'Kfz/h'}</b></div>` : ''}
         ${conf != null ? `<div><span>${(typeof I18n !== 'undefined') ? I18n.t('popover.confidence') : 'Konfidenz'}</span><b>${Math.round(conf * 100)} %</b></div>` : ''}
       </div>

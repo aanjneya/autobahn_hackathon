@@ -649,7 +649,7 @@ function showReasonPopover(anchorEl, ds, k) {
   if (cat > 0) {
     const spdEl = document.createElement('div');
     spdEl.className = 'reason-popover__confidence';
-    spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Ø Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
+    spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Min. Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
     pop.appendChild(spdEl);
   if (rs.length) {
     const ul = document.createElement('ul');
