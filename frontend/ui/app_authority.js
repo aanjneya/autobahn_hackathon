@@ -454,6 +454,24 @@ function lookup(ds) {
   return state.data[`${ds}|${state.strecke}|${state.richtung}`];
 }
 
+function computeDayWarningIcons(ds, slots) {
+  const key = `${ds}|${state.strecke}|${state.richtung}`;
+  const reasonsForDay = state.reasons[key] || [];
+  const confForDay = state.confidence[key] || [];
+  const icons = new Set();
+  for (let k = 0; k < 6; k++) {
+    const cat = slots[k] || 0;
+    const conf = confForDay[k];
+    const rs = reasonsForDay[k] || [];
+    if (cat === 5 && conf != null && conf >= 0.8) icons.add('🚧');
+    else if (cat === 4) icons.add('⚠️');
+    const rsStr = rs.join(',');
+    if (rsStr.includes('Oktoberfest') || rsStr.includes('Ferienbeginn')) icons.add('🚓');
+    if (key.includes('A8') && key.includes('München') && (rsStr.includes('Ferienende') || rsStr.includes('Rückreise'))) icons.add('🛂');
+  }
+  return [...icons];
+}
+
 function renderDetail(container, year, month) {
   container.innerHTML = '';
   container.classList.remove('cal--empty');
@@ -469,6 +487,9 @@ function renderDetail(container, year, month) {
   const thDay = document.createElement('th');
   thDay.className = 'col-day';
   trh.appendChild(thDay);
+  const thWarn = document.createElement('th');
+  thWarn.className = 'col-warn';
+  trh.appendChild(thWarn);
   SLOT_LABELS.forEach(lbl => {
     const th = document.createElement('th');
     th.className = 'col-slot';
@@ -504,6 +525,13 @@ function renderDetail(container, year, month) {
     tr.appendChild(tdDay);
 
     const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
+
+    const tdWarn = document.createElement('td');
+    tdWarn.className = 'cell-warn';
+    const icons = computeDayWarningIcons(ds, slots);
+    if (icons.length) tdWarn.textContent = icons.join(' ');
+    tr.appendChild(tdWarn);
+
     for (let k = 0; k < 6; k++) {
       const td = document.createElement('td');
       td.className = 'cell-slot cell-slot--clickable';
