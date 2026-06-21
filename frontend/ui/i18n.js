@@ -16,7 +16,7 @@
         2: 'Verstärkter Verkehr',
         3: 'Starker Verkehr',
         4: 'Sehr starker Verkehr',
-        5: 'Stillstand'
+        5: 'Potentieller Stillstand'
       },
       'app.title': 'FAHRKALENDER',
       'app.print': '🖨️ Drucken',
@@ -46,7 +46,7 @@
       'legend.cat2': 'Verstärkter Verkehr',
       'legend.cat3': 'Starker Verkehr',
       'legend.cat4': 'Sehr starker Verkehr',
-      'legend.cat5': 'Stillstand',
+      'legend.cat5': 'Potentieller Stillstand',
       'footer.stand': 'Stand –',
       'popover.close': 'Schließen',
       'popover.confidence': 'Konfidenz',
@@ -100,7 +100,7 @@
         2: 'Increased traffic',
         3: 'Heavy traffic',
         4: 'Very heavy traffic',
-        5: 'Standstill'
+        5: 'Potential standstill'
       },
       'app.title': 'TRAVEL CALENDAR',
       'app.print': '🖨️ Print',
@@ -130,7 +130,7 @@
       'legend.cat2': 'Increased traffic',
       'legend.cat3': 'Heavy traffic',
       'legend.cat4': 'Very heavy traffic',
-      'legend.cat5': 'Standstill',
+      'legend.cat5': 'Potential standstill',
       'footer.stand': 'As of –',
       'popover.close': 'Close',
       'popover.confidence': 'Confidence',

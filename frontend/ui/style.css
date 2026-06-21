@@ -84,8 +84,9 @@ html, body {
   grid-column: 3;
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   background: #ffffff;
@@ -778,7 +779,7 @@ html, body {
   border-radius: 6px;
   padding: 8px 12px;
   flex-shrink: 0;
-  width: 210px;
+  width: 220px;
 }
 .day-view__swatch {
   width: 22px;
