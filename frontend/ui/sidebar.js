@@ -181,7 +181,13 @@ const Sidebar = {
     this.initMap();
     const el = document.getElementById('mapBox');
     if (el && el.tagName === 'IMG') {
-      const newSrc = state.strecke === 'A8' ? 'a8.png?v=2' : 'a93.png?v=2';
+      let newSrc = state.strecke === 'A8' ? 'a8.png?v=2' : 'a93.png?v=2';
+      if (state.strecke === 'A8' && typeof state.wohnort !== 'undefined' && state.wohnort !== 'Alle') {
+         if (state.wohnort === 'München - Holzkirchen') newSrc = 'Hoehenkirchen-Holzkirchen.png';
+         else if (state.wohnort === 'Holzkirchen - Siegsdorf') newSrc = 'Holzkirchen-Siegsdorf.png';
+         else if (state.wohnort === 'Siegsdorf - Teisendorf') newSrc = 'Siegsdorf-Teisendorf.png';
+         else if (state.wohnort === 'Teisendorf - Salzburg') newSrc = 'Teisendorf-Salzburg.png';
+      }
       if (el.getAttribute('src') !== newSrc) {
         el.setAttribute('src', newSrc);
       }
