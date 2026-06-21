@@ -978,3 +978,90 @@ html, body {
 
   .cal, .grid, .ctrl-wrap, .hdr, .ftr { page-break-inside: avoid; break-inside: avoid; }
 }
+
+/* Glassmorphism Premium Tip */
+.premium-tip {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  margin-top: 12px !important;
+}
+.premium-tip span {
+  text-align: left !important;
+}
+
+/* Premium Stau-Hotspot Container */
+.stau-hotspot-container {
+  margin-top: 16px !important;
+  background-color: #f8f9fa !important;
+  border: 1px solid #e9ecef !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+}
+.stau-hotspot-title {
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: #343a40 !important;
+  margin-bottom: 8px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+.stau-hotspot-row {
+  display: flex !important;
+  align-items: flex-start !important;
+  background-color: #ffffff !important;
+  border: 1px solid #dee2e6 !important;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  margin-bottom: 6px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+.stau-hotspot-row:last-child {
+  margin-bottom: 0 !important;
+}
+.stau-hotspot-dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+}
+.stau-hotspot-text {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #495057 !important;
+}
+
+/* Glassmorphism Premium Tip */
+.premium-tip {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  margin-top: 12px !important;
+}
+.premium-tip span {
+  text-align: left !important;
+}
+
+/* Glassmorphism Premium Tip */
+.premium-tip {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 12px 16px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  margin-top: 12px !important;
+}
+.premium-tip span {
+  text-align: left !important;
+}

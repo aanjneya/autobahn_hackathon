@@ -347,6 +347,11 @@ function parseCsv(text) {
       
       // We will compute agg after the loop!
 
+      // Segment-level data tracking
+      if (!window.__segReasons) window.__segReasons = {};
+      if (!window.__segKfz) window.__segKfz = {};
+      if (!window.__segHourly) window.__segHourly = {};
+
       // Gründe je 4h-Block sammeln (Vereinigung, ohne Duplikate).
       if (iReason >= 0) {
         const rs = parseReason(cols[iReason]);
@@ -354,6 +359,9 @@ function parseCsv(text) {
           if (!reasons[key]) reasons[key] = [[], [], [], [], [], []];
           const bucket = reasons[key][block];
           for (const r of rs) if (!bucket.includes(r)) bucket.push(r);
+          // Also track per-segment reasons
+          if (!window.__segReasons[segKey]) window.__segReasons[segKey] = [];
+          for (const r of rs) if (!window.__segReasons[segKey].includes(r)) window.__segReasons[segKey].push(r);
         }
       }
 
@@ -362,6 +370,8 @@ function parseCsv(text) {
         if (!isNaN(val)) {
           if (!kfz[key]) kfz[key] = [0, 0, 0, 0, 0, 0];
           if (val > kfz[key][block]) kfz[key][block] = val;
+          // Also track per-segment kfz
+          if (!window.__segKfz[segKey] || val > window.__segKfz[segKey]) window.__segKfz[segKey] = val;
         }
       }
 
@@ -375,6 +385,13 @@ function parseCsv(text) {
         if (hVal > existing.val) existing.val = hVal;
       } else {
         hourly[key][block].push({ slot: slot, cat: cat, val: hVal });
+      }
+      // Also track per-segment hourly
+      const segSlotKey = `${key}|${slot}|${subStrecke}`;
+      if (!window.__segHourly[segSlotKey]) window.__segHourly[segSlotKey] = { slot: slot, cat: cat, val: hVal };
+      else {
+        if (cat > window.__segHourly[segSlotKey].cat) window.__segHourly[segSlotKey].cat = cat;
+        if (hVal > window.__segHourly[segSlotKey].val) window.__segHourly[segSlotKey].val = hVal;
       }
     }
   }
@@ -499,12 +516,14 @@ function dateStr(y, m, d) {
 
 function lookup(ds) {
   const key = `${ds}|${state.strecke}|${state.richtung}`;
+  const globalData = state.data[key];
+  if (!globalData) return null;
+
   if (state.wohnort && state.wohnort !== 'Alle') {
      const stretches = STRETCHES[state.strecke] || [];
      const stretch = stretches.find(s => s.label === state.wohnort);
      if (stretch && stretch.segments.length > 0 && window.__segMax) {
          const blocks = [0, 0, 0, 0, 0, 0];
-         let hasData = false;
          for (let k = 0; k < 6; k++) {
              let maxCat = 0;
              stretch.segments.forEach(seg => {
@@ -512,13 +531,17 @@ function lookup(ds) {
                  const c = window.__segMax[segKey] || 0;
                  if (c > maxCat) maxCat = c;
              });
-             blocks[k] = maxCat;
-             if (maxCat > 0) hasData = true;
+             // Fallback: if local sensor has no data, use global corridor data
+             if (maxCat === 0 && globalData[k]) {
+                 blocks[k] = globalData[k];
+             } else {
+                 blocks[k] = maxCat;
+             }
          }
-         return hasData ? blocks : state.data[key];
+         return blocks;
      }
   }
-  return state.data[key];
+  return globalData;
 }
 
 function renderDetail(container, year, month) {
@@ -640,9 +663,55 @@ function showReasonPopover(anchorEl, ds, k) {
   const pop = getPopover();
   const cat = (lookup(ds) || [])[k] || 0;
   const key = `${ds}|${state.strecke}|${state.richtung}`;
-  const rs = (state.reasons[key] || [])[k] || [];
+
+  // Get data — filter by segment if a Wohnort is selected
+  let rs = (state.reasons[key] || [])[k] || [];
   const conf = (state.confidence[key] || [])[k];
-  const kfzVal = (state.kfz && state.kfz[key]) ? state.kfz[key][k] : null;
+  let kfzVal = (state.kfz && state.kfz[key]) ? state.kfz[key][k] : null;
+  let hourlyData = (state.hourly && state.hourly[key]) ? state.hourly[key][k] : null;
+
+  if (state.wohnort && state.wohnort !== 'Alle') {
+    const stretches = STRETCHES[state.strecke] || [];
+    const stretch = stretches.find(s => s.label === state.wohnort);
+    if (stretch && stretch.segments.length > 0) {
+      let segRs = [];
+      let segKfz = 0;
+      const slotMap = {};
+      stretch.segments.forEach(seg => {
+        const segKey = `${key}|${k}|${seg}`;
+        if (window.__segReasons && window.__segReasons[segKey]) {
+          for (const r of window.__segReasons[segKey]) {
+            if (!segRs.includes(r)) segRs.push(r);
+          }
+        }
+        if (window.__segKfz && window.__segKfz[segKey]) {
+          if (window.__segKfz[segKey] > segKfz) segKfz = window.__segKfz[segKey];
+        }
+        if (hourlyData) {
+          hourlyData.forEach(h => {
+            const segSlotKey = `${key}|${h.slot}|${seg}`;
+            if (window.__segHourly && window.__segHourly[segSlotKey]) {
+              const hData = window.__segHourly[segSlotKey];
+              if (!slotMap[h.slot]) slotMap[h.slot] = { slot: h.slot, cat: hData.cat, val: hData.val };
+              else {
+                if (hData.cat > slotMap[h.slot].cat) slotMap[h.slot].cat = hData.cat;
+                if (hData.val > slotMap[h.slot].val) slotMap[h.slot].val = hData.val;
+              }
+            }
+          });
+        }
+      });
+      // Fill missing 30-min slots from global data
+      if (hourlyData) {
+        hourlyData.forEach(h => {
+          if (!slotMap[h.slot]) slotMap[h.slot] = { slot: h.slot, cat: h.cat, val: h.val };
+        });
+      }
+      if (segRs.length > 0) rs = segRs;
+      if (segKfz > 0) kfzVal = segKfz;
+      if (Object.keys(slotMap).length > 0) hourlyData = Object.values(slotMap);
+    }
+  }
 
   pop.innerHTML = '';
 
@@ -704,20 +773,7 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(spdEl);
   }
 
-  if (cat >= 4) {
-    const resEl = document.createElement('div');
-    resEl.className = 'reason-popover__confidence';
-    resEl.style.color = '#721c24';
-    resEl.style.backgroundColor = '#f8d7da';
-    resEl.style.padding = '4px 8px';
-    resEl.style.borderRadius = '4px';
-    resEl.style.marginTop = '8px';
-    const resTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.resident.title') : '⚠️ Schleichverkehr-Risiko:';
-    const resText = (typeof I18n !== 'undefined') ? I18n.t('tip.resident.text') : 'Hoch (Dorfstraßen meiden)';
-    resEl.innerHTML = '<span>' + resTitle + '</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + resText + '</span>';
-    pop.appendChild(resEl);
-  }
-
+  // Reasons listed BEFORE tips/advice
   if (rs.length) {
     const ul = document.createElement('ul');
     ul.className = 'reason-popover__list';
@@ -736,7 +792,24 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(note);
   }
 
-  const hourlyData = (state.hourly && state.hourly[key]) ? state.hourly[key][k] : null;
+  // Tip (after reasons)
+  if (cat >= 4) {
+    const resEl = document.createElement('div');
+    resEl.className = 'reason-popover__confidence premium-tip';
+    resEl.style.color = '#721c24';
+    resEl.style.backgroundColor = '#f8d7da';
+    resEl.style.padding = '4px 8px';
+    resEl.style.borderRadius = '4px';
+    resEl.style.marginTop = '8px';
+    const resTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.resident.title') : '⚠️ Schleichverkehr-Risiko:';
+    const resText = (typeof I18n !== 'undefined') ? I18n.t('tip.resident.text') : 'Hoch (Dorfstraßen meiden)';
+    resEl.style.flexDirection = 'column';
+    resEl.style.alignItems = 'flex-start';
+    resEl.innerHTML = '<span style="font-size:10px;">' + resTitle + '</span><span style="font-weight:bold; font-size:12px; margin-top: 2px;">' + resText + '</span>';
+    pop.appendChild(resEl);
+  }
+
+  // 30-minute timeline
   if (hourlyData && hourlyData.length > 0) {
     const mapContainer = document.createElement('div');
     mapContainer.style.marginTop = '12px';
@@ -787,58 +860,110 @@ function showReasonPopover(anchorEl, ds, k) {
     pop.appendChild(mapContainer);
   }
 
-  // Positionieren: unterhalb der Zelle, im Viewport gehalten.
+  // Stau-Hotspots: merged contiguous stretches
   pop.hidden = false;
 
-  const DETECTORS_UI = {
-      "A8_MQB25": "Holzkirchen",
-      "A8_MQQ37": "Holzkirchen (Süd)",
-      "A8_MQQ209": "Traunstein/Siegsdorf",
-      "A8_MQQ213": "Siegsdorf (Ost)",
-      "A8_MQQ245": "Teisendorf",
-      "A93_Kiefersfelden": "Kiefersfelden",
-      "A93_Inntal": "Inntal",
-      "A93_Gletschergarten": "Gletschergarten"
-  };
-
-  const segWrap = document.createElement('div');
-  segWrap.className = 'reason-popover__confidence';
-  segWrap.style.flexDirection = 'column';
-  segWrap.style.alignItems = 'flex-start';
-  segWrap.innerHTML = '<span style="margin-bottom: 4px; font-weight: bold;">📍 Stau-Hotspots:</span>';
+  const A8_NODES = ['München', 'Holzkirchen', 'Siegsdorf', 'Teisendorf', 'Salzburg'];
+  const A8_EDGES = [
+    ['A8_MQB25', 'A8_MQQ37'],
+    ['A8_MQQ209'],
+    ['A8_MQQ213'],
+    ['A8_MQQ245']
+  ];
   
-  let foundSegs = false;
-  for (const det in DETECTORS_UI) {
-      if (det.startsWith(state.strecke)) {
-          const segKey = `${key}|${k}|${det}`;
-          const segCat = window.__segMax ? window.__segMax[segKey] : 0;
-          if (segCat >= 3) {
-              foundSegs = true;
-              const row = document.createElement('div');
-              row.style.display = 'flex';
-              row.style.width = '100%';
-              row.style.alignItems = 'center';
-              row.style.marginBottom = '2px';
-              
-              const dot = document.createElement('div');
-              dot.className = `cat-${segCat}`;
-              dot.style.width = '8px';
-              dot.style.height = '8px';
-              dot.style.borderRadius = '50%';
-              dot.style.marginRight = '6px';
-              
-              const name = document.createElement('span');
-              name.textContent = DETECTORS_UI[det];
-              name.style.fontSize = '11px';
-              
-              row.appendChild(dot);
-              row.appendChild(name);
-              segWrap.appendChild(row);
-          }
+  const A93_NODES = ['Rosenheim', 'Inntal', 'Gletschergarten', 'Kiefersfelden'];
+  const A93_EDGES = [
+    ['A93_Inntal'],
+    ['A93_Gletschergarten'],
+    ['A93_Kiefersfelden']
+  ];
+
+  let activeEdges = [];
+  let nodes = state.strecke === 'A8' ? A8_NODES : A93_NODES;
+  let edges = state.strecke === 'A8' ? A8_EDGES : A93_EDGES;
+
+  for (let i = 0; i < edges.length; i++) {
+    let isActive = false;
+    let maxCat = 0;
+    
+    let isInWohnort = true;
+    if (state.wohnort && state.wohnort !== 'Alle') {
+      const stretchObj = STRETCHES[state.strecke].find(s => s.label === state.wohnort);
+      if (stretchObj) {
+        isInWohnort = edges[i].some(det => stretchObj.segments.includes(det));
       }
+    }
+    
+    if (isInWohnort) {
+      for (const det of edges[i]) {
+        const segKey = `${key}|${k}|${det}`;
+        let segCat = window.__segMax ? (window.__segMax[segKey] || 0) : 0;
+        // Fallback to global if no local sensor data
+        if (segCat === 0 && state.data[key] && state.data[key][k]) {
+          segCat = state.data[key][k];
+        }
+        if (segCat >= 3) {
+          isActive = true;
+          if (segCat > maxCat) maxCat = segCat;
+        }
+      }
+    }
+    activeEdges.push({ active: isActive, cat: maxCat });
   }
-  if (foundSegs) {
-      pop.appendChild(segWrap);
+
+  // Merge contiguous active edges into stretches (e.g. A-B + B-C → A-C)
+  let mergedStretches = [];
+  let startIdx = -1;
+  let currentMaxCat = 0;
+
+  for (let i = 0; i <= activeEdges.length; i++) {
+    if (i < activeEdges.length && activeEdges[i].active) {
+      if (startIdx === -1) {
+        startIdx = i;
+        currentMaxCat = activeEdges[i].cat;
+      } else {
+        if (activeEdges[i].cat > currentMaxCat) currentMaxCat = activeEdges[i].cat;
+      }
+    } else {
+      if (startIdx !== -1) {
+        let endIdx = i;
+        let strName = `${nodes[startIdx]} - ${nodes[endIdx]}`;
+        if (state.richtung === 'Nord' || state.richtung === 'West') {
+          strName = `${nodes[endIdx]} - ${nodes[startIdx]}`;
+        }
+        mergedStretches.push({ name: strName, cat: currentMaxCat });
+        startIdx = -1;
+        currentMaxCat = 0;
+      }
+    }
+  }
+
+  if (mergedStretches.length > 0) {
+    const segWrap = document.createElement('div');
+    segWrap.className = 'stau-hotspot-container';
+    
+    const htitle = document.createElement('div');
+    htitle.className = 'stau-hotspot-title';
+    htitle.innerHTML = '<span style="font-size: 14px; margin-right: 6px;">📍</span> Stau-Hotspots auf der Strecke:';
+    segWrap.appendChild(htitle);
+    
+    for (const stretch of mergedStretches) {
+      const row = document.createElement('div');
+      row.className = 'stau-hotspot-row';
+      
+      const dot = document.createElement('div');
+      dot.className = `stau-hotspot-dot cat-${stretch.cat}`;
+      dot.style.boxShadow = '0 0 0 2px rgba(255,255,255,0.8)';
+      
+      const name = document.createElement('span');
+      name.className = 'stau-hotspot-text';
+      name.textContent = stretch.name;
+      
+      row.appendChild(dot);
+      row.appendChild(name);
+      segWrap.appendChild(row);
+    }
+    pop.appendChild(segWrap);
   }
 
   const rect = anchorEl.getBoundingClientRect();

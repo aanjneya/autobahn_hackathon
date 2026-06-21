@@ -624,6 +624,23 @@ function showReasonPopover(anchorEl, ds, k) {
     spdEl.className = 'reason-popover__confidence';
     spdEl.innerHTML = '<span>' + ((typeof I18n !== 'undefined') ? I18n.t('popover.speed') : 'Ø Geschwindigkeit:') + '</span><span style="margin-left:auto; font-weight:bold;">' + speedMap[cat] + '</span>';
     pop.appendChild(spdEl);
+  if (rs.length) {
+    const ul = document.createElement('ul');
+    ul.className = 'reason-popover__list';
+    for (const r of rs) {
+      const li = document.createElement('li');
+      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
+      ul.appendChild(li);
+    }
+    pop.appendChild(ul);
+  } else {
+    const note = document.createElement('div');
+    note.className = 'reason-popover__note';
+    note.textContent = cat === 0
+      ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast') : 'Keine Prognose verfügbar.')
+      : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason') : 'Kein besonderer Grund – normaler Verkehr.');
+    pop.appendChild(note);
+  }
   }
 
   if (cat >= 3) {
@@ -685,34 +702,19 @@ function showReasonPopover(anchorEl, ds, k) {
     }
 
     const tipEl = document.createElement('div');
-    tipEl.className = 'reason-popover__confidence';
+    tipEl.className = 'reason-popover__confidence premium-tip';
     tipEl.style.color = '#155724';
     tipEl.style.backgroundColor = '#d4edda';
     tipEl.style.padding = '4px 8px';
     tipEl.style.borderRadius = '4px';
     tipEl.style.marginTop = '8px';
     const tipTitle = (typeof I18n !== 'undefined') ? I18n.t('tip.tourist.title') : '💡 Tipp:';
-    tipEl.innerHTML = '<span>' + tipTitle + '</span><span style="margin-left:auto; font-weight:bold; font-size:11px;">' + tipText + '</span>';
+    tipEl.style.flexDirection = 'column';
+    tipEl.style.alignItems = 'flex-start';
+    tipEl.innerHTML = '<span style="font-size:10px;">' + tipTitle + '</span><span style="font-weight:bold; font-size:12px; margin-top: 2px;">' + tipText + '</span>';
     pop.appendChild(tipEl);
   }
 
-  if (rs.length) {
-    const ul = document.createElement('ul');
-    ul.className = 'reason-popover__list';
-    for (const r of rs) {
-      const li = document.createElement('li');
-      li.textContent = (typeof I18n !== "undefined" && I18n.tReason) ? I18n.tReason(r) : r;
-      ul.appendChild(li);
-    }
-    pop.appendChild(ul);
-  } else {
-    const note = document.createElement('div');
-    note.className = 'reason-popover__note';
-    note.textContent = cat === 0
-      ? ((typeof I18n !== 'undefined') ? I18n.t('popover.no_forecast') : 'Keine Prognose verfügbar.')
-      : ((typeof I18n !== 'undefined') ? I18n.t('popover.no_reason') : 'Kein besonderer Grund – normaler Verkehr.');
-    pop.appendChild(note);
-  }
 
   const hourlyData = (state.hourly && state.hourly[key]) ? state.hourly[key][k] : null;
   if (hourlyData && hourlyData.length > 0) {
@@ -768,54 +770,90 @@ function showReasonPopover(anchorEl, ds, k) {
   // Positionieren: unterhalb der Zelle, im Viewport gehalten.
   pop.hidden = false;
 
-  const DETECTORS_UI = {
-      "A8_MQB25": "Holzkirchen",
-      "A8_MQQ37": "Holzkirchen (Süd)",
-      "A8_MQQ209": "Traunstein/Siegsdorf",
-      "A8_MQQ213": "Siegsdorf (Ost)",
-      "A8_MQQ245": "Teisendorf",
-      "A93_Kiefersfelden": "Kiefersfelden",
-      "A93_Inntal": "Inntal",
-      "A93_Gletschergarten": "Gletschergarten"
-  };
-
-  const segWrap = document.createElement('div');
-  segWrap.className = 'reason-popover__confidence';
-  segWrap.style.flexDirection = 'column';
-  segWrap.style.alignItems = 'flex-start';
-  segWrap.innerHTML = '<span style="margin-bottom: 4px; font-weight: bold;">📍 Stau-Hotspots:</span>';
+    const A8_NODES = ['München', 'Holzkirchen', 'Siegsdorf', 'Teisendorf', 'Salzburg'];
+  const A8_EDGES = [
+    ['A8_MQB25', 'A8_MQQ37'],
+    ['A8_MQQ209'],
+    ['A8_MQQ213'],
+    ['A8_MQQ245']
+  ];
   
-  let foundSegs = false;
-  for (const det in DETECTORS_UI) {
-      if (det.startsWith(state.strecke)) {
-          const segKey = `${key}|${k}|${det}`;
-          const segCat = window.__segMax ? window.__segMax[segKey] : 0;
-          if (segCat >= 3) {
-              foundSegs = true;
-              const row = document.createElement('div');
-              row.style.display = 'flex';
-              row.style.width = '100%';
-              row.style.alignItems = 'center';
-              row.style.marginBottom = '2px';
-              
-              const dot = document.createElement('div');
-              dot.className = `cat-${segCat}`;
-              dot.style.width = '8px';
-              dot.style.height = '8px';
-              dot.style.borderRadius = '50%';
-              dot.style.marginRight = '6px';
-              
-              const name = document.createElement('span');
-              name.textContent = DETECTORS_UI[det];
-              name.style.fontSize = '11px';
-              
-              row.appendChild(dot);
-              row.appendChild(name);
-              segWrap.appendChild(row);
-          }
-      }
+  const A93_NODES = ['Rosenheim', 'Inntal', 'Gletschergarten', 'Kiefersfelden'];
+  const A93_EDGES = [
+    ['A93_Inntal'],
+    ['A93_Gletschergarten'],
+    ['A93_Kiefersfelden']
+  ];
+
+  let activeEdges = [];
+  let nodes = state.strecke === 'A8' ? A8_NODES : A93_NODES;
+  let edges = state.strecke === 'A8' ? A8_EDGES : A93_EDGES;
+
+  for (let i = 0; i < edges.length; i++) {
+     let isActive = false;
+     let maxCat = 0;
+     for (const det of edges[i]) {
+         const segKey = `${key}|${k}|${det}`;
+         const cat = window.__segMax ? (window.__segMax[segKey] || 0) : 0;
+         if (cat >= 3) { 
+             isActive = true; 
+             if(cat > maxCat) maxCat = cat; 
+         }
+     }
+     activeEdges.push({ active: isActive, cat: maxCat });
   }
-  if (foundSegs) {
+
+  let mergedStretches = [];
+  let startIdx = -1;
+  let currentMaxCat = 0;
+
+  for (let i = 0; i <= activeEdges.length; i++) {
+     if (i < activeEdges.length && activeEdges[i].active) {
+         if (startIdx === -1) {
+             startIdx = i;
+             currentMaxCat = activeEdges[i].cat;
+         } else {
+             if (activeEdges[i].cat > currentMaxCat) currentMaxCat = activeEdges[i].cat;
+         }
+     } else {
+         if (startIdx !== -1) {
+             let endIdx = i;
+             let strName = `${nodes[startIdx]} - ${nodes[endIdx]}`;
+             if (state.richtung === 'Nord' || state.richtung === 'West') {
+                 strName = `${nodes[endIdx]} - ${nodes[startIdx]}`;
+             }
+             mergedStretches.push({ name: strName, cat: currentMaxCat });
+             startIdx = -1;
+             currentMaxCat = 0;
+         }
+     }
+  }
+
+  if (mergedStretches.length > 0) {
+      const segWrap = document.createElement('div');
+      segWrap.className = 'stau-hotspot-container';
+      
+      const title = document.createElement('div');
+      title.className = 'stau-hotspot-title';
+      title.innerHTML = '<span style="font-size: 14px; margin-right: 6px;">📍</span> Stau-Hotspots auf der Strecke:';
+      segWrap.appendChild(title);
+      
+      for (const stretch of mergedStretches) {
+          const row = document.createElement('div');
+          row.className = 'stau-hotspot-row';
+          
+          const dot = document.createElement('div');
+          dot.className = `stau-hotspot-dot cat-${stretch.cat}`;
+          dot.style.boxShadow = '0 0 0 2px rgba(255,255,255,0.8)';
+          
+          const name = document.createElement('span');
+          name.className = 'stau-hotspot-text';
+          name.textContent = stretch.name;
+          
+          row.appendChild(dot);
+          row.appendChild(name);
+          segWrap.appendChild(row);
+      }
       pop.appendChild(segWrap);
   }
 
