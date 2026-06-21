@@ -487,9 +487,6 @@ function renderDetail(container, year, month) {
   const thDay = document.createElement('th');
   thDay.className = 'col-day';
   trh.appendChild(thDay);
-  const thWarn = document.createElement('th');
-  thWarn.className = 'col-warn';
-  trh.appendChild(thWarn);
   SLOT_LABELS.forEach(lbl => {
     const th = document.createElement('th');
     th.className = 'col-slot';
@@ -512,25 +509,35 @@ function renderDetail(container, year, month) {
     if (hol) tr.classList.add('is-holiday');
     else if (isWE) tr.classList.add('is-weekend');
 
+    const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
+    const icons = computeDayWarningIcons(ds, slots);
+
     const tdDay = document.createElement('td');
     tdDay.className = 'cell-day';
+    
+    const dateWrap = document.createElement('span');
+    dateWrap.className = 'cell-day__date-wrap';
+    
     const numEl = document.createElement('span');
     numEl.className = 'cell-day__num';
     numEl.textContent = d;
+    
     const dowEl = document.createElement('span');
     dowEl.className = 'cell-day__dow';
     dowEl.textContent = DOW_SHORT[dow];
-    tdDay.appendChild(numEl);
-    tdDay.appendChild(dowEl);
+    
+    dateWrap.appendChild(numEl);
+    dateWrap.appendChild(dowEl);
+    tdDay.appendChild(dateWrap);
+    
+    if (icons.length) {
+      const iconSpan = document.createElement('span');
+      iconSpan.className = 'cell-day__icons';
+      iconSpan.textContent = icons.join(' ');
+      tdDay.appendChild(iconSpan);
+    }
+    
     tr.appendChild(tdDay);
-
-    const slots = lookup(ds) || [0, 0, 0, 0, 0, 0];
-
-    const tdWarn = document.createElement('td');
-    tdWarn.className = 'cell-warn';
-    const icons = computeDayWarningIcons(ds, slots);
-    if (icons.length) tdWarn.textContent = icons.join(' ');
-    tr.appendChild(tdWarn);
 
     for (let k = 0; k < 6; k++) {
       const td = document.createElement('td');

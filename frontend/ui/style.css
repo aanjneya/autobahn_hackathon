@@ -286,9 +286,18 @@ html, body {
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
   position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cell-day__date-wrap {
+  display: flex;
+  align-items: baseline;
+  width: 36px;
 }
 .cell-day__num { font-weight: 600; }
 .cell-day__dow { color: #555; margin-left: 3px; }
+.cell-day__icons { margin-left: 6px; font-size: 11px; }
 .cell-slot {
   width: 24px;
   height: 22px;
